@@ -8,7 +8,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg
 
-
 from Determinatebeams.Shearandmomentdiagramming_ui import Ui_shearandmomentscalculator
 
 class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
