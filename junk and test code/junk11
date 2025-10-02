@@ -1,0 +1,54 @@
+from PySide6.QtWidgets import (
+    QApplication, QWidget, QGraphicsView, QGraphicsScene,
+    QGraphicsEllipseItem, QVBoxLayout, QDoubleSpinBox, QPushButton
+)
+from PySide6.QtCore import Qt
+
+class ShapeController(QWidget):
+    def __init__(self):
+        super().__init__()
+
+        # Scene and view
+        self.scene = QGraphicsScene()
+        self.view = QGraphicsView(self.scene)
+        self.scene.setSceneRect(0, 0, 400, 300)
+
+        # GUI elements
+        self.button = QPushButton("Show Shape")
+        self.spinbox = QDoubleSpinBox()
+        self.spinbox.setRange(0, 100)
+        self.spinbox.setSingleStep(5)
+
+        # Layout
+        layout = QVBoxLayout(self)
+        layout.addWidget(self.view)
+        layout.addWidget(self.button)
+        layout.addWidget(self.spinbox)
+
+        # Shape (not added initially)
+        self.shape = QGraphicsEllipseItem(0, 0, 20, 20)
+        self.shape.setBrush(Qt.green)
+        self.shape_visible = False
+
+        # Connect signals
+        self.button.clicked.connect(self.show_shape)
+        self.spinbox.valueChanged.connect(self.update_shape_position)
+
+    def show_shape(self):
+        """Add the shape to the scene when the button is clicked."""
+        if not self.shape_visible:
+            self.scene.addItem(self.shape)
+            self.shape.setPos(self.spinbox.value(), 100)
+            self.shape_visible = True
+
+    def update_shape_position(self, value):
+        """Move shape only if it's visible."""
+        if self.shape_visible:
+            self.shape.setPos(value, 100)
+
+if __name__ == "__main__":
+    app = QApplication([])
+    window = ShapeController()
+    window.resize(500, 400)
+    window.show()
+    app.exec()

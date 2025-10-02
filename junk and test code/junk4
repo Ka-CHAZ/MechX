@@ -1,0 +1,45 @@
+import sys
+from PySide6.QtWidgets import (QApplication, QWidget, QPushButton,
+                               QScrollArea, QVBoxLayout, QLineEdit,
+                               QGridLayout)
+
+class MyWidget(QWidget):
+    def __init__(self):
+        super().__init__()
+
+        self.scroll_area = QScrollArea()
+        self.scroll_widget = QWidget()
+        self.grid_layout = QGridLayout(self.scroll_widget)
+        self.scroll_area.setWidget(self.scroll_widget)
+        self.scroll_area.setWidgetResizable(True)
+
+        self.button = QPushButton("Add Line Edit")
+        self.button.clicked.connect(self.add_line_edit)
+
+        self.read_button = QPushButton("Read Values")
+        self.read_button.clicked.connect(self.read_values)
+
+        self.main_layout = QVBoxLayout(self)
+        self.main_layout.addWidget(self.button)
+        self.main_layout.addWidget(self.scroll_area)
+        self.main_layout.addWidget(self.read_button)
+
+        self.line_edit_count = 0
+
+    def add_line_edit(self):
+        line_edit = QLineEdit()
+        self.grid_layout.addWidget(line_edit, self.line_edit_count, 0)
+        self.line_edit_count += 1
+
+    def read_values(self):
+         for i in range(self.grid_layout.count()):
+            widget = self.grid_layout.itemAt(i).widget()
+            if isinstance(widget, QLineEdit):
+                print(f"Line Edit {i+1}: {widget.text()}")
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    widget = MyWidget()
+    widget.show()
+    sys.exit(app.exec())
+    

@@ -1,0 +1,104 @@
+from PySide6.QtWidgets import (
+    QApplication, QWidget, QVBoxLayout, QPushButton, QScrollArea,
+    QGroupBox, QComboBox, QDoubleSpinBox, QSpinBox, QLabel, QGridLayout
+)
+
+class DynamicGroupBoxApp(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Dynamic GroupBoxes in ScrollArea")
+        self.setGeometry(100, 100, 400, 400)
+
+        # Main layout
+        self.main_layout = QVBoxLayout(self)
+
+        # Scroll Area
+        self.scroll_area = QScrollArea(self)
+        self.scroll_area.setWidgetResizable(True)
+
+        # Widget inside Scroll Area
+        self.scroll_widget = QWidget()
+        self.scroll_layout = QVBoxLayout(self.scroll_widget)
+        self.scroll_widget.setLayout(self.scroll_layout)
+
+        self.scroll_area.setWidget(self.scroll_widget)
+
+        # Buttons to add different GroupBoxes
+        self.add_groupbox1_btn = QPushButton("Add GroupBox 1", self)
+        self.add_groupbox1_btn.clicked.connect(self.add_groupbox1)
+
+        self.add_groupbox2_btn = QPushButton("Add GroupBox 2", self)
+        self.add_groupbox2_btn.clicked.connect(self.add_groupbox2)
+
+        # Add widgets to the main layout
+        self.main_layout.addWidget(self.add_groupbox1_btn)
+        self.main_layout.addWidget(self.add_groupbox2_btn)
+        self.main_layout.addWidget(self.scroll_area)
+        
+        self.group_box_counter = 0
+
+    def add_groupbox1(self):
+        """Adds a group box with combo boxes and double spin boxes."""
+        
+        self.group_box_counter += 1
+        groupbox = QGroupBox(f"GroupBox {self.group_box_counter}")
+        groupbox.setCheckable(True)  # Makes the group box checkable
+        groupbox.setChecked(True)  # Set it checked by default
+        groupbox.toggled.connect(lambda checked: self.remove_groupbox(groupbox, checked))
+
+        layout = QGridLayout(groupbox)
+
+        combo1 = QComboBox()
+        combo1.addItems(["Option A1", "Option A2", "Option A3"])
+
+        combo2 = QComboBox()
+        combo2.addItems(["Option B1", "Option B2", "Option B3"])
+
+        spin_box = QDoubleSpinBox()
+        spin_box.setRange(0.0, 100.0)
+        spin_box.setSingleStep(0.5)
+
+        layout.addWidget(QLabel("Combo 1:"), 0, 0)
+        layout.addWidget(combo1, 0, 1)
+        layout.addWidget(QLabel("Combo 2:"), 1, 0)
+        layout.addWidget(combo2, 1, 1)
+        layout.addWidget(QLabel("Double Spin Box:"), 2, 0)
+        layout.addWidget(spin_box, 2, 1)
+
+        self.scroll_layout.addWidget(groupbox)
+
+    def add_groupbox2(self):
+        """Adds a different group box with different widgets."""
+        groupbox = QGroupBox("GroupBox 2")
+        groupbox.setCheckable(True)
+        groupbox.setChecked(True)
+        groupbox.toggled.connect(lambda checked: self.remove_groupbox(groupbox, checked))
+
+        layout = QGridLayout(groupbox)
+
+        combo1 = QComboBox()
+        combo1.addItems(["Category 1", "Category 2", "Category 3"])
+
+        spin_box = QSpinBox()
+        spin_box.setRange(1, 50)
+
+        label = QLabel("Select an option:")
+
+        layout.addWidget(label, 0, 0)
+        layout.addWidget(combo1, 0, 1)
+        layout.addWidget(QLabel("Quantity:"), 1, 0)
+        layout.addWidget(spin_box, 1, 1)
+
+        self.scroll_layout.addWidget(groupbox)
+
+    def remove_groupbox(self, groupbox, checked):
+        """Removes the group box when unchecked."""
+        if not checked:
+            self.scroll_layout.removeWidget(groupbox)
+            groupbox.deleteLater()
+
+if __name__ == "__main__":
+    app = QApplication([])
+    window = DynamicGroupBoxApp()
+    window.show()
+    app.exec()

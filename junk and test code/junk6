@@ -1,0 +1,297 @@
+import sys
+from PySide6.QtWidgets import (
+    QApplication, QMainWindow, QSplitter, QTreeWidget, QTreeWidgetItem,
+    QMdiArea, QMdiSubWindow, QTextEdit, QVBoxLayout, QWidget, QMenuBar,
+    QMenu, QColorDialog
+)
+from PySide6.QtCore import Qt, QSize, QRect, QPoint
+from PySide6.QtGui import QColor, QBrush, QAction
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Tree to MDI Example")
+        self.resize(1000, 600)
+        
+        # Create the main splitter
+        self.splitter = QSplitter(Qt.Horizontal)
+        self.setCentralWidget(self.splitter)
+        
+        # Create the tree widget
+        self.tree = QTreeWidget()
+        self.tree.setHeaderLabel("Items")
+        self.tree.setMinimumWidth(200)
+        self.tree.itemClicked.connect(self.on_tree_item_clicked)
+        
+        # Enable context menu for the tree
+        self.tree.setContextMenuPolicy(Qt.CustomContextMenu)
+        self.tree.customContextMenuRequested.connect(self.show_tree_context_menu)
+        
+        # Create the MDI area
+        self.mdi_area = QMdiArea()
+        
+        # Add widgets to splitter
+        self.splitter.addWidget(self.tree)
+        self.splitter.addWidget(self.mdi_area)
+        self.splitter.setSizes([200, 800])
+        
+        # Populate the tree with sample items
+        self.populate_tree()
+        
+        # Dictionary to keep track of open windows
+        self.open_windows = {}
+        
+        # Add window management actions
+        menu_bar = self.menuBar()
+        window_menu = menu_bar.addMenu("Window")
+        
+        cascade_action = window_menu.addAction("Cascade")
+        cascade_action.triggered.connect(self.cascade_windows)
+        
+        tile_action = window_menu.addAction("Tile")
+        tile_action.triggered.connect(self.tile_windows)
+        
+        close_all_action = window_menu.addAction("Close All")
+        close_all_action.triggered.connect(self.close_all_windows)
+
+    def populate_tree(self):
+        # Create some sample categories
+        categories = {
+            "Documents": ["Report", "Invoice", "Contract"],
+            "Images": ["Photo", "Diagram", "Chart"],
+            "Projects": ["Project A", "Project B", "Project C"]
+        }
+        
+        # Add items to the tree
+        for category, items in categories.items():
+            category_item = QTreeWidgetItem(self.tree, [category])
+            
+            # Set category item color (example)
+            if category == "Documents":
+                self.set_item_background_color(category_item, QColor(240, 240, 255))  # Light blue
+                self.set_item_text_color(category_item, QColor(0, 0, 128))  # Dark blue
+            elif category == "Images":
+                self.set_item_background_color(category_item, QColor(240, 255, 240))  # Light green
+                self.set_item_text_color(category_item, QColor(0, 128, 0))  # Dark green
+            elif category == "Projects":
+                self.set_item_background_color(category_item, QColor(255, 240, 240))  # Light red
+                self.set_item_text_color(category_item, QColor(128, 0, 0))  # Dark red
+            
+            for i, item in enumerate(items):
+                child_item = QTreeWidgetItem(category_item, [item])
+                
+                # Set some example colors for child items
+                if i == 0:
+                    self.set_item_text_color(child_item, QColor(128, 0, 128))  # Purple
+                elif i == 1:
+                    self.set_item_text_color(child_item, QColor(0, 128, 128))  # Teal
+                elif i == 2:
+                    self.set_item_text_color(child_item, QColor(128, 128, 0))  # Olive
+            
+        # Expand all items
+        self.tree.expandAll()
+
+    def set_item_background_color(self, item, color):
+        """Set the background color of a tree item"""
+        item.setBackground(0, QBrush(color))
+    
+    def set_item_text_color(self, item, color):
+        """Set the text color of a tree item"""
+        item.setForeground(0, QBrush(color))
+
+    def show_tree_context_menu(self, position):
+        """Show context menu for tree items to change colors"""
+        item = self.tree.itemAt(position)
+        if item:
+            context_menu = QMenu()
+            
+            # Add actions for changing colors
+            text_color_action = QAction("Change Text Color", self)
+            text_color_action.triggered.connect(lambda: self.change_item_text_color(item))
+            
+            bg_color_action = QAction("Change Background Color", self)
+            bg_color_action.triggered.connect(lambda: self.change_item_background_color(item))
+            
+            reset_color_action = QAction("Reset Colors", self)
+            reset_color_action.triggered.connect(lambda: self.reset_item_colors(item))
+            
+            context_menu.addAction(text_color_action)
+            context_menu.addAction(bg_color_action)
+            context_menu.addAction(reset_color_action)
+            
+            # Show the context menu
+            context_menu.exec_(self.tree.mapToGlobal(position))
+
+    def change_item_text_color(self, item):
+        """Open color dialog and change text color of the item"""
+        color = QColorDialog.getColor()
+        if color.isValid():
+            self.set_item_text_color(item, color)
+
+    def change_item_background_color(self, item):
+        """Open color dialog and change background color of the item"""
+        color = QColorDialog.getColor()
+        if color.isValid():
+            self.set_item_background_color(item, color)
+
+    def reset_item_colors(self, item):
+        """Reset item colors to default"""
+        item.setForeground(0, QBrush())  # Reset to default text color
+        item.setBackground(0, QBrush())  # Reset to default background color
+
+    def on_tree_item_clicked(self, item, column):
+        # Get the full path of the item (including parent)
+        item_path = self.get_item_path(item)
+        
+        # Skip if it's a top-level item (category)
+        if item.parent() is None:
+            return
+        
+        # Check if window already exists
+        if item_path in self.open_windows and not self.open_windows[item_path].isHidden():
+            # Activate the existing window
+            self.mdi_area.setActiveSubWindow(self.open_windows[item_path])
+        else:
+            # Create a new window
+            sub_window = self.create_sub_window(item_path)
+            self.open_windows[item_path] = sub_window
+    
+    def get_item_path(self, item):
+        """Get the full path of the item (including parent)"""
+        path = item.text(0)
+        parent = item.parent()
+        
+        if parent:
+            return f"{parent.text(0)}/{path}"
+        return path
+    
+    def create_sub_window(self, title):
+        """Create a new MDI sub window with content"""
+        # Create a sub window
+        sub_window = QMdiSubWindow()
+        sub_window.setWindowTitle(title)
+        sub_window.setAttribute(Qt.WA_DeleteOnClose)  # Ensure proper cleanup on close
+        
+        # Create content widget
+        content = QWidget()
+        layout = QVBoxLayout(content)
+        
+        # Add a text edit to the content
+        text_edit = QTextEdit()
+        text_edit.setPlainText(f"This is the content for {title}")
+        layout.addWidget(text_edit)
+        
+        # Set the content widget for the sub window
+        sub_window.setWidget(content)
+        
+        # Set a default size for the window - vary sizes for demonstration
+        if "Report" in title:
+            sub_window.resize(350, 250)
+        elif "Invoice" in title:
+            sub_window.resize(400, 300)
+        elif "Contract" in title:
+            sub_window.resize(450, 350)
+        elif "Photo" in title:
+            sub_window.resize(500, 400)
+        else:
+            sub_window.resize(400, 300)
+        
+        # Add the sub window to the MDI area
+        self.mdi_area.addSubWindow(sub_window)
+        
+        # IMPORTANT: Remove maximize button AFTER adding to MDI area
+        # This ensures the window flags are properly applied
+        flags = sub_window.windowFlags()
+        flags &= ~Qt.WindowMaximizeButtonHint  # Remove maximize button
+        sub_window.setWindowFlags(flags)
+        
+        sub_window.show()
+        
+        # Connect the close event to remove from open_windows
+        sub_window.destroyed.connect(lambda: self.on_window_closed(title))
+        
+        return sub_window
+    
+    def cascade_windows(self):
+        """Custom cascade that preserves window sizes"""
+        windows = self.mdi_area.subWindowList()
+        if not windows:
+            return
+            
+        # Get the visible area
+        mdi_rect = self.mdi_area.viewport().rect()
+        
+        # Cascade windows with offset
+        x, y = 0, 0
+        offset = 30
+        
+        for window in windows:
+            # Get window size
+            size = window.size()
+            
+            # Ensure window stays within MDI area
+            if x + size.width() > mdi_rect.width():
+                x = 0
+            if y + size.height() > mdi_rect.height():
+                y = 0
+                
+            # Move window without resizing
+            window.move(x, y)
+            window.raise_()
+            window.show()
+            
+            # Update position for next window
+            x += offset
+            y += offset
+    
+    def tile_windows(self):
+        """Custom tiling that preserves window sizes"""
+        windows = self.mdi_area.subWindowList()
+        if not windows:
+            return
+            
+        # Get the visible area
+        mdi_rect = self.mdi_area.viewport().rect()
+        
+        # Calculate grid size
+        count = len(windows)
+        rows = int(count ** 0.5)
+        cols = (count + rows - 1) // rows  # Ceiling division
+        
+        # Calculate positions to keep windows on screen
+        positions = []
+        
+        for i in range(count):
+            row = i // cols
+            col = i % cols
+            
+            # Calculate position
+            x = col * (mdi_rect.width() // cols)
+            y = row * (mdi_rect.height() // rows)
+            
+            positions.append(QPoint(x, y))
+        
+        # Position windows without resizing them
+        for i, window in enumerate(windows):
+            # Move the window without resizing
+            window.move(positions[i])
+            
+            # Ensure the window is visible
+            window.show()
+            window.raise_()
+    
+    def on_window_closed(self, title):
+        """Remove the window from the open_windows dictionary when closed"""
+        if title in self.open_windows:
+            del self.open_windows[title]
+            
+    def close_all_windows(self):
+        """Close all open windows in the MDI area"""
+        self.mdi_area.closeAllSubWindows()
+        self.open_windows.clear()
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+    sys.exit(app.exec())

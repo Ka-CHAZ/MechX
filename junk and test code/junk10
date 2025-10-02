@@ -1,0 +1,95 @@
+import sys
+from PySide6.QtWidgets import (QApplication, QMainWindow, QPushButton, QScrollArea, 
+                               QVBoxLayout, QWidget, QGroupBox, QDoubleSpinBox, 
+                               QComboBox, QHBoxLayout, QLabel, QInputDialog)
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Multiple Widgets in GroupBox Example")
+        self.setGeometry(100, 100, 500, 600)
+
+        # Create a central widget and layout
+        central_widget = QWidget()
+        self.setCentralWidget(central_widget)
+        main_layout = QVBoxLayout(central_widget)
+
+        # Create a button to add GroupBoxes
+        add_button = QPushButton("Add GroupBox")
+        add_button.clicked.connect(self.add_group_box)
+        main_layout.addWidget(add_button)
+
+        # Create a scroll area
+        self.scroll_area = QScrollArea()
+        self.scroll_area.setWidgetResizable(True)
+        main_layout.addWidget(self.scroll_area)
+
+        # Create a widget to hold the GroupBoxes
+        self.scroll_content = QWidget()
+        self.scroll_layout = QVBoxLayout(self.scroll_content)
+        self.scroll_area.setWidget(self.scroll_content)
+
+        # Create a button to read values
+        read_button = QPushButton("Read Values")
+        read_button.clicked.connect(self.read_values)
+        main_layout.addWidget(read_button)
+
+        self.group_box_count = 0
+
+    def add_group_box(self):
+        self.group_box_count += 1
+        group_box = QGroupBox(f"Group {self.group_box_count}")
+        layout = QVBoxLayout()
+
+        # Add multiple DoubleSpinBoxes
+        for i in range(3):
+            spin_box = QDoubleSpinBox()
+            spin_box.setRange(-100, 100)
+            spin_box.setObjectName(f"spinbox_{i}")
+            layout.addWidget(QLabel(f"DoubleSpinBox {i+1}:"))
+            layout.addWidget(spin_box)
+
+        # Add multiple ComboBoxes
+        for i in range(2):
+            combo_box = QComboBox()
+            combo_box.addItems([f"Option {j+1}" for j in range(3)])
+            combo_box.setObjectName(f"combobox_{i}")
+            layout.addWidget(QLabel(f"ComboBox {i+1}:"))
+            layout.addWidget(combo_box)
+
+        # Add a button to add text to ComboBoxes
+        add_text_button = QPushButton("Add Text to ComboBoxes")
+        add_text_button.clicked.connect(lambda: self.add_text_to_combos(group_box))
+        layout.addWidget(add_text_button)
+
+        group_box.setLayout(layout)
+        self.scroll_layout.addWidget(group_box)
+
+    def add_text_to_combos(self, group_box):
+        new_text, ok = QInputDialog.getText(self, "Add Text", "Enter new text:")
+        if ok and new_text:
+            for combo_box in group_box.findChildren(QComboBox):
+                combo_box.addItem(new_text)
+
+    def read_values(self):
+        for i in range(self.scroll_layout.count()):
+            group_box = self.scroll_layout.itemAt(i).widget()
+            if isinstance(group_box, QGroupBox):
+                print(f"Group {i+1}:")
+                
+                # Read DoubleSpinBox values
+                for spin_box in group_box.findChildren(QDoubleSpinBox):
+                    print(f"  {spin_box.objectName()} value: {spin_box.value()}")
+                
+                # Read ComboBox values and items
+                for combo_box in group_box.findChildren(QComboBox):
+                    print(f"  {combo_box.objectName()} selected: {combo_box.currentText()}")
+                    print(f"  {combo_box.objectName()} items: {[combo_box.itemText(j) for j in range(combo_box.count())]}")
+                
+                print()
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+    sys.exit(app.exec())

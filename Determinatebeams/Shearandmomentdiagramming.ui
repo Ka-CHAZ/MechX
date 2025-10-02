@@ -1,0 +1,1241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>shearandmomentscalculator</class>
+ <widget class="QMainWindow" name="shearandmomentscalculator">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1150</width>
+    <height>840</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1150</width>
+    <height>840</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1150</width>
+    <height>840</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Arial</family>
+    <pointsize>14</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::TabShape::Rounded</enum>
+  </property>
+  <property name="dockNestingEnabled">
+   <bool>false</bool>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="variablesupports">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>90</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="text">
+     <string>variable supports</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>false</bool>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="lftsidesupport">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>10</y>
+      <width>90</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>supported left side</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="rtsidesupport">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>10</y>
+      <width>90</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>supported right side</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Uppntload">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>point up</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Downpntload">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>140</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>point down</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="lineardistribloadup">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>200</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ditrib up</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="lineardistribloaddown">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>260</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>distrib down</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="varibledistribloadup">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>320</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>var distrib up</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="varibdistribloaddown">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>380</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>var distrib down</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="momentccw">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>440</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>moment ccw</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="momentcw">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>500</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>moment cw</string>
+    </property>
+   </widget>
+   <widget class="QScrollArea" name="elemetsscrollarea">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>320</y>
+      <width>311</width>
+      <height>461</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::Box</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Sunken</enum>
+    </property>
+    <property name="lineWidth">
+     <number>2</number>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>303</width>
+       <height>453</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>300</y>
+      <width>311</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Consolas</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Elements</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="Beamsetuplength">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>80</y>
+      <width>221</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>Beam Setup</string>
+    </property>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>201</width>
+       <height>68</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Total Beam
+Length</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QDoubleSpinBox" name="Beamlength">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>45</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+          </property>
+          <property name="maximum">
+           <double>100000000.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="beamlengthunits">
+          <property name="minimumSize">
+           <size>
+            <width>45</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <item>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mm</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>m</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>in.</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ft</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="supportlocation">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>180</y>
+      <width>221</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>Support Locations</string>
+    </property>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>201</width>
+       <height>84</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Location of
+Left Support</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QDoubleSpinBox" name="leftsupportlocation">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+          </property>
+          <property name="maximum">
+           <double>100000000.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QLabel" name="label_5">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Location of
+Right Support</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QDoubleSpinBox" name="rightsupportlocation">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+          </property>
+          <property name="maximum">
+           <double>100000000.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>10</y>
+      <width>88</width>
+      <height>68</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_6">
+     <item>
+      <widget class="QPushButton" name="entersetup">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Enter</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cancelsetup">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QGraphicsView" name="Loadsdiagram">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>40</y>
+      <width>671</width>
+      <height>241</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::WinPanel</enum>
+    </property>
+    <property name="verticalScrollBarPolicy">
+     <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="sizeAdjustPolicy">
+     <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents</enum>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="Sheargraph">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>290</y>
+      <width>671</width>
+      <height>241</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::WinPanel</enum>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="Momentgraph">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>540</y>
+      <width>671</width>
+      <height>241</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::WinPanel</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Switchmomentconvention">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>560</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Moment Convention</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Switchshearconvention">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>330</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Shear Convention</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="visualizerlengthunits">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>40</y>
+      <width>61</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QScrollArea" name="loadsscroll">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>105</y>
+      <width>151</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>149</width>
+       <height>69</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>80</y>
+      <width>151</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Consolas</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Loads</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QScrollArea" name="reactionsscroll">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>200</y>
+      <width>151</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>149</width>
+       <height>69</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>175</y>
+      <width>151</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Consolas</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Reactions</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="visualizerloadunits">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>290</y>
+      <width>61</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="visualizermomentunits">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>520</y>
+      <width>61</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>466</x>
+      <y>20</y>
+      <width>661</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Load Diagram</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1150</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_Utilites">
+    <property name="title">
+     <string>&amp;Utilites</string>
+    </property>
+    <addaction name="actionScreenshot"/>
+   </widget>
+   <widget class="QMenu" name="menu_Help">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menuOptions">
+    <property name="title">
+     <string>Options</string>
+    </property>
+    <addaction name="actionShear_and_Moment_Diagrams"/>
+    <addaction name="actionSlope_and_Deflection_Diagrams"/>
+    <addaction name="separator"/>
+    <addaction name="actionGraph_Details"/>
+    <addaction name="actionDesign"/>
+    <addaction name="separator"/>
+    <addaction name="actionFlexural_Stiffness_EI"/>
+   </widget>
+   <addaction name="menu_Utilites"/>
+   <addaction name="menu_Help"/>
+   <addaction name="menuOptions"/>
+  </widget>
+  <action name="actionUnit_Converter">
+   <property name="text">
+    <string>Unit Converter</string>
+   </property>
+  </action>
+  <action name="actionMoments_of_Inertia">
+   <property name="text">
+    <string>Moments of Inertia</string>
+   </property>
+  </action>
+  <action name="actionVectors">
+   <property name="text">
+    <string>Vectors</string>
+   </property>
+  </action>
+  <action name="actionFriction_and_Force">
+   <property name="text">
+    <string>Friction and Force</string>
+   </property>
+  </action>
+  <action name="actionFasteners">
+   <property name="text">
+    <string>Fasteners</string>
+   </property>
+  </action>
+  <action name="actionMaterial_Properties">
+   <property name="text">
+    <string>Material Properties</string>
+   </property>
+  </action>
+  <action name="actionCM_and_CG">
+   <property name="text">
+    <string>CM and CG</string>
+   </property>
+  </action>
+  <action name="actionTrusses">
+   <property name="text">
+    <string>Trusses</string>
+   </property>
+  </action>
+  <action name="actionBeamsMoments_of_Inertia">
+   <property name="text">
+    <string>Moments of Inertia</string>
+   </property>
+  </action>
+  <action name="actionShear_and_Moment">
+   <property name="text">
+    <string>Shear and Moment</string>
+   </property>
+  </action>
+  <action name="actionIndeterminate_Axial_Structures">
+   <property name="text">
+    <string>Indeterminate Axial Structures</string>
+   </property>
+  </action>
+  <action name="actionFlexure">
+   <property name="text">
+    <string>Flexure</string>
+   </property>
+  </action>
+  <action name="actionBeam_Deformation">
+   <property name="text">
+    <string>Beam Deformation</string>
+   </property>
+  </action>
+  <action name="actionAxial_Beam_Deformation">
+   <property name="text">
+    <string>Axial Beam Deformation</string>
+   </property>
+  </action>
+  <action name="actionTorsional_Beam_Deformation">
+   <property name="text">
+    <string>Torsional Beam Deformation</string>
+   </property>
+  </action>
+  <action name="actionSupported_Beams">
+   <property name="text">
+    <string>Supported Beams</string>
+   </property>
+  </action>
+  <action name="actionMohr_s_Circle">
+   <property name="text">
+    <string>Mohr's Circle</string>
+   </property>
+  </action>
+  <action name="actionC_Clamp">
+   <property name="text">
+    <string>C-Clamp</string>
+   </property>
+  </action>
+  <action name="actionCompression_Link">
+   <property name="text">
+    <string>Compression Link</string>
+   </property>
+  </action>
+  <action name="actionTension_Link">
+   <property name="text">
+    <string>Tension Link</string>
+   </property>
+  </action>
+  <action name="actionPost">
+   <property name="text">
+    <string>Post</string>
+   </property>
+  </action>
+  <action name="actionPost_and_Beam">
+   <property name="text">
+    <string>Post and Beam</string>
+   </property>
+  </action>
+  <action name="actionKinematic_Diagraming">
+   <property name="text">
+    <string>Kinematic Diagraming</string>
+   </property>
+  </action>
+  <action name="actionVector_Analysis">
+   <property name="text">
+    <string>Vector Analysis</string>
+   </property>
+  </action>
+  <action name="actionGDT_Checker">
+   <property name="text">
+    <string>GDT Checker</string>
+   </property>
+  </action>
+  <action name="actionVirtual_Condition_Calculator">
+   <property name="text">
+    <string>Virtual Condition Calculator</string>
+   </property>
+  </action>
+  <action name="actionLimits_and_Fits">
+   <property name="text">
+    <string>Limits and Fits</string>
+   </property>
+  </action>
+  <action name="actionGDTFasteners">
+   <property name="text">
+    <string>Fasteners</string>
+   </property>
+  </action>
+  <action name="actionPaper_Gauging">
+   <property name="text">
+    <string>Paper Gauging</string>
+   </property>
+  </action>
+  <action name="actionTolerance_Finder">
+   <property name="text">
+    <string>Tolerance Finder</string>
+   </property>
+  </action>
+  <action name="actionDiameter_Deviation">
+   <property name="text">
+    <string>Diameter Deviation</string>
+   </property>
+  </action>
+  <action name="actionTorsion">
+   <property name="text">
+    <string>Torsion</string>
+   </property>
+  </action>
+  <action name="actionPressure">
+   <property name="text">
+    <string>Pressure</string>
+   </property>
+  </action>
+  <action name="actionAddMohr_s_Circle">
+   <property name="text">
+    <string>Mohr's Circle</string>
+   </property>
+  </action>
+  <action name="actionModule_List">
+   <property name="text">
+    <string>Module List</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionNotepad">
+   <property name="text">
+    <string>Notepad</string>
+   </property>
+  </action>
+  <action name="actionCalculator">
+   <property name="text">
+    <string>Calculator</string>
+   </property>
+  </action>
+  <action name="actionScreenshot">
+   <property name="text">
+    <string>Screenshot</string>
+   </property>
+  </action>
+  <action name="actionPerfer_SI_units">
+   <property name="text">
+    <string>Edit Saftey Factor</string>
+   </property>
+  </action>
+  <action name="actionPerfer_Metric_Units">
+   <property name="text">
+    <string>Theme</string>
+   </property>
+  </action>
+  <action name="actionMaterials_list">
+   <property name="text">
+    <string>Materials List</string>
+   </property>
+  </action>
+  <action name="actionCross_Sectional_Beams_and_Shapes_Lists">
+   <property name="text">
+    <string>Beams and Shapes Lists</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionUnit_Converter_help">
+   <property name="text">
+    <string>Unit Converter</string>
+   </property>
+  </action>
+  <action name="actionMoments_of_Inertia_help">
+   <property name="text">
+    <string>Moments of Inertia</string>
+   </property>
+  </action>
+  <action name="actionVectors_help">
+   <property name="text">
+    <string>Vectors</string>
+   </property>
+  </action>
+  <action name="actionFriction_and_Force_help">
+   <property name="text">
+    <string>Friction and Force</string>
+   </property>
+  </action>
+  <action name="actionFasteners_help">
+   <property name="text">
+    <string>Fasteners</string>
+   </property>
+  </action>
+  <action name="actionMaterial_Properties_help">
+   <property name="text">
+    <string>Material Properties</string>
+   </property>
+  </action>
+  <action name="actionCM_and_CG_help">
+   <property name="text">
+    <string>CM and CG</string>
+   </property>
+  </action>
+  <action name="actionTrusses_help">
+   <property name="text">
+    <string>Trusses</string>
+   </property>
+  </action>
+  <action name="actionBeamsMoments_of_Inertia_help">
+   <property name="text">
+    <string>Moments of Inertia</string>
+   </property>
+  </action>
+  <action name="actionShear_and_Moment_help">
+   <property name="text">
+    <string>Shear and Moment</string>
+   </property>
+  </action>
+  <action name="actionIndeterminate_Axial_Structures_help">
+   <property name="text">
+    <string>Indeterminate Axial Structures</string>
+   </property>
+  </action>
+  <action name="actionFlexure_help">
+   <property name="text">
+    <string>Flexure</string>
+   </property>
+  </action>
+  <action name="actionBeam_Deformation_help">
+   <property name="text">
+    <string>Beam Deformation</string>
+   </property>
+  </action>
+  <action name="actionAxial_Beam_Deformation_help">
+   <property name="text">
+    <string>Axial Beam Deformation</string>
+   </property>
+  </action>
+  <action name="actionTorsional_Beam_Deformation_help">
+   <property name="text">
+    <string>Torsional Beam Deformation</string>
+   </property>
+  </action>
+  <action name="actionSupported_Beams_help">
+   <property name="text">
+    <string>Supported Beams</string>
+   </property>
+  </action>
+  <action name="actionMohr_s_Circle_help">
+   <property name="text">
+    <string>Mohr's Circle</string>
+   </property>
+  </action>
+  <action name="actionC_Clamp_help">
+   <property name="text">
+    <string>C-Clamp</string>
+   </property>
+  </action>
+  <action name="actionCompression_Link_help">
+   <property name="text">
+    <string>Compression Link</string>
+   </property>
+  </action>
+  <action name="actionTension_Link_help">
+   <property name="text">
+    <string>Tension Link</string>
+   </property>
+  </action>
+  <action name="actionPost_help">
+   <property name="text">
+    <string>Post</string>
+   </property>
+  </action>
+  <action name="actionPost_and_Beam_help">
+   <property name="text">
+    <string>Post and Beam</string>
+   </property>
+  </action>
+  <action name="actionSolid_shaft_and_Pipe_help">
+   <property name="text">
+    <string>Solid Shaft and Pipe</string>
+   </property>
+  </action>
+  <action name="actionKinematic_Diagraming_help">
+   <property name="text">
+    <string>Kinematic Diagraming</string>
+   </property>
+  </action>
+  <action name="actionVector_and_Motion_Analysis_help">
+   <property name="text">
+    <string>Vector and Motion Analysis</string>
+   </property>
+  </action>
+  <action name="actionGDT_Checker_help">
+   <property name="text">
+    <string>GDT Checker</string>
+   </property>
+  </action>
+  <action name="actionVirtual_Condition_Calculator_help">
+   <property name="text">
+    <string>Virtual Condition Calculator</string>
+   </property>
+  </action>
+  <action name="actionLimits_and_Fits_help">
+   <property name="text">
+    <string>Limits and Fits</string>
+   </property>
+  </action>
+  <action name="actionGDTFasteners_help">
+   <property name="text">
+    <string>Fasteners</string>
+   </property>
+  </action>
+  <action name="actionPaper_Gauging_help">
+   <property name="text">
+    <string>Paper Gauging</string>
+   </property>
+  </action>
+  <action name="actionTolerance_Finder_help">
+   <property name="text">
+    <string>Tolerance Finder</string>
+   </property>
+  </action>
+  <action name="actionDiameter_Deviation_help">
+   <property name="text">
+    <string>Diameter Deviation</string>
+   </property>
+  </action>
+  <action name="actionTorsion_help">
+   <property name="text">
+    <string>Torsion</string>
+   </property>
+  </action>
+  <action name="actionPressure_help">
+   <property name="text">
+    <string>Pressure</string>
+   </property>
+  </action>
+  <action name="actionTheme">
+   <property name="text">
+    <string>Theme</string>
+   </property>
+  </action>
+  <action name="actionSaftey_Factors">
+   <property name="text">
+    <string>Saftey Factors</string>
+   </property>
+  </action>
+  <action name="actionSolid_Shaft_and_Pipe">
+   <property name="text">
+    <string>Solid Shaft and Pipe</string>
+   </property>
+  </action>
+  <action name="actionMohr_s_Circle_2">
+   <property name="text">
+    <string>Mohr's Circle</string>
+   </property>
+  </action>
+  <action name="actionFit_Classes">
+   <property name="text">
+    <string>Fit Classes</string>
+   </property>
+  </action>
+  <action name="actionShear_and_Moment_Diagrams">
+   <property name="text">
+    <string>Shear and Moment Diagrams</string>
+   </property>
+  </action>
+  <action name="actionSlope_and_Deflection_Diagrams">
+   <property name="text">
+    <string>Slope and Deflection Diagrams</string>
+   </property>
+  </action>
+  <action name="actionGraph_Details">
+   <property name="text">
+    <string>Graph Details</string>
+   </property>
+  </action>
+  <action name="actionDesign">
+   <property name="text">
+    <string>Design</string>
+   </property>
+  </action>
+  <action name="actionFlexural_Stiffness_EI">
+   <property name="text">
+    <string>Flexural Stiffness EI</string>
+   </property>
+  </action>
+  <action name="actionQuit_All">
+   <property name="text">
+    <string>Quit All</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

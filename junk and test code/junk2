@@ -1,0 +1,42 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define beam parameters
+length = 10  # Length of the beam
+w = 10 # Uniformly distributed load
+
+# Define number of points
+num_points = 100
+
+# Calculate reactions
+R_A = R_B = w * length / 2
+
+# Initialize arrays for shear and moment
+x = np.linspace(0, length, num_points)
+V = np.zeros(num_points)
+M = np.zeros(num_points)
+
+# Calculate shear force and bending moment
+for i, pos in enumerate(x):
+    V[i] = R_A - w * pos
+    M[i] = R_A * pos - 0.5 * w * pos**2
+
+# Plotting
+fig, axes = plt.subplots(2, 1, figsize=(8, 6))
+
+# Shear force diagram
+axes[0].plot(x, V)
+axes[0].set_xlabel('Position (m)')
+axes[0].set_ylabel('Shear Force (N)')
+axes[0].set_title('Shear Force Diagram')
+axes[0].grid(True)
+
+# Bending moment diagram
+axes[1].plot(x, M)
+axes[1].set_xlabel('Position (m)')
+axes[1].set_ylabel('Bending Moment (Nm)')
+axes[1].set_title('Bending Moment Diagram')
+axes[1].grid(True)
+
+plt.tight_layout()
+plt.show()

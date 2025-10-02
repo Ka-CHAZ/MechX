@@ -1,0 +1,1818 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>James Karczewski</author>
+ <class>MElist</class>
+ <widget class="QMainWindow" name="MElist">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>530</width>
+    <height>780</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>270</width>
+    <height>610</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Consolas</family>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::TabShape::Rounded</enum>
+  </property>
+  <property name="dockNestingEnabled">
+   <bool>false</bool>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QToolBox" name="ModuleList">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Consolas</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::ContextMenuPolicy::NoContextMenu</enum>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::WinPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Sunken</enum>
+      </property>
+      <property name="lineWidth">
+       <number>2</number>
+      </property>
+      <property name="midLineWidth">
+       <number>0</number>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="generalanalysis">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>508</width>
+         <height>485</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>General Analysis</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="3" column="0">
+         <widget class="QPushButton" name="vectors">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>230</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Vectors</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QPushButton" name="cmandcg">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>230</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Center of Mass and
+Center of Gravity</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="moi">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>230</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Moments of Inertia</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QPushButton" name="fasteners">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>230</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Fasteners</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="unitconvert">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>230</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Unit Converter</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QPushButton" name="matlprop">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>230</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Material Properties</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="beamsandloads">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>508</width>
+         <height>485</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>Beams and Loads</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QToolBox" name="beamsandloadssub">
+          <property name="frameShape">
+           <enum>QFrame::Shape::WinPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Shadow::Sunken</enum>
+          </property>
+          <property name="lineWidth">
+           <number>2</number>
+          </property>
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <widget class="QWidget" name="stdbeams">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>486</width>
+             <height>391</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>General Beam Analysis</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <item row="2" column="1">
+             <widget class="QPushButton" name="indtrmaxialstructs">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>210</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Indeterminate Axial
+Structures</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QPushButton" name="axialbeam">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>210</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Axial Beam
+Deformation</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="1">
+             <widget class="QPushButton" name="mohrs">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>210</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Mohr's Circle</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QPushButton" name="flex">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>210</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Flexure</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QPushButton" name="beamdeform">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>210</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Beam Deformation
+Analysis</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QPushButton" name="moi_beamssub">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>210</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Moments of Inertia</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QPushButton" name="trusses">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>210</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Trusses</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="shearandmoment">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>210</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Determinate Beams</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QPushButton" name="supportedbeams">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>210</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Column Buckling</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="0">
+             <widget class="QPushButton" name="torsionbeam">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>210</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Torsional Beam
+Deformation</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="combloading">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>486</width>
+             <height>391</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Combined Loadings</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <widget class="QLabel" name="Shearforceandbendingmoment_3">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>28</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Eccentric Loadings</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QGridLayout" name="gridLayout_3">
+              <item row="0" column="0">
+               <widget class="QPushButton" name="complink">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>210</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Compression Link</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QPushButton" name="tensionlink">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>210</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Tension Link</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QPushButton" name="cclamp">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>210</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>C-Clamp</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QPushButton" name="post">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>210</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Post</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="Line" name="line">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="Shearforceandbendingmoment">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Shear Force and Bending Moment</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="postandbeam">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>210</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Post and Beam</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="Line" name="line_2">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="Shearforceandbendingmoment_2">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Axial, Torsional, and Bending Stresses</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="solidshaftandpipe">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>210</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Solid Shaft and Pipe</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="BasicMechanicsAnalysis">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>508</width>
+         <height>485</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>Basic Mechanics Analysis</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_6">
+        <item row="4" column="0">
+         <widget class="QPushButton" name="pressure">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>230</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Pressure</string>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="1">
+         <widget class="QPushButton" name="kinematicdiagraming_4">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>230</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Indeterminate
+End-to-End
+Shafts</string>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="0">
+         <widget class="QPushButton" name="kinematicdiagraming_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>230</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Indeterminate Coaxial
+Shafts</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="torsion">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>230</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Simple Torsion</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="shearandmoment_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>210</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Determinate Beams</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QPushButton" name="mohrsadditional">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Mohr's Circle</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QPushButton" name="kinematicdiagraming">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>230</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Kinematic
+Diagramming</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QPushButton" name="flex_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>210</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Flexure</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="machindesignelements">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>508</width>
+         <height>485</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>Machine Design Elements</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_7">
+        <item row="2" column="1">
+         <widget class="QPushButton" name="pushButton_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Belt Drives</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QPushButton" name="pushButton_4">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Advanced Gear
+Calculator</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QPushButton" name="pushButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Gear Trains</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QPushButton" name="pushButton_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Chain Drives</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="kinematicdiagraming_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>230</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Gear Driven Shafts</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="pushButton_7">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Shaft Design</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QPushButton" name="pushButton_6">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Keyway Calculator</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QPushButton" name="pushButton_5">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Bearing Caclulator</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="engineeringanddrafting">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>508</width>
+         <height>485</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>Engineering and Drafting</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_5">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="GDTchecker">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>230</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Geometric
+Dimensioning 
+ and Tolerancing
+Checker</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QPushButton" name="limsandfits">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>230</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Limits and Fits</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="0">
+         <widget class="QPushButton" name="diamdev">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>230</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Diameter Deviation</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QPushButton" name="VCcalc">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>230</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Virtual Condition 
+Calculator</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QPushButton" name="fastenersGDT">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>230</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Fixed and Floating
+Fastener Calculator</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QPushButton" name="tolfinder">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>230</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Tolerance Finder</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QPushButton" name="papergauge">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>230</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Paper Gauging</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="additional">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>508</width>
+         <height>485</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>Additional Calculators</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_8"/>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>530</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_File">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <widget class="QMenu" name="menu_Settings">
+     <property name="title">
+      <string>Settings</string>
+     </property>
+     <addaction name="actionUnit_Settings"/>
+     <addaction name="separator"/>
+     <addaction name="actionTheme"/>
+    </widget>
+    <addaction name="menu_Settings"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menu_Utilites">
+    <property name="title">
+     <string>&amp;Utilites</string>
+    </property>
+    <widget class="QMenu" name="menuTables">
+     <property name="title">
+      <string>Tables</string>
+     </property>
+     <addaction name="actionMaterials_list"/>
+     <addaction name="actionCross_Sectional_Beams_and_Shapes_Lists"/>
+     <addaction name="actionSaftey_Factors"/>
+     <addaction name="actionFit_Classes"/>
+    </widget>
+    <addaction name="actionNotepad"/>
+    <addaction name="actionCalculator"/>
+    <addaction name="actionUnit_Converter_2"/>
+    <addaction name="actionScreenshot"/>
+    <addaction name="menuTables"/>
+   </widget>
+   <widget class="QMenu" name="menu_Help">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <widget class="QMenu" name="menuModules_help">
+     <property name="title">
+      <string>Modules</string>
+     </property>
+     <widget class="QMenu" name="menuGeneral_Analysis_help">
+      <property name="title">
+       <string>General Analysis</string>
+      </property>
+      <addaction name="actionUnit_Converter_help"/>
+      <addaction name="actionMoments_of_Inertia_help"/>
+      <addaction name="actionVectors_help"/>
+      <addaction name="actionFriction_and_Force_help"/>
+      <addaction name="actionFasteners_help"/>
+      <addaction name="actionMaterial_Properties_help"/>
+      <addaction name="actionCM_and_CG_help"/>
+     </widget>
+     <widget class="QMenu" name="menuBeams_and_Loads_help">
+      <property name="title">
+       <string>Beams and Loads</string>
+      </property>
+      <widget class="QMenu" name="menuGeneral_Beam_Analysis">
+       <property name="title">
+        <string>General Beam Analysis</string>
+       </property>
+       <addaction name="actionTrusses_help"/>
+       <addaction name="actionBeamsMoments_of_Inertia_help"/>
+       <addaction name="actionShear_and_Moment_help"/>
+       <addaction name="actionIndeterminate_Axial_Structures_help"/>
+       <addaction name="actionFlexure_help"/>
+       <addaction name="actionBeam_Deformation_help"/>
+       <addaction name="actionAxial_Beam_Deformation_help"/>
+       <addaction name="actionTorsional_Beam_Deformation_help"/>
+       <addaction name="actionSupported_Beams_help"/>
+       <addaction name="actionMohr_s_Circle_help"/>
+      </widget>
+      <widget class="QMenu" name="menuCombined_Loadings_help">
+       <property name="title">
+        <string>Combined Loadings</string>
+       </property>
+       <widget class="QMenu" name="menuEccentric_Loadings_help">
+        <property name="title">
+         <string>Eccentric Loadings</string>
+        </property>
+        <addaction name="actionC_Clamp_help"/>
+        <addaction name="actionCompression_Link_help"/>
+        <addaction name="actionTension_Link_help"/>
+        <addaction name="actionPost_help"/>
+       </widget>
+       <widget class="QMenu" name="menuShear_Force_and_Bending_Moment_help">
+        <property name="title">
+         <string>Shear Force and Bending Moment</string>
+        </property>
+        <addaction name="actionPost_and_Beam_help"/>
+       </widget>
+       <widget class="QMenu" name="menuAxial_Torsional_and_Bending_Stresses_help">
+        <property name="title">
+         <string>Axial, Torsional, and Bending Stresses</string>
+        </property>
+        <addaction name="actionSolid_shaft_and_Pipe_help"/>
+       </widget>
+       <addaction name="menuEccentric_Loadings_help"/>
+       <addaction name="menuShear_Force_and_Bending_Moment_help"/>
+       <addaction name="menuAxial_Torsional_and_Bending_Stresses_help"/>
+      </widget>
+      <addaction name="menuGeneral_Beam_Analysis"/>
+      <addaction name="menuCombined_Loadings_help"/>
+     </widget>
+     <widget class="QMenu" name="menuKinematics_help">
+      <property name="title">
+       <string>Kinematics</string>
+      </property>
+      <addaction name="actionKinematic_Diagraming_help"/>
+      <addaction name="actionVector_and_Motion_Analysis_help"/>
+     </widget>
+     <widget class="QMenu" name="menuEngineering_and_Drafting_help">
+      <property name="title">
+       <string>Engineering and Drafting</string>
+      </property>
+      <addaction name="actionGDT_Checker_help"/>
+      <addaction name="actionVirtual_Condition_Calculator_help"/>
+      <addaction name="actionLimits_and_Fits_help"/>
+      <addaction name="actionGDTFasteners_help"/>
+      <addaction name="actionPaper_Gauging_help"/>
+      <addaction name="actionTolerance_Finder_help"/>
+      <addaction name="actionDiameter_Deviation_help"/>
+     </widget>
+     <widget class="QMenu" name="menuAdditional_Calculators_help">
+      <property name="title">
+       <string>Additional Calculators</string>
+      </property>
+      <addaction name="actionTorsion_help"/>
+      <addaction name="actionPressure_help"/>
+      <addaction name="actionMohr_s_Circle_2"/>
+     </widget>
+     <addaction name="menuGeneral_Analysis_help"/>
+     <addaction name="menuBeams_and_Loads_help"/>
+     <addaction name="menuKinematics_help"/>
+     <addaction name="menuEngineering_and_Drafting_help"/>
+     <addaction name="menuAdditional_Calculators_help"/>
+    </widget>
+    <addaction name="menuModules_help"/>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menu_Modules">
+    <property name="title">
+     <string>&amp;Modules</string>
+    </property>
+    <widget class="QMenu" name="menu_General_Analysis">
+     <property name="font">
+      <font>
+       <family>Consolas</family>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>General Analysis</string>
+     </property>
+     <addaction name="actionUnit_Converter"/>
+     <addaction name="actionMoments_of_Inertia"/>
+     <addaction name="actionVectors"/>
+     <addaction name="actionFriction_and_Force"/>
+     <addaction name="actionFasteners"/>
+     <addaction name="actionMaterial_Properties"/>
+     <addaction name="actionCM_and_CG"/>
+    </widget>
+    <widget class="QMenu" name="menu_Beams_and_Loads">
+     <property name="title">
+      <string>Beams and Loads</string>
+     </property>
+     <widget class="QMenu" name="menu_Generic_Beam_Analysis">
+      <property name="title">
+       <string>Generic Beam Analysis</string>
+      </property>
+      <addaction name="actionTrusses"/>
+      <addaction name="actionBeamsMoments_of_Inertia"/>
+      <addaction name="actionShear_and_Moment"/>
+      <addaction name="actionIndeterminate_Axial_Structures"/>
+      <addaction name="actionFlexure"/>
+      <addaction name="actionBeam_Deformation"/>
+      <addaction name="actionAxial_Beam_Deformation"/>
+      <addaction name="actionTorsional_Beam_Deformation"/>
+      <addaction name="actionSupported_Beams"/>
+      <addaction name="actionMohr_s_Circle"/>
+     </widget>
+     <widget class="QMenu" name="menuCombined_Loadings">
+      <property name="title">
+       <string>Combined Loadings</string>
+      </property>
+      <widget class="QMenu" name="menuEccentric_Loadings">
+       <property name="title">
+        <string>Eccentric Loadings</string>
+       </property>
+       <addaction name="actionC_Clamp"/>
+       <addaction name="actionCompression_Link"/>
+       <addaction name="actionTension_Link"/>
+       <addaction name="actionPost"/>
+      </widget>
+      <widget class="QMenu" name="menuShear_Force_and_Bending_Moment">
+       <property name="title">
+        <string>Shear Force and Bending Moment</string>
+       </property>
+       <addaction name="actionPost_and_Beam"/>
+      </widget>
+      <widget class="QMenu" name="menuAxial_Torsional_and_Bending_Stresses">
+       <property name="title">
+        <string>Axial, Torsional, and Bending Stresses</string>
+       </property>
+       <addaction name="actionSolid_Shaft_and_Pipe"/>
+      </widget>
+      <addaction name="menuEccentric_Loadings"/>
+      <addaction name="menuShear_Force_and_Bending_Moment"/>
+      <addaction name="menuAxial_Torsional_and_Bending_Stresses"/>
+     </widget>
+     <addaction name="menu_Generic_Beam_Analysis"/>
+     <addaction name="menuCombined_Loadings"/>
+    </widget>
+    <widget class="QMenu" name="menu_Kinematics">
+     <property name="title">
+      <string>Kinematics</string>
+     </property>
+     <addaction name="actionKinematic_Diagraming"/>
+     <addaction name="actionVector_Analysis"/>
+    </widget>
+    <widget class="QMenu" name="menu_Egineering_and_Drafting">
+     <property name="title">
+      <string>Egineering and Drafting</string>
+     </property>
+     <addaction name="actionGDT_Checker"/>
+     <addaction name="actionVirtual_Condition_Calculator"/>
+     <addaction name="actionLimits_and_Fits"/>
+     <addaction name="actionGDTFasteners"/>
+     <addaction name="actionPaper_Gauging"/>
+     <addaction name="actionTolerance_Finder"/>
+     <addaction name="actionDiameter_Deviation"/>
+    </widget>
+    <widget class="QMenu" name="menu_Additional_Calculators">
+     <property name="title">
+      <string>Additional Calculators</string>
+     </property>
+     <addaction name="actionTorsion"/>
+     <addaction name="actionPressure"/>
+     <addaction name="actionAddMohr_s_Circle"/>
+    </widget>
+    <addaction name="menu_General_Analysis"/>
+    <addaction name="menu_Beams_and_Loads"/>
+    <addaction name="menu_Kinematics"/>
+    <addaction name="menu_Egineering_and_Drafting"/>
+    <addaction name="menu_Additional_Calculators"/>
+   </widget>
+   <addaction name="menu_File"/>
+   <addaction name="menu_Modules"/>
+   <addaction name="menu_Utilites"/>
+   <addaction name="menu_Help"/>
+  </widget>
+  <action name="actionUnit_Converter">
+   <property name="text">
+    <string>Unit Converter</string>
+   </property>
+  </action>
+  <action name="actionMoments_of_Inertia">
+   <property name="text">
+    <string>Moments of Inertia</string>
+   </property>
+  </action>
+  <action name="actionVectors">
+   <property name="text">
+    <string>Vectors</string>
+   </property>
+  </action>
+  <action name="actionFriction_and_Force">
+   <property name="text">
+    <string>Friction and Force</string>
+   </property>
+  </action>
+  <action name="actionFasteners">
+   <property name="text">
+    <string>Fasteners</string>
+   </property>
+  </action>
+  <action name="actionMaterial_Properties">
+   <property name="text">
+    <string>Material Properties</string>
+   </property>
+  </action>
+  <action name="actionCM_and_CG">
+   <property name="text">
+    <string>CM and CG</string>
+   </property>
+  </action>
+  <action name="actionTrusses">
+   <property name="text">
+    <string>Trusses</string>
+   </property>
+  </action>
+  <action name="actionBeamsMoments_of_Inertia">
+   <property name="text">
+    <string>Moments of Inertia</string>
+   </property>
+  </action>
+  <action name="actionShear_and_Moment">
+   <property name="text">
+    <string>Shear and Moment</string>
+   </property>
+  </action>
+  <action name="actionIndeterminate_Axial_Structures">
+   <property name="text">
+    <string>Indeterminate Axial Structures</string>
+   </property>
+  </action>
+  <action name="actionFlexure">
+   <property name="text">
+    <string>Flexure</string>
+   </property>
+  </action>
+  <action name="actionBeam_Deformation">
+   <property name="text">
+    <string>Beam Deformation</string>
+   </property>
+  </action>
+  <action name="actionAxial_Beam_Deformation">
+   <property name="text">
+    <string>Axial Beam Deformation</string>
+   </property>
+  </action>
+  <action name="actionTorsional_Beam_Deformation">
+   <property name="text">
+    <string>Torsional Beam Deformation</string>
+   </property>
+  </action>
+  <action name="actionSupported_Beams">
+   <property name="text">
+    <string>Supported Beams</string>
+   </property>
+  </action>
+  <action name="actionMohr_s_Circle">
+   <property name="text">
+    <string>Mohr's Circle</string>
+   </property>
+  </action>
+  <action name="actionC_Clamp">
+   <property name="text">
+    <string>C-Clamp</string>
+   </property>
+  </action>
+  <action name="actionCompression_Link">
+   <property name="text">
+    <string>Compression Link</string>
+   </property>
+  </action>
+  <action name="actionTension_Link">
+   <property name="text">
+    <string>Tension Link</string>
+   </property>
+  </action>
+  <action name="actionPost">
+   <property name="text">
+    <string>Post</string>
+   </property>
+  </action>
+  <action name="actionPost_and_Beam">
+   <property name="text">
+    <string>Post and Beam</string>
+   </property>
+  </action>
+  <action name="actionKinematic_Diagraming">
+   <property name="text">
+    <string>Kinematic Diagraming</string>
+   </property>
+  </action>
+  <action name="actionVector_Analysis">
+   <property name="text">
+    <string>Vector Analysis</string>
+   </property>
+  </action>
+  <action name="actionGDT_Checker">
+   <property name="text">
+    <string>GDT Checker</string>
+   </property>
+  </action>
+  <action name="actionVirtual_Condition_Calculator">
+   <property name="text">
+    <string>Virtual Condition Calculator</string>
+   </property>
+  </action>
+  <action name="actionLimits_and_Fits">
+   <property name="text">
+    <string>Limits and Fits</string>
+   </property>
+  </action>
+  <action name="actionGDTFasteners">
+   <property name="text">
+    <string>Fasteners</string>
+   </property>
+  </action>
+  <action name="actionPaper_Gauging">
+   <property name="text">
+    <string>Paper Gauging</string>
+   </property>
+  </action>
+  <action name="actionTolerance_Finder">
+   <property name="text">
+    <string>Tolerance Finder</string>
+   </property>
+  </action>
+  <action name="actionDiameter_Deviation">
+   <property name="text">
+    <string>Diameter Deviation</string>
+   </property>
+  </action>
+  <action name="actionTorsion">
+   <property name="text">
+    <string>Torsion</string>
+   </property>
+  </action>
+  <action name="actionPressure">
+   <property name="text">
+    <string>Pressure</string>
+   </property>
+  </action>
+  <action name="actionAddMohr_s_Circle">
+   <property name="text">
+    <string>Mohr's Circle</string>
+   </property>
+  </action>
+  <action name="actionModule_List">
+   <property name="text">
+    <string>Module List</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionNotepad">
+   <property name="text">
+    <string>Notepad</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Consolas</family>
+    </font>
+   </property>
+  </action>
+  <action name="actionCalculator">
+   <property name="text">
+    <string>Calculator</string>
+   </property>
+  </action>
+  <action name="actionScreenshot">
+   <property name="text">
+    <string>Screenshot</string>
+   </property>
+  </action>
+  <action name="actionPerfer_SI_units">
+   <property name="text">
+    <string>Edit Saftey Factor</string>
+   </property>
+  </action>
+  <action name="actionPerfer_Metric_Units">
+   <property name="text">
+    <string>Theme</string>
+   </property>
+  </action>
+  <action name="actionMaterials_list">
+   <property name="text">
+    <string>Materials List</string>
+   </property>
+  </action>
+  <action name="actionCross_Sectional_Beams_and_Shapes_Lists">
+   <property name="text">
+    <string>Beams and Shapes Lists</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionUnit_Converter_help">
+   <property name="text">
+    <string>Unit Converter</string>
+   </property>
+  </action>
+  <action name="actionMoments_of_Inertia_help">
+   <property name="text">
+    <string>Moments of Inertia</string>
+   </property>
+  </action>
+  <action name="actionVectors_help">
+   <property name="text">
+    <string>Vectors</string>
+   </property>
+  </action>
+  <action name="actionFriction_and_Force_help">
+   <property name="text">
+    <string>Friction and Force</string>
+   </property>
+  </action>
+  <action name="actionFasteners_help">
+   <property name="text">
+    <string>Fasteners</string>
+   </property>
+  </action>
+  <action name="actionMaterial_Properties_help">
+   <property name="text">
+    <string>Material Properties</string>
+   </property>
+  </action>
+  <action name="actionCM_and_CG_help">
+   <property name="text">
+    <string>CM and CG</string>
+   </property>
+  </action>
+  <action name="actionTrusses_help">
+   <property name="text">
+    <string>Trusses</string>
+   </property>
+  </action>
+  <action name="actionBeamsMoments_of_Inertia_help">
+   <property name="text">
+    <string>Moments of Inertia</string>
+   </property>
+  </action>
+  <action name="actionShear_and_Moment_help">
+   <property name="text">
+    <string>Shear and Moment</string>
+   </property>
+  </action>
+  <action name="actionIndeterminate_Axial_Structures_help">
+   <property name="text">
+    <string>Indeterminate Axial Structures</string>
+   </property>
+  </action>
+  <action name="actionFlexure_help">
+   <property name="text">
+    <string>Flexure</string>
+   </property>
+  </action>
+  <action name="actionBeam_Deformation_help">
+   <property name="text">
+    <string>Beam Deformation</string>
+   </property>
+  </action>
+  <action name="actionAxial_Beam_Deformation_help">
+   <property name="text">
+    <string>Axial Beam Deformation</string>
+   </property>
+  </action>
+  <action name="actionTorsional_Beam_Deformation_help">
+   <property name="text">
+    <string>Torsional Beam Deformation</string>
+   </property>
+  </action>
+  <action name="actionSupported_Beams_help">
+   <property name="text">
+    <string>Supported Beams</string>
+   </property>
+  </action>
+  <action name="actionMohr_s_Circle_help">
+   <property name="text">
+    <string>Mohr's Circle</string>
+   </property>
+  </action>
+  <action name="actionC_Clamp_help">
+   <property name="text">
+    <string>C-Clamp</string>
+   </property>
+  </action>
+  <action name="actionCompression_Link_help">
+   <property name="text">
+    <string>Compression Link</string>
+   </property>
+  </action>
+  <action name="actionTension_Link_help">
+   <property name="text">
+    <string>Tension Link</string>
+   </property>
+  </action>
+  <action name="actionPost_help">
+   <property name="text">
+    <string>Post</string>
+   </property>
+  </action>
+  <action name="actionPost_and_Beam_help">
+   <property name="text">
+    <string>Post and Beam</string>
+   </property>
+  </action>
+  <action name="actionSolid_shaft_and_Pipe_help">
+   <property name="text">
+    <string>Solid Shaft and Pipe</string>
+   </property>
+  </action>
+  <action name="actionKinematic_Diagraming_help">
+   <property name="text">
+    <string>Kinematic Diagraming</string>
+   </property>
+  </action>
+  <action name="actionVector_and_Motion_Analysis_help">
+   <property name="text">
+    <string>Vector and Motion Analysis</string>
+   </property>
+  </action>
+  <action name="actionGDT_Checker_help">
+   <property name="text">
+    <string>GDT Checker</string>
+   </property>
+  </action>
+  <action name="actionVirtual_Condition_Calculator_help">
+   <property name="text">
+    <string>Virtual Condition Calculator</string>
+   </property>
+  </action>
+  <action name="actionLimits_and_Fits_help">
+   <property name="text">
+    <string>Limits and Fits</string>
+   </property>
+  </action>
+  <action name="actionGDTFasteners_help">
+   <property name="text">
+    <string>Fasteners</string>
+   </property>
+  </action>
+  <action name="actionPaper_Gauging_help">
+   <property name="text">
+    <string>Paper Gauging</string>
+   </property>
+  </action>
+  <action name="actionTolerance_Finder_help">
+   <property name="text">
+    <string>Tolerance Finder</string>
+   </property>
+  </action>
+  <action name="actionDiameter_Deviation_help">
+   <property name="text">
+    <string>Diameter Deviation</string>
+   </property>
+  </action>
+  <action name="actionTorsion_help">
+   <property name="text">
+    <string>Torsion</string>
+   </property>
+  </action>
+  <action name="actionPressure_help">
+   <property name="text">
+    <string>Pressure</string>
+   </property>
+  </action>
+  <action name="actionTheme">
+   <property name="text">
+    <string>Theme</string>
+   </property>
+  </action>
+  <action name="actionSaftey_Factors">
+   <property name="text">
+    <string>Saftey Factors</string>
+   </property>
+  </action>
+  <action name="actionSolid_Shaft_and_Pipe">
+   <property name="text">
+    <string>Solid Shaft and Pipe</string>
+   </property>
+  </action>
+  <action name="actionMohr_s_Circle_2">
+   <property name="text">
+    <string>Mohr's Circle</string>
+   </property>
+  </action>
+  <action name="actionFit_Classes">
+   <property name="text">
+    <string>Fit Classes</string>
+   </property>
+  </action>
+  <action name="actionUnit_Settings">
+   <property name="text">
+    <string>Unit Settings</string>
+   </property>
+  </action>
+  <action name="actionUnit_Converter_2">
+   <property name="text">
+    <string>Unit Converter</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

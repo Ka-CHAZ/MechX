@@ -1,0 +1,26 @@
+import sys
+from PySide6.QtWidgets import QApplication, QTreeWidget, QTreeWidgetItem
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+
+    tree_widget = QTreeWidget()
+    tree_widget.setHeaderLabels(["Column 1", "Column 2"])
+
+    # Create top-level items
+    item1 = QTreeWidgetItem(tree_widget, ["Item 1", "Value 1"])
+    item2 = QTreeWidgetItem(tree_widget, ["Item 2", "Value 2"])
+
+    # Create child items for item1
+    child1 = QTreeWidgetItem(item1, ["Child 1", "Value 1.1"])
+    child2 = QTreeWidgetItem(item1, ["Child 2", "Value 1.2"])
+
+    # Add more child items to child2
+    child3 = QTreeWidgetItem(child2, ["Child 3", "Value 1.2.1"])
+
+    # Create child items for item2
+    child4 = QTreeWidgetItem(item2, ["Child 4", "Value 2.1"])
+
+    tree_widget.expandAll()
+    tree_widget.show()
+    sys.exit(app.exec_())

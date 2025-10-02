@@ -1,0 +1,70 @@
+        self.ConcentratedloadsGBox = QGroupBox(self.centralwidget)
+        self.ConcentratedloadsGBox.setObjectName(u"ConcentratedloadsGBox")
+        self.ConcentratedloadsGBox.setGeometry(QRect(670, 900, 281, 174))
+        self.ConcentratedloadsGBox.setFont(font)
+        self.ConcentratedloadsGBox.setCheckable(True)
+        self.verticalLayout_8 = QVBoxLayout(self.ConcentratedloadsGBox)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.label = QLabel(self.ConcentratedloadsGBox)
+        self.label.setObjectName(u"label")
+        self.label.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_2.addWidget(self.label)
+
+        self.verticalLayout_2 = QVBoxLayout()
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.concenloadlocation = QDoubleSpinBox(self.ConcentratedloadsGBox)
+        self.concenloadlocation.setObjectName(u"concenloadlocation")
+        self.concenloadlocation.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.concenloadlocation.setMaximum(100000000.000000000000000)
+
+        self.verticalLayout_2.addWidget(self.concenloadlocation)
+
+        self.concenloadlocationunits = QComboBox(self.ConcentratedloadsGBox)
+        self.concenloadlocationunits.setObjectName(u"concenloadlocationunits")
+
+        self.verticalLayout_2.addWidget(self.concenloadlocationunits)
+
+
+        self.horizontalLayout_2.addLayout(self.verticalLayout_2)
+
+
+        self.verticalLayout_8.addLayout(self.horizontalLayout_2)
+
+        self.line_4 = QFrame(self.ConcentratedloadsGBox)
+        self.line_4.setObjectName(u"line_4")
+        self.line_4.setLineWidth(2)
+        self.line_4.setFrameShape(QFrame.Shape.HLine)
+        self.line_4.setFrameShadow(QFrame.Shadow.Sunken)
+
+        self.verticalLayout_8.addWidget(self.line_4)
+
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.label_3 = QLabel(self.ConcentratedloadsGBox)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_3.addWidget(self.label_3)
+
+        self.verticalLayout_3 = QVBoxLayout()
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.concenloadmagnitude = QDoubleSpinBox(self.ConcentratedloadsGBox)
+        self.concenloadmagnitude.setObjectName(u"concenloadmagnitude")
+        self.concenloadmagnitude.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.concenloadmagnitude.setMaximum(100000000.000000000000000)
+
+        self.verticalLayout_3.addWidget(self.concenloadmagnitude)
+
+        self.concenloadmagnitudeunits = QComboBox(self.ConcentratedloadsGBox)
+        self.concenloadmagnitudeunits.setObjectName(u"concenloadmagnitudeunits")
+
+        self.verticalLayout_3.addWidget(self.concenloadmagnitudeunits)
+
+
+        self.horizontalLayout_3.addLayout(self.verticalLayout_3)
+
+
+        self.verticalLayout_8.addLayout(self.horizontalLayout_3)

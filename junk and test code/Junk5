@@ -1,0 +1,49 @@
+import sys
+import matplotlib
+matplotlib.use('Qt5Agg')
+
+from PySide6.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+from matplotlib.figure import Figure
+import numpy as np
+
+class MatplotlibCanvas(FigureCanvas):
+    def __init__(self, parent=None, width=5, height=4, dpi=100):
+        fig = Figure(figsize=(width, height), dpi=dpi)
+        self.axes = fig.add_subplot(111)
+        super(MatplotlibCanvas, self).__init__(fig)
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super(MainWindow, self).__init__()
+
+        self.setWindowTitle("Matplotlib in PySide6")
+        self.setGeometry(100, 100, 600, 400)
+
+        central_widget = QWidget()
+        self.setCentralWidget(central_widget)
+
+        layout = QVBoxLayout(central_widget)
+
+        # Create Matplotlib canvas
+        canvas = MatplotlibCanvas(self, width=5, height=4, dpi=100)
+        layout.addWidget(canvas)
+
+        # Generate some sample data
+        x = np.linspace(0, 10, 100)
+        y = np.sin(x)
+
+        # Plot the data
+        canvas.axes.plot(x, y)
+        canvas.axes.set_title("Sine Wave")
+        canvas.axes.set_xlabel("X-axis")
+        canvas.axes.set_ylabel("Y-axis")
+
+        # Draw the canvas
+        canvas.draw()
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    main_window = MainWindow()
+    main_window.show()
+    sys.exit(app.exec())
