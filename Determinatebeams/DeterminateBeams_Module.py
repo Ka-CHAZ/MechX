@@ -2104,8 +2104,8 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         # Axis formatting
         ax.axhline(0, color="gray", linewidth=2.5)  # thickened axis line
         ax.axvline(0, color="gray", linewidth=2.5)  # thickened axis line
-        ax.axvline(self.leftsupportlocation.value(), color="#DD7f21", linestyle="--", linewidth=1.5)  # left support
-        ax.axvline(self.rightsupportlocation.value(), color="#DD7f21", linestyle="--", linewidth=1.5)  # right support
+        ax.axvline(self.leftsupportlocation.value(), color="#DD7f21", linestyle="--", linewidth=1.5)  # dashed line to represent left support
+        ax.axvline(self.rightsupportlocation.value(), color="#DD7f21", linestyle="--", linewidth=1.5)  # dashed line to represent right support
         ax.set_title("Shear Force Diagram", color="white")
         ax.set_xlabel(f"Beam Length ({self.beamlengthunits.currentText()})", color="white")
         ax.set_ylabel("Shear (V)", color="white")
@@ -2159,8 +2159,8 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         # Axis formatting
         ax.axhline(0, color="gray", linewidth=2.5)  # thickened axis line
         ax.axvline(0, color="gray", linewidth=2.5)  # thickened axis line
-        ax.axvline(self.leftsupportlocation.value(), color="#DD7f21", linestyle="--", linewidth=1.5)  # left support
-        ax.axvline(self.rightsupportlocation.value(), color="#DD7f21", linestyle="--", linewidth=1.5)  # right support
+        ax.axvline(self.leftsupportlocation.value(), color="#DD7f21", linestyle="--", linewidth=1.5)  # dashed line to represent left support
+        ax.axvline(self.rightsupportlocation.value(), color="#DD7f21", linestyle="--", linewidth=1.5)  # dashed line to represent right support
         ax.set_title("Moment Diagram", color="white")
         ax.set_xlabel(f"Beam Length ({self.beamlengthunits.currentText()})", color="white")
         ax.set_ylabel("Moment (M)", color="white")
