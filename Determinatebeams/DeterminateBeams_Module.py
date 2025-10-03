@@ -224,6 +224,7 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         return arc, head1, head2
 
     def add_concenuploads(self):
+        # Upwards concentrated loads groupbox layout
         self.cupl_group_box_counter += 1
         
         font = QFont()
@@ -332,6 +333,7 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         elementbox.toggled.connect(lambda checked: self.remove_groupbox(elementbox, checked))
         
     def add_concendownloads(self):
+        # Downwards concentrated loads groupbox layout
         self.cdl_group_box_counter += 1
         
         font = QFont()
@@ -439,6 +441,7 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         elementbox.toggled.connect(lambda checked: self.remove_groupbox(elementbox, checked))
         
     def add_uniformuploads(self):
+        # Upwards uniform loads groupbox layout
         self.uupl_group_box_counter += 1
         
         font = QFont()
@@ -566,6 +569,7 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         elementbox.toggled.connect(lambda checked: self.remove_groupbox(elementbox, checked))
         
     def add_uniformdownloads(self):
+        # Downwards uniform loads groupbox layout
         self.udl_group_box_counter += 1
         
         font = QFont()
@@ -693,6 +697,7 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         elementbox.toggled.connect(lambda checked: self.remove_groupbox(elementbox, checked))
         
     def add_lineardistribuploads(self):
+        # Upwards linear distributed loads groupbox layout
         self.ldupl_group_box_counter += 1
         
         font = QFont()
@@ -846,6 +851,7 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         elementbox.toggled.connect(lambda checked: self.remove_groupbox(elementbox, checked))
         
     def add_lineardistribdownloads(self):
+        # Downwards linear distributed loads groupbox layout
         self.lddl_group_box_counter += 1
         
         font = QFont()
@@ -999,6 +1005,7 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         elementbox.toggled.connect(lambda checked: self.remove_groupbox(elementbox, checked))
         
     def add_momentccw(self):
+        # Counterclockwise concentrated moment groupbox layout
         self.mccw_group_box_counter += 1
         
         font = QFont()
@@ -1104,6 +1111,7 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         elementbox.toggled.connect(lambda checked: self.remove_groupbox(elementbox, checked))
 
     def add_momentcw(self):
+        # Clockwise concentrated moment groupbox layout
         self.mcw_group_box_counter += 1
     
         font = QFont()
@@ -1207,7 +1215,7 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         elementbox.toggled.connect(lambda checked: self.remove_groupbox(elementbox, checked))
     
     def remove_groupbox(self, elementbox, checked):
-        #Removes the group box when unchecked.
+        #Removes the group box when checkbox is unchecked in the UI.
         if not checked:
             self.scroll_layout.removeWidget(elementbox)
             # remove graphics if present
