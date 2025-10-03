@@ -16,7 +16,7 @@ class MdiApp(QMainWindow):
         self.ui = Ui_MEMainWindow()
         self.ui.setupUi(self)
         
-        self.setWindowTitle('Mechanics Engine alpha v 0.4.5')
+        self.setWindowTitle('Mechanics Engine pre-alpha v 0.2.4')
 
         # Reference widgets
         self.mdi_area: QMdiArea = self.ui.mdiArea
