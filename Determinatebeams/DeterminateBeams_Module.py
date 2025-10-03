@@ -1900,6 +1900,7 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         if not entry or entry.get("type") != "linear":
             return
 
+        # find items in groupbox
         start_sb = self._find_spin(group_box, "lineardistribloadstart")
         end_sb = self._find_spin(group_box, "lineardistribloadend")
         mag1_sb = self._find_spin(group_box, "lineardistribloadmagnitude")
@@ -1975,10 +1976,8 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
             head2.setPos(-9999, -9999)
             
     def _create_moment_load(self, group_box):
-        """
-        Create (and register) a moment symbol for the given group_box.
-        Direction (CW/CCW) is detected from the groupbox title.
-        """
+        # Create (and register) a moment symbol for the given group_box.
+        # Direction (CW/CCW) is detected from the groupbox title.
         if not isinstance(group_box, QGroupBox):
             return
 
@@ -2135,7 +2134,6 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         self.Sheargraph.fitInView(self.shear_scene.sceneRect(), Qt.KeepAspectRatio)
 
         plt.close(fig)
-
 
     def momentgraph(self):
         import numpy as np
