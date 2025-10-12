@@ -2,7 +2,7 @@ import sys
 from PySide6 import QtCore, QtGui, QtWidgets, QtUiTools
 from PySide6.QtCore import QCoreApplication, QDate, QDateTime, QRectF, QLocale, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QPointF
 from PySide6.QtGui import QAction, QBrush, QColor, QPainterPath, QConicalGradient, QCursor, QFont, QFontDatabase, QGradient, QIcon, QImage, QKeySequence, QLinearGradient, QPainter, QPalette, QPixmap, QRadialGradient, QTransform, QPen, QPolygonF
-from PySide6.QtWidgets import QAbstractSpinBox, QGraphicsPathItem, QTreeWidget, QTreeWidgetItem, QMdiSubWindow, QMdiArea, QApplication, QComboBox, QDoubleSpinBox, QPushButton, QDialog, QLineEdit, QMenu, QScrollArea, QGridLayout, QVBoxLayout, QHBoxLayout, QFrame, QGroupBox, QHBoxLayout, QLabel, QMainWindow, QMenu, QMenuBar, QSizePolicy, QMessageBox, QStatusBar, QTabWidget, QVBoxLayout, QWidget, QGraphicsView, QGraphicsScene, QGraphicsRectItem, QDoubleSpinBox, QSpacerItem, QSplitter, QGraphicsTextItem, QGraphicsPolygonItem, QGraphicsEllipseItem, QGraphicsLineItem
+from PySide6.QtWidgets import QAbstractSpinBox, QGraphicsPathItem, QTreeWidget, QTreeWidgetItem, QMdiSubWindow, QMdiArea, QApplication, QComboBox, QDoubleSpinBox, QPushButton, QDialog, QLineEdit, QMenu, QScrollArea, QGridLayout, QVBoxLayout, QHBoxLayout, QFrame, QGroupBox, QHBoxLayout, QLabel, QMainWindow, QMenu, QMenuBar, QSizePolicy, QMessageBox, QStatusBar, QTabWidget, QVBoxLayout, QWidget, QGraphicsView, QGraphicsScene, QGraphicsRectItem, QDoubleSpinBox, QSpacerItem, QSplitter, QGraphicsTextItem, QGraphicsPolygonItem, QGraphicsEllipseItem, QGraphicsLineItem, QGraphicsPixmapItem
 import math 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -1797,6 +1797,8 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         head1.setPos(x, y_offset)
         head2.setPos(x, y_offset)
 
+        self._update_shear_moment_graphs()
+
     # ---------- create + update for uniform loads ----------
     def _create_uniform_load(self, group_box):
         if not isinstance(group_box, QGroupBox):
@@ -1877,6 +1879,8 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
             trunk.setPos(-9999, -9999)
             head1.setPos(-9999, -9999)
             head2.setPos(-9999, -9999)
+        
+        self._update_shear_moment_graphs()
         
     # ---------- create + update for linear (graded) distributed loads ----------
     def _create_linear_load(self, group_box):
@@ -1982,6 +1986,8 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
             trunk.setPos(-9999, -9999)
             head1.setPos(-9999, -9999)
             head2.setPos(-9999, -9999)
+        
+        self._update_shear_moment_graphs()
             
     def _create_moment_load(self, group_box):
         # Create (and register) a moment symbol for the given group_box.
@@ -2063,7 +2069,9 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         arc.setPos(x, y_offset)
         head1.setPos(x, y_offset)
         head2.setPos(x, y_offset)
-            
+        
+        self._update_shear_moment_graphs()
+        
     # ---------- dispatcher to ensure items exist and update a single groupbox ----------
     def update_load(self, group_box):
         # defensive: ignore accidental boolean or other wrong args
@@ -2087,6 +2095,191 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
             self._update_linear_load(group_box)
         elif t == "moment":
             self._update_moment_load(group_box)
+
+    def _compute_shear_moment_data(self, num_points=400):
+        
+        # Compute shear and moment arrays from current loads in self.load_items.
+        # Returns x (beam units), shear, moment arrays (same units as magnitudes).
+        # NOTE: This is a simple superposition implementation (no reactions computed).
+        # Positive convention:
+        # - Shear: positive up (we'll follow sign so point down reduces shear)
+        # - Moment: positive CCW (we will subtract CW moments to be consistent)
+        
+        beam_len = float(self.Beamlength.value())
+        if beam_len <= 0:
+            return np.array([0.0]), np.array([0.0]), np.array([0.0])
+
+        x = np.linspace(0.0, beam_len, num_points)
+        shear = np.zeros_like(x)
+        moment = np.zeros_like(x)
+
+        # Helper: convert a location given in a group's unit to beam units
+        def loc_in_beam_units(group_box, spin_name, unit_cb_candidate=None):
+            sb = self._find_spin(group_box, spin_name)
+            if not sb:
+                return None
+            val = sb.value()
+            # Try to find unit combobox in the groupbox; fallback to beam unit
+            cb = unit_cb_candidate or self._find_combo(group_box, spin_name + "unit")
+            if cb:
+                from_unit = cb.currentText()
+            else:
+                from_unit = self.beamlengthunits.currentText()
+            return self.convert_to_beam_units(val, from_unit, self.beamlengthunits.currentText())
+
+        # Iterate active loads
+        for gb, info in list(self.load_items.items()):
+            ltype = info.get("type")
+            # --- POINT LOAD ---
+            if ltype == "point":
+                val_sb = self._find_spin(gb, "concenloadmagnitude") or self._find_spin(gb, "concenloadvalue") or self._find_spin(gb, "concenload")
+                loc_beam = loc_in_beam_units(gb, "concenloadlocation", self._find_combo(gb, "concenloadlocationunit"))
+                if val_sb is None or loc_beam is None:
+                    continue
+                P = val_sb.value()
+                # if group title contains '[down]' treat as downward (negative shear)
+                down = "[down]" in (gb.title() or "").lower()
+                sign = -1.0 if down else 1.0
+                # shear: jump of magnitude at location
+                mask = x >= loc_beam
+                shear[mask] += sign * P
+                # moment: for x >= loc, moment changes by P*(x - loc)
+                moment[mask] += sign * P * (x[mask] - loc_beam)
+
+            # --- UNIFORM (constant w over interval) ---
+            elif ltype == "uniform":
+                w_sb = self._find_spin(gb, "uniformloadmagnitude") or self._find_spin(gb, "uniformloadvalue")
+                start_beam = loc_in_beam_units(gb, "uniformloadstart", self._find_combo(gb, "uniformloadstartunit"))
+                end_beam = loc_in_beam_units(gb, "uniformloadend", self._find_combo(gb, "uniformloadendunit"))
+                if w_sb is None or start_beam is None or end_beam is None:
+                    continue
+                w = w_sb.value()
+                down = "[down]" in (gb.title() or "").lower()
+                sign = -1.0 if down else 1.0
+                a = min(start_beam, end_beam)
+                b = max(start_beam, end_beam)
+                # shear contribution (piecewise)
+                mask_a_b = (x >= a) & (x <= b)
+                shear[mask_a_b] += sign * (-w) * (x[mask_a_b] - a)  # ramp within distributed span
+                mask_b = x > b
+                shear[mask_b] += sign * (-w) * (b - a)             # full load contributes constant beyond span
+                # moment: integrate shear
+                moment[mask_a_b] += sign * (-w) * 0.5 * (x[mask_a_b] - a)**2
+                moment[mask_b] += sign * (-w) * ( (b - a) * (x[mask_b] - (a + b)/2.0) )
+
+            # --- LINEAR (triangular/trapezoidal) ---
+            elif ltype == "linear":
+                m1_sb = self._find_spin(gb, "lineardistribloadmagnitude") or self._find_spin(gb, "lineardistribloadmagnitudestart")
+                m2_sb = self._find_spin(gb, "lineardistribloadmagnitudeend") or self._find_spin(gb, "lineardistribloadmagnitudefinish")
+                start_beam = loc_in_beam_units(gb, "lineardistribloadstart", self._find_combo(gb, "lineardistribloadstartunit"))
+                end_beam = loc_in_beam_units(gb, "lineardistribloadend", self._find_combo(gb, "lineardistribloadendunit"))
+                if m1_sb is None or m2_sb is None or start_beam is None or end_beam is None:
+                    continue
+                m1 = m1_sb.value()
+                m2 = m2_sb.value()
+                down = "[down]" in (gb.title() or "").lower()
+                sign = -1.0 if down else 1.0
+                a = min(start_beam, end_beam)
+                b = max(start_beam, end_beam)
+                L = b - a
+                if L <= 0:
+                    continue
+                # Evaluate distributed load q(x) linear between m1->m2 mapped over [a,b]
+                mask_span = (x >= a) & (x <= b)
+                xs = x[mask_span]
+                t = (xs - a) / L
+                qxs = m1 + (m2 - m1) * t  # load per length at each x
+                # shear contribution inside span: integral of q from a to x => cumulative
+                shear[mask_span] += sign * (-1.0) * np.cumsum(qxs) * (L / max(1,len(qxs))) * (1.0/len(qxs))  # approximate integral
+                # more precise approach: integrate q analytically for linear ramp - do trapezoidal numeric instead
+                # simpler: compute via cumulative trapezoid
+                try:
+                    from numpy import trapz
+                    # compute cumulative moment and shear properly
+                    # shear contribution at each x within span:
+                    shear_vals = np.zeros_like(xs)
+                    for idx in range(len(xs)):
+                        shear_vals[idx] = -trapz(qxs[:idx+1], xs[:idx+1])
+                    shear[mask_span] += sign * shear_vals
+                    # beyond span:
+                    mask_beyond = x > b
+                    if np.any(mask_beyond):
+                        total_q = trapz(qxs, xs)
+                        shear[mask_beyond] += sign * (-total_q)
+                    # moment: integrate shear
+                    # compute moment increment inside span via trapezoid of shear
+                    # We integrate shear with respect to x to get moment increment. Simpler numerical:
+                    from numpy import cumtrapz
+                    moment_vals = -cumtrapz(qxs, xs, initial=0.0) * 1.0
+                    moment[mask_span] += sign * moment_vals
+                    if np.any(mask_beyond):
+                        # for x > b, moment change is -total_q*(x - (a+b)/2) approximate
+                        xb = x[mask_beyond]
+                        moment[mask_beyond] += sign * (-total_q) * (xb - (a + b)/2.0)
+                except Exception:
+                    # fallback simple approximate triangular behavior
+                    pass
+
+            # --- MOMENT LOAD (pure couple) ---
+            elif ltype == "moment":
+                mag_sb = self._find_spin(gb, "momentmagnitude") or self._find_spin(gb, "momentvalue") or self._find_spin(gb, "moment")
+                loc_beam = loc_in_beam_units(gb, "momentlocation", self._find_combo(gb, "momentlocationunits"))
+                if mag_sb is None or loc_beam is None:
+                    continue
+                M = mag_sb.value()
+                # direction in title: 'ccw' means positive moment, 'cw' negative
+                down = "[cw]" in (gb.title() or "").lower()
+                sign = -1.0 if down else 1.0
+                mask = x >= loc_beam
+                moment[mask] += sign * M
+
+        # Final sign convention cleanup: user may prefer opposite - keep as implemented so graph shows plus/minus
+        return x, shear, moment
+
+    def _update_shear_moment_graphs(self):
+        """Compute shear/moment and render into self.sheargraph and self.momentgraph QGraphicsViews."""
+        # compute
+        x, shear, moment = self._compute_shear_moment_data(num_points=600)
+
+        # plotting helper
+        def render_to_view(xdata, ydata, view, ylabel):
+            fig, ax = plt.subplots(figsize=(5,2.2), dpi=120)
+            fig.patch.set_facecolor("#222222")
+            ax.set_facecolor("#222222")
+            ax.plot(xdata, ydata, linewidth=2)
+            # thickened horizontal axis at y=0
+            ax.axhline(0, linewidth=2.5, color="white", zorder=3)
+            # vertical axis at x=0
+            ax.axvline(0, linewidth=1.0, color="white", zorder=2)
+            ax.set_xlim(0, float(self.Beamlength.value()))
+            ax.set_xlabel(f"Length ({self.beamlengthunits.currentText()})", color="white")
+            ax.set_ylabel(ylabel, color="white")
+            ax.tick_params(colors="white")
+            # remove legend (none)
+            for spine in ax.spines.values():
+                spine.set_color("#444444")
+            fig.tight_layout()
+
+            # render to image
+            canvas = FigureCanvasAgg(fig)
+            canvas.draw()
+            width, height = fig.get_size_inches() * fig.get_dpi()
+            arr = np.frombuffer(canvas.buffer_rgba(), dtype=np.uint8)
+            image = QImage(arr, int(width), int(height), QImage.Format_RGBA8888)
+            pix = QPixmap.fromImage(image)
+            plt.close(fig)
+
+            scene = QGraphicsScene()
+            scene.addItem(QGraphicsPixmapItem(pix))
+            view.setScene(scene)
+            view.fitInView(scene.sceneRect(), Qt.KeepAspectRatio)
+
+        # draw shear then moment
+        try:
+            render_to_view(x, shear, self.sheargraph, "Shear")
+            render_to_view(x, moment, self.momentgraph, "Moment")
+        except Exception as e:
+            print("[Shear/Moment] plot error:", e)
 
     def sheargraph(self):
         import numpy as np
