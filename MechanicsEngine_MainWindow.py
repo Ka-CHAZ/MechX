@@ -12,6 +12,9 @@ class MdiApp(QMainWindow):
     def __init__(self):
         super().__init__()
 
+        icon = QIcon("mechengineicon.png")
+        self.setWindowIcon(icon)
+
         # Set up main UI
         self.ui = Ui_MEMainWindow()
         self.ui.setupUi(self)
