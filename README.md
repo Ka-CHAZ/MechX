@@ -1,1 +1,1 @@
-How to run Mechanics Engine: make sure you have the MechanicsEngine_MainWindow.py file open in the code editor. Click the "run" button from this file; clicking the run button from any of the other modules will not run the main program.
+How to run MechX from Code Studio: make sure you have the MechX_MainWindow.py file open in the code editor. Click the "run" button from this file; clicking the run button from any of the other modules will not run the main program.
