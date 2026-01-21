@@ -152,7 +152,7 @@ class Ui_credits(object):
 
     def retranslateUi(self, credits):
         credits.setWindowTitle(QCoreApplication.translate("credits", u"MainWindow", None))
-        self.label.setText(QCoreApplication.translate("credits", u"Mechanics Engine", None))
+        self.label.setText(QCoreApplication.translate("credits", u"MechX", None))
         self.label_3.setText(QCoreApplication.translate("credits", u"Version Alpha 0.0.12", None))
         self.label_4.setText(QCoreApplication.translate("credits", u"A Mathematics and engineering\n"
 "software for calculating,\n"
@@ -162,7 +162,8 @@ class Ui_credits(object):
 "structures, and machine elements ", None))
         self.label_2.setText(QCoreApplication.translate("credits", u"Author: James Karczewski", None))
         self.label_7.setText(QCoreApplication.translate("credits", u"Credits", None))
-        self.label_6.setText(QCoreApplication.translate("credits", u"Kelly Ryba\n"
+        self.label_6.setText(QCoreApplication.translate("credits", u"Chris Hohl\n"
+"Kelly Ryba\n"
 "Tom Filipiak\n"
 "Ryan Weister", None))
         self.label_5.setText(QCoreApplication.translate("credits", u"Dr. Timothy Philpot", None))
