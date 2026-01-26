@@ -2097,29 +2097,46 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
             self._update_moment_load(group_box)
 
     def _compute_shear_moment_data(self, num_points=400):
+        """
+        Compute shear and moment arrays from current loads in self.load_items.
+        Returns x (beam units), shear, moment arrays (same units as magnitudes).
         
-        # Compute shear and moment arrays from current loads in self.load_items.
-        # Returns x (beam units), shear, moment arrays (same units as magnitudes).
-        # NOTE: This is a simple superposition implementation (no reactions computed).
-        # Positive convention:
-        # - Shear: positive up (we'll follow sign so point down reduces shear)
-        # - Moment: positive CCW (we will subtract CW moments to be consistent)
+        This method first calculates support reactions using equilibrium equations:
+        - Sum of vertical forces = 0
+        - Sum of moments about left support = 0
+        
+        Then computes shear and moment diagrams including reactions.
+        
+        Sign conventions:
+        - Downward loads are negative (reduce shear)
+        - Upward reactions are positive (increase shear)
+        - Positive moment causes compression on top (sagging)
+        """
         
         beam_len = float(self.Beamlength.value())
         if beam_len <= 0:
             return np.array([0.0]), np.array([0.0]), np.array([0.0])
 
-        x = np.linspace(0.0, beam_len, num_points)
-        shear = np.zeros_like(x)
-        moment = np.zeros_like(x)
+        # Get support locations
+        left_support = float(self.leftsupportlocation.value())
+        right_support = float(self.rightsupportlocation.value())
+        
+        # Ensure left < right
+        if left_support > right_support:
+            left_support, right_support = right_support, left_support
+        
+        support_span = right_support - left_support
+        if support_span <= 0:
+            return np.array([0.0]), np.array([0.0]), np.array([0.0])
 
+        x = np.linspace(0.0, beam_len, num_points)
+        
         # Helper: convert a location given in a group's unit to beam units
         def loc_in_beam_units(group_box, spin_name, unit_cb_candidate=None):
             sb = self._find_spin(group_box, spin_name)
             if not sb:
                 return None
             val = sb.value()
-            # Try to find unit combobox in the groupbox; fallback to beam unit
             cb = unit_cb_candidate or self._find_combo(group_box, spin_name + "unit")
             if cb:
                 from_unit = cb.currentText()
@@ -2127,9 +2144,18 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
                 from_unit = self.beamlengthunits.currentText()
             return self.convert_to_beam_units(val, from_unit, self.beamlengthunits.currentText())
 
-        # Iterate active loads
+        # ==========================================
+        # STEP 1: Collect all loads and compute resultant force/moment about left support
+        # ==========================================
+        total_force = 0.0  # Sum of all downward forces (positive = downward)
+        total_moment_about_left = 0.0  # Sum of moments about left support (positive = CW)
+        
+        # Store parsed loads for later shear/moment calculation
+        parsed_loads = []
+        
         for gb, info in list(self.load_items.items()):
             ltype = info.get("type")
+            
             # --- POINT LOAD ---
             if ltype == "point":
                 val_sb = self._find_spin(gb, "concenloadmagnitude") or self._find_spin(gb, "concenloadvalue") or self._find_spin(gb, "concenload")
@@ -2137,14 +2163,13 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
                 if val_sb is None or loc_beam is None:
                     continue
                 P = val_sb.value()
-                # if group title contains '[down]' treat as downward (negative shear)
                 down = "[down]" in (gb.title() or "").lower()
-                sign = -1.0 if down else 1.0
-                # shear: jump of magnitude at location
-                mask = x >= loc_beam
-                shear[mask] += sign * P
-                # moment: for x >= loc, moment changes by P*(x - loc)
-                moment[mask] += sign * P * (x[mask] - loc_beam)
+                # Force magnitude (positive = downward)
+                force = P if down else -P
+                total_force += force
+                # Moment about left support (positive = CW for downward force to right of support)
+                total_moment_about_left += force * (loc_beam - left_support)
+                parsed_loads.append({"type": "point", "magnitude": force, "location": loc_beam})
 
             # --- UNIFORM (constant w over interval) ---
             elif ltype == "uniform":
@@ -2155,17 +2180,15 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
                     continue
                 w = w_sb.value()
                 down = "[down]" in (gb.title() or "").lower()
-                sign = -1.0 if down else 1.0
                 a = min(start_beam, end_beam)
                 b = max(start_beam, end_beam)
-                # shear contribution (piecewise)
-                mask_a_b = (x >= a) & (x <= b)
-                shear[mask_a_b] += sign * (-w) * (x[mask_a_b] - a)  # ramp within distributed span
-                mask_b = x > b
-                shear[mask_b] += sign * (-w) * (b - a)             # full load contributes constant beyond span
-                # moment: integrate shear
-                moment[mask_a_b] += sign * (-w) * 0.5 * (x[mask_a_b] - a)**2
-                moment[mask_b] += sign * (-w) * ( (b - a) * (x[mask_b] - (a + b)/2.0) )
+                L = b - a
+                # Resultant force = w * L at centroid (a + L/2)
+                resultant = w * L if down else -w * L
+                centroid = a + L / 2.0
+                total_force += resultant
+                total_moment_about_left += resultant * (centroid - left_support)
+                parsed_loads.append({"type": "uniform", "w": w if down else -w, "start": a, "end": b})
 
             # --- LINEAR (triangular/trapezoidal) ---
             elif ltype == "linear":
@@ -2175,65 +2198,171 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
                 end_beam = loc_in_beam_units(gb, "lineardistribloadend", self._find_combo(gb, "lineardistribloadendunit"))
                 if m1_sb is None or m2_sb is None or start_beam is None or end_beam is None:
                     continue
-                m1 = m1_sb.value()
-                m2 = m2_sb.value()
+                w1 = m1_sb.value()
+                w2 = m2_sb.value()
                 down = "[down]" in (gb.title() or "").lower()
-                sign = -1.0 if down else 1.0
                 a = min(start_beam, end_beam)
                 b = max(start_beam, end_beam)
                 L = b - a
                 if L <= 0:
                     continue
-                # Evaluate distributed load q(x) linear between m1->m2 mapped over [a,b]
-                mask_span = (x >= a) & (x <= b)
-                xs = x[mask_span]
-                t = (xs - a) / L
-                qxs = m1 + (m2 - m1) * t  # load per length at each x
-                # shear contribution inside span: integral of q from a to x => cumulative
-                shear[mask_span] += sign * (-1.0) * np.cumsum(qxs) * (L / max(1,len(qxs))) * (1.0/len(qxs))  # approximate integral
-                # more precise approach: integrate q analytically for linear ramp - do trapezoidal numeric instead
-                # simpler: compute via cumulative trapezoid
-                try:
-                    from numpy import trapz
-                    # compute cumulative moment and shear properly
-                    # shear contribution at each x within span:
-                    shear_vals = np.zeros_like(xs)
-                    for idx in range(len(xs)):
-                        shear_vals[idx] = -trapz(qxs[:idx+1], xs[:idx+1])
-                    shear[mask_span] += sign * shear_vals
-                    # beyond span:
-                    mask_beyond = x > b
-                    if np.any(mask_beyond):
-                        total_q = trapz(qxs, xs)
-                        shear[mask_beyond] += sign * (-total_q)
-                    # moment: integrate shear
-                    # compute moment increment inside span via trapezoid of shear
-                    # We integrate shear with respect to x to get moment increment. Simpler numerical:
-                    from numpy import cumtrapz
-                    moment_vals = -cumtrapz(qxs, xs, initial=0.0) * 1.0
-                    moment[mask_span] += sign * moment_vals
-                    if np.any(mask_beyond):
-                        # for x > b, moment change is -total_q*(x - (a+b)/2) approximate
-                        xb = x[mask_beyond]
-                        moment[mask_beyond] += sign * (-total_q) * (xb - (a + b)/2.0)
-                except Exception:
-                    # fallback simple approximate triangular behavior
-                    pass
+                # Resultant = average intensity * length
+                avg_w = (w1 + w2) / 2.0
+                resultant = avg_w * L if down else -avg_w * L
+                # Centroid for trapezoidal load: (a + L*(w1 + 2*w2)/(3*(w1+w2))) if w1+w2 != 0
+                if abs(w1 + w2) > 1e-10:
+                    centroid = a + L * (w1 + 2*w2) / (3 * (w1 + w2))
+                else:
+                    centroid = a + L / 2.0
+                total_force += resultant
+                total_moment_about_left += resultant * (centroid - left_support)
+                parsed_loads.append({"type": "linear", "w1": w1 if down else -w1, "w2": w2 if down else -w2, "start": a, "end": b})
 
             # --- MOMENT LOAD (pure couple) ---
             elif ltype == "moment":
+                # Debug: print all spinboxes in this groupbox
+                all_spins = gb.findChildren(QDoubleSpinBox)
+                print(f"DEBUG moment groupbox '{gb.title()}' spinboxes: {[(s.objectName(), s.value()) for s in all_spins]}")
+                
                 mag_sb = self._find_spin(gb, "momentmagnitude") or self._find_spin(gb, "momentvalue") or self._find_spin(gb, "moment")
                 loc_beam = loc_in_beam_units(gb, "momentlocation", self._find_combo(gb, "momentlocationunits"))
                 if mag_sb is None or loc_beam is None:
                     continue
                 M = mag_sb.value()
-                # direction in title: 'ccw' means positive moment, 'cw' negative
-                down = "[cw]" in (gb.title() or "").lower()
-                sign = -1.0 if down else 1.0
-                mask = x >= loc_beam
-                moment[mask] += sign * M
+                print(f"DEBUG: Found moment spinbox: {mag_sb.objectName() if mag_sb else 'None'}, value = {M}")
+                title_lower = (gb.title() or "").lower()
+                # Must check for "[ccw]" first since "[cw]" is a substring of "[ccw]"
+                ccw = "[ccw]" in title_lower
+                cw = "[cw]" in title_lower and not ccw
+                # For equilibrium about left support:
+                # - CW moment adds positive moment (same direction as CW from downward loads)
+                # - CCW moment adds negative moment (opposes CW)
+                moment_for_equilibrium = M if cw else -M
+                total_moment_about_left += moment_for_equilibrium
+                # For the moment diagram jump (crossing from left to right):
+                # - CCW applied moment causes NEGATIVE jump (moment decreases)
+                # - CW applied moment causes POSITIVE jump (moment increases)
+                moment_jump = -M if ccw else M
+                parsed_loads.append({"type": "moment", "magnitude": moment_jump, "location": loc_beam})
 
-        # Final sign convention cleanup: user may prefer opposite - keep as implemented so graph shows plus/minus
+        # ==========================================
+        # STEP 2: Solve for support reactions
+        # ==========================================
+        # Convention: total_force is positive downward, total_moment_about_left is positive CW
+        # Reactions are upward (positive), opposing the loads
+        # 
+        # Sum of moments about left support = 0:
+        # R_right * support_span = total_moment_about_left
+        # R_right = total_moment_about_left / support_span
+        R_right = total_moment_about_left / support_span
+        
+        # Sum of vertical forces = 0:
+        # R_left + R_right = total_force (reactions balance net downward force)
+        R_left = total_force - R_right
+        
+        # Debug output
+        print(f"DEBUG: total_force = {total_force}")
+        print(f"DEBUG: total_moment_about_left = {total_moment_about_left}")
+        print(f"DEBUG: support_span = {support_span}")
+        print(f"DEBUG: R_left = {R_left}, R_right = {R_right}")
+        print(f"DEBUG: parsed_loads = {parsed_loads}")
+        
+        # ==========================================
+        # STEP 3: Compute shear and moment diagrams
+        # ==========================================
+        # Using the "cutting plane" method from left to right:
+        # Shear V(x) = sum of all upward forces to the left of x minus sum of all downward forces to the left of x
+        # 
+        # Start with shear = 0, then:
+        # - At each support: add the reaction (positive if upward)
+        # - At each load: subtract if downward, add if upward
+        
+        shear = np.zeros_like(x)
+        moment = np.zeros_like(x)
+        
+        # Add support reactions (reactions oppose loads, so positive R means upward reaction)
+        # Left support reaction
+        mask_left = x >= left_support
+        shear[mask_left] += R_left
+        
+        # Right support reaction
+        mask_right = x >= right_support
+        shear[mask_right] += R_right
+        
+        # Process each load - loads are stored with sign (positive = downward)
+        # Subtracting a positive (downward) load decreases shear
+        # Subtracting a negative (upward) load increases shear
+        for load in parsed_loads:
+            if load["type"] == "point":
+                P = load["magnitude"]  # positive = downward, negative = upward
+                loc = load["location"]
+                mask = x >= loc
+                shear[mask] -= P  # downward decreases, upward increases
+                
+            elif load["type"] == "uniform":
+                w = load["w"]  # positive = downward
+                a = load["start"]
+                b = load["end"]
+                # Within the load span
+                mask_in = (x >= a) & (x <= b)
+                shear[mask_in] -= w * (x[mask_in] - a)
+                # Beyond the load span
+                mask_beyond = x > b
+                shear[mask_beyond] -= w * (b - a)
+                
+            elif load["type"] == "linear":
+                w1 = load["w1"]  # positive = downward
+                w2 = load["w2"]
+                a = load["start"]
+                b = load["end"]
+                L = b - a
+                if L <= 0:
+                    continue
+                # Linear load: w(xi) = w1 + (w2-w1)*(xi-a)/L
+                # Shear contribution = integral of w from a to x
+                mask_in = (x >= a) & (x <= b)
+                xi = x[mask_in] - a
+                # Integral of linear load: w1*xi + (w2-w1)*xi^2/(2*L)
+                shear[mask_in] -= w1 * xi + (w2 - w1) * xi**2 / (2 * L)
+                # Beyond span
+                mask_beyond = x > b
+                total_area = w1 * L + (w2 - w1) * L / 2  # = (w1+w2)*L/2
+                shear[mask_beyond] -= total_area
+                
+            elif load["type"] == "moment":
+                M = load["magnitude"]  # positive = CCW
+                loc = load["location"]
+                # Pure moment doesn't affect shear, only moment diagram
+                # Will be added in moment calculation below
+        
+        # ==========================================
+        # STEP 4: Compute moment by integrating shear
+        # ==========================================
+        # Use cumulative trapezoidal integration
+        dx = x[1] - x[0] if len(x) > 1 else 1.0
+        moment = np.zeros_like(x)
+        for i in range(1, len(x)):
+            moment[i] = moment[i-1] + (shear[i-1] + shear[i]) / 2.0 * dx
+        
+        # Add moment jumps from applied moments
+        for load in parsed_loads:
+            if load["type"] == "moment":
+                M = load["magnitude"]
+                loc = load["location"]
+                mask = x >= loc
+                moment[mask] += M
+
+        # Debug: check shear values at key points
+        idx_16 = np.argmin(np.abs(x - 16))
+        idx_17 = np.argmin(np.abs(x - 17))
+        idx_19 = np.argmin(np.abs(x - 19))
+        print(f"DEBUG: shear at x=16: {shear[idx_16]}")
+        print(f"DEBUG: shear at x=17: {shear[idx_17]}")
+        print(f"DEBUG: shear at x=19: {shear[idx_19]}")
+        print(f"DEBUG: moment at x=16: {moment[idx_16]}")
+        print(f"DEBUG: moment at x=17: {moment[idx_17]}")
+        print(f"DEBUG: moment at x=19: {moment[idx_19]}")
+
         return x, shear, moment
 
     def _update_shear_moment_graphs(self):
@@ -2285,9 +2414,12 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         import numpy as np
         from matplotlib.backends.backend_agg import FigureCanvasAgg
 
-        beam_length = self.Beamlength.value()  # fallback if not set
-        x = np.linspace(0, beam_length, 200)
-        y = np.sin(x)  # replace with real shear values
+        beam_length = self.Beamlength.value()
+        if beam_length <= 0:
+            return
+            
+        # Get actual shear data from the computed loads
+        x, shear, _ = self._compute_shear_moment_data(num_points=400)
 
         plt.style.use("dark_background")
 
@@ -2299,14 +2431,25 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         fig, ax = plt.subplots(figsize=(fig_w, fig_h), dpi=dpi, facecolor="#202020")
         ax.set_facecolor("#202020")
 
-        # Plot shear force
-        ax.plot(x, y, color="deepskyblue", linewidth=2)
+        # Plot shear force with fill
+        ax.fill_between(x, 0, shear, alpha=0.3, color="deepskyblue")
+        ax.plot(x, shear, color="deepskyblue", linewidth=2)
 
         # Axis formatting
         ax.axhline(0, color="gray", linewidth=2.5)  # thickened axis line
         ax.axvline(0, color="gray", linewidth=2.5)  # thickened axis line
-        ax.axvline(self.leftsupportlocation.value(), color="#DD7f21", linestyle="--", linewidth=1.5)  # dashed line to represent left support
-        ax.axvline(self.rightsupportlocation.value(), color="#DD7f21", linestyle="--", linewidth=1.5)  # dashed line to represent right support
+        
+        # Support location lines (only if supports exist)
+        try:
+            left_support = self.leftsupportlocation.value()
+            right_support = self.rightsupportlocation.value()
+            if left_support > 0:
+                ax.axvline(left_support, color="#DD7f21", linestyle="--", linewidth=1.5)
+            if right_support > 0:
+                ax.axvline(right_support, color="#DD7f21", linestyle="--", linewidth=1.5)
+        except:
+            pass
+            
         ax.set_title("Shear Force Diagram", color="white")
         ax.set_xlabel(f"Beam Length ({self.beamlengthunits.currentText()})", color="white")
         ax.set_ylabel("Shear (V)", color="white")
@@ -2340,9 +2483,12 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         import numpy as np
         from matplotlib.backends.backend_agg import FigureCanvasAgg
 
-        beam_length = self.Beamlength.value()  # fallback if not set
-        x = np.linspace(0, beam_length, 200)
-        y = -np.cos(x)  # replace with real moment values
+        beam_length = self.Beamlength.value()
+        if beam_length <= 0:
+            return
+            
+        # Get actual moment data from the computed loads
+        x, _, moment = self._compute_shear_moment_data(num_points=400)
 
         plt.style.use("dark_background")
 
@@ -2354,14 +2500,25 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         fig, ax = plt.subplots(figsize=(fig_w, fig_h), dpi=dpi, facecolor="#202020")
         ax.set_facecolor("#202020")
 
-        # Plot moment diagram
-        ax.plot(x, y, color="orangered", linewidth=2)
+        # Plot moment diagram with fill
+        ax.fill_between(x, 0, moment, alpha=0.3, color="orangered")
+        ax.plot(x, moment, color="orangered", linewidth=2)
 
         # Axis formatting
         ax.axhline(0, color="gray", linewidth=2.5)  # thickened axis line
         ax.axvline(0, color="gray", linewidth=2.5)  # thickened axis line
-        ax.axvline(self.leftsupportlocation.value(), color="#DD7f21", linestyle="--", linewidth=1.5)  # dashed line to represent left support
-        ax.axvline(self.rightsupportlocation.value(), color="#DD7f21", linestyle="--", linewidth=1.5)  # dashed line to represent right support
+        
+        # Support location lines (only if supports exist)
+        try:
+            left_support = self.leftsupportlocation.value()
+            right_support = self.rightsupportlocation.value()
+            if left_support > 0:
+                ax.axvline(left_support, color="#DD7f21", linestyle="--", linewidth=1.5)
+            if right_support > 0:
+                ax.axvline(right_support, color="#DD7f21", linestyle="--", linewidth=1.5)
+        except:
+            pass
+            
         ax.set_title("Moment Diagram", color="white")
         ax.set_xlabel(f"Beam Length ({self.beamlengthunits.currentText()})", color="white")
         ax.set_ylabel("Moment (M)", color="white")
