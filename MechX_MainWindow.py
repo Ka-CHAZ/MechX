@@ -1,6 +1,7 @@
 import sys
 from PySide6.QtWidgets import QApplication, QMainWindow, QMdiArea, QMdiSubWindow, QTreeWidget, QWidget
 from PySide6.QtCore import Qt, QSize
+from PySide6 import QtGui
 from PySide6.QtGui import QIcon, QAction
 
 from MechEnginehome.MechanicsEngine_Mainscreen_ui import Ui_MEMainWindow  # Import main UI
@@ -12,14 +13,13 @@ class MdiApp(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        icon = QIcon("mechengineicon.png")
-        self.setWindowIcon(icon)
-
         # Set up main UI
         self.ui = Ui_MEMainWindow()
         self.ui.setupUi(self)
         
         self.setWindowTitle('MechX pre-alpha v 0.2.4')
+        
+        self.setWindowIcon(QtGui.QIcon('gearNB.ico'))
 
         # Reference widgets
         self.mdi_area: QMdiArea = self.ui.mdiArea
