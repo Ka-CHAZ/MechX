@@ -1257,8 +1257,8 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
     def varsupportsbeam(self):
         self.current_beamscene = 1
         
-        # Clear the scene before drawing
-        self.loads_scene.clear()
+        # Clear the scene before drawing but preserve loads so they can be recreated
+        group_boxes = self._clear_scene_preserve_loads()
         self.Beamlength.clear()
         self.beamlengthunits.setCurrentIndex(0)
         self.leftsupportlocation.clear()
@@ -1282,6 +1282,14 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         
         self.text_item = QGraphicsTextItem()
         self.loads_scene.addItem(self.text_item)
+
+        # Recreate any load/moment graphics that were present before switching scenes
+        try:
+            self.ensure_load_graphics()
+            for gb in group_boxes:
+                self.update_load(gb)
+        except Exception:
+            pass
 
         #Show the elements of the beam setup
         if self.Beamsetuplength.isHidden():
@@ -1338,8 +1346,8 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
     def leftsidebeam(self):
         self.current_beamscene = 2
         
-        # Clear the scene before drawing
-        self.loads_scene.clear()
+        # Clear the scene before drawing but preserve loads so they can be recreated
+        group_boxes = self._clear_scene_preserve_loads()
         self.Beamlength.clear()
         self.beamlengthunits.setCurrentIndex(0)
 
@@ -1365,9 +1373,17 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
 
         # Add the rectangle to the scene
         self.loads_scene.addItem(rect_item)
-
+        
         self.text_item = QGraphicsTextItem()
         self.loads_scene.addItem(self.text_item)
+
+        # Recreate any load/moment graphics that were present before switching scenes
+        try:
+            self.ensure_load_graphics()
+            for gb in group_boxes:
+                self.update_load(gb)
+        except Exception:
+            pass
 
         #Show the elements of the beam setup
         if self.Beamsetuplength.isHidden():
@@ -1424,8 +1440,8 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
     def rightsidebeam(self):
         self.current_beamscene = 3
         
-        # Clear the scene before drawing
-        self.loads_scene.clear()
+        # Clear the scene before drawing but preserve loads so they can be recreated
+        group_boxes = self._clear_scene_preserve_loads()
         self.Beamlength.clear()
         self.beamlengthunits.setCurrentIndex(0)
 
@@ -1454,6 +1470,14 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
 
         self.text_item = QGraphicsTextItem()
         self.loads_scene.addItem(self.text_item)
+
+        # Recreate any load/moment graphics that were present before switching scenes
+        try:
+            self.ensure_load_graphics()
+            for gb in group_boxes:
+                self.update_load(gb)
+        except Exception:
+            pass
 
         #Show the elements of the beam setup
         if self.Beamsetuplength.isHidden():
@@ -1734,6 +1758,40 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
                 self._create_linear_load(group_box)
             elif "concentrated moment" in title or "moment" in title:
                 self._create_moment_load(group_box)
+
+    def _clear_scene_preserve_loads(self):
+        """Clear the loads scene but preserve the information needed to recreate
+        the load graphics so they persist when switching beam scene types.
+
+        Returns list of groupboxes that had load entries (so callers can refresh them).
+        """
+        group_boxes = []
+        for i in range(self.scroll_layout.count()):
+            item = self.scroll_layout.itemAt(i)
+            if item is None:
+                continue
+            w = item.widget()
+            if isinstance(w, QGroupBox):
+                group_boxes.append(w)
+
+        # clear the scene (removes previous QGraphicsItems)
+        self.loads_scene.clear()
+
+        # reset load_items so ensure_load_graphics will recreate graphics
+        self.load_items = {}
+
+        # Reset any support-graphics visibility flags so supports aren't re-added
+        for attr in ("pinnedtriangle_Visible", "pinnedsupportline_Visible",
+                     "sp1_Visible", "sp2_Visible", "sp3_Visible", "sp4_Visible", "sp5_Visible",
+                     "rollersupport_Visible", "rollerline_Visible",
+                     "rsp1_Visible", "rsp2_Visible", "rsp3_Visible", "rsp4_Visible", "rsp5_Visible"):
+            if hasattr(self, attr):
+                try:
+                    setattr(self, attr, False)
+                except Exception:
+                    pass
+
+        return group_boxes
 
     # ---------- create + update for point loads ----------
     def _create_point_load(self, group_box):
@@ -2117,16 +2175,28 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         if beam_len <= 0:
             return np.array([0.0]), np.array([0.0]), np.array([0.0])
 
-        # Get support locations
+        # Get support locations (from UI spins) then override for cantilevers
         left_support = float(self.leftsupportlocation.value())
         right_support = float(self.rightsupportlocation.value())
-        
-        # Ensure left < right
+
+        # Ensure left < right for two-support case
         if left_support > right_support:
             left_support, right_support = right_support, left_support
+
+        # Override support positions for cantilever scenes so reactions/masks don't
+        # treat previous variable-support positions as still present.
+        if getattr(self, "current_beamscene", 1) == 2:
+            # left cantilever: fixed at left end
+            left_support = 0.0
+            right_support = beam_len
+        elif getattr(self, "current_beamscene", 1) == 3:
+            # right cantilever: fixed at right end
+            left_support = 0.0
+            right_support = beam_len
         
         support_span = right_support - left_support
-        if support_span <= 0:
+        # For two-support beams we need a positive span; for cantilevers span may be zero
+        if support_span <= 0 and getattr(self, "current_beamscene", 1) == 1:
             return np.array([0.0]), np.array([0.0]), np.array([0.0])
 
         x = np.linspace(0.0, beam_len, num_points)
@@ -2250,23 +2320,45 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         # ==========================================
         # Convention: total_force is positive downward, total_moment_about_left is positive CW
         # Reactions are upward (positive), opposing the loads
-        # 
-        # Sum of moments about left support = 0:
-        # R_right * support_span = total_moment_about_left
-        # R_right = total_moment_about_left / support_span
-        R_right = total_moment_about_left / support_span
-        
-        # Sum of vertical forces = 0:
-        # R_left + R_right = total_force (reactions balance net downward force)
-        R_left = total_force - R_right
-        
+
+        # Default (two simple supports): determine reactions by statics
+        R_left = 0.0
+        R_right = 0.0
+        M_left = 0.0
+        M_right = 0.0
+
+        if getattr(self, "current_beamscene", 1) == 1:
+            # Two supports (existing behavior)
+            R_right = total_moment_about_left / support_span
+            R_left = total_force - R_right
+
+        elif getattr(self, "current_beamscene", 1) == 2:
+            # Left cantilever (fixed at left, free at right)
+            # Vertical reaction at left balances all vertical loads
+            R_left = total_force
+            R_right = 0.0
+            # Fixed end moment (reaction moment at left) must balance moments from loads
+            # Sum moments about left: M_left + total_moment_about_left = 0 => M_left = -total_moment_about_left
+            M_left = - total_moment_about_left
+
+        elif getattr(self, "current_beamscene", 1) == 3:
+            # Right cantilever (fixed at right, free at left)
+            # Vertical reaction at right balances all vertical loads
+            R_right = total_force
+            R_left = 0.0
+            # Compute total moment about right from previously computed total_moment_about_left
+            # moment_about_right = total_moment_about_left - total_force * support_span
+            total_moment_about_right = total_moment_about_left - total_force * support_span
+            # Fixed end moment at right balances loads: M_right = - total_moment_about_right
+            M_right = - total_moment_about_right
+
         # Debug output
         print(f"DEBUG: total_force = {total_force}")
         print(f"DEBUG: total_moment_about_left = {total_moment_about_left}")
         print(f"DEBUG: support_span = {support_span}")
-        print(f"DEBUG: R_left = {R_left}, R_right = {R_right}")
+        print(f"DEBUG: R_left = {R_left}, R_right = {R_right}, M_left = {M_left}, M_right = {M_right}")
         print(f"DEBUG: parsed_loads = {parsed_loads}")
-        
+
         # ==========================================
         # STEP 3: Compute shear and moment diagrams
         # ==========================================
@@ -2351,6 +2443,18 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
                 loc = load["location"]
                 mask = x >= loc
                 moment[mask] += M
+
+        # Add fixed-end reaction moments for cantilevers (if any)
+        try:
+            if abs(M_left) > 0.0:
+                mask_ml = x >= left_support
+                moment[mask_ml] += M_left
+            if abs(M_right) > 0.0:
+                mask_mr = x >= right_support
+                moment[mask_mr] += M_right
+        except NameError:
+            # In case M_left/M_right not defined for some reason, skip
+            pass
 
         # Debug: check shear values at key points
         idx_16 = np.argmin(np.abs(x - 16))
@@ -2439,15 +2543,16 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         ax.axhline(0, color="gray", linewidth=2.5)  # thickened axis line
         ax.axvline(0, color="gray", linewidth=2.5)  # thickened axis line
         
-        # Support location lines (only if supports exist)
+        # Support location visualizer: only show for variable-support scene
         try:
-            left_support = self.leftsupportlocation.value()
-            right_support = self.rightsupportlocation.value()
-            if left_support > 0:
-                ax.axvline(left_support, color="#DD7f21", linestyle="--", linewidth=1.5)
-            if right_support > 0:
-                ax.axvline(right_support, color="#DD7f21", linestyle="--", linewidth=1.5)
-        except:
+            if getattr(self, "current_beamscene", 1) == 1:
+                left_support = self.leftsupportlocation.value()
+                right_support = self.rightsupportlocation.value()
+                if left_support > 0:
+                    ax.axvline(left_support, color="#DD7f21", linestyle="--", linewidth=1.5)
+                if right_support > 0:
+                    ax.axvline(right_support, color="#DD7f21", linestyle="--", linewidth=1.5)
+        except Exception:
             pass
             
         ax.set_title("Shear Force Diagram", color="white")
@@ -2508,15 +2613,16 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         ax.axhline(0, color="gray", linewidth=2.5)  # thickened axis line
         ax.axvline(0, color="gray", linewidth=2.5)  # thickened axis line
         
-        # Support location lines (only if supports exist)
+        # Support location visualizer: only show for variable-support scene
         try:
-            left_support = self.leftsupportlocation.value()
-            right_support = self.rightsupportlocation.value()
-            if left_support > 0:
-                ax.axvline(left_support, color="#DD7f21", linestyle="--", linewidth=1.5)
-            if right_support > 0:
-                ax.axvline(right_support, color="#DD7f21", linestyle="--", linewidth=1.5)
-        except:
+            if getattr(self, "current_beamscene", 1) == 1:
+                left_support = self.leftsupportlocation.value()
+                right_support = self.rightsupportlocation.value()
+                if left_support > 0:
+                    ax.axvline(left_support, color="#DD7f21", linestyle="--", linewidth=1.5)
+                if right_support > 0:
+                    ax.axvline(right_support, color="#DD7f21", linestyle="--", linewidth=1.5)
+        except Exception:
             pass
             
         ax.set_title("Moment Diagram", color="white")
