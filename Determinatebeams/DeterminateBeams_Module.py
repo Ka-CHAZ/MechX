@@ -563,7 +563,7 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         self.verticalLayout_9.addLayout(self.horizontalLayout_9)
         
         self.uniformloadunits.addItems(["", "mm", "m", "in.", "ft"])
-        self.uniformloadmagnitudunits.addItems(["", "N", "kN", "lb", "kip"])
+        self.uniformloadmagnitudunits.addItems(["", "N/m", "N/mm", "kN/m", "kN/mm", "lb/ft", "lb/in.", "kip/ft", "kip/in."])
 
         self.scroll_layout.addWidget(elementbox)
         elementbox.toggled.connect(lambda checked: self.remove_groupbox(elementbox, checked))
@@ -691,7 +691,7 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         self.verticalLayout_9.addLayout(self.horizontalLayout_9)
         
         self.uniformloadunits.addItems(["", "mm", "m", "in.", "ft"])
-        self.uniformloadmagnitudunits.addItems(["", "N", "kN", "lb", "kip"])
+        self.uniformloadmagnitudunits.addItems(["", "N/m", "N/mm", "kN/m", "kN/mm", "lb/ft", "lb/in.", "kip/ft", "kip/in."])
         
         self.scroll_layout.addWidget(elementbox)
         elementbox.toggled.connect(lambda checked: self.remove_groupbox(elementbox, checked))
@@ -845,7 +845,7 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         self.verticalLayout_10.addLayout(self.horizontalLayout_10)
         
         self.lineardistribloadunits.addItems(["", "mm", "m", "in.", "ft"])
-        self.lineardistribloadmagnitudunits.addItems(["", "N", "kN", "lb", "kip"])
+        self.lineardistribloadmagnitudunits.addItems(["", "N/m", "N/mm", "kN/m", "kN/mm", "lb/ft", "lb/in.", "kip/ft", "kip/in."])
         
         self.scroll_layout.addWidget(elementbox)
         elementbox.toggled.connect(lambda checked: self.remove_groupbox(elementbox, checked))
@@ -999,7 +999,7 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         self.verticalLayout_10.addLayout(self.horizontalLayout_10)
         
         self.lineardistribloadunits.addItems(["", "mm", "m", "in.", "ft"])
-        self.lineardistribloadmagnitudunits.addItems(["", "N", "kN", "lb", "kip"])
+        self.lineardistribloadmagnitudunits.addItems(["", "N/m", "N/mm", "kN/m", "kN/mm", "lb/ft", "lb/in.", "kip/ft", "kip/in."])
         
         self.scroll_layout.addWidget(elementbox)
         elementbox.toggled.connect(lambda checked: self.remove_groupbox(elementbox, checked))
@@ -1105,7 +1105,7 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         self.verticalLayout_7.addLayout(self.horizontalLayout_13)
         
         self.momentlocationunits.addItems(["", "mm", "m", "in.", "ft"])
-        self.momentmagnitudeunits.addItems(["", "N-m", "N-mm", "kN-m", "kN-mm", "lb-in.", "lb-ft", "kip-in.", "kip-ft"])
+        self.momentmagnitudeunits.addItems(["", "N-m", "N-mm", "kN-m", "kN-mm", "lb-ft", "lb-in.", "kip-ft", "kip-in."])
         
         self.scroll_layout.addWidget(elementbox)
         elementbox.toggled.connect(lambda checked: self.remove_groupbox(elementbox, checked))
@@ -1209,7 +1209,7 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         self.verticalLayout_7.addLayout(self.horizontalLayout_13)
         
         self.momentlocationunits.addItems(["", "mm", "m", "in.", "ft"])
-        self.momentmagnitudeunits.addItems(["", "N-m", "N-mm", "kN-m", "kN-mm", "lb-in.", "lb-ft", "kip-in.", "kip-ft"])
+        self.momentmagnitudeunits.addItems(["", "N-m", "N-mm", "kN-m", "kN-mm", "lb-ft", "lb-in.", "kip-ft", "kip-in."])
         
         self.scroll_layout.addWidget(elementbox)
         elementbox.toggled.connect(lambda checked: self.remove_groupbox(elementbox, checked))

@@ -6,7 +6,7 @@ from PySide6.QtGui import QIcon, QAction
 
 from MechEnginehome.MechanicsEngine_Mainscreen_ui import Ui_MEMainWindow  # Import main UI
 from Unitconverter.UnitConverter_Module import Unit_Converter  # Import Unit Converter classes
-from Determinatebeams.Deterbeams_modtest import Determinate_beams  # Import Determinate Beams classes
+from Determinatebeams.DeterminateBeams_Module import Determinate_beams  # Import Determinate Beams classes
 from MechEnginehome.credits_ui import Ui_credits  # Import credits UI
 
 class MdiApp(QMainWindow):
