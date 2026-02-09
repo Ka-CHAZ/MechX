@@ -85,6 +85,7 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         self.loads_scene.setSceneRect(0, 12.5, 590, 25)
         
         self.load_items = {}  # keeps track of arrows drawn for each load
+        self.reaction_items = {}  # keeps track of arrows drawn for reactions
 
         self.shear_scene = QGraphicsScene(self)
         self.Sheargraph.setScene(self.shear_scene)
@@ -1907,6 +1908,9 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
 
         # reset load_items so ensure_load_graphics will recreate graphics
         self.load_items = {}
+        
+        # clear reaction items as well
+        self._clear_reactions()
 
         # Reset any support-graphics visibility flags so supports aren't re-added
         for attr in ("pinnedtriangle_Visible", "pinnedsupportline_Visible",
@@ -2256,6 +2260,146 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         head2.setPos(x, y_offset)
         
         self._update_shear_moment_graphs()
+        
+    # ---------- draw reactions ----------
+    def _draw_reactions(self):
+        """Draw reaction arrows on the loads diagram in red.
+        Reactions are drawn as upward arrows for forces and curved arrows for moments."""
+        # Clear existing reaction graphics
+        self._clear_reactions()
+
+        # Get reactions from last calculation
+        reactions = getattr(self, "_last_reactions", None)
+        if not reactions:
+            return
+
+        R_left = reactions.get("R_left", 0.0)
+        R_right = reactions.get("R_right", 0.0)
+        M_left = reactions.get("M_left", 0.0)
+        M_right = reactions.get("M_right", 0.0)
+
+        # Get support locations
+        left_support = float(self.leftsupportlocation.value())
+        right_support = float(self.rightsupportlocation.value())
+
+        # Pixel scale
+        beamlength = max(1.0, self.Beamlength.value())
+        scale = 590.0 / beamlength
+
+        # Determine if any variable (linear) distributed loads are present
+        parsed = getattr(self, "_last_parsed_loads", [])
+        place_below_for_linear = any(ld.get("type") == "linear" for ld in parsed)
+
+        # For cantilevers, place reactions centered in Y (vertical center of beam)
+        center_y_pixel = 20  # approximate vertical center of beam rectangle
+        is_cantilever = getattr(self, "current_beamscene", 1) in (2, 3)
+
+        # Red color for reactions (thicker stroke)
+        reaction_pen = QPen(QColor("red"), 3)
+
+        # Draw left support reaction force (if non-zero)
+        if abs(R_left) > 1e-10:
+            x_pixel = left_support * scale
+            # Positive reaction is upward
+            direction = 1 if R_left > 0 else -1
+            y_center = center_y_pixel if is_cantilever else None
+            trunk, head1, head2 = self._create_reaction_arrow_graphics(x_pixel, direction, reaction_pen, place_below=place_below_for_linear, y_center=y_center)
+            self.reaction_items["R_left"] = {"items": [trunk, head1, head2], "type": "force"}
+
+        # Draw right support reaction force (if non-zero)
+        if abs(R_right) > 1e-10:
+            x_pixel = right_support * scale
+            direction = 1 if R_right > 0 else -1
+            y_center = center_y_pixel if is_cantilever else None
+            trunk, head1, head2 = self._create_reaction_arrow_graphics(x_pixel, direction, reaction_pen, place_below=place_below_for_linear, y_center=y_center)
+            self.reaction_items["R_right"] = {"items": [trunk, head1, head2], "type": "force"}
+
+        # Draw left support reaction moment (if non-zero)
+        if abs(M_left) > 1e-10:
+            x_pixel = left_support * scale
+            direction = 1 if M_left > 0 else -1  # positive = CCW
+            arc, head1, head2 = self._create_reaction_moment_graphics(x_pixel, direction, reaction_pen)
+            self.reaction_items["M_left"] = {"items": [arc, head1, head2], "type": "moment"}
+
+        # Draw right support reaction moment (if non-zero)
+        if abs(M_right) > 1e-10:
+            x_pixel = right_support * scale
+            direction = 1 if M_right > 0 else -1  # positive = CCW
+            arc, head1, head2 = self._create_reaction_moment_graphics(x_pixel, direction, reaction_pen)
+            self.reaction_items["M_right"] = {"items": [arc, head1, head2], "type": "moment"}
+    
+    def _clear_reactions(self):
+        """Remove all reaction graphics from the scene."""
+        for key, entry in self.reaction_items.items():
+            for item in entry.get("items", []):
+                if item.scene():
+                    self.loads_scene.removeItem(item)
+        self.reaction_items = {}
+    
+    def _create_reaction_arrow_graphics(self, x_pixel, direction, pen, place_below=False, y_center=None):
+        """Create a vertical arrow for a force reaction.
+        direction: 1 for upward, -1 for downward"""
+        # Beam baseline is at y=0 in the scene; placing below means offset positive
+        if direction > 0:
+            # upward reaction: head should be toward the beam
+            L = -40
+        else:
+            # downward reaction: head away from beam
+            L = 40
+
+        # If a vertical center is requested (cantilever case), position so the
+        # arrow shaft is centered vertically at y_center. Otherwise fall back
+        # to previous place_below behavior.
+        if y_center is not None:
+            y_base = y_center - (L / 2.0)
+        else:
+            if direction > 0:
+                y_base = 40 if place_below else 0
+            else:
+                y_base = 0 if not place_below else -40
+
+        trunk = self.loads_scene.addLine(0, 0, 0, L, pen)
+        trunk.setPos(x_pixel, y_base)
+
+        head_y = L
+        if direction > 0:
+            head1 = self.loads_scene.addLine(0, head_y, -6, head_y + 10, pen)
+            head2 = self.loads_scene.addLine(0, head_y, 6, head_y + 10, pen)
+        else:
+            head1 = self.loads_scene.addLine(0, head_y, -6, head_y - 10, pen)
+            head2 = self.loads_scene.addLine(0, head_y, 6, head_y - 10, pen)
+
+        head1.setPos(x_pixel, y_base)
+        head2.setPos(x_pixel, y_base)
+
+        return trunk, head1, head2
+    
+    def _create_reaction_moment_graphics(self, x_pixel, direction, pen):
+        """Create a moment symbol using the existing moment symbol helper so sizing
+        and arrowhead placement match the moment input graphic.
+        direction: 1 for CCW (positive), -1 for CW (negative)"""
+
+        # Map our direction (positive == CCW) to the cw flag used by _create_moment_symbol
+        cw_flag = False if direction > 0 else True
+
+        # Use slightly smaller radius for reaction moments
+        radius = 36
+
+        # Create symbol using existing helper (returns arc, head1, head2 but does not add to scene)
+        arc, head1, head2 = self._create_moment_symbol(radius=radius, cw=cw_flag, color=QColor("red"))
+
+        # Add to the loads scene and position
+        self.loads_scene.addItem(arc)
+        self.loads_scene.addItem(head1)
+        self.loads_scene.addItem(head2)
+
+        # vertical offset so symbol sits near beam
+        y_offset = 10
+        arc.setPos(x_pixel, y_offset)
+        head1.setPos(x_pixel, y_offset)
+        head2.setPos(x_pixel, y_offset)
+
+        return arc, head1, head2
         
     # ---------- dispatcher to ensure items exist and update a single groupbox ----------
     def update_load(self, group_box):
@@ -2652,6 +2796,12 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
             render_to_view(x, moment, self.momentgraph, "Moment")
         except Exception as e:
             print("[Shear/Moment] plot error:", e)
+
+        # Draw reactions on the loads diagram
+        try:
+            self._draw_reactions()
+        except Exception as e:
+            print("[Reactions] draw error:", e)
 
         # update lists in the UI (loads summary and reactions)
         try:
