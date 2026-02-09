@@ -98,6 +98,37 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
 
         self.scroll_area.setWidget(self.scroll_widget)
         
+        # Prepare load list UI inside the `loadsscroll` area
+        try:
+            if isinstance(self.loadsscroll, QScrollArea):
+                self.loads_scroll_widget = QWidget()
+                self.loads_scroll_layout = QVBoxLayout(self.loads_scroll_widget)
+                self.loads_scroll_layout.setContentsMargins(4,4,4,4)
+                self.loads_scroll_layout.setSpacing(4)
+                self.loadsscroll.setWidget(self.loads_scroll_widget)
+            else:
+                # fallback: create a container attribute so other code can still use it
+                self.loads_scroll_widget = QWidget()
+                self.loads_scroll_layout = QVBoxLayout(self.loads_scroll_widget)
+        except Exception:
+            self.loads_scroll_widget = QWidget()
+            self.loads_scroll_layout = QVBoxLayout(self.loads_scroll_widget)
+
+        # Prepare reactions list UI inside the `reactionsscroll` area
+        try:
+            if isinstance(self.reactionsscroll, QScrollArea):
+                self.reacts_scroll_widget = QWidget()
+                self.reacts_scroll_layout = QVBoxLayout(self.reacts_scroll_widget)
+                self.reacts_scroll_layout.setContentsMargins(4,4,4,4)
+                self.reacts_scroll_layout.setSpacing(4)
+                self.reactionsscroll.setWidget(self.reacts_scroll_widget)
+            else:
+                self.reacts_scroll_widget = QWidget()
+                self.reacts_scroll_layout = QVBoxLayout(self.reacts_scroll_widget)
+        except Exception:
+            self.reacts_scroll_widget = QWidget()
+            self.reacts_scroll_layout = QVBoxLayout(self.reacts_scroll_widget)
+        
         self.cupl_group_box_counter = 0
         self.cdl_group_box_counter = 0
         self.uupl_group_box_counter = 0
@@ -231,7 +262,7 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         font.setFamilies([u"Consolas"])
         font.setPointSize(12)
         
-        elementbox = QGroupBox(f"Concentrated Load p{self.cdl_group_box_counter} [UP]")
+        elementbox = QGroupBox(f"Concentrated Load P{self.cupl_group_box_counter} [UP]")
         elementbox.setObjectName(u"ConcentratedloadsGBox")
         elementbox.setGeometry(QRect(10, 10, 251, 171))
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
@@ -1759,6 +1790,103 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
             elif "concentrated moment" in title or "moment" in title:
                 self._create_moment_load(group_box)
 
+    # ---------- UI population for the load and reaction summary scroll areas ----------
+    def _populate_loads_scroll(self):
+        # Clear existing
+        try:
+            while self.loads_scroll_layout.count():
+                item = self.loads_scroll_layout.takeAt(0)
+                w = item.widget()
+                if w:
+                    w.deleteLater()
+        except Exception:
+            pass
+
+        # Add one label per groupbox load
+        for i in range(self.scroll_layout.count()):
+            item = self.scroll_layout.itemAt(i)
+            if item is None:
+                continue
+            gb = item.widget()
+            if not isinstance(gb, QGroupBox):
+                continue
+
+            title = gb.title() or ""
+            # extract short token like 'P1', 'W2', 'Q3', 'M1' from title
+            import re
+            short = None
+            for m in re.finditer(r'([A-Za-z])\s*(\d+)', title):
+                short = m.group(1).upper() + m.group(2)
+            if short is None:
+                # fallback: try multi-letter token (e.g., 'UDL1')
+                m2 = re.search(r'([A-Za-z]+)\s*(\d+)', title)
+                if m2:
+                    short = m2.group(1).upper() + m2.group(2)
+            if short is None:
+                short = title
+            # Try to find key values
+            loc_sb = self._find_spin(gb, "concenloadlocation") or self._find_spin(gb, "momentlocation") or self._find_spin(gb, "uniformloadstart")
+            mag_sb = self._find_spin(gb, "concenloadmagnitude") or self._find_spin(gb, "momentmagnitude") or self._find_spin(gb, "uniformloadmagnitude") or self._find_spin(gb, "lineardistribloadmagnitude")
+            loc_cb = self._find_combo(gb, "concenloadlocationunits") or self._find_combo(gb, "momentlocationunits") or self._find_combo(gb, "uniformloadunits")
+            mag_cb = self._find_combo(gb, "concenloadmagnitudeunits") or self._find_combo(gb, "momentmagnitudeunits") or self._find_combo(gb, "uniformloadmagnitudunits")
+
+            loc_str = ""
+            mag_str = ""
+            try:
+                if loc_sb:
+                    loc = loc_sb.value()
+                    loc_unit = loc_cb.currentText() if loc_cb else self.beamlengthunits.currentText()
+                    loc_str = f"{loc} {loc_unit}"
+                if mag_sb:
+                    mag = mag_sb.value()
+                    mag_unit = mag_cb.currentText() if mag_cb else ""
+                    mag_str = f"{mag} {mag_unit}".strip()
+            except Exception:
+                pass
+
+            lbl = QLabel(f"{short}: {loc_str} {mag_str}")
+            lbl.setWordWrap(True)
+            self.loads_scroll_layout.addWidget(lbl)
+
+        self.loads_scroll_layout.addStretch(1)
+
+    def _populate_reactions_scroll(self):
+        # Clear existing
+        try:
+            while self.reacts_scroll_layout.count():
+                item = self.reacts_scroll_layout.takeAt(0)
+                w = item.widget()
+                if w:
+                    w.deleteLater()
+        except Exception:
+            pass
+
+        reactions = getattr(self, "_last_reactions", None)
+        if not reactions:
+            # show placeholder
+            lbl = QLabel("No reactions computed yet")
+            self.reacts_scroll_layout.addWidget(lbl)
+            self.reacts_scroll_layout.addStretch(1)
+            return
+
+        try:
+            Rl = reactions.get("R_left", 0.0)
+            Rr = reactions.get("R_right", 0.0)
+            Ml = reactions.get("M_left", 0.0)
+            Mr = reactions.get("M_right", 0.0)
+        except Exception:
+            Rl = Rr = Ml = Mr = 0.0
+
+        self.reacts_scroll_layout.addWidget(QLabel(f"Lft Rxn (V): {Rl:.4f} {self.visualizerloadunits.currentText() if hasattr(self, 'visualizerloadunits') else ''}"))
+        self.reacts_scroll_layout.addWidget(QLabel(f"Rt Rxn (V): {Rr:.4f} {self.visualizerloadunits.currentText() if hasattr(self, 'visualizerloadunits') else ''}"))
+        # include fixed-end moments if present
+        if abs(Ml) > 1e-12:
+            self.reacts_scroll_layout.addWidget(QLabel(f"Lt Mmt (M): {Ml:.4f} {self.visualizermomentunits.currentText() if hasattr(self, 'visualizermomentunits') else ''}"))
+        if abs(Mr) > 1e-12:
+            self.reacts_scroll_layout.addWidget(QLabel(f"Rt Mmt (M): {Mr:.4f} {self.visualizermomentunits.currentText() if hasattr(self, 'visualizermomentunits') else ''}"))
+
+        self.reacts_scroll_layout.addStretch(1)
+
     def _clear_scene_preserve_loads(self):
         """Clear the loads scene but preserve the information needed to recreate
         the load graphics so they persist when switching beam scene types.
@@ -2085,12 +2213,11 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         self._update_moment_load(group_box)
         
     def _update_moment_load(self, group_box):
-        """
-        Update the moment graphic position for group_box.
-        Fallbacks:
-        - if groupbox unit combobox isn't found, treat input as beam units
-        - if something missing, exit gracefully
-        """
+        #Update the moment graphic position for group_box.
+        # Fallbacks:
+        # - if groupbox unit combobox isn't found, treat input as beam units
+        # - if something missing, exit gracefully
+        
         entry = self.load_items.get(group_box)
         if not entry or entry.get("type") != "moment":
             return
@@ -2456,6 +2583,12 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
             # In case M_left/M_right not defined for some reason, skip
             pass
 
+        # Save parsed loads for plotting markers
+        try:
+            self._last_parsed_loads = parsed_loads
+        except Exception:
+            self._last_parsed_loads = []
+
         # Debug: check shear values at key points
         idx_16 = np.argmin(np.abs(x - 16))
         idx_17 = np.argmin(np.abs(x - 17))
@@ -2466,6 +2599,12 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         print(f"DEBUG: moment at x=16: {moment[idx_16]}")
         print(f"DEBUG: moment at x=17: {moment[idx_17]}")
         print(f"DEBUG: moment at x=19: {moment[idx_19]}")
+
+        # store last reactions for UI consumption
+        try:
+            self._last_reactions = {"R_left": R_left, "R_right": R_right, "M_left": M_left, "M_right": M_right}
+        except Exception:
+            self._last_reactions = {"R_left": 0.0, "R_right": 0.0, "M_left": 0.0, "M_right": 0.0}
 
         return x, shear, moment
 
@@ -2514,6 +2653,16 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         except Exception as e:
             print("[Shear/Moment] plot error:", e)
 
+        # update lists in the UI (loads summary and reactions)
+        try:
+            self._populate_loads_scroll()
+        except Exception:
+            pass
+        try:
+            self._populate_reactions_scroll()
+        except Exception:
+            pass
+
     def sheargraph(self):
         import numpy as np
         from matplotlib.backends.backend_agg import FigureCanvasAgg
@@ -2554,11 +2703,82 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
                     ax.axvline(right_support, color="#DD7f21", linestyle="--", linewidth=1.5)
         except Exception:
             pass
+        # Draw vertical markers for loads and moments (use last parsed loads)
+        try:
+            for ld in getattr(self, "_last_parsed_loads", []):
+                t = ld.get("type")
+                if t == "point":
+                    ax.axvline(ld.get("location"), color="#A0A0A0", linestyle=(0, (3, 3)), linewidth=1.0, alpha=0.9, zorder=0)
+                elif t == "moment":
+                    ax.axvline(ld.get("location"), color="#808080", linestyle="-", linewidth=1.2, alpha=0.9, zorder=0)
+                elif t == "uniform":
+                    a = ld.get("start")
+                    b = ld.get("end")
+                    if a is not None:
+                        ax.axvline(a, color="#A0A0A0", linestyle=(0, (3, 3)), linewidth=0.9, alpha=0.8, zorder=0)
+                    if b is not None:
+                        ax.axvline(b, color="#A0A0A0", linestyle=(0, (3, 3)), linewidth=0.9, alpha=0.8, zorder=0)
+                elif t == "linear":
+                    a = ld.get("start")
+                    b = ld.get("end")
+                    if a is not None:
+                        ax.axvline(a, color="#A0A0A0", linestyle=(0, (3, 3)), linewidth=0.9, alpha=0.8, zorder=0)
+                    if b is not None:
+                        ax.axvline(b, color="#A0A0A0", linestyle=(0, (3, 3)), linewidth=0.9, alpha=0.8, zorder=0)
+        except Exception:
+            pass
             
         ax.set_title("Shear Force Diagram", color="white")
         ax.set_xlabel(f"Beam Length ({self.beamlengthunits.currentText()})", color="white")
         ax.set_ylabel("Shear (V)", color="white")
         ax.set_xlim(0, beam_length)
+        # Configure x-axis ticks to show support and load locations
+        try:
+            # gather support locations
+            left_support = float(self.leftsupportlocation.value())
+            right_support = float(self.rightsupportlocation.value())
+        except Exception:
+            left_support = None
+            right_support = None
+
+        positions = set()
+        positions.add(0.0)
+        positions.add(float(beam_length))
+        if left_support is not None:
+            positions.add(left_support)
+        if right_support is not None:
+            positions.add(right_support)
+
+        try:
+            for ld in getattr(self, "_last_parsed_loads", []):
+                t = ld.get("type")
+                if t == "point" or t == "moment":
+                    loc = ld.get("location")
+                    if loc is not None:
+                        positions.add(float(loc))
+                elif t == "uniform" or t == "linear":
+                    a = ld.get("start")
+                    b = ld.get("end")
+                    if a is not None:
+                        positions.add(float(a))
+                    if b is not None:
+                        positions.add(float(b))
+        except Exception:
+            pass
+
+        # keep only those within beam range
+        positions = sorted([p for p in positions if p is not None and p >= 0.0 and p <= float(beam_length)])
+
+        def _fmt_val(v):
+            if abs(v - round(v)) < 1e-6:
+                return str(int(round(v)))
+            return ("{:.3f}".format(v)).rstrip('0').rstrip('.')
+
+        try:
+            ax.set_xticks(positions)
+            ax.set_xticklabels([_fmt_val(p) for p in positions], color="white")
+        except Exception:
+            pass
 
         ax.tick_params(colors="white")
         ax.grid(True, color="gray", alpha=0.5)
@@ -2624,11 +2844,82 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
                     ax.axvline(right_support, color="#DD7f21", linestyle="--", linewidth=1.5)
         except Exception:
             pass
+        # Draw vertical markers for loads and moments (use last parsed loads)
+        try:
+            for ld in getattr(self, "_last_parsed_loads", []):
+                t = ld.get("type")
+                if t == "point":
+                    ax.axvline(ld.get("location"), color="#A0A0A0", linestyle=(0, (3, 3)), linewidth=1.0, alpha=0.9, zorder=0)
+                elif t == "moment":
+                    ax.axvline(ld.get("location"), color="#808080", linestyle="-", linewidth=1.2, alpha=0.9, zorder=0)
+                elif t == "uniform":
+                    a = ld.get("start")
+                    b = ld.get("end")
+                    if a is not None:
+                        ax.axvline(a, color="#A0A0A0", linestyle=(0, (3, 3)), linewidth=0.9, alpha=0.8, zorder=0)
+                    if b is not None:
+                        ax.axvline(b, color="#A0A0A0", linestyle=(0, (3, 3)), linewidth=0.9, alpha=0.8, zorder=0)
+                elif t == "linear":
+                    a = ld.get("start")
+                    b = ld.get("end")
+                    if a is not None:
+                        ax.axvline(a, color="#A0A0A0", linestyle=(0, (3, 3)), linewidth=0.9, alpha=0.8, zorder=0)
+                    if b is not None:
+                        ax.axvline(b, color="#A0A0A0", linestyle=(0, (3, 3)), linewidth=0.9, alpha=0.8, zorder=0)
+        except Exception:
+            pass
             
         ax.set_title("Moment Diagram", color="white")
         ax.set_xlabel(f"Beam Length ({self.beamlengthunits.currentText()})", color="white")
         ax.set_ylabel("Moment (M)", color="white")
         ax.set_xlim(0, beam_length)
+        # Configure x-axis ticks to show support and load locations
+        try:
+            # gather support locations
+            left_support = float(self.leftsupportlocation.value())
+            right_support = float(self.rightsupportlocation.value())
+        except Exception:
+            left_support = None
+            right_support = None
+
+        positions = set()
+        positions.add(0.0)
+        positions.add(float(beam_length))
+        if left_support is not None:
+            positions.add(left_support)
+        if right_support is not None:
+            positions.add(right_support)
+
+        try:
+            for ld in getattr(self, "_last_parsed_loads", []):
+                t = ld.get("type")
+                if t == "point" or t == "moment":
+                    loc = ld.get("location")
+                    if loc is not None:
+                        positions.add(float(loc))
+                elif t == "uniform" or t == "linear":
+                    a = ld.get("start")
+                    b = ld.get("end")
+                    if a is not None:
+                        positions.add(float(a))
+                    if b is not None:
+                        positions.add(float(b))
+        except Exception:
+            pass
+
+        # keep only those within beam range
+        positions = sorted([p for p in positions if p is not None and p >= 0.0 and p <= float(beam_length)])
+
+        def _fmt_val(v):
+            if abs(v - round(v)) < 1e-6:
+                return str(int(round(v)))
+            return ("{:.3f}".format(v)).rstrip('0').rstrip('.')
+
+        try:
+            ax.set_xticks(positions)
+            ax.set_xticklabels([_fmt_val(p) for p in positions], color="white")
+        except Exception:
+            pass
 
         ax.tick_params(colors="white")
         ax.grid(True, color="gray", alpha=0.5)
