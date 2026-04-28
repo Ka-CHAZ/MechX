@@ -17,7 +17,7 @@ class MdiApp(QMainWindow):
         self.ui = Ui_MEMainWindow()
         self.ui.setupUi(self)
         
-        self.setWindowTitle('MechX pre-alpha v 0.2.4')
+        self.setWindowTitle('MechX pre-alpha v 0.2.2')
         
         self.setWindowIcon(QtGui.QIcon('gearNB.ico'))
 

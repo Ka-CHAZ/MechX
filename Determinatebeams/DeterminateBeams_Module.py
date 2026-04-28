@@ -141,7 +141,7 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         
         pen = QPen()
         pen.setWidth(2)
-        pen.setColor(QColor(180, 180, 180))
+        pen.setColor("#A3A3A3")
         
         pinnedtriangle = QPolygonF([
                 QPointF(0, 40),
@@ -198,7 +198,7 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         self.rsp5.setPen(pen)
         self.rsp5_Visible = False
         
-    def _create_moment_symbol(self, radius=75, cw=True, color=QColor("red")):
+    def _create_moment_symbol(self, radius=75, cw=True, color=("#FF6347")):
         from PySide6.QtCore import QRectF, Qt
         from PySide6.QtGui import QPainterPath, QPen, QColor
         from PySide6.QtWidgets import QGraphicsPathItem, QGraphicsLineItem
@@ -216,7 +216,16 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         path.arcTo(rect, start_deg, sweep_deg)
 
         arc = QGraphicsPathItem(path)
-        arc.setPen(QPen(color, 2))
+        # ensure we have a QColor instance
+        try:
+            from PySide6.QtGui import QColor as _QColor
+        except Exception:
+            _QColor = QColor
+        color_q = color if isinstance(color, _QColor) else _QColor(color)
+        pen = QPen()
+        pen.setColor(color_q)
+        pen.setWidth(2)
+        arc.setPen(pen)
 
         # Compute arrowhead tip location at end of arc
         end_deg = start_deg + sweep_deg
@@ -250,8 +259,9 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         head1 = QGraphicsLineItem(tip_x, tip_y, hx1, hy1)
         head2 = QGraphicsLineItem(tip_x, tip_y, hx2, hy2)
 
-        head1.setPen(QPen(color, 2))
-        head2.setPen(QPen(color, 2))
+        # reuse pen for arrowheads
+        head1.setPen(pen)
+        head2.setPen(pen)
 
         return arc, head1, head2
 
@@ -1299,15 +1309,15 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         # Create a rectangle item
         pen = QPen()
         pen.setWidth(1)
-        pen.setColor(QColor("black"))
+        pen.setColor(QColor("#646464"))
         
         pen2 = QPen()
         pen2.setWidth(3)
-        pen2.setColor(QColor("white"))
+        pen2.setColor(QColor("#FFFFFF"))
         
         rect_item = QGraphicsRectItem(0, 0, 590, 40)
         rect_item.setPen(pen)
-        rect_item.setBrush(QtGui.QBrush(QtGui.QColor(100, 100, 100)))  # Set color
+        rect_item.setBrush(QtGui.QBrush(QtGui.QColor("#646464")))  # Set color
 
         # Add the rectangle to the scene
         self.loads_scene.addItem(rect_item)
@@ -1386,15 +1396,15 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         # Create a rectangle item
         pen = QPen()
         pen.setWidth(2)
-        pen.setColor(QColor("black"))
+        pen.setColor(QColor("#646464"))
         
         pen2 = QPen()
         pen2.setWidth(3)
-        pen2.setColor(QColor("white"))
+        pen2.setColor(QColor("#FFFFFF"))
         
         rect_item = QGraphicsRectItem(0, 0, 590, 40)
         rect_item.setPen(pen)
-        rect_item.setBrush(QtGui.QBrush(QtGui.QColor(100, 100, 100)))  # Set color
+        rect_item.setBrush(QtGui.QBrush(QtGui.QColor("#646464")))  # Set color
 
         line = self.loads_scene.addLine(-3, -50, -3, 100, pen2)
         s1 = self.loads_scene.addLine(-4, -35, -15, -27, pen2)
@@ -1480,15 +1490,15 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         # Create a rectangle item
         pen = QPen()
         pen.setWidth(1)
-        pen.setColor(QColor("black"))
+        pen.setColor(QColor("#646464"))
         
         pen2 = QPen()
         pen2.setWidth(3)
-        pen2.setColor(QColor("white"))
+        pen2.setColor(QColor("#FFFFFF"))
         
         rect_item = QGraphicsRectItem(0, 0, 590, 40)
         rect_item.setPen(pen)
-        rect_item.setBrush(QtGui.QBrush(QtGui.QColor(100, 100, 100)))  # Set color
+        rect_item.setBrush(QtGui.QBrush(QtGui.QColor("#646464")))  # Set color
 
         line = self.loads_scene.addLine(593, -50, 593, 100, pen2)
         s1 = self.loads_scene.addLine(594, -35, 605, -27, pen2)
@@ -1571,7 +1581,7 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         
         pen = QPen()
         pen.setWidth(1)
-        pen.setColor(QColor(85, 85, 85))
+        pen.setColor(QColor("#646464"))
 
         if beamlength and units:
             try:
@@ -1585,12 +1595,12 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
                     length_text = self.text_item.setPlainText(f"{beamlength} {units}")
                     self.text_item.setFont(QFont("Arial", 12))
                     self.text_item.setPos(525, -90)  # Adjust position as needed
-                    self.text_item.setDefaultTextColor(QColor(255, 255, 255))  # Set text color to white
+                    self.text_item.setDefaultTextColor(QColor("#FFFFFF"))  # Set text color to white
                 elif current_beamscene == 3:
                     length_text = self.text_item.setPlainText(f"{beamlength} {units}")
                     self.text_item.setFont(QFont("Arial", 12))
                     self.text_item.setPos(-25, -90)  # Adjust position as needed
-                    self.text_item.setDefaultTextColor(QColor(255, 255, 255))  # Set text color to white
+                    self.text_item.setDefaultTextColor(QColor("#FFFFFF"))  # Set text color to white
                 
             except ValueError:
                 print("Invalid length value")
@@ -2295,7 +2305,7 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         is_cantilever = getattr(self, "current_beamscene", 1) in (2, 3)
 
         # Red color for reactions (thicker stroke)
-        reaction_pen = QPen(QColor("red"), 3)
+        reaction_pen = QPen(QColor("#FF0000"), 3)
 
         # Draw left support reaction force (if non-zero)
         if abs(R_left) > 1e-10:
@@ -2382,11 +2392,11 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         # Map our direction (positive == CCW) to the cw flag used by _create_moment_symbol
         cw_flag = False if direction > 0 else True
 
-        # Use slightly smaller radius for reaction moments
+        # Use slightly smaller radius for reaction moment
         radius = 36
 
         # Create symbol using existing helper (returns arc, head1, head2 but does not add to scene)
-        arc, head1, head2 = self._create_moment_symbol(radius=radius, cw=cw_flag, color=QColor("red"))
+        arc, head1, head2 = self._create_moment_symbol(radius=radius, cw=cw_flag, color=QColor("#FF0000"))
 
         # Add to the loads scene and position
         self.loads_scene.addItem(arc)
@@ -2474,15 +2484,35 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         
         # Helper: convert a location given in a group's unit to beam units
         def loc_in_beam_units(group_box, spin_name, unit_cb_candidate=None):
+            """
+            Robustly find the spinbox and its unit combobox inside a group_box and
+            convert the spin value to beam units. This tolerates slightly different
+            objectName patterns (e.g. trailing 'unit' vs 'units').
+            """
             sb = self._find_spin(group_box, spin_name)
             if not sb:
                 return None
             val = sb.value()
-            cb = unit_cb_candidate or self._find_combo(group_box, spin_name + "unit")
+
+            # Prefer explicitly provided combobox; otherwise search for any
+            # combobox whose objectName contains 'unit' (case-insensitive).
+            cb = None
+            if unit_cb_candidate is not None:
+                cb = unit_cb_candidate
+
+            if cb is None:
+                for c in group_box.findChildren(QComboBox):
+                    nm = (c.objectName() or "").lower()
+                    if "unit" in nm:
+                        cb = c
+                        break
+
             if cb:
                 from_unit = cb.currentText()
             else:
+                # fallback to beam units if none found
                 from_unit = self.beamlengthunits.currentText()
+
             return self.convert_to_beam_units(val, from_unit, self.beamlengthunits.currentText())
 
         # ==========================================
@@ -2733,17 +2763,6 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         except Exception:
             self._last_parsed_loads = []
 
-        # Debug: check shear values at key points
-        idx_16 = np.argmin(np.abs(x - 16))
-        idx_17 = np.argmin(np.abs(x - 17))
-        idx_19 = np.argmin(np.abs(x - 19))
-        print(f"DEBUG: shear at x=16: {shear[idx_16]}")
-        print(f"DEBUG: shear at x=17: {shear[idx_17]}")
-        print(f"DEBUG: shear at x=19: {shear[idx_19]}")
-        print(f"DEBUG: moment at x=16: {moment[idx_16]}")
-        print(f"DEBUG: moment at x=17: {moment[idx_17]}")
-        print(f"DEBUG: moment at x=19: {moment[idx_19]}")
-
         # store last reactions for UI consumption
         try:
             self._last_reactions = {"R_left": R_left, "R_right": R_right, "M_left": M_left, "M_right": M_right}
@@ -2764,13 +2783,13 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
             ax.set_facecolor("#222222")
             ax.plot(xdata, ydata, linewidth=2)
             # thickened horizontal axis at y=0
-            ax.axhline(0, linewidth=2.5, color="white", zorder=3)
+            ax.axhline(0, linewidth=2.5, color="#FFFFFF", zorder=3)
             # vertical axis at x=0
-            ax.axvline(0, linewidth=1.0, color="white", zorder=2)
+            ax.axvline(0, linewidth=1.0, color="#FFFFFF", zorder=2)
             ax.set_xlim(0, float(self.Beamlength.value()))
-            ax.set_xlabel(f"Length ({self.beamlengthunits.currentText()})", color="white")
-            ax.set_ylabel(ylabel, color="white")
-            ax.tick_params(colors="white")
+            ax.set_xlabel(f"Length ({self.beamlengthunits.currentText()})", color="#FFFFFF")
+            ax.set_ylabel(ylabel, color="#FFFFFF")
+            ax.tick_params(colors="#FFFFFF")
             # remove legend (none)
             for spine in ax.spines.values():
                 spine.set_color("#444444")
@@ -2835,12 +2854,12 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         ax.set_facecolor("#202020")
 
         # Plot shear force with fill
-        ax.fill_between(x, 0, shear, alpha=0.3, color="deepskyblue")
-        ax.plot(x, shear, color="deepskyblue", linewidth=2)
+        ax.fill_between(x, 0, shear, alpha=0.3, color="#1E90FF")
+        ax.plot(x, shear, color="#1E90FF", linewidth=2)
 
         # Axis formatting
-        ax.axhline(0, color="gray", linewidth=2.5)  # thickened axis line
-        ax.axvline(0, color="gray", linewidth=2.5)  # thickened axis line
+        ax.axhline(0, color="#444444", linewidth=2.5)  # thickened axis line
+        ax.axvline(0, color="#444444", linewidth=2.5)  # thickened axis line
         
         # Support location visualizer: only show for variable-support scene
         try:
@@ -2878,9 +2897,9 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         except Exception:
             pass
             
-        ax.set_title("Shear Force Diagram", color="white")
-        ax.set_xlabel(f"Beam Length ({self.beamlengthunits.currentText()})", color="white")
-        ax.set_ylabel("Shear (V)", color="white")
+        ax.set_title("Shear Force Diagram", color="#FFFFFF")
+        ax.set_xlabel(f"Beam Length ({self.beamlengthunits.currentText()})", color="#FFFFFF")
+        ax.set_ylabel("Shear (V)", color="#FFFFFF")
         ax.set_xlim(0, beam_length)
         # Configure x-axis ticks to show support and load locations
         try:
@@ -2926,12 +2945,12 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
 
         try:
             ax.set_xticks(positions)
-            ax.set_xticklabels([_fmt_val(p) for p in positions], color="white")
+            ax.set_xticklabels([_fmt_val(p) for p in positions], color="#FFFFFF")
         except Exception:
             pass
 
-        ax.tick_params(colors="white")
-        ax.grid(True, color="gray", alpha=0.5)
+        ax.tick_params(colors="#FFFFFF")
+        ax.grid(True, color="#444444", alpha=0.5)
 
         fig.tight_layout(pad=0.2)
 
@@ -2976,12 +2995,12 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         ax.set_facecolor("#202020")
 
         # Plot moment diagram with fill
-        ax.fill_between(x, 0, moment, alpha=0.3, color="orangered")
-        ax.plot(x, moment, color="orangered", linewidth=2)
+        ax.fill_between(x, 0, moment, alpha=0.3, color="#FF6347")
+        ax.plot(x, moment, color="#FF6347", linewidth=2)
 
         # Axis formatting
-        ax.axhline(0, color="gray", linewidth=2.5)  # thickened axis line
-        ax.axvline(0, color="gray", linewidth=2.5)  # thickened axis line
+        ax.axhline(0, color="#8A8A8A", linewidth=2.5)  # thickened axis line
+        ax.axvline(0, color="#8A8A8A", linewidth=2.5)  # thickened axis line
         
         # Support location visualizer: only show for variable-support scene
         try:
@@ -3019,9 +3038,9 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         except Exception:
             pass
             
-        ax.set_title("Moment Diagram", color="white")
-        ax.set_xlabel(f"Beam Length ({self.beamlengthunits.currentText()})", color="white")
-        ax.set_ylabel("Moment (M)", color="white")
+        ax.set_title("Moment Diagram", color="#FFFFFF")
+        ax.set_xlabel(f"Beam Length ({self.beamlengthunits.currentText()})", color="#FFFFFF")
+        ax.set_ylabel("Moment (M)", color="#FFFFFF")
         ax.set_xlim(0, beam_length)
         # Configure x-axis ticks to show support and load locations
         try:
@@ -3067,12 +3086,12 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
 
         try:
             ax.set_xticks(positions)
-            ax.set_xticklabels([_fmt_val(p) for p in positions], color="white")
+            ax.set_xticklabels([_fmt_val(p) for p in positions], color="#FFFFFF")
         except Exception:
             pass
 
-        ax.tick_params(colors="white")
-        ax.grid(True, color="gray", alpha=0.5)
+        ax.tick_params(colors="#FFFFFF")
+        ax.grid(True, color="#8A8A8A", alpha=0.5)
 
         fig.tight_layout(pad=0.2)
 

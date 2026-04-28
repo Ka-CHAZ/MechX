@@ -1,0 +1,2229 @@
+
+W4x13 3.83 4.16 4.06 11.3 3.86 6.28 2.92
+W5x16
+Dimensions
+4.71 5.01 5 21.4 7.51 9.63 4.58
+W5x19
+Dimensions
+5.56 5.15 5.03 26.3 9.13 11.6 5.53
+W6x8.5
+Dimensions
+2.52 5.83 3.94 14.9 1.99 5.73 1.56
+W6x9
+Dimensions
+2.68 5.9 3.94 16.4 2.2 6.23 1.72
+   
+2
+x
+4
+y
+4
+3 3
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 1/29
+B
+ritis
+h
+S
+t
+e
+el B
+e
+a
+m
+Ta
+ble
+s
+B
+ritis
+h
+W
+o
+o
+d
+Ta
+ble
+s
+Eu
+r
+o
+p
+e
+a
+n
+S
+t
+e
+el Beam Tables
+Eu
+r
+o
+p
+e
+a
+n
+W
+o
+o
+d
+Ta
+ble
+s
+M
+e
+xic
+a
+n
+S
+t
+e
+el Ta
+ble
+s
+M
+a
+t
+e
+r
+i
+al L
+i
+b
+r
+a
+r
+i
+e
+s
+A
+S
+T
+M
+S
+t
+e
+el NDS Materials ® ADM Non-Weld
+e
+d
+Alu
+miniu
+m
+Eu
+r
+o
+p
+e
+a
+n
+Alu
+miniu
+m
+Eu
+r
+o
+p
+e
+a
+n
+C
+o
+n
+c
+r
+e
+t
+e
+C
+S
+A
+S
+t
+e
+el M
+a
+t
+e
+rials
+C
+S
+A
+O
+8
+6
+Tim
+b
+e
+r
+B
+ritis
+h
+S
+t
+e
+el Materials Australian S
+t
+e
+el AS 1720 Timber Materials AS 3600 Concre
+t
+e
+M
+a
+t
+e
+rials
+S
+A
+N
+S
+1
+4
+3
+1
+S
+t
+e
+el Show all Materials Structural Design ToolsSteel I Beam Load Capacity Calculat
+o
+r
+
+S
+t
+e
+el C
+C
+h
+a
+n
+n
+el L
+o
+a
+d
+C
+a
+p
+a
+cit
+y
+C
+alc
+ula
+t
+o
+r
+
+S
+h
+a
+p
+e
+A
+r
+e
+a
+(
+i
+n
+)
+D
+e
+p
+t
+h
+(
+i
+n
+)
+W
+i
+d
+t
+h
+(
+i
+n
+)
+S
+e
+c
+t
+i
+o
+n Pr
+o
+p
+e
+r
+t
+i
+e
+s
+I
+(
+i
+n
+)
+I
+(
+i
+n
+)
+Pl
+a
+s
+t
+i
+c
+M
+o
+d
+X
+p
+(
+i
+n
+)
+Pl
+a
+s
+t
+i
+c
+M
+o
+d
+Yp
+(
+i
+n
+)
+W
+6
+x
+1
+2
+Dim
+e
+n
+sio
+n
+s
+3.5
+5
+6.0
+3
+4
+2
+2.1
+2.9
+9
+8.3
+2.3
+2
+W
+6
+x
+1
+5
+Dim
+e
+n
+sio
+n
+s
+4.4
+3
+5.9
+9
+5.9
+9
+2
+9.1
+9.3
+2
+1
+0.8
+4.7
+5
+W
+6
+x
+1
+6
+Dim
+e
+n
+sio
+n
+s
+4.7
+4
+6.2
+8
+4.0
+3
+3
+2.1
+4.4
+3
+1
+1.7
+3.3
+9
+W
+6
+x
+2
+0
+Dim
+e
+n
+sio
+n
+s
+5.8
+7
+6.2
+6.0
+2
+4
+1.4
+1
+3.3
+1
+5
+6.7
+2
+W
+6
+x
+2
+5
+Dim
+e
+n
+sio
+n
+s
+7.3
+4
+6.3
+8
+6.0
+8
+5
+3.4
+1
+7.1
+1
+8.9
+8.5
+6
+W
+8
+x
+1
+0
+Dim
+e
+n
+sio
+n
+s
+2.9
+6
+7.8
+9
+3.9
+4
+3
+0.8
+2.0
+9
+8.8
+7
+1.6
+6
+W
+8
+x
+1
+3
+Dim
+e
+n
+sio
+n
+s
+3.8
+4
+7.9
+9
+4
+3
+9.6
+2.7
+3
+1
+1.4
+2.1
+5
+W
+8
+x
+1
+5
+Dim
+e
+n
+sio
+n
+s
+4.4
+4
+8.1
+1
+4.0
+1
+5
+4
+8
+3.4
+1
+1
+3.6
+2.6
+7
+W
+8
+x
+1
+8
+Dim
+e
+n
+sio
+n
+s
+5.2
+6
+8.1
+4
+5.2
+5
+6
+1.9
+7.9
+7
+1
+7
+4.6
+6
+W
+8
+x
+2
+1
+Dim
+e
+n
+sio
+n
+s
+6.1
+6
+8.2
+8
+5.2
+7
+7
+5.3
+9.7
+7
+2
+0.4
+5.6
+9
+W
+8
+x
+2
+4
+Dim
+e
+n
+sio
+n
+s
+7.0
+8
+7.9
+3
+6.5
+8
+2.7
+1
+8.3
+2
+3.1
+8.5
+7
+2
+x
+4
+y
+4
+3
+3
+1
+/
+2
+4
+/
+2
+5, 6:5
+7
+P
+M
+A
+m
+e
+ric
+a
+n
+W
+S
+h
+a
+p
+e
+s | S
+e
+c
+tio
+n
+Siz
+e
+s
+h
+t
+t
+p
+s://
+b
+e
+a
+m
+dim
+e
+n
+sio
+n
+s.c
+o
+m
+/
+d
+a
+t
+a
+b
+a
+s
+e
+/A
+m
+e
+ric
+a
+n
+/AIS
+C
+/
+W_
+s
+h
+a
+p
+e
+s
+/
+2
+/
+2
+9
+Purlin Capacity
+Calculator
+
+Aluminum Design
+Calculator
+
+Bolt Shear Strength
+Calculator
+
+Weld Strength
+Calculator
+
+Column Buckling
+Calculator
+
+Scaffolding Design
+Calculator
+
+RC Fire Resistance
+Design Calculator
+
+Slab Design
+Calculator
+
+Concrete Wall
+Calculator
+
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W8x28
+Dimensions
+8.25 8.06 6.54 98 21.7 27.2 10.1
+W8x31
+Dimensions
+9.13 8 8 110 37.1 30.4 14.1
+W8x35
+Dimensions
+10.3 8.12 8.02 127 42.6 34.7 16.1
+W8x40
+Dimensions
+11.7 8.25 8.07 146 49.1 39.8 18.5
+W8x48
+Dimensions
+14.1 8.5 8.11 184 60.9 49 22.9
+W8x58
+Dimensions
+17.1 8.75 8.22 228 75.1 59.8 27.9
+W8x67
+Dimensions
+19.7 9 8.28 272 88.6 70.1 32.7
+W10x12
+Dimensions
+3.54 9.87 3.96 53.8 2.18 12.6 1.74
+W10x15
+Dimensions
+4.41 9.99 4 68.9 2.89 16 2.3
+W10x17
+Dimensions
+4.99 10.1 4.01 81.9 3.56 18.7 2.8
+W10x19
+Dimensions
+5.62 10.2 4.02 96.3 4.29 21.6 3.35
+2
+x
+4
+y
+4
+3 3
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 3/29
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W10x22
+Dimensions
+6.49 10.2 5.75 118 11.4 26 6.1
+W10x26
+Dimensions
+7.61 10.3 5.77 144 14.1 31.3 7.5
+W10x30
+Dimensions
+8.84 10.5 5.81 170 16.7 36.6 8.84
+W10x33
+Dimensions
+9.71 9.73 7.96 171 36.6 38.8 14
+W10x39
+Dimensions
+11.5 9.92 7.99 209 45 46.8 17.2
+W10x45
+Dimensions
+13.3 10.1 8.02 248 53.4 54.9 20.3
+W10x49
+Dimensions
+14.4 10 10 272 93.4 60.4 28.3
+W10x54
+Dimensions
+15.8 10.1 10 303 103 66.6 31.3
+W10x60
+Dimensions
+17.7 10.2 10.1 341 116 74.6 35
+W10x68
+Dimensions
+19.9 10.4 10.1 394 134 85.3 40.1
+W10x77
+Dimensions
+22.7 10.6 10.2 455 154 97.6 45.9
+2
+x
+4
+y
+4
+3 3
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 4/29
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W10x88
+Dimensions
+26 10.8 10.3 534 179 113 53.1
+W10x100
+Dimensions
+29.3 11.1 10.3 623 207 130 61
+W10x112
+Dimensions
+32.9 11.4 10.4 716 236 147 69.2
+W12x14
+Dimensions
+4.16 11.9 3.97 88.6 2.36 17.4 1.9
+W12x16
+Dimensions
+4.71 12 3.99 103 2.82 20.1 2.26
+W12x19
+Dimensions
+5.57 12.2 4.01 130 3.76 24.7 2.98
+W12x22
+Dimensions
+6.48 12.3 4.03 156 4.66 29.3 3.66
+W12x26
+Dimensions
+7.65 12.2 6.49 204 17.3 37.2 8.17
+W12x30
+Dimensions
+8.79 12.3 6.52 238 20.3 43.1 9.56
+W12x35
+Dimensions
+10.3 12.5 6.56 285 24.5 51.2 11.5
+W12x40
+Dimensions
+11.7 11.9 8.01 307 44.1 57 16.8
+2
+x
+4
+y
+4
+3 3
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 5/29
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W12x45
+Dimensions
+13.1 12.1 8.05 348 50 64.2 19
+W12x50
+Dimensions
+14.6 12.2 8.08 391 56.3 71.9 21.3
+W12x53
+Dimensions
+15.6 12.1 10 425 95.8 77.9 29.1
+W12x58
+Dimensions
+17 12.2 10 475 107 86.4 32.5
+W12x65
+Dimensions
+19.1 12.1 12 533 174 96.8 44.1
+W12x72
+Dimensions
+21.1 12.3 12 597 195 108 49.2
+W12x79
+Dimensions
+23.2 12.4 12.1 662 216 119 54.3
+W12x87
+Dimensions
+25.6 12.5 12.1 740 241 132 60.4
+W12x96
+Dimensions
+28.2 12.7 12.2 833 270 147 67.5
+W12x106
+Dimensions
+31.2 12.9 12.2 933 301 164 75.1
+W12x120
+Dimensions
+35.2 13.1 12.3 1070 345 186 85.4
+2
+x
+4
+y
+4
+3 3
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 6/29
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W12x136
+Dimensions
+39.9 13.4 12.4 1240 398 214 98
+W12x152
+Dimensions
+44.7 13.7 12.5 1430 454 243 111
+W12x170
+Dimensions
+50 14 12.6 1650 517 275 126
+W12x190
+Dimensions
+56 14.4 12.7 1890 589 311 143
+W12x210
+Dimensions
+61.8 14.7 12.8 2140 664 348 159
+W12x230
+Dimensions
+67.7 15.1 12.9 2420 742 386 177
+W12x252
+Dimensions
+74.1 15.4 13 2720 828 428 196
+W12x279
+Dimensions
+81.9 15.9 13.1 3110 937 481 220
+W12x305
+Dimensions
+89.5 16.3 13.2 3550 1050 537 244
+W12x336
+Dimensions
+98.9 16.8 13.4 4060 1190 603 274
+W14x22
+Dimensions
+6.49 13.7 5 199 7 33.2 4.39
+2
+x
+4
+y
+4
+3 3
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 7/29
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W14x26
+Dimensions
+7.69 13.9 5.03 245 8.91 40.2 5.54
+W14x30
+Dimensions
+8.85 13.8 6.73 291 19.6 47.3 8.99
+W14x34
+Dimensions
+10 14 6.75 340 23.3 54.6 10.6
+W14x38
+Dimensions
+11.2 14.1 6.77 385 26.7 61.5 12.1
+W14x43
+Dimensions
+12.6 13.7 8 428 45.2 69.6 17.3
+W14x48
+Dimensions
+14.1 13.8 8.03 484 51.4 78.4 19.6
+W14x53
+Dimensions
+15.6 13.9 8.06 541 57.7 87.1 22
+W14x61
+Dimensions
+17.9 13.9 10 640 107 102 32.8
+W14x68
+Dimensions
+20 14 10 722 121 115 36.9
+W14x74
+Dimensions
+21.8 14.2 10.1 795 134 126 40.5
+W14x82
+Dimensions
+24 14.3 10.1 881 148 139 44.8
+2
+x
+4
+y
+4
+3 3
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 8/29
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W14x90
+Dimensions
+26.5 14 14.5 999 362 157 75.6
+W14x99
+Dimensions
+29.1 14.2 14.6 1110 402 173 83.6
+W14x109
+Dimensions
+32 14.3 14.6 1240 447 192 92.7
+W14x120
+Dimensions
+35.3 14.5 14.7 1380 495 212 102
+W14x132
+Dimensions
+38.8 14.7 14.7 1530 548 234 113
+W14x145
+Dimensions
+42.7 14.8 15.5 1710 677 260 133
+W14x159
+Dimensions
+46.7 15 15.6 1900 748 287 146
+W14x176
+Dimensions
+51.8 15.2 15.7 2140 838 320 163
+W14x193
+Dimensions
+56.8 15.5 15.7 2400 931 355 180
+W14x211
+Dimensions
+62 15.7 15.8 2660 1030 390 198
+W14x233
+Dimensions
+68.5 16 15.9 3010 1150 436 221
+2
+x
+4
+y
+4
+3 3
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 9/29
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W14x257
+Dimensions
+75.6 16.4 16 3400 1290 487 246
+W14x283
+Dimensions
+83.3 16.7 16.1 3840 1440 542 274
+W14x311
+Dimensions
+91.4 17.1 16.2 4330 1610 603 304
+W14x342
+Dimensions
+101 17.5 16.4 4900 1810 672 338
+W14x370
+Dimensions
+109 17.9 16.5 5440 1990 736 370
+W14x398
+Dimensions
+117 18.3 16.6 6000 2170 801 402
+W14x426
+Dimensions
+125 18.7 16.7 6600 2360 869 434
+W14x455
+Dimensions
+134 19 16.8 7190 2560 936 468
+W14x500
+Dimensions
+147 19.6 17 8210 2880 1050 522
+W14x550
+Dimensions
+162 20.2 17.2 9430 3250 1180 583
+W14x605
+Dimensions
+178 20.9 17.4 10800 3680 1320 652
+2
+x
+4
+y
+4
+3 3
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 10/29
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W14x665
+Dimensions
+196 21.6 17.7 12400 4170 1480 730
+W14x730
+Dimensions
+215 22.4 17.9 14300 4720 1660 816
+W14x808
+Dimensions
+238 22.8 18.6 15900 5550 1830 930
+W14x873
+Dimensions
+257 23.6 18.8 18100 6170 2030 1020
+W16x26
+Dimensions
+7.68 15.7 5.5 301 9.59 44.2 5.48
+W16x31
+Dimensions
+9.13 15.9 5.53 375 12.4 54 7.03
+W16x36
+Dimensions
+10.6 15.9 6.99 448 24.5 64 10.8
+W16x40
+Dimensions
+11.8 16 7 518 28.9 73 12.7
+W16x45
+Dimensions
+13.3 16.1 7.04 586 32.8 82.3 14.5
+W16x50
+Dimensions
+14.7 16.3 7.07 659 37.2 92 16.3
+W16x57
+Dimensions
+16.8 16.4 7.12 758 43.1 105 18.9
+2
+x
+4
+y
+4
+3 3
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 11/29
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W16x67
+Dimensions
+19.6 16.3 10.2 954 119 130 35.5
+W16x77
+Dimensions
+22.6 16.5 10.3 1110 138 150 41.1
+W16x89
+Dimensions
+26.2 16.8 10.4 1300 163 175 48.1
+W16x100
+Dimensions
+29.4 17 10.4 1490 186 198 54.9
+W18x35
+Dimensions
+10.3 17.7 6 510 15.3 66.5 8.06
+W18x40
+Dimensions
+11.8 17.9 6.02 612 19.1 78.4 10
+W18x46
+Dimensions
+13.5 18.1 6.06 712 22.5 90.7 11.7
+W18x50
+Dimensions
+14.7 18 7.5 800 40.1 101 16.6
+W18x55
+Dimensions
+16.2 18.1 7.53 890 44.9 112 18.5
+W18x60
+Dimensions
+17.6 18.2 7.56 984 50.1 123 20.6
+W18x65
+Dimensions
+19.1 18.4 7.59 1070 54.8 133 22.5
+2
+x
+4
+y
+4
+3 3
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 12/29
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W18x71
+Dimensions
+20.9 18.5 7.64 1170 60.3 146 24.7
+W18x76
+Dimensions
+22.3 18.2 11 1330 152 163 42.2
+W18x86
+Dimensions
+25.3 18.4 11.1 1530 175 186 48.4
+W18x97
+Dimensions
+28.5 18.6 11.1 1750 201 211 55.3
+W18x106
+Dimensions
+31.1 18.7 11.2 1910 220 230 60.5
+W18x119
+Dimensions
+35.1 19 11.3 2190 253 262 69.1
+W18x130
+Dimensions
+38.3 19.3 11.2 2460 278 290 76.7
+W18x143
+Dimensions
+42 19.5 11.2 2750 311 322 85.4
+W18x158
+Dimensions
+46.3 19.7 11.3 3060 347 356 94.8
+W18x175
+Dimensions
+51.4 20 11.4 3450 391 398 106
+W18x192
+Dimensions
+56.2 20.4 11.5 3870 440 442 119
+2
+x
+4
+y
+4
+3 3
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 13/29
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W18x211
+Dimensions
+62.3 20.7 11.6 4330 493 490 132
+W18x234
+Dimensions
+68.6 21.1 11.7 4900 558 549 149
+W18x258
+Dimensions
+76 21.5 11.8 5510 628 611 166
+W18x283
+Dimensions
+83.3 21.9 11.9 6170 704 676 185
+W18x311
+Dimensions
+91.6 22.3 12 6970 795 754 207
+W21x44
+Dimensions
+13 20.7 6.5 843 20.7 95.4 10.2
+W21x48
+Dimensions
+14.1 20.6 8.14 959 38.7 107 14.9
+W21x50
+Dimensions
+14.7 20.8 6.53 984 24.9 110 12.2
+W21x55
+Dimensions
+16.2 20.8 8.22 1140 48.4 126 18.4
+W21x57
+Dimensions
+16.7 21.1 6.56 1170 30.6 129 14.8
+W21x62
+Dimensions
+18.3 21 8.24 1330 57.5 144 21.7
+2
+x
+4
+y
+4
+3 3
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 14/29
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W21x68
+Dimensions
+20 21.1 8.27 1480 64.7 160 24.4
+W21x73
+Dimensions
+21.5 21.2 8.3 1600 70.6 172 26.6
+W21x83
+Dimensions
+24.4 21.4 8.36 1830 81.4 196 30.5
+W21x93
+Dimensions
+27.3 21.6 8.42 2070 92.9 221 34.7
+W21x101
+Dimensions
+29.8 21.4 12.3 2420 248 253 61.7
+W21x111
+Dimensions
+32.6 21.5 12.3 2670 274 279 68.2
+W21x122
+Dimensions
+35.9 21.7 12.4 2960 305 307 75.6
+W21x132
+Dimensions
+38.8 21.8 12.4 3220 333 333 82.3
+W21x147
+Dimensions
+43.2 22.1 12.5 3630 376 373 92.6
+W21x166
+Dimensions
+48.8 22.5 12.4 4280 435 432 108
+W21x182
+Dimensions
+53.6 22.7 12.5 4730 483 476 119
+2
+x
+4
+y
+4
+3 3
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 15/29
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W21x201
+Dimensions
+59.3 23 12.6 5310 542 530 133
+W21x223
+Dimensions
+66.5 23.4 12.7 6080 614 601 150
+W21x248
+Dimensions
+73.8 23.7 12.8 6830 699 671 170
+W21x275
+Dimensions
+81.8 24.1 12.9 7690 787 749 191
+W24x55
+Dimensions
+16.2 23.6 7.01 1350 29.1 134 13.3
+W24x62
+Dimensions
+18.2 23.7 7.04 1550 34.5 153 15.7
+W24x68
+Dimensions
+20.1 23.7 8.97 1830 70.4 177 24.5
+W24x76
+Dimensions
+22.4 23.9 8.99 2100 82.5 200 28.6
+W24x84
+Dimensions
+24.7 24.1 9.02 2370 94.4 224 32.6
+W24x94
+Dimensions
+27.7 24.3 9.07 2700 109 254 37.5
+W24x103
+Dimensions
+30.3 24.5 9 3000 119 280 41.5
+2
+x
+4
+y
+4
+3 3
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 16/29
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W24x104
+Dimensions
+30.7 24.1 12.8 3100 259 289 62.4
+W24x117
+Dimensions
+34.4 24.3 12.8 3540 297 327 71.4
+W24x131
+Dimensions
+38.6 24.5 12.9 4020 340 370 81.5
+W24x146
+Dimensions
+43 24.7 12.9 4580 391 418 93.2
+W24x162
+Dimensions
+47.8 25 13 5170 443 468 105
+W24x176
+Dimensions
+51.7 25.2 12.9 5680 479 511 115
+W24x192
+Dimensions
+56.5 25.5 13 6260 530 559 126
+W24x207
+Dimensions
+60.7 25.7 13 6820 578 606 137
+W24x229
+Dimensions
+67.2 26 13.1 7650 651 675 154
+W24x250
+Dimensions
+73.5 26.3 13.2 8490 724 744 171
+W24x279
+Dimensions
+81.9 26.7 13.3 9600 823 835 193
+2
+x
+4
+y
+4
+3 3
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 17/29
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W24x306
+Dimensions
+89.7 27.1 13.4 10700 919 922 214
+W24x335
+Dimensions
+98.3 27.5 13.5 11900 1030 1020 238
+W24x370
+Dimensions
+109 28 13.7 13400 1160 1130 267
+W24x408
+Dimensions
+119 28.54 13.8 15100 1320 1250 300
+W24x492
+Dimensions
+144 29.65 14.115 19100 1670 1550 375
+W27x84
+Dimensions
+24.7 26.7 10 2850 106 244 33.2
+W27x94
+Dimensions
+27.6 26.9 10 3270 124 278 38.8
+W27x102
+Dimensions
+30 27.1 10 3620 139 305 43.4
+W27x114
+Dimensions
+33.6 27.3 10.1 4080 159 343 49.3
+W27x129
+Dimensions
+37.8 27.6 10 4760 184 395 57.6
+W27x146
+Dimensions
+43.2 27.4 14 5660 443 464 97.7
+2
+x
+4
+y
+4
+3 3
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 18/29
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W27x161
+Dimensions
+47.6 27.6 14 6310 497 515 109
+W27x178
+Dimensions
+52.5 27.8 14.1 7020 555 570 122
+W27x194
+Dimensions
+57.1 28.1 14 7860 619 631 136
+W27x217
+Dimensions
+63.9 28.4 14.1 8910 704 711 154
+W27x235
+Dimensions
+69.4 28.7 14.2 9700 769 772 168
+W27x258
+Dimensions
+76.1 29 14.3 10800 859 852 187
+W27x281
+Dimensions
+83.1 29.3 14.4 11900 953 936 206
+W27x307
+Dimensions
+90.2 29.6 14.4 13100 1050 1030 227
+W27x336
+Dimensions
+99.2 30 14.6 14600 1180 1130 252
+W27x368
+Dimensions
+109 30.4 14.7 16200 1310 1240 279
+W27x448
+Dimensions
+131 31.42 14.94 20400 1670 1530 351
+2
+x
+4
+y
+4
+3 3
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 19/29
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W27x539
+Dimensions
+159 32.5 15.3 25600 2110 1890 437
+W30x90
+Dimensions
+26.3 29.5 10.4 3610 115 283 34.7
+W30x99
+Dimensions
+29 29.7 10.5 3990 128 312 38.6
+W30x108
+Dimensions
+31.7 29.8 10.5 4470 146 346 43.9
+W30x116
+Dimensions
+34.2 30 10.5 4930 164 378 49.2
+W30x124
+Dimensions
+36.5 30.2 10.5 5360 181 408 54
+W30x132
+Dimensions
+38.8 30.3 10.5 5770 196 437 58.4
+W30x148
+Dimensions
+43.6 30.7 10.5 6680 227 500 68
+W30x173
+Dimensions
+50.9 30.4 15 8230 598 607 123
+W30x191
+Dimensions
+56.1 30.7 15 9200 673 675 138
+W30x211
+Dimensions
+62.3 30.9 15.1 10300 757 751 155
+2
+x
+4
+y
+4
+3 3
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 20/29
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W30x235
+Dimensions
+69.3 31.3 15.1 11700 855 847 175
+W30x261
+Dimensions
+77 31.6 15.2 13100 959 943 196
+W30x292
+Dimensions
+86 32 15.3 14900 1100 1060 223
+W30x326
+Dimensions
+95.9 32.4 15.4 16800 1240 1190 252
+W30x357
+Dimensions
+105 32.8 15.5 18700 1390 1320 279
+W30x391
+Dimensions
+115 33.2 15.6 20700 1550 1450 310
+W30x477
+Dimensions
+140 34.21 15.865 26100 1970 1790 390
+W33x118
+Dimensions
+34.7 32.9 11.5 5900 187 415 51.3
+W33x130
+Dimensions
+38.3 33.1 11.5 6710 218 467 59.5
+W33x141
+Dimensions
+41.5 33.3 11.5 7450 246 514 66.9
+W33x152
+Dimensions
+44.9 33.5 11.6 8160 273 559 73.9
+2
+x
+4
+y
+4
+3 3
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 21/29
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W33x169
+Dimensions
+49.5 33.8 11.5 9290 310 629 84.4
+W33x201
+Dimensions
+59.1 33.7 15.7 11600 749 773 147
+W33x221
+Dimensions
+65.3 33.9 15.8 12900 840 857 164
+W33x241
+Dimensions
+71.1 34.2 15.9 14200 933 940 182
+W33x263
+Dimensions
+77.4 34.5 15.8 15900 1040 1040 202
+W33x291
+Dimensions
+85.6 34.8 15.9 17700 1160 1160 226
+W33x318
+Dimensions
+93.7 35.2 16 19500 1290 1270 250
+W33x354
+Dimensions
+104 35.6 16.1 22000 1460 1420 282
+W33x387
+Dimensions
+114 36 16.2 24300 1620 1560 312
+W36x135
+Dimensions
+39.9 35.6 12 7800 225 509 59.7
+W36x150
+Dimensions
+44.3 35.9 12 9040 270 581 70.9
+2
+x
+4
+y
+4
+3 3
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 22/29
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W36x160
+Dimensions
+47 36 12 9760 295 624 77.3
+W36x170
+Dimensions
+50 36.2 12 10500 320 668 83.8
+W36x182
+Dimensions
+53.6 36.3 12.1 11300 347 718 90.7
+W36x194
+Dimensions
+57 36.5 12.1 12100 375 767 97.7
+W36x210
+Dimensions
+61.9 36.7 12.2 13200 411 833 107
+W36x230
+Dimensions
+67.6 35.9 16.47 15000 940 943 176
+W36x231
+Dimensions
+68.2 36.5 16.5 15600 940 963 176
+W36x232
+Dimensions
+68 37.1 12.1 15000 468 936 122
+W36x245
+Dimensions
+72.1 36.08 16.51 16100 1010 1010 190
+W36x247
+Dimensions
+72.5 36.7 16.5 16700 1010 1030 190
+W36x256
+Dimensions
+75.3 37.4 12.2 16800 528 1040 137
+2
+x
+4
+y
+4
+3 3
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 23/29
+Countries
+American
+Libraries
+Australian
+Libraries
+British Libraries
+Canadian
+Libraries
+European
+Libraries
+Chinese Libraries
+Indian Libraries
+Libraries
+AISC Steel
+Beams
+AISI Cold
+Formed
+NDS Timber
+Beams
+Australian Steel
+(250 Grade)
+Beams
+Australian
+Aluminium
+Shapes
+AISC Steel I
+Beam Sizes
+AISC Channel
+Standard Sizes
+AISC HSS Steel
+Sizes
+Australian
+Universal Beam
+Sizes
+UK Universal
+Beam Sizes
+Materials
+Steel ASTM
+Materials
+Wood NDS
+Materials
+ADM 2015 NonWelded
+Materials
+Concrete
+Eurocode 2
+Materials
+About
+Home
+FAQ
+About
+Terms
+Privacy
+Section
+Database
+Materials
+Database
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W36x260
+Dimensions
+76.5 36.26 16.55 17300 1090 1080 204
+W36x262
+Dimensions
+77.2 36.9 16.6 17900 1090 1100 204
+W36x280
+Dimensions
+82.4 36.52 16.595 18900 1200 1170 223
+W36x282
+Dimensions
+82.9 37.1 16.6 19600 1200 1190 223
+W36x300
+Dimensions
+88.3 36.74 16.655 20300 1300 1260 241
+W36x302
+Dimensions
+89 37.3 16.7 21100 1300 1280 241
+W36x328
+Dimensions
+96.4 37.09 16.63 22500 1420 1380 265
+W36x330
+Dimensions
+96.9 37.7 16.6 23300 1420 1410 265
+W36x359
+Dimensions
+105 37.4 16.73 24800 1570 1510 292
+W36x361
+Dimensions
+106 38 16.7 25700 1570 1550 293
+W36x393
+Dimensions
+115 37.8 16.83 27500 1750 1660 325
+2
+x
+4
+y
+4
+3 3
+®
+®
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 24/29
+Mexican
+Libraries
+Libraries
+CISC Steel
+Libraries
+British Steel
+Libraries
+Canadian I
+Beam Sizes
+CSA G40.21
+Steel Properties
+BS 4360 Steel
+Properties
+AS/NZS Steel
+Materials
+© Copyright 2024. SkyCiv Engineering.
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W36x395
+Dimensions
+116 38.4 16.8 28500 1750 1710 325
+W36x439
+Dimensions
+128 38.26 16.965 31000 1990 1860 367
+W36x441
+Dimensions
+130 38.9 17 32100 1990 1910 368
+W36x487
+Dimensions
+143 39.3 17.1 36000 2250 2130 412
+W36x527
+Dimensions
+154 39.21 17.22 38300 2490 2270 454
+W36x529
+Dimensions
+156 39.8 17.2 39600 2490 2330 454
+W36x650
+Dimensions
+190 40.47 17.575 48900 3230 2840 580
+W36x652
+Dimensions
+192 41.1 17.6 50600 3230 2910 581
+W36x723
+Dimensions
+213 41.8 17.75 57300 3700 3270 658
+W36x798
+Dimensions
+234 41.97 17.99 62600 4200 3570 743
+W36x802
+Dimensions
+236 42.6 18 64800 4210 3660 744
+2
+x
+4
+y
+4
+3 3
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 25/29
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W36x848
+Dimensions
+249 42.45 18.13 67400 4550 3830 799
+W36x853
+Dimensions
+251 43.1 18.2 70000 4600 3920 805
+W36x925
+Dimensions
+272 43.1 18.6 73000 4940 4130 862
+W40x149
+Dimensions
+43.8 38.2 11.8 9800 229 598 62.2
+W40x167
+Dimensions
+49.3 38.6 11.8 11600 283 693 76
+W40x174
+Dimensions
+51.1 38.2 15.75 12200 541 715 107
+W40x183
+Dimensions
+53.3 39 11.8 13200 331 774 88.3
+W40x199
+Dimensions
+58.8 38.7 15.8 14900 695 869 137
+W40x211
+Dimensions
+62.1 39.4 11.8 15500 390 906 105
+W40x215
+Dimensions
+63.5 39 15.8 16700 803 964 156
+W40x235
+Dimensions
+69.1 39.7 11.9 17400 444 1010 118
+2
+x
+4
+y
+4
+3 3
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 26/29
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W40x249
+Dimensions
+73.5 39.4 15.8 19600 926 1120 182
+W40x264
+Dimensions
+77.4 40 11.9 19400 493 1130 132
+W40x277
+Dimensions
+81.5 39.7 15.8 21900 1040 1250 204
+W40x278
+Dimensions
+82.3 40.2 12 20500 521 1190 140
+W40x294
+Dimensions
+86.2 40.4 12 21900 562 1270 150
+W40x297
+Dimensions
+87.3 39.8 15.8 23200 1090 1330 215
+W40x321
+Dimensions
+95.3 40.2 15.9 25600 1220 1460 239
+W40x324
+Dimensions
+95.3 40.2 15.9 25600 1220 1460 239
+W40x327
+Dimensions
+95.9 40.8 12.1 24500 640 1410 170
+W40x331
+Dimensions
+97.7 40.8 12.2 24700 644 1430 172
+W40x362
+Dimensions
+106 40.6 16 28900 1380 1640 270
+2
+x
+4
+y
+4
+3 3
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 27/29
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W40x372
+Dimensions
+110 40.6 16.1 29600 1420 1680 277
+W40x392
+Dimensions
+116 41.6 12.4 29900 803 1710 212
+W40x397
+Dimensions
+117 41 16.1 32000 1540 1800 300
+W40x431
+Dimensions
+127 41.3 16.2 34800 1690 1960 328
+W40x466
+Dimensions
+137 42.44 12.64 36300 1010 2050 262
+W40x503
+Dimensions
+148 42.1 16.4 41600 2040 2320 394
+W40x593
+Dimensions
+174 43 16.7 50400 2520 2760 481
+W40x655
+Dimensions
+193 43.6 16.9 56500 2870 3080 542
+W44x230
+Dimensions
+67.8 42.9 15.8 20800 796 1100 157
+W44x262
+Dimensions
+77.2 43.3 15.8 24100 923 1270 182
+W44x290
+Dimensions
+85.4 43.6 15.8 27000 1040 1410 205
+2
+x
+4
+y
+4
+3 3
+1/24/25, 6:57 PM American W Shapes | Section Sizes
+https://beamdimensions.com/database/American/AISC/W_shapes/ 28/29
+Shape
+Area
+(in )
+Depth
+(in)
+Width
+(in)
+Section Properties
+I (in ) I (in )
+Plastic
+Mod Xp
+(in )
+Plastic
+Mod Yp
+(in )
+W44x335
+Dimensions
+98.5 44 15.9 31100 1200 1620 236

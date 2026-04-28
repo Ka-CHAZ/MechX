@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>370</width>
-    <height>550</height>
+    <width>376</width>
+    <height>844</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -20,13 +20,13 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>0</y>
       <width>351</width>
-      <height>491</height>
+      <height>796</height>
      </rect>
     </property>
     <property name="font">
@@ -44,10 +44,10 @@
         </font>
        </property>
        <property name="text">
-        <string>Mechanics Engine</string>
+        <string>MechX</string>
        </property>
        <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignCenter</set>
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -63,22 +63,19 @@
         <string>Version Alpha 0.0.12</string>
        </property>
        <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignCenter</set>
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <spacer name="verticalSpacer">
-       <property name="orientation">
-        <enum>Qt::Orientation::Vertical</enum>
-       </property>
        <property name="sizeType">
-        <enum>QSizePolicy::Policy::Preferred</enum>
+        <enum>QSizePolicy::Fixed</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
          <width>20</width>
-         <height>50</height>
+         <height>40</height>
         </size>
        </property>
       </spacer>
@@ -100,18 +97,15 @@ and material properties of solids,
 structures, and machine elements </string>
        </property>
        <property name="textFormat">
-        <enum>Qt::TextFormat::PlainText</enum>
+        <enum>Qt::PlainText</enum>
        </property>
        <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignCenter</set>
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <spacer name="verticalSpacer_3">
-       <property name="orientation">
-        <enum>Qt::Orientation::Vertical</enum>
-       </property>
        <property name="sizeHint" stdset="0">
         <size>
          <width>20</width>
@@ -129,22 +123,35 @@ structures, and machine elements </string>
         </font>
        </property>
        <property name="text">
+        <string>Developed by Komet Industries</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_10">
+       <property name="font">
+        <font>
+         <family>Consolas</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
         <string>Author: James Karczewski</string>
        </property>
        <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignCenter</set>
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <spacer name="verticalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Orientation::Vertical</enum>
-       </property>
        <property name="sizeHint" stdset="0">
         <size>
          <width>20</width>
-         <height>40</height>
+         <height>30</height>
         </size>
        </property>
       </spacer>
@@ -161,7 +168,7 @@ structures, and machine elements </string>
         <string>Credits</string>
        </property>
        <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignCenter</set>
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -176,22 +183,24 @@ structures, and machine elements </string>
        <property name="text">
         <string>Kelly Ryba
 Tom Filipiak
-Ryan Weister</string>
+Ryan Weister
+Chris Hohl
+Josh Pigott
+Kristian Price
+Jayson Charpalla
+Tanner B</string>
        </property>
        <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignCenter</set>
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <spacer name="verticalSpacer_4">
-       <property name="orientation">
-        <enum>Qt::Orientation::Vertical</enum>
-       </property>
        <property name="sizeHint" stdset="0">
         <size>
          <width>20</width>
-         <height>40</height>
+         <height>30</height>
         </size>
        </property>
       </spacer>
@@ -208,7 +217,7 @@ Ryan Weister</string>
         <string>Dr. Timothy Philpot</string>
        </property>
        <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignCenter</set>
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -225,15 +234,12 @@ Ryan Weister</string>
 the inspiration for Mechanics Engine</string>
        </property>
        <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignCenter</set>
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <spacer name="verticalSpacer_5">
-       <property name="orientation">
-        <enum>Qt::Orientation::Vertical</enum>
-       </property>
        <property name="sizeHint" stdset="0">
         <size>
          <width>20</width>
@@ -252,11 +258,11 @@ the inspiration for Mechanics Engine</string>
        </property>
        <property name="text">
         <string>For additional information,
-look on the Mechanics Engine website
+look on the MechX website
 or cantact ____________</string>
        </property>
        <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignCenter</set>
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -268,8 +274,8 @@ or cantact ____________</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>370</width>
-     <height>33</height>
+     <width>376</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>
