@@ -1,0 +1,41 @@
+﻿UnitName,Abrv,Use,toBase,fromBase
+Pascal,Pa,,x,x
+kilopascal,kPa,,x * 1000,x / 1000
+bar,bar,,x * 100000,x / 100000
+pounds/square inch,psi,,x * 6894.757291783,x / 6894.757291783
+kips/square inch,ksi,,x * 6894757.291783,x / 6894757.291783
+standard atmosphere,atm,,x * 101325,x / 101325
+exapascal,EPa,,x * 1000000000000000000,x / 1000000000000000000
+petapascal,PPa,,x * 1000000000000000,x / 1000000000000000
+terapascal,TPa,,x * 1000000000000,x / 1000000000000
+gigapascal,GPa,,x * 1000000000,x / 1000000000
+megapascal,MPa,,x * 1000000,x / 1000000
+hectopascal,hPa,,x * 100,x / 100
+dekapascal,daPa,,x * 10,x / 10
+decipascal,dPa,,x * 0.1,x / 0.1
+centipascal,cPa,,x * 0.01,x / 0.01
+millipascal,mPa,,x * 0.001,x / 0.001
+micropascal,\u03BCPa,,x * 0.000001,x / 0.000001
+nanopascal,nPa,,x * 0.000000001,x / 0.000000001
+picopascal,pPa,,x * 0.00000000001,x / 0.00000000001
+femtopascal,fPa,,x * 0.000000000000001,x / 0.000000000000001
+attopascal,aPa,,x * 0.000000000000000001,x / 0.000000000000000001
+Newton/square meter,N/m\u00B2,,x,x
+Newton/square centimeter,N/cm\u00B2,,x * 10000,x / 10000
+Newton/square millimeter,N/mm\u00B2,,x * 1000000,x / 1000000
+kilonewton/square meter,kN/m\u00B2,,x * 1000,x / 1000
+millibar,mbar,,x * 100,x / 100
+microbar,\u03BCbar,,x * 0.1,x / 0.1
+dyne/square centimeter,dyn/cm\u00B2,,x * 0.1,x / 0.1
+kilogram-force/square meter,kgf/m\u00B2,,x * 9.80665,x / 9.80665
+kilogram-force/square centimeter,kgf/cm\u00B2,,x * 98066.5,x / 98066.5
+kilogram-force/square millimeter,kgf/mm\u00B2,,x * 9806650,x / 9806650
+gram-force/square centimeter,gf/cm\u00B2,,x * 98.0665,x / 98.0665
+ton-force/square foot,tf/f\u00B2,short,x * 95760.517960678,x / 95760.517960678
+ton-force/square inch,tf/in\u00B2,short,x * 13789514.586338,x / 13789514.586338
+ton-force/square foot,tf/f\u00B2,long,x * 107251.78011595,x / 107251.78011595
+ton-force/square inch,tf/in\u00B2,long,x * 1544256.336697,x / 1544256.336697
+pound-force/square foot,lbf/ft\u00B2,,x * 47.8802589804,x / 47.8802589804
+torr,Torr,,x * 133.3223684211,x / 133.3223684211
+millimeter mercury,mmHg,,x * 133.3223684211,x / 133.3223684211
+inch mercury,inHg,,x * 3386.38,x / 3386.38

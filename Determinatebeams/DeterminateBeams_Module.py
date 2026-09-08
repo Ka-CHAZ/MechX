@@ -8,7 +8,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg
 
-from Determinatebeams.Shearandmomentdiagramming_ui import Ui_shearandmomentscalculator
+from DeterminateBeams.Shearandmomentdiagramming_ui import Ui_shearandmomentscalculator
 
 class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
     def __init__(self):
@@ -82,7 +82,10 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         
         self.loads_scene = QGraphicsScene(self)
         self.Loadsdiagram.setScene(self.loads_scene)
-        self.loads_scene.setSceneRect(0, 12.5, 590, 25)
+        # Make the scene rect taller and include negative Y so arrows
+        # drawn above/below the beam (which use negative coords) are visible.
+        # Beam baseline is y=0; allow space above and below for arrowheads.
+        self.loads_scene.setSceneRect(0, -100, 590, 220)
         
         self.load_items = {}  # keeps track of arrows drawn for each load
         self.reaction_items = {}  # keeps track of arrows drawn for reactions
@@ -776,30 +779,30 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         self.label_16.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.gridLayout.addWidget(self.label_16, 0, 1, 1, 1)
 
-        self.lineardistribloadstart = QDoubleSpinBox(elementbox)
-        self.lineardistribloadstart.setObjectName(u"lineardistribloadstart")
+        self.lineardistribloadstartlocation = QDoubleSpinBox(elementbox)
+        self.lineardistribloadstartlocation.setObjectName(u"lineardistribloadstartlocation")
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.lineardistribloadstart.sizePolicy().hasHeightForWidth())
-        self.lineardistribloadstart.setSizePolicy(sizePolicy1)
-        self.lineardistribloadstart.setMinimumSize(QSize(110, 27))
-        self.lineardistribloadstart.setMaximumSize(QSize(100, 27))
-        self.lineardistribloadstart.setButtonSymbols(QAbstractSpinBox.ButtonSymbols.NoButtons)
-        self.lineardistribloadstart.setDecimals(3)
-        self.lineardistribloadstart.setMaximum(100000000.000000000000000)
-        self.gridLayout.addWidget(self.lineardistribloadstart, 1, 0, 1, 1)
+        sizePolicy1.setHeightForWidth(self.lineardistribloadstartlocation.sizePolicy().hasHeightForWidth())
+        self.lineardistribloadstartlocation.setSizePolicy(sizePolicy1)
+        self.lineardistribloadstartlocation.setMinimumSize(QSize(110, 27))
+        self.lineardistribloadstartlocation.setMaximumSize(QSize(100, 27))
+        self.lineardistribloadstartlocation.setButtonSymbols(QAbstractSpinBox.ButtonSymbols.NoButtons)
+        self.lineardistribloadstartlocation.setDecimals(3)
+        self.lineardistribloadstartlocation.setMaximum(100000000.000000000000000)
+        self.gridLayout.addWidget(self.lineardistribloadstartlocation, 1, 0, 1, 1)
 
-        self.lineardistribloadend = QDoubleSpinBox(elementbox)
-        self.lineardistribloadend.setObjectName(u"lineardistribloadend")
-        sizePolicy1.setHeightForWidth(self.lineardistribloadend.sizePolicy().hasHeightForWidth())
-        self.lineardistribloadend.setSizePolicy(sizePolicy1)
-        self.lineardistribloadend.setMinimumSize(QSize(110, 27))
-        self.lineardistribloadend.setMaximumSize(QSize(100, 27))
-        self.lineardistribloadend.setButtonSymbols(QAbstractSpinBox.ButtonSymbols.NoButtons)
-        self.lineardistribloadend.setDecimals(3)
-        self.lineardistribloadend.setMaximum(100000000.000000000000000)
-        self.gridLayout.addWidget(self.lineardistribloadend, 1, 1, 1, 1)
+        self.lineardistribloadendlocation = QDoubleSpinBox(elementbox)
+        self.lineardistribloadendlocation.setObjectName(u"lineardistribloadendlocation")
+        sizePolicy1.setHeightForWidth(self.lineardistribloadendlocation.sizePolicy().hasHeightForWidth())
+        self.lineardistribloadendlocation.setSizePolicy(sizePolicy1)
+        self.lineardistribloadendlocation.setMinimumSize(QSize(110, 27))
+        self.lineardistribloadendlocation.setMaximumSize(QSize(100, 27))
+        self.lineardistribloadendlocation.setButtonSymbols(QAbstractSpinBox.ButtonSymbols.NoButtons)
+        self.lineardistribloadendlocation.setDecimals(3)
+        self.lineardistribloadendlocation.setMaximum(100000000.000000000000000)
+        self.gridLayout.addWidget(self.lineardistribloadendlocation, 1, 1, 1, 1)
 
         self.verticalSpacer_2 = QSpacerItem(107, 38, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
         self.gridLayout.addItem(self.verticalSpacer_2, 2, 0, 1, 1)
@@ -930,30 +933,30 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         self.label_16.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.gridLayout.addWidget(self.label_16, 0, 1, 1, 1)
 
-        self.lineardistribloadstart = QDoubleSpinBox(elementbox)
-        self.lineardistribloadstart.setObjectName(u"lineardistribloadstart")
+        self.lineardistribloadstartlocation = QDoubleSpinBox(elementbox)
+        self.lineardistribloadstartlocation.setObjectName(u"lineardistribloadstartlocation")
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.lineardistribloadstart.sizePolicy().hasHeightForWidth())
-        self.lineardistribloadstart.setSizePolicy(sizePolicy1)
-        self.lineardistribloadstart.setMinimumSize(QSize(110, 27))
-        self.lineardistribloadstart.setMaximumSize(QSize(100, 27))
-        self.lineardistribloadstart.setButtonSymbols(QAbstractSpinBox.ButtonSymbols.NoButtons)
-        self.lineardistribloadstart.setDecimals(3)
-        self.lineardistribloadstart.setMaximum(100000000.000000000000000)
-        self.gridLayout.addWidget(self.lineardistribloadstart, 1, 0, 1, 1)
+        sizePolicy1.setHeightForWidth(self.lineardistribloadstartlocation.sizePolicy().hasHeightForWidth())
+        self.lineardistribloadstartlocation.setSizePolicy(sizePolicy1)
+        self.lineardistribloadstartlocation.setMinimumSize(QSize(110, 27))
+        self.lineardistribloadstartlocation.setMaximumSize(QSize(100, 27))
+        self.lineardistribloadstartlocation.setButtonSymbols(QAbstractSpinBox.ButtonSymbols.NoButtons)
+        self.lineardistribloadstartlocation.setDecimals(3)
+        self.lineardistribloadstartlocation.setMaximum(100000000.000000000000000)
+        self.gridLayout.addWidget(self.lineardistribloadstartlocation, 1, 0, 1, 1)
 
-        self.lineardistribloadend = QDoubleSpinBox(elementbox)
-        self.lineardistribloadend.setObjectName(u"lineardistribloadend")
-        sizePolicy1.setHeightForWidth(self.lineardistribloadend.sizePolicy().hasHeightForWidth())
-        self.lineardistribloadend.setSizePolicy(sizePolicy1)
-        self.lineardistribloadend.setMinimumSize(QSize(110, 27))
-        self.lineardistribloadend.setMaximumSize(QSize(100, 27))
-        self.lineardistribloadend.setButtonSymbols(QAbstractSpinBox.ButtonSymbols.NoButtons)
-        self.lineardistribloadend.setDecimals(3)
-        self.lineardistribloadend.setMaximum(100000000.000000000000000)
-        self.gridLayout.addWidget(self.lineardistribloadend, 1, 1, 1, 1)
+        self.lineardistribloadendlocation = QDoubleSpinBox(elementbox)
+        self.lineardistribloadendlocation.setObjectName(u"lineardistribloadendlocation")
+        sizePolicy1.setHeightForWidth(self.lineardistribloadendlocation.sizePolicy().hasHeightForWidth())
+        self.lineardistribloadendlocation.setSizePolicy(sizePolicy1)
+        self.lineardistribloadendlocation.setMinimumSize(QSize(110, 27))
+        self.lineardistribloadendlocation.setMaximumSize(QSize(100, 27))
+        self.lineardistribloadendlocation.setButtonSymbols(QAbstractSpinBox.ButtonSymbols.NoButtons)
+        self.lineardistribloadendlocation.setDecimals(3)
+        self.lineardistribloadendlocation.setMaximum(100000000.000000000000000)
+        self.gridLayout.addWidget(self.lineardistribloadendlocation, 1, 1, 1, 1)
 
         self.verticalSpacer_2 = QSpacerItem(107, 38, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
         self.gridLayout.addItem(self.verticalSpacer_2, 2, 0, 1, 1)
@@ -1973,7 +1976,9 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
 
         loc_beam = self.convert_to_beam_units(loc_val, loc_unit, beam_unit)
 
-        beamlength = max(1.0, self.Beamlength.value())
+        beamlength = float(self.Beamlength.value())
+        if beamlength <= 0:
+            return
         scale = 590.0 / beamlength
         x = loc_beam * scale
 
@@ -2040,21 +2045,46 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         start_beam = self.convert_to_beam_units(start_sb.value(), unit_cb.currentText(), beam_unit)
         end_beam = self.convert_to_beam_units(end_sb.value(), unit_cb.currentText(), beam_unit)
 
-        beamlength = max(1.0, self.Beamlength.value())
+        if self.DEBUG_UNITS:
+            print(f"[UDL Debug] start_val={start_sb.value()} {unit_cb.currentText()}, end_val={end_sb.value()} {unit_cb.currentText()}, beam_unit={beam_unit}")
+            print(f"[UDL Debug] start_beam={start_beam}, end_beam={end_beam}")
+
+        beamlength = float(self.Beamlength.value())
+        if beamlength <= 0:
+            return
         scale = 590.0 / beamlength
+        if self.DEBUG_UNITS:
+            print(f"[UDL Debug] beamlength={beamlength}, scale={scale}")
         x1 = start_beam * scale
         x2 = end_beam * scale
         if x2 < x1:
             x1, x2 = x2, x1
+        if self.DEBUG_UNITS:
+            print(f"[UDL Debug] x1_px={x1*scale if False else x1*1}, x2_px={x2*scale if False else x2*1} (pre-scale shown in beam units)")
 
-        # closer spacing
+
+        # closer spacing (pixels between arrows)
         step_px = 15
 
         arrows = entry["items"]
-        used = 0
         down = "[down]" in (group_box.title() or "").lower()
 
-        for x in range(int(x1), int(x2) + 1, step_px):
+        # determine how many arrows we need to cover the pixel span
+        span_px = max(0, int(x2 - x1))
+        needed = (span_px // step_px) + 1
+
+        # create additional arrow items if required
+        if needed > len(arrows):
+            to_add = needed - len(arrows)
+            for _ in range(to_add):
+                trunk = self.loads_scene.addLine(0, 0, 0, 30, QPen(QColor("#233AA3"), 1))
+                head1 = self.loads_scene.addLine(0, 30, -4, 22, QPen(QColor("#233AA3"), 1))
+                head2 = self.loads_scene.addLine(0, 30, 4, 22, QPen(QColor("#233AA3"), 1))
+                arrows.append((trunk, head1, head2))
+
+        used = 0
+        # place arrows along span (x1,x2 are in pixels)
+        for px in range(int(x1), int(x2) + 1, step_px):
             if used >= len(arrows):
                 break
             trunk, head1, head2 = arrows[used]
@@ -2062,16 +2092,16 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
                 trunk.setLine(0, 0, 0, 30)
                 head1.setLine(0, 30, -4, 22)
                 head2.setLine(0, 30, 4, 22)
-                trunk.setPos(x, -30)  # small upward offset
-                head1.setPos(x, -30)
-                head2.setPos(x, -30)
+                trunk.setPos(px, -30)  # small upward offset
+                head1.setPos(px, -30)
+                head2.setPos(px, -30)
             else:
                 trunk.setLine(0, 0, 0, -30)
                 head1.setLine(0, -30, -4, -22)
                 head2.setLine(0, -30, 4, -22)
-                trunk.setPos(x, 0)
-                head1.setPos(x, 0)
-                head2.setPos(x, 0)
+                trunk.setPos(px, 0)
+                head1.setPos(px, 0)
+                head2.setPos(px, 0)
             used += 1
 
         for idx in range(used, len(arrows)):
@@ -2099,7 +2129,7 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
 
         self.load_items[group_box] = {"type": "linear", "items": arrows}
 
-        for name in ("lineardistribloadstart", "lineardistribloadend",
+        for name in ("lineardistribloadstartlocation", "lineardistribloadendlocation",
                     "lineardistribloadmagnitudestart", "lineardistribloadmagnitudeend"):
             sb = self._find_spin(group_box, name)
             if sb:
@@ -2113,11 +2143,11 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
             return
 
         # find items in groupbox
-        start_sb = self._find_spin(group_box, "lineardistribloadstart")
-        end_sb = self._find_spin(group_box, "lineardistribloadend")
+        start_sb = self._find_spin(group_box, "lineardistribloadstartlocation")
+        end_sb = self._find_spin(group_box, "lineardistribloadendlocation")
         mag1_sb = self._find_spin(group_box, "lineardistribloadmagnitude")
         mag2_sb = self._find_spin(group_box, "lineardistribloadmagnitudeend")
-        length_unit_cb = self._find_combo(group_box, "lineardistribloadstartunit")
+        length_unit_cb = self._find_combo(group_box, "lineardistribloadstartlocationunit")
         if not (start_sb and end_sb and mag1_sb and mag2_sb and length_unit_cb):
             return
 
@@ -2126,7 +2156,9 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         start_beam = self.convert_to_beam_units(start_sb.value(), length_unit_cb.currentText(), beam_unit)
         end_beam = self.convert_to_beam_units(end_sb.value(), length_unit_cb.currentText(), beam_unit)
 
-        beamlength = max(1.0, self.Beamlength.value())
+        beamlength = float(self.Beamlength.value())
+        if beamlength <= 0:
+            return
         scale = 590.0 / beamlength
         x1 = start_beam * scale
         x2 = end_beam * scale
@@ -2259,7 +2291,9 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         loc_beam = self.convert_to_beam_units(loc_val, loc_unit, beam_unit)
 
         # pixel scale (same approach used elsewhere)
-        beamlength = max(1.0, self.Beamlength.value())
+        beamlength = float(self.Beamlength.value())
+        if beamlength <= 0:
+            return
         scale = 590.0 / beamlength
         x = loc_beam * scale
 
@@ -2293,7 +2327,9 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         right_support = float(self.rightsupportlocation.value())
 
         # Pixel scale
-        beamlength = max(1.0, self.Beamlength.value())
+        beamlength = float(self.Beamlength.value())
+        if beamlength <= 0:
+            return
         scale = 590.0 / beamlength
 
         # Determine if any variable (linear) distributed loads are present
@@ -2435,26 +2471,23 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         elif t == "moment":
             self._update_moment_load(group_box)
 
-    def _compute_shear_moment_data(self, num_points=400):
-        """
-        Compute shear and moment arrays from current loads in self.load_items.
-        Returns x (beam units), shear, moment arrays (same units as magnitudes).
-        
-        This method first calculates support reactions using equilibrium equations:
-        - Sum of vertical forces = 0
-        - Sum of moments about left support = 0
-        
-        Then computes shear and moment diagrams including reactions.
-        
-        Sign conventions:
-        - Downward loads are negative (reduce shear)
-        - Upward reactions are positive (increase shear)
-        - Positive moment causes compression on top (sagging)
-        """
-        
+    def _compute_shear_moment_data(self, num_points=400, x_custom=None):
         beam_len = float(self.Beamlength.value())
-        if beam_len <= 0:
-            return np.array([0.0]), np.array([0.0]), np.array([0.0])
+        
+        # USE x_custom if it exists!
+        if x_custom is not None:
+            x = x_custom
+        else:
+            x = np.linspace(0.0, beam_len, num_points)
+            
+        shear = np.zeros_like(x)
+        moment = np.zeros_like(x)
+        
+        # IMPORTANT: Ensure your loop uses 'x' and not a fixed range
+        # It should look like this:
+        for i in range(len(x)):
+            current_x = x[i]
+            # ... (your math for shear and moment goes here)
 
         # Get support locations (from UI spins) then override for cantilevers
         left_support = float(self.leftsupportlocation.value())
@@ -2480,7 +2513,14 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         if support_span <= 0 and getattr(self, "current_beamscene", 1) == 1:
             return np.array([0.0]), np.array([0.0]), np.array([0.0])
 
-        x = np.linspace(0.0, beam_len, num_points)
+        # Replace the old 'x = np.linspace' line with this:
+        if x_custom is not None:
+            x = x_custom
+        else:
+            x = np.linspace(0.0, beam_len, num_points)
+            
+        shear = np.zeros_like(x)
+        # ... (rest of function stays the same)
         
         # Helper: convert a location given in a group's unit to beam units
         def loc_in_beam_units(group_box, spin_name, unit_cb_candidate=None):
@@ -2565,8 +2605,8 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
             elif ltype == "linear":
                 m1_sb = self._find_spin(gb, "lineardistribloadmagnitude") or self._find_spin(gb, "lineardistribloadmagnitudestart")
                 m2_sb = self._find_spin(gb, "lineardistribloadmagnitudeend") or self._find_spin(gb, "lineardistribloadmagnitudefinish")
-                start_beam = loc_in_beam_units(gb, "lineardistribloadstart", self._find_combo(gb, "lineardistribloadstartunit"))
-                end_beam = loc_in_beam_units(gb, "lineardistribloadend", self._find_combo(gb, "lineardistribloadendunit"))
+                start_beam = loc_in_beam_units(gb, "lineardistribloadstartlocation", self._find_combo(gb, "lineardistribloadstartlocationunit"))
+                end_beam = loc_in_beam_units(gb, "lineardistribloadendlocation", self._find_combo(gb, "lineardistribloadendlocationunit"))
                 if m1_sb is None or m2_sb is None or start_beam is None or end_beam is None:
                     continue
                 w1 = m1_sb.value()
@@ -2836,12 +2876,28 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         import numpy as np
         from matplotlib.backends.backend_agg import FigureCanvasAgg
 
-        beam_length = self.Beamlength.value()
+        beam_length = float(self.Beamlength.value())
         if beam_length <= 0:
             return
-            
-        # Get actual shear data from the computed loads
-        x, shear, _ = self._compute_shear_moment_data(num_points=400)
+        
+        # 1. Collect exact locations for math and labels
+        critical_x = [0.0, beam_length, 
+                      float(self.leftsupportlocation.value()), 
+                      float(self.rightsupportlocation.value())]
+        
+        for gb in self.load_items.keys():
+            for sb in gb.findChildren(QtWidgets.QDoubleSpinBox):
+                name = sb.objectName().lower()
+                if any(k in name for k in ["loc", "pos", "start", "end"]) and "magnitude" not in name:
+                    critical_x.append(float(sb.value()))
+
+        # 2. Build the high-precision grid
+        base_grid = np.linspace(0, beam_length, 1000)
+        xa = np.unique(np.sort(np.concatenate([base_grid, critical_x])))
+        
+        # 3. RUN MATH ON THE HIGH-PRECISION GRID
+        # Note: We pass xa here so the math lands exactly on your 15.0m load
+        _, ya, _ = self._compute_shear_moment_data(x_custom=xa)
 
         plt.style.use("dark_background")
 
@@ -2854,8 +2910,8 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         ax.set_facecolor("#202020")
 
         # Plot shear force with fill
-        ax.fill_between(x, 0, shear, alpha=0.3, color="#1E90FF")
-        ax.plot(x, shear, color="#1E90FF", linewidth=2)
+        ax.fill_between(xa, 0, ya, alpha=0.3, color="#1E90FF")
+        ax.plot(xa, ya, color="#1E90FF", linewidth=2)
 
         # Axis formatting
         ax.axhline(0, color="#444444", linewidth=2.5)  # thickened axis line
@@ -2899,7 +2955,6 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
             
         ax.set_title("Shear Force Diagram", color="#FFFFFF")
         ax.set_xlabel(f"Beam Length ({self.beamlengthunits.currentText()})", color="#FFFFFF")
-        ax.set_ylabel("Shear (V)", color="#FFFFFF")
         ax.set_xlim(0, beam_length)
         # Configure x-axis ticks to show support and load locations
         try:
@@ -2952,6 +3007,72 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         ax.tick_params(colors="#FFFFFF")
         ax.grid(True, color="#444444", alpha=0.5)
 
+        # remove vertical axis numbers (user-requested)
+        try:
+            ax.set_yticks([])
+            ax.tick_params(labelleft=False)
+        except Exception:
+            pass
+
+        # annotate at direction-change points and global extrema
+        try:
+            def _fmt_y(v):
+                if abs(v - round(v)) < 1e-6:
+                    return str(int(round(v)))
+                return ("{:.3f}".format(v)).rstrip('0').rstrip('.')
+
+            xa = np.array(xa)
+            ya = np.array(ya)
+            if xa.size > 2:
+                N = xa.size
+                y_range = float(np.nanmax(ya) - np.nanmin(ya)) or 1.0
+                
+                # Base locations for X-axis
+                clean_interest_x = sorted(list(set([max(0, min(x, beam_length)) for x in critical_x])))
+
+                # Find zero crossings with a noise filter (removes jitter)
+                zero_indices = [i for i in np.where(np.diff(np.sign(ya)) != 0)[0] 
+                                if abs(ya[i] - ya[i+1]) > 1e-4]
+                
+                for idx in zero_indices:
+                    x1, x2, y1, y2 = xa[idx], xa[idx+1], ya[idx], ya[idx+1]
+                    if abs(y2 - y1) > 1e-9:
+                        x_zero = x1 - y1 * (x2 - x1) / (y2 - y1)
+                        if not any(abs(x_zero - ex) < 0.05 * beam_length for ex in clean_interest_x):
+                            clean_interest_x.append(float(x_zero))
+                
+                clean_interest_x.sort()
+
+                # Ticks and Labels
+                ax.set_xticks(clean_interest_x)
+                ax.set_xticklabels([f"{x:g}" for x in clean_interest_x], fontsize=7, color="#AAAAAA", rotation=45)
+
+                label_candidates = [(0, int(np.argmax(ya))), (0, int(np.argmin(ya)))]
+                for x_val in clean_interest_x:
+                    idx = np.abs(xa - x_val).argmin()
+                    for i in [idx-1, idx, idx+1]:
+                        if 0 <= i < N: label_candidates.append((1, i))
+
+                label_candidates.sort()
+                final_labels = []
+                x_limit, y_limit = 0.02 * beam_length, 0.10 * y_range
+
+                for priority, idx in label_candidates:
+                    xv, yv = float(xa[idx]), float(ya[idx])
+                    if any(abs(xv - px) < x_limit and abs(yv - py) < y_limit for px, py in final_labels):
+                        continue
+                    final_labels.append((xv, yv))
+                    
+                    offset = 0.11 * y_range
+                    ha = 'left' if xv < 0.02 * beam_length else 'right' if xv > 0.98 * beam_length else 'center'
+                    ypos, va = (yv + offset, 'bottom') if yv >= -1e-4 else (yv - offset, 'top')
+                    
+                    ax.scatter([xv], [yv], color="#FFFFFF", s=10, zorder=6)
+                    ax.text(xv, ypos, _fmt_y(yv), color="#FFFFFF", fontsize=8, ha=ha, va=va, fontweight='bold',
+                            bbox=dict(facecolor="#202020", alpha=0.9, edgecolor='#555555', linewidth=0.5, boxstyle='round,pad=0.2'))
+        except Exception:
+            pass
+
         fig.tight_layout(pad=0.2)
 
         # Render to QImage
@@ -2977,12 +3098,27 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         import numpy as np
         from matplotlib.backends.backend_agg import FigureCanvasAgg
 
-        beam_length = self.Beamlength.value()
+        beam_length = float(self.Beamlength.value())
         if beam_length <= 0:
             return
-            
-        # Get actual moment data from the computed loads
-        x, _, moment = self._compute_shear_moment_data(num_points=400)
+        
+        # 1. Identify all critical X-coordinates
+        critical_x = [0.0, beam_length, 
+                      float(self.leftsupportlocation.value()), 
+                      float(self.rightsupportlocation.value())]
+        
+        for gb in self.load_items.keys():
+            for sb in gb.findChildren(QtWidgets.QDoubleSpinBox):
+                name = sb.objectName().lower()
+                if any(k in name for k in ["loc", "pos", "start", "end"]) and "magnitude" not in name:
+                    critical_x.append(float(sb.value()))
+
+        # 2. Setup the Smart Grid
+        base_grid = np.linspace(0, beam_length, 1000)
+        xa = np.unique(np.sort(np.concatenate([base_grid, critical_x])))
+        
+        # 3. Get the accurate math data
+        _, _, ya = self._compute_shear_moment_data(x_custom=xa)
 
         plt.style.use("dark_background")
 
@@ -2995,8 +3131,8 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         ax.set_facecolor("#202020")
 
         # Plot moment diagram with fill
-        ax.fill_between(x, 0, moment, alpha=0.3, color="#FF6347")
-        ax.plot(x, moment, color="#FF6347", linewidth=2)
+        ax.fill_between(xa, 0, ya, alpha=0.3, color="#FF6347")
+        ax.plot(xa, ya, color="#FF6347", linewidth=2)
 
         # Axis formatting
         ax.axhline(0, color="#8A8A8A", linewidth=2.5)  # thickened axis line
@@ -3040,7 +3176,6 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
             
         ax.set_title("Moment Diagram", color="#FFFFFF")
         ax.set_xlabel(f"Beam Length ({self.beamlengthunits.currentText()})", color="#FFFFFF")
-        ax.set_ylabel("Moment (M)", color="#FFFFFF")
         ax.set_xlim(0, beam_length)
         # Configure x-axis ticks to show support and load locations
         try:
@@ -3092,6 +3227,72 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
 
         ax.tick_params(colors="#FFFFFF")
         ax.grid(True, color="#8A8A8A", alpha=0.5)
+
+        # remove vertical axis numbers (user-requested)
+        try:
+            ax.set_yticks([])
+            ax.tick_params(labelleft=False)
+        except Exception:
+            pass
+
+        # annotate at direction-change points and global extrema
+        try:
+            def _fmt_y(v):
+                if abs(v - round(v)) < 1e-6:
+                    return str(int(round(v)))
+                return ("{:.3f}".format(v)).rstrip('0').rstrip('.')
+
+            xa = np.array(xa)
+            ya = np.array(ya)
+            if xa.size > 2:
+                N = xa.size
+                y_range = float(np.nanmax(ya) - np.nanmin(ya)) or 1.0
+                
+                # Base locations for X-axis
+                clean_interest_x = sorted(list(set([max(0, min(x, beam_length)) for x in critical_x])))
+
+                # Find zero crossings with a noise filter (removes jitter)
+                zero_indices = [i for i in np.where(np.diff(np.sign(ya)) != 0)[0] 
+                                if abs(ya[i] - ya[i+1]) > 1e-4]
+                
+                for idx in zero_indices:
+                    x1, x2, y1, y2 = xa[idx], xa[idx+1], ya[idx], ya[idx+1]
+                    if abs(y2 - y1) > 1e-9:
+                        x_zero = x1 - y1 * (x2 - x1) / (y2 - y1)
+                        if not any(abs(x_zero - ex) < 0.05 * beam_length for ex in clean_interest_x):
+                            clean_interest_x.append(float(x_zero))
+                
+                clean_interest_x.sort()
+
+                # Ticks and Labels
+                ax.set_xticks(clean_interest_x)
+                ax.set_xticklabels([f"{x:g}" for x in clean_interest_x], fontsize=7, color="#AAAAAA", rotation=45)
+
+                label_candidates = [(0, int(np.argmax(ya))), (0, int(np.argmin(ya)))]
+                for x_val in clean_interest_x:
+                    idx = np.abs(xa - x_val).argmin()
+                    for i in [idx-1, idx, idx+1]:
+                        if 0 <= i < N: label_candidates.append((1, i))
+
+                label_candidates.sort()
+                final_labels = []
+                x_limit, y_limit = 0.02 * beam_length, 0.10 * y_range
+
+                for priority, idx in label_candidates:
+                    xv, yv = float(xa[idx]), float(ya[idx])
+                    if any(abs(xv - px) < x_limit and abs(yv - py) < y_limit for px, py in final_labels):
+                        continue
+                    final_labels.append((xv, yv))
+                    
+                    offset = 0.11 * y_range
+                    ha = 'left' if xv < 0.02 * beam_length else 'right' if xv > 0.98 * beam_length else 'center'
+                    ypos, va = (yv + offset, 'bottom') if yv >= -1e-4 else (yv - offset, 'top')
+                    
+                    ax.scatter([xv], [yv], color="#FFFFFF", s=10, zorder=6)
+                    ax.text(xv, ypos, _fmt_y(yv), color="#FFFFFF", fontsize=8, ha=ha, va=va, fontweight='bold',
+                            bbox=dict(facecolor="#202020", alpha=0.9, edgecolor='#555555', linewidth=0.5, boxstyle='round,pad=0.2'))
+        except Exception:
+            pass
 
         fig.tight_layout(pad=0.2)
 

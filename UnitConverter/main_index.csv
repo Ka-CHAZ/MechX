@@ -1,0 +1,71 @@
+Category,Type
+Fundamentals,Length and Distance
+Fundamentals,Mass and Weight
+Fundamentals,Area
+Fundamentals,Volume
+Fundamentals,Density
+Fundamentals,Temperature
+Fundamentals,Time
+Angles and Rotation,Plane Angle
+Angles and Rotation,Angular Velocity
+Angles and Rotation,Angular Acceleration
+Kinematics,Velocity and Speed
+Kinematics,Acceleration
+Mechanics and Dynamics,Force
+Mechanics and Dynamics,Torque
+Mechanics and Dynamics,Power
+Mechanics and Dynamics,Pressure
+Mechanics and Dynamics,Moment of Inertia
+Fluids,Volume
+Fluids,Volume - Dry
+Fluids,Specific Volume
+Fluids,Pressure
+Fluids,Flow
+Fluids,Flow - Mass
+Fluids,Flow - Molar
+Fluids,Surface Tension
+Fluids,Permeability
+Fluids,Molar Mass
+Fluids,Viscosity - Dynamic
+Fluids,Viscosity - Kinematic
+Fluids,Concentration - Molar
+Fluids,Concentration - Solution
+Thermals and Heat,Temperature
+Thermals and Heat,Thermal Resistance
+Thermals and Heat,Specific Heat Capacity
+Thermals and Heat,Heat Flux Density
+Thermals and Heat,Thermal Expansion
+Thermals and Heat,Thermal Conductivity
+Thermals and Heat,Heat Density
+Thermals and Heat,Heat Transfer Coefficient
+Thermals and Heat,Entropy
+Thermals and Heat,Enthalpy
+Electricity,Energy
+Electricity,Electrical Charge
+Electricity,Electric Potential (Voltage)
+Electricity,Current
+Electricity,Conductance
+Electricity,Conductivity
+Electricity,Resistance
+Electricity,Resistivity
+Electricity,Capacitance
+Electricity,Inductance
+Electricity,Electric Field Strength
+Electricity,Linear Charge Density
+Electricity,Linear Current Density
+Electricity,Surface Charge Density
+Electricity,Surface Current Density
+Electricity,Volume Charge Density
+Magnetism,Magnetic Force
+Magnetism,Magnetic Field Srength
+Magnetism,Magnetic Flux
+Magnetism,Magnetic Flux Density
+Light and Waves,Frequency and Wavewlength
+Light and Waves,Luminance
+Light and Waves,Illumination
+Light and Waves,Luminous Intensity
+Additional Converters,Fuel Consumption
+Additional Converters,Fuel Efficiency - Mass
+Additional Converters,Fuel Efficiency - Volume
+Additional Converters,Data Storage
+Additional Converters,Numbers

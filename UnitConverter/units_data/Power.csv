@@ -1,0 +1,64 @@
+﻿UnitName,Abrv,Use,toBase,fromBase
+Watt,W,,x,x
+exawatt,EW,,x * 1000000000000000000,x / 1000000000000000000
+petawatt,PW,,x * 1000000000000000,x / 1000000000000000
+terawatt,TW,,x * 1000000000000,x / 1000000000000
+gigawatt,GW,,x * 1000000000,x / 1000000000
+megawatt,MW,,x * 1000000,x / 1000000
+kilowatt,kW,,x * 1000,x / 1000
+hectowatt,hW,,x * 100,x / 100
+dekawatt,daW,,x * 10,x / 10
+deciwatt,dW,,x * 0.1,x / 0.1
+centiwatt,cW,,x * 0.01,x / 0.01
+milliwatt,mW,,x * 0.001,x / 0.001
+microwatt,\u03BCW,,x * 0.000001,x / 0.000001
+nanowatt,nW,,x * 0.000000001,x / 0.000000001
+picowatt,pW,,x * 0.000000000001,x / 0.000000000001
+femtowatt,fW,,x * 0.000000000000001,x / 0.000000000000001
+attowatt,aW,,x * 0.000000000000000001,x / 0.000000000000000001
+horsepower,hp,,x * 745.6998715823,x / 745.6998715823
+horsepower,hp,metric,x * 735.49875,x / 735.49875
+horsepower,hp,boiler,x * 9809.5000000002,x / 9809.5000000002
+horsepower,hp,electric,x * 746,x / 746
+horsepower,hp,water,x * 746.043,x / 746.043
+Pferdestärke,ps,,x * 735.49875,x / 735.49875
+Btu/hour,Btu/hr,,x * 0.2930710702,x / 0.2930710702
+Btu/minute,Btu/min,,x * 17.5842642103,x / 17.5842642103
+Btu/second,Btu/s,,x * 1055.05585262,x / 1055.05585262
+Mbtu/hour,Mbtu/hr,,x * 293071.07017222,x / 293071.07017222
+MBH,,,x * 293.0710701722,x / 293.0710701722
+ton,,refrigeration,x * 3516.8528420667,x / 3516.8528420667
+kilocalorie/hour,kcal/hr,,x * 1.163,x / 1.163
+kilocalorie/minute,kcal/min,,x * 69.78,x / 69.78
+kilocalorie/second,kcal/s,,x * 4186.8,x / 4186.8
+calorie/hour,cal/hr,,x * 0.001163,x / 0.001163
+calorie/minute,cal/min,,x * 0.06978,x / 0.06978
+calorie/second,cal/s,,x * 4.1868,x / 4.1868
+foot pound-force/hour,ft-lbf/hr,,x * 0.0003766161,x / 0.0003766161
+foot pound-force/minute,ft-lbf/min,,x * 0.0225969658,x / 0.0225969658
+foot pound-force/second,ft-lbf/s,,x * 1.3558179483,x / 1.3558179483
+erg/second,erg/s,,x * 0.0000001,x / 0.0000001
+kilovolt ampere,kV-A,,x * 1000,x / 1000
+volt ampere,V-A,,x,x
+Newton meter/second,Nm/s,,x,x
+joule/second,J/s,,x,x
+exajoule/second,EJ/s,,x * 1000000000000000000,x / 1000000000000000000
+petajoule/second,PJ/s,,x * 1000000000000000,x / 1000000000000000
+terajoule/second,TJ/s,,x * 1000000000000,x / 1000000000000
+gigajoule/second,GJ/s,,x * 1000000000,x / 1000000000
+megajoule/second,MJ/s,,x * 1000000,x / 1000000
+kilojoule/second,kJ/s,,x * 1000,x / 1000
+hectojoule/second,hJ/s,,x * 100,x / 100
+dekajoule/second,daJ/s,,x * 10,x / 10
+decijoule/second,dJ/s,,x * 0.1,x / 0.1
+centijoule/second,cJ/s,,x * 0.01,x / 0.01
+millijoule/second,mJ/s,,x * 0.001,x / 0.001
+microjoule/second,\u03BCJ/s,,x * 0.000001,x / 0.000001
+nanojoule/second,nJ/s,,x * 0.000000001,x / 0.000000001
+picojoule/second,pJ/s,,x * 0.000000000001,x / 0.000000000001
+femtojoule/second,fJ/s,,x * 0.000000000000001,x / 0.000000000000001
+attojoule/second,aJ/s,,x * 0.000000000000000001,x / 0.000000000000000001
+joule/hour,J/hr,,x * (1 / 3600),x / (1 / 3600)
+joule/minute,J/min,,x * (1 / 60),x / (1 / 60)
+kilojoule/hour,kJ/hr,,x * (5 / 18),x / (5 / 18)
+kilojoule/minute,kJ/min,,x * (50 / 3),x / (50 / 3)

@@ -1,0 +1,30 @@
+UnitName,Abrv,Use,toBase,fromBase
+Newton,N,,x,x
+kilonewton,kN,,x * 1000,x / 1000
+gram-force,gf,,x * 0.00980665,x / 0.00980665
+kilogram-force,kgf,,x * 9.80665,x / 9.80665
+ton-force,tf,,x * 9806.65,x / 9806.65
+ton-force,tf,US (short),x * 8896.443230521,x / 8896.443230521
+ton-force,tf,UK (long),x * 9964.0164181707,x / 9964.0164181707
+exanewton,EN,,x * 1.0E18,x / 1.0E18
+petanewton,PN,,x * 1.0E15,x / 1.0E15
+teranewton,TN,,x * 1.0E12,x / 1.0E12
+giganewton,GN,,x * 1000000000,x / 1000000000
+meganewton,MN,,x * 1000000,x / 1000000
+hectonewton,hM,,x * 100,x / 100
+dekanewton,daN,,x * 10,x / 10
+decinewton,dN,,x * 0.1,x / 0.1
+centinewton,cN,,x * 0.01,x / 0.01
+millinewton,mN,,x * 0.001,x / 0.001
+micronewton,\u03BCN,,x * 1.0E-06,x / 1.0E-06
+nanonewton,nN,,x * 1.0E-09,x / 1.0E-09
+piconewton,pN,,x * 1.0E-12,x / 1.0E-12
+femtonewton,fN,,x * 1.0E-15,x / 1.0E-15
+attonewton,aN,,x * 1.0E-18,x / 1.0E-18
+dyne,dyn,,x * 1.0E-05,x / 1.0E-05
+joule/meter,J/m,,x,x
+joule/centimeter,J/cm,,x * 0.01,x / 0.01
+kip-force,kipf,,x * 4448.2216152548,x / 4448.2216152548
+pound-force,lbf,,x * 4.4482216152548,x / 4.4482216152548
+ounce-force,ozf,,x * 0.278013851,x / 0.278013851
+poundal,pdl,,x * 0.1382549544,x / 0.1382549544

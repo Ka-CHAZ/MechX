@@ -1,0 +1,39 @@
+﻿UnitName,Abrv,Use,toBase,fromBase
+gram,g,,x * 0.001,x / 0.001
+exagram,Eg,,x * 1000000000000000,x / 1000000000000000
+petagram,Pg,,x * 1000000000000,x / 1000000000000
+teragram,Tg,,x * 1000000000,x / 1000000000
+gigagram,Gg,,x * 1000000,x / 1000000
+megagram,Mg,,x * 1000,x / 1000
+kiogram,kg,,x,x
+hectogram,hg,,x * 0.1,x / 0.1
+dekagram,dag,,x * 0.01,x / 0.01
+decigram,dg,,x * 0.0001,x / 0.0001
+centigram,cg,,x * 0.00001,x / 0.00001
+milligram,mg,,x * 0.000001,x / 0.000001
+microgram,\u03BCg,,x * 0.000000001,x / 0.000000001
+nanogram,ng,,x * 0.000000000001,x / 0.000000000001
+picogram,pg,,x * 0.000000000000001,x / 0.000000000000001
+femtogram,fg,,x * 0.000000000000000001,x / 0.000000000000000001
+attogram,ag,,x * 1E-21,x / 1E-21
+Ton,t,metric,x * 1000,x / 1000
+Pound,lbs,,x * 0.45359237,x / 0.45359237
+ounce,oz,,x * 0.028349523,x / 0.028349523
+carat,car,,x * 0.0002,x / 0.0002
+Ton,t,US (short),x * 907.18474,x / 907.18474
+Ton,t,UK (long),x * 1016.046909,x / 1016.046909
+Atomic Mass Unit,u,,x * 1.66054E-27,x / 1.66054E-27
+dalton,,,x * 1.66053E-27,x / 1.66053E-27
+kilopound,kip,,x * 453.59237,x / 453.59237
+slug,,,x * 14.59390294,x / 14.59390294
+kiloton,kt,metric,x * 1000000,x / 1000000
+hundredweight,cwt,US (short),x * 45.359237,x / 45.359237
+hundredweight,cwt,UK (long),x * 50.80234544,x / 50.80234544
+stone,st,,x * 6.35029318,x / 6.35029318
+tonne,t,,x * 1000,x / 1000
+grain,gr,,x * 0.0000647989,x / 0.0000647989
+Plank mass,,,x * 0.0000000217671,x / 0.0000000217671
+Electron mass,,,x * 9.10939E-31,x / 9.10939E-31
+Proton mass,,,x * 1.67262E-27,x / 1.67262E-27
+Neutron mass,,,x * 1.67493E-27,x / 1.67493E-27
+gravity,"kgs\u00B2/m, g",,x * 9.80665,x / 9.80665

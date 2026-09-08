@@ -1,0 +1,13 @@
+UnitName,Abrv,Use,toBase,fromBase
+radian/day,rad/d,,x * 1.15741E-05,x / 1.15741E-05
+radian/hour,rad/hr,,x * (1 / 3600),x / (1 / 3600)
+radian/minute,rad/min,,x * (1 / 60),x / (1 / 60)
+radian/second,rad/s,,x,x
+degree/day,\u00B0/d,,x * 2.0200570046231E-07,x / 2.0200570046231E-07
+degree/hour,\u00B0/hr,,x * 4.8481368110954E-06,x / 4.8481368110954E-06
+degree/minute,\u00B0/min,,x * 0.0002908882,x / 0.0002908882
+degree/second,\u00B0/s,,x * 0.0174532925,x / 0.0174532925
+revolution/day,rev/d,,x * 0.0000727221,x / 0.0000727221
+revolution/hour,rev/hr,,x * 0.0017453293,x / 0.0017453293
+revolution/minute,RPM,,x * 0.1047197551,x / 0.1047197551
+revolution/second,RPS,,x * 6.2831853072,x / 6.2831853072

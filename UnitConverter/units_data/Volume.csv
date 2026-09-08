@@ -1,0 +1,62 @@
+﻿UnitName,Abrv,Use,toBase,fromBase
+cubic meter,m\u00B3,,x,x
+cubic exameter,Em\u00B3,,x * 1E+54,x / 1E+54
+cubic petameter,Pm\u00B3,,x * 1E+45,x / 1E+45
+cubic terameter,Tm\u00B3,,x * 1E+36,x / 1E+36
+cubic gigameter,Gm\u00B3,,x * 1E+27,x / 1E+27
+cubic megameter,Mm\u00B3,,x * 1000000000000000000,x / 1000000000000000000
+cubic kilometer,km\u00B3,,x * 1000000000,x / 1000000000
+cubic hectometer,hm\u00B3,,x * 1000000,x / 1000000
+cubic dekameter,dam\u00B3,,x * 1000,x / 1000
+cubic decimeter,dm\u00B3,,x * 0.001,x / 0.001
+cubic centimeter,cm\u00B3,,x * 0.000001,x / 0.000001
+cubic millimeter,mm\u00B3,,x * 0.000000001,x / 0.000000001
+cubic micrometer,\u03BCm\u00B3,,x * 0.000000000000000001,x / 0.000000000000000001
+cubic nanometer,nm\u00B3,,x * 1E-27,x / 1E-27
+cubic picometer,pm\u00B3,,x * 1E-36,x / 1E-36
+cubic femtometer,fm\u00B3,,x * 1E-45,x / 1E-45
+cubic attometer,am\u00B3,,x * 1E-54,x / 1E-54
+cubic inch,in\u00B3,,x * 0.0000163871,x / 0.0000163871
+cubic foot,ft\u00B3,,x * 0.028316847,x / 0.028316847
+cubic yard,yd\u00B3,,x * 0.764554858,x / 0.764554858
+cubic mile,mi\u00B3,,x * 4168181825,x / 4168181825
+Liter,L,,x * 0.001,x / 0.001
+exaliter,EL,,x * 1000000000000000,x / 1000000000000000
+petaliter,PL,,x * 1000000000000,x / 1000000000000
+teraliter,TL,,x * 1000000000,x / 1000000000
+gigaliter,GL,,x * 1000000,x / 1000000
+megaliter,ML,,x * 1000,x / 1000
+kiloliter,kL,,x,x
+hectoliter,hL,,x * 0.1,x / 0.1
+dekaliter,daL,,x * 0.01,x / 0.01
+deciliter,dL,,x * 0.0001,x / 0.0001
+centiliter,cL,,x * 0.00001,x / 0.00001
+milliliter,mL,,x * 0.000001,x / 0.000001
+microliter,\u03BCL,,x * 0.000000001,x / 0.000000001
+nanoliter,nL,,x * 0.000000000001,x / 0.000000000001
+picoliter,pL,,x * 0.000000000000001,x / 0.000000000000001
+femtoliter,fL,,x * 0.000000000000000001,x / 0.000000000000000001
+attoliter,aL,,x * 1E-21,x / 1E-21
+cc,cc,,x * 0.000001,x / 0.000001
+drop,,,x * 0.00000005,x / 0.00000005
+barrel (oil),bbl,,x * 0.158987295,x / 0.158987295
+barrel,bbl,US,x * 0.1192404712,x / 0.1192404712
+barrel,bbl,UK,x * 0.16365924,x / 0.16365924
+gallon,gal,US,x * 0.003785412,x / 0.003785412
+gallon,gal,UK,x * 0.00454609,x / 0.00454609
+quart,qt,US,x * 0.0009463529,x / 0.0009463529
+quart,qt,UK,x * 0.0011365225,x / 0.0011365225
+pint,pt,US,x * 0.0004731765,x / 0.0004731765
+pint,pt,UK,x * 0.0005682613,x / 0.0005682613
+cup,,US,x * 0.0002365882,x / 0.0002365882
+cup,,UK,x * 0.0002841306,x / 0.0002841306
+cup,,,x * 0.00025,x / 0.00025
+tablespoon,Tbsp,US,x * 0.0000147868,x / 0.0000147868
+tablespoon,Tbsp,UK,x * 0.0000177582,x / 0.0000177582
+tablespoon,Tbsp,,x * 0.000015,x / 0.000015
+teaspoon,tsp,US,x * 0.00000492892159375,x / 0.00000492892159375
+teaspoon,tsp,UK,x * 0.0000059193880208333,x / 0.0000059193880208333
+teaspoon,tsp,,x * 0.000005,x / 0.000005
+fluid ounce,fl oz,US,x * 0.0000295735,x / 0.0000295735
+fluid ounce,fl oz,UK,x * 0.0000284131,x / 0.0000284131
+dram,dr,,x * 0.0000036966911953125,x / 0.0000036966911953125

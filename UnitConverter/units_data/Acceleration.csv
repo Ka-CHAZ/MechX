@@ -1,0 +1,32 @@
+﻿UnitName,Abrv,Use,toBase,fromBase
+meter/second squared,m/s\u00B2,,x,x
+meter/minute squared,m/min\u00B2,,x * 0.000277777778,x / 0.000277777778
+meter/hour squared,m/hr\u00B2,,x * 7.716049383E-08,x / 7.716049383E-08
+kilometer/second squared,km/s\u00b2,,x * 1000,x / 1000
+kilometer/minute squared,km/min\u00B2,,x * 0.277777778,x / 0.277777778
+kilometer/hour squared,km/hr\u00B2,,x * 0.00007716049383,x / 0.00007716049383
+centimeter/second squared,cm/s\u00B2,,x * 0.01,x / 0.01
+centimeter/minute squared,cm/min\u00B2,,x * 2.77777778E-06,x / 2.77777778E-06
+centimeter/hour squared,cm/hr\u00B2,,x * 7.716049383E-10,x / 7.716049383E-10
+millimeter/second squared,mm/sec\u00B2,,x * 0.001,x / 0.001
+millimeter/minute squared,mm/min\u00B2,,x * 2.77777778E-07,x / 2.77777778E-07
+millimeter/hour squared,mm/hr\u00B2,,x * 7.716049383E-11,x / 7.716049383E-11
+decimeter/second squared,dm/s\u00B2,,x * 0.1,x / 0.1
+hectometer/second squared,hm/s\u00B2,,x * 100,x / 100
+dekameter/second squared,dam/s\u00B2,,x * 10,x / 10
+micrometer/second squared,\u03BCm/s\u00B2,,x * 1.0E-06,x / 1.0E-06
+nanometer/second squared,nm/s\u00B2,,x * 1.0E-09,x / 1.0E-09
+picometer/second squared,pm/s\u00B2,,x * 1.0E-12,x / 1.0E-12
+femtometer/second squared,fm/s\u00B2,,x * 1.0E-15,x / 1.0E-15
+attometer/second squared,am/s\u00B2,,x * 1.0E-18,x / 1.0E-18
+mile/second squared,mi/s\u00B2,,x * 1609.344,x / 1609.344
+mile/minute squared,mi/min\u00B2,,x * 0.44704,x / 0.44704
+mile/hour squared,mi/hr\u00B2,,x * 0.00012417777777778,x / 0.00012417777777778
+yard/second squared,yd/s\u00B2,,x * 0.9144,x / 0.9144
+yard/minute squared,yd/min\u00B2,,x * 0.000254,x / 0.000254
+yard/hour squared,yd/hr\u00B2,,x * 7.05555556E-08,x / 7.05555556E-08
+foot/second squared,ft/s\u00B2,,x * 0.3048,x / 0.3048
+foot/minute squared,ft/min\u00B2,,x * 8.46666667E-05,x / 8.46666667E-05
+foot/hour squared,ft/hr\u00B2,,x * 2.35185185E-08,x / 2.35185185E-08
+Galileo,Gal,,x * 0.01,x / 0.01
+Acceleration from Earth's gravity,g,,x * 9.80665,x / 9.80665

@@ -1,0 +1,42 @@
+UnitName,Abrv,Use,toBase,fromBase
+meter,m,,x,x
+exameter,Em,,x * 1000000000000000000,x / 1000000000000000000
+petameter,Pm,,x * 1000000000000000,x / 1000000000000000
+terameter,Tm,,x * 1000000000000,x / 1000000000000
+gigameter,Gm,,x * 1000000000,x / 1000000000
+megameter,Mm,,x * 1000000,x / 1000000
+kilometer,km,,x * 1000,x / 1000
+hectometer,hm,,x * 100,x / 100
+dekameter,dam,,x * 10,x / 10
+decimeter,dm,,x * 0.1,x / 0.1
+centimeter,cm,,x * 0.01,x / 0.01
+millimeter,mm,,x * 0.001,x / 0.001
+micrometer,\u03BCm,,x * 0.000001,x / 0.000001
+nanometer,nm,,x * 0.000000001,x / 0.000000001
+picometer,pm,,x * 0.000000000001,x / 0.000000000001
+femtometer,fm,,x * 0.000000000000001,x / 0.000000000000001
+attometer,am,,x * 0.000000000000000001,x / 0.000000000000000001
+micron,\u03BC,,x * 0.000001,x / 0.000001
+inch,in,,x * 0.0254,x / 0.0254
+foot,ft,,x * 0.3048,x / 0.3048
+yard,yd,,x * 0.9144,x / 0.9144
+mile,mi,,x * 1609.344,x / 1609.344
+mile,mi,statute,x * 1609.3472186944,x / 1609.3472186944
+mil,"mil, thou",,x * 0.0000254,x / 0.0000254
+microinch,,,x * 0.0000000254,x / 0.0000000254
+light year,ly,,x * 9460000000000000,x / 9460000000000000
+megaparsec,Mpc,,x * 3.09E+22,x / 3.09E+22
+kiloparsec,kpc,,x * 30900000000000000000,x / 30900000000000000000
+parsec,pc,,x * 30900000000000000,x / 30900000000000000
+Astronomical Unit,AU,,x * 150000000000,x / 150000000000
+league,lea,,x * 4828.032,x / 4828.032
+nautical league,nl,,x * 5556,x / 5556
+nautical league,nl,UK,x * 5559.552,x / 5559.552
+nautical league,nl,statute,x * 4828.0416560833,x / 4828.0416560833
+nautical mile,nmi,,x * 1852,x / 1852
+nautical mile,nmi,UK,x * 1853.184,x / 1853.184
+fathom,fath,,x * 1.8288,x / 1.8288
+angstrom,A,,x * 0.0000000001,x / 0.0000000001
+caliber,cl,,x * 0.000254,x / 0.000254
+Plank Length,,,x * 1.62E-35,x / 1.62E-35
+Electron Radius,,,x * 0.00000000000000282,x / 0.00000000000000282

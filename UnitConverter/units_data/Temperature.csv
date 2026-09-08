@@ -1,0 +1,6 @@
+﻿UnitName,Abrv,Use,toBase,fromBase
+kelvin,K,,x,x
+Celsius,\u00B0C,,x + 273.15,x - 273.15
+Fahrenheit,\u00B0F,,(x - 32) * 0.55555555555555555555555555555556 + 273.15,(((x - 273.15) * 1.8) + 32)
+Rankine,u\00B0R,,x * 0.555555556,x / 0.555555556
+Reaumur,\u00B0r,,(x * 1.25) + 273.15,(x - 273.15) * 0.8

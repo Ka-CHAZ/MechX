@@ -1,0 +1,41 @@
+﻿UnitName,Abrv,Use,toBase,fromBase
+kilogram/cubic meter,kg/m\u00B3,,x,x
+gram/cubic centimeter,g/cm\u00B3,,x * 1000,x / 1000
+kilogram/cubic centimeter,kg/cm\u00B3,,x * 1000000,x / 1000000
+gram/cubic meter,g/m\u00B3,,x * 0.001,x / 0.001
+gram/cubic millimeter,g/mm\u00B3,,x * 1000000,x / 1000000
+milligram/cubic meter,mg/m\u00B3,,x * 0.000001,x / 0.000001
+milligram/cubic centimeter,mg/cm\u00B3,,x,x
+milligram/cubic millimeter,mg/mm\u00B3,,x * 1000,x / 1000
+exagram/liter,Eg/L,,x * 1000000000000000000,x / 1000000000000000000
+petagram/liter,Pg/L,,x * 1000000000000000,x / 1000000000000000
+teragram/liter,Tg/L,,x * 1000000000000,x / 1000000000000
+gigagram/liter,Gg/L,,x * 1000000000,x / 1000000000
+megagram/liter,Mg/L,,x * 1000000,x / 1000000
+kilogram/liter,kg/L,,x * 1000,x / 1000
+hectogram/liter,hg/L,,x * 100,x / 100
+dekagram/liter,dag/L,,x * 10,x / 10
+gram/liter,g/L,,x,x
+decigram/liter,dg/L,,x * 0.1,x / 0.1
+centigram/liter,cg/L,,x * 0.01,x / 0.01
+milligram/liter,mg/L,,x * 0.001,x / 0.001
+microgram/liter,\u03BCg/L,,x * 0.000001,x / 0.000001
+nanogram/liter,ng/L,,x * 0.000000001,x / 0.000000001
+picogram/liter,pg/L,,x * 0.000000000001,x / 0.000000000001
+femtogram/liter,fg/L,,x * 0.000000000000001,x / 0.000000000000001
+attogram/liter,ag/L,,x * 0.000000000000000001,x / 0.000000000000000001
+pound/cubic inch,lb/in\u00B3,,x * 27679.90471,x / 27679.90471
+pound/cubic foot,lb/ft\u00B3,,x * 16.01846337,x / 16.01846337
+pound/cubic yard,lb/yd\u00B3,,x * 0.593276421,x / 0.593276421
+pound/gallon,lb/gal,US,x * 119.8264273,x / 119.8264273
+pound/gallon,lb/gal,UK,x * 99.7763726631,x / 99.7763726631
+ounce/cubic inch,oz/in\u00B3,,x * 1729.994044,x / 1729.994044
+ounce/cubic foot,oz/ft\u00B3,,x * 1.001153961,x / 1.001153961
+ounce/gallon,oz/gal,US,x * 7.489151707,x / 7.489151707
+ounce/gallon,oz/gal,UK,x * 6.2360232914,x / 6.2360232914
+grain/gallon,gr/gal,US,x * 0.017118061,x / 0.017118061
+grain/gallon,gr/gal,UK,x * 0.0142537675,x / 0.0142537675
+ton/cubic yard,t/yd\u00B3,US (short),x * 1186.552843,x / 1186.552843
+ton/cubic yard,t/yd\u00B3,UK (long),x * 1328.939184,x / 1328.939184
+slug/cubic foot,slug/ft\u00B3,,x * 515.3788184,x / 515.3788184
+psi/1000 feet,,,x * 2.306658726,x / 2.306658726

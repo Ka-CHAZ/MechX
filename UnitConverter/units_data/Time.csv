@@ -1,0 +1,19 @@
+﻿UnitName,Abrv,Use,toBase,fromBase
+second,s,,x,x
+millisecond,ms,,x * 0.001,x / 0.001
+minute,min,,x * 60,x / 60
+hour,hr,,x * 3600,x / 3600
+day,,,x * 86400,x / 86400
+week,,,x * 604800,x / 604800
+month,mo,,x * 2628000,x / 2628000
+year,yr,,x * 31557600,x / 31557600
+decade,,,x * 315576000,x / 315576000
+century,,,x * 3155760000,x / 3155760000
+millennium,,,x * 31557600000,x / 31557600000
+microsecond,\u03BCs,,x * 0.000001,x / 0.000001
+nanosecond,ns,,x * 0.000000001,x / 0.000000001
+picosecond,ps,,x * 0.000000000001,x / 0.000000000001
+femtosecond,fs,,x * 0.000000000000001,x / 0.000000000000001
+attosecond,as,,x * 0.000000000000000001,x / 0.000000000000000001
+shake,,,x * 0.00000001,x / 0.00000001
+Plank time,,,x * 5.39056E-44,x / 5.39056E-44

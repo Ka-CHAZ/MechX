@@ -1,0 +1,9 @@
+﻿UnitName,Abrv,Use,toBase,fromBase
+liter,L,,x,x
+barrel,bbl dry,,x * 115.6271236039,x / 115.6271236039
+pint,pt dry,,x * 0.5506104714,x / 0.5506104714
+quart,qt dry,,x * 1.1012209428,x / 1.1012209428
+peck,pk,US,x * 8.8097675424,x / 8.8097675424
+peck,pk,UK,x * 9.09218,x / 9.09218
+bushel,bu,US,x * 35.2390701696,x / 35.2390701696
+bushel,bu,UK,x * 36.36872,x / 36.36872

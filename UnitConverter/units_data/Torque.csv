@@ -1,0 +1,22 @@
+﻿UnitName,Abrv,Use,toBase,fromBase
+Newton meter,N-m,,x,x
+Newton centimeter,N-cm,,x * 0.01,x / 0.01
+Newton millimeter,N-mm,,x * 0.001,x / 0.001
+kilonewton meter,kN-m,,x * 1000,x / 1000
+millinewton meter,mN-m,,x * 0.001,x / 0.001
+dyne meter,dyn-m,,x * 0.00001,x / 0.00001
+dyne centimeter,dyn-cm,,x * 0.0000001,x / 0.0000001
+dyne millimeter,dyn-mm,,x * 0.00000001,x / 0.00000001
+kilogram-force meter,kgf-m,,x * 9.80665,x / 9.80665
+kilogram-force centimeter,kgf-cm,,x * 0.0980665,x / 0.0980665
+kilogram-force millimeter,kgf-mm,,x * 0.00980665,x / 0.00980665
+gram-force meter,gf-m,,x * 0.00980665,x / 0.00980665
+gram-force centimeter,gf-cm,,x * 0.0000980665,x / 0.0000980665
+gram-force millimeter,gf-mm,,x * 0.00000980665,x / 0.00000980665
+ounce-force foot,ozf-ft,,x * 0.084738624,x / 0.084738624
+ounce-force inch,ozf-in,,x * 0.007061552,x / 0.007061552
+pound-force foot,lbf-ft,,x * 1.355818,x / 1.355818
+pound-force inch,lbf-in,,x * 0.1129848333,x / 0.1129848333
+ton-force meter,tf-m,US (short),x * 8896.4400000035,x / 8896.4400000035
+ton-force meter,tf-m,UK (long),x * 9964.0200000047,x / 9964.0200000047
+ton-force meter,tf-m,metric,x * 9806.6499999993,x / 9806.6499999993

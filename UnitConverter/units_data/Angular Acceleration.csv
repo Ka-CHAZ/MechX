@@ -1,0 +1,6 @@
+UnitName,Abrv,Use,toBase,fromBase
+radian/square second,rad/s\u00B2,,x,x
+radian/square minute,rad/m\u00B2,,x * (1 / 3600),x / (1 / 3600)
+revolution/square second,rev/s\u00B2,,x * 6.2831853069,x / 6.2831853069
+revolution/square minute,rev/m\u00B2,,x * 0.1047197551,x / 0.1047197551
+revolution/minute/second,"rev/m/s, RPM/s",,x * 0.0017453293,x / 0.0017453293

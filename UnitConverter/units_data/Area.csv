@@ -1,0 +1,24 @@
+﻿UnitName,Abrv,Use,toBase,fromBase
+square meter,m\u00B2,,x,x
+square exameter,Em\u00B2,,x * 1E+36,x / 1E+36
+square petameter,Pm\u00B2,,x * 1E+30,x / 1E+30
+square terameter,Tm\u00B2,,x * 1E+24,x / 1E+24
+square gigameter,Gm\u00B2,,x * 1000000000000000000,x / 1000000000000000000
+square megameter,Mm\u00B2,,x * 1000000000000,x / 1000000000000
+square kilometer,km\u00B2,,x * 1000000,x / 1000000
+square hectometer,hm\u00B2,,x * 10000,x / 10000
+square dekameter,dam\u00B2,,x * 100,x / 100
+square decimeter,dm\u00B2,,x * 0.01,x / 0.01
+square centimeter,cm\u00B2,,x * 0.0001,x / 0.0001
+square millimeter,mm\u00B2,,x * 0.000001,x / 0.000001
+square micrometer,\u03BCm\u00B2,,x * 0.000000000001,x / 0.000000000001
+square nanometer,nm\u00B2,,x * 0.000000000000000001,x / 0.000000000000000001
+square picometer,pm\u00B2,,x * 1E-24,x / 1E-24
+square femtometer,fm\u00B2,,x * 1E-30,x / 1E-30
+square attometer,am\u00B2,,x * 1E-36,x / 1E-36
+square inch,in\u00B2,,x * 0.000645,x / 0.000645
+square foot,ft\u00B2,,x * 0.0929,x / 0.0929
+square yard,yd\u00B2,,x * 0.836,x / 0.836
+square mile,mi\u00B2,,x * 2589988.11,x / 2589988.11
+acre,ac,,x * 4046.856422,x / 4046.856422
+hectare,ha,,x * 10000,x / 10000

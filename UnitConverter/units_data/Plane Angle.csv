@@ -1,0 +1,8 @@
+UnitName,Abrv,Use,toBase,fromBase
+degree,\u00B0,,x,x
+radian,rad,,x * (pi / 180),(x * pi) / 180
+gradian,grad,,x * 0.9,x / 0.9
+minute,\u0027,,x * (1 / 60),x / (1 / 60)
+second,\u0022,,x * (1 / 3600),x / (1 / 3600)
+milliradian,mil,,x * 0.05625,x / 0.05625
+revolution,r,,x * 360,x / 360

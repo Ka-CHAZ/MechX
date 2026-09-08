@@ -1,0 +1,26 @@
+UnitName,Abrv,Use,toBase,fromBase
+meter/second,m/s,,x,x
+meter/minute,m/min,,x * 0.0166666667,x / 0.0166666667
+meter/hour,m/hr,,x * 0.0002777778,x / 0.0002777778
+kilometer/second,km/s,,x * 1000,x / 1000
+kilometer/minute,km/min,,x * 16.6666666667,x / 16.6666666667
+kilometer/hour,"kph, km/hr",,x * 0.2777777778,x / 0.2777777778
+centimeter/hour,cm/hr,,x * 2.7777777777778E06,x / 2.7777777777778E06
+centimeter/minute,cm/min,,x * 0.0001666667,x / 0.0001666667
+centimeter/second,cm/s,,x * 0.01,x / 0.01
+millimeter/hour,mm/hr,,x * 2.7777777777778E07,x / 2.7777777777778E07
+millimeter/minute,mm/min,,x * 1.66667E05,x / 1.66667E05
+millimeter/second,mm/s,,x * 0.001,x / 0.001
+mile/hour,"mph, mi/hr",,x * 0.44704,x / 0.44704
+mile/minute,mi/min,,x * 26.8224,x / 26.8224
+mile/second,mi/s,,x * 1609.344,x / 1609.344
+yard/hour,yd/hr,,x * 0.000254,x / 0.000254
+yard/minute,yd/min,,x * 0.01524,x / 0.01524
+yard/second,yd/s,,x * 0.9144,x / 0.9144
+foot/hour,ft/hr,,x * 8.46667E05,x / 8.46667E05
+foot/minute,ft/min,,x * 0.00508,x / 0.00508
+foot/second,"fps, ft/s",,x * 0.3048,x / 0.3048
+knot,kt,,x * 0.5144444444,x / 0.5144444444
+knot,kt,UK,x * 0.5147733333,x / 0.5147733333
+speed of light (vacum),,,x * 299792458,x / 299792458
+speed of sound in Air,Mach,,x * 295.0464000003,x / 295.0464000003

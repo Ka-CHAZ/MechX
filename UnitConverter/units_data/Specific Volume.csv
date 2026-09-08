@@ -1,0 +1,9 @@
+﻿UnitName,Abrv,Use,toBase,fromBase
+cubic meter/kilogram,m\u00B3/kg,,x,x
+cubic centimeter/gram,cm\u00B3/g,,x * 0.001,x / 0.001
+liter/kilogram,L/kg,,x * 0.001,x / 0.001
+liter/gram,L/g,,x,x
+cubic foot/kilogram,ft\u00B3/kg,,x * 0.0283168466,x / 0.0283168466
+cubic foot/pound,ft\u00B3/lb,,x * 0.06242796,x / 0.06242796
+gallon/pound,gal/lb,US,x * 0.008345039,x / 0.008345039
+gallon/pound,gal/lb,UK,x * 0.0100224128,x / 0.0100224128

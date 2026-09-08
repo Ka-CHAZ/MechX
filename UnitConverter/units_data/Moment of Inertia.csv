@@ -1,0 +1,15 @@
+﻿UnitName,Abrv,Use,toBase,fromBase
+kiogram square meter,kg-m\u00B2,,x,x
+kilogram square centimeter,kg-cm\u00B2,,x * 0.0001,x / 0.0001
+kilogram square millimeter,kg-mm\u00B2,,x * 0.000001,x / 0.000001
+gram square centimeter,g-cm\u00B2,,x * 0.0000001,x / 0.0000001
+gram square millimeter,g-mm\u00B2,,x * 0.000000001,x / 0.000000001
+kilogram-force meter square second,kgf-m-s\u00B2,,x * 9.80665,x / 9.80665
+kilogram-force centimeter square second,kgf-cm-s\u00B2,,x * 0.0980665,x / 0.0980665
+ounce square inch,oz-in\u00B2,,x * 1.829E-6,x / 1.829E-6
+ounce-force inch square second,ozf-in-s\u00B2,,x * 0.0070615519,x / 0.0070615519
+pound square foot,lb-ft\u00B2,,x * 0.0421401101,x / 0.0421401101
+pound-force foot square second,lbf-ft-s\u00B2,,x * 1.3558179619,x / 1.3558179619
+pound square inch,lb-in\u00B2,,x * 0.0002926397,x / 0.0002926397
+pound-force inch square second,lbf-in-s\u00B2,,x * 0.1129848302,x / 0.1129848302
+slug square foot,slug-ft\u00B2,,x * 1.3558179619,x / 1.3558179619
