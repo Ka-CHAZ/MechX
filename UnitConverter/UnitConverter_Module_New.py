@@ -1,4 +1,5 @@
 import csv
+import io
 import os
 import re
 from PySide6.QtWidgets import QMainWindow, QMessageBox
@@ -34,6 +35,44 @@ def parse_base_factor(value):
         return float(text)
     except ValueError:
         return 1.0
+
+
+def decode_csv_text(value):
+    text = str(value)
+
+    def replace_escape(match):
+        return chr(int(match.group(1) or match.group(2) or match.group(3), 16))
+
+    return re.sub(r'\\u([0-9A-Fa-f]{4})|\\U([0-9A-Fa-f]{8})|\\x([0-9A-Fa-f]{2})', replace_escape, text)
+
+
+def read_csv_rows(filename, expected_headers):
+    with open(filename, 'rb') as csvfile:
+        data = csvfile.read()
+
+    encodings = ('utf-8-sig', 'utf-16', 'utf-16-le', 'utf-16-be', 'cp1252', 'latin-1')
+    expected_headers = {header.lower() for header in expected_headers}
+    last_error = None
+
+    for encoding in encodings:
+        try:
+            text = data.decode(encoding)
+            reader = csv.DictReader(io.StringIO(text, newline=''))
+            fieldnames = reader.fieldnames or []
+            normalized_fieldnames = [
+                fieldname.strip().lstrip('\ufeff') if fieldname else fieldname
+                for fieldname in fieldnames
+            ]
+            if not expected_headers.intersection(
+                fieldname.lower() for fieldname in normalized_fieldnames if fieldname
+            ):
+                continue
+            reader.fieldnames = normalized_fieldnames
+            return list(reader), encoding
+        except (UnicodeDecodeError, UnicodeError, csv.Error) as error:
+            last_error = error
+
+    raise UnicodeError(f'Could not decode CSV file: {filename}') from last_error
 
 
 class Unit_Converter(QMainWindow, Ui_UnitConverter):
@@ -76,18 +115,18 @@ class Unit_Converter(QMainWindow, Ui_UnitConverter):
             return
 
         try:
-            with open(filename, newline='', encoding='utf-8') as csvfile:
-                reader = csv.DictReader(csvfile)
-                for row in reader:
-                    cat = row.get('Category') or row.get('category') or row.get('CategoryName')
-                    typ = row.get('Type') or row.get('type') or row.get('TypeName')
-                    if not cat or not typ:
-                        continue
-                    cat = cat.strip()
-                    typ = typ.strip()
-                    self.index_map.setdefault(cat, [])
-                    if typ not in self.index_map[cat]:
-                        self.index_map[cat].append(typ)
+            rows, encoding = read_csv_rows(filename, ('Category', 'Type'))
+            for row in rows:
+                cat = row.get('Category') or row.get('category') or row.get('CategoryName')
+                typ = row.get('Type') or row.get('type') or row.get('TypeName')
+                if not cat or not typ:
+                    continue
+                cat = cat.strip()
+                typ = typ.strip()
+                self.index_map.setdefault(cat, [])
+                if typ not in self.index_map[cat]:
+                    self.index_map[cat].append(typ)
+            print(f'[UnitConverter] Loaded index {filename} using {encoding}')
         except Exception as e:
             QMessageBox.warning(self, 'Index Load', f'Could not load main_index.csv: {e}')
 
@@ -100,6 +139,7 @@ class Unit_Converter(QMainWindow, Ui_UnitConverter):
             if self.unitsubcat.count() > 0:
                 self.unitsubcat.setCurrentIndex(0)
         self.unitsubcat.blockSignals(False)
+        self.subcategory_selected(self.unitsubcat.currentText())
 
     def _resolve_unit_csv_path(self, subcat):
         csv_dir = os.path.join(os.path.dirname(__file__), 'units_data')
@@ -131,19 +171,29 @@ class Unit_Converter(QMainWindow, Ui_UnitConverter):
         units_map = {}
         if os.path.isfile(csv_path):
             try:
-                with open(csv_path, newline='', encoding='utf-8') as f:
-                    reader = csv.DictReader(f)
-                    for row in reader:
-                        name = row.get('UnitName') or row.get('Name') or row.get('unit')
-                        if not name:
-                            continue
-                        name = str(name).strip()
-                        factor_raw = row.get('toBase') or row.get('to_base')
-                        factor = parse_base_factor(factor_raw)
-                        units_map[name] = factor
-            except Exception:
+                rows, encoding = read_csv_rows(csv_path, ('UnitName', 'Name', 'unit'))
+                loaded_rows = 0
+                for row in rows:
+                    name = row.get('UnitName') or row.get('Name') or row.get('unit')
+                    if not name:
+                        continue
+                    name = str(name).strip()
+                    abbreviation = decode_csv_text(row.get('Abrv') or '').strip()
+                    use = decode_csv_text(row.get('Use') or '').strip()
+                    if abbreviation:
+                        name += f' [{abbreviation}]'
+                    if use:
+                        name += f' ({use})'
+                    factor_raw = row.get('toBase') or row.get('to_base')
+                    factor = parse_base_factor(factor_raw)
+                    units_map[name] = factor
+                    loaded_rows += 1
+                print(f'[UnitConverter] Loaded {loaded_rows} units from {csv_path} using {encoding}')
+            except Exception as error:
+                print(f'[UnitConverter] Failed to load {csv_path}: {error}')
                 units_map = {}
         else:
+            print(f'[UnitConverter] Missing unit file for {category}/{subcat}: {csv_path}')
             QMessageBox.information(self, 'Units Missing', f'Unit file not found: {csv_path}')
 
         self.conversion_data.setdefault(category, {})

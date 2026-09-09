@@ -1,4 +1,4 @@
-﻿UnitName,Abrv,Use,toBase,fromBase
+UnitName,Abrv,Use,toBase,fromBase
 square meter,m\u00B2,,x,x
 square exameter,Em\u00B2,,x * 1E+36,x / 1E+36
 square petameter,Pm\u00B2,,x * 1E+30,x / 1E+30
