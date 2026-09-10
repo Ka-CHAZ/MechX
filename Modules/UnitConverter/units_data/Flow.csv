@@ -1,0 +1,51 @@
+﻿UnitName,Abrv,Use,toBase,fromBase
+cubic meter/second,m\u00B3/s,,x,x
+cubic meter/minute,m\u00B3/min,,x * 0.0166666667,x / 0.0166666667
+cubic meter/hour,m\u00B3/hr,,x * 0.0002777778,x / 0.0002777778
+cubic meter/day,m\u00B3/d,,x * 0.0000115741,x / 0.0000115741
+cubic centimeter/second,cm\u00B3/s,,x * 0.000001,x / 0.000001
+cubic centimeter/minute,cm\u00B3/min,,x * 0.000000016666666666667,x / 0.000000016666666666667
+cubic centimeter/hour,cm\u00B3/hr,,x * 0.00000000027777777777778,x / 0.00000000027777777777778
+cubic centimeter/day,cm\u00B3/d,,x * 0.000000000011574074074074,x / 0.000000000011574074074074
+liter/second,L/s,,x * 0.001,x / 0.001
+liter/minute,L/min,,x * 0.0000166667,x / 0.0000166667
+liter/hour,L/hr,,x * 0.00000027777777777778,x / 0.00000027777777777778
+liter/day,L/d,,x * 0.000000011574074074074,x / 0.000000011574074074074
+millileter/second,mL/s,,x * 0.000001,x / 0.000001
+millileter/minute,mL/min,,x * 0.000000016666666666667,x / 0.000000016666666666667
+millileter/hour,mL/hr,,x * 0.00000000027777777777778,x / 0.00000000027777777777778
+millileter/day,mL/d,,x * 0.000000000011574074074074,x / 0.000000000011574074074074
+gallon/second,gal/s,US,x * 0.0037854118,x / 0.0037854118
+gallon/minute,gal/min,US,x * 0.0000630902,x / 0.0000630902
+gallon/hour,gal/hr,US,x * 0.0000010515032733333,x / 0.0000010515032733333
+gallon/day,gal/d,US,x * 0.000000043812636388889,x / 0.000000043812636388889
+gallon/second,gal/sec,UK,x * 0.00454609,x / 0.00454609
+gallon/minute,gal/min,UK,x * 0.0000757682,x / 0.0000757682
+gallon/hour,gal/hr,UK,x * 0.0000012628027777778,x / 0.0000012628027777778
+gallon/day,gal/d,UK,x * 0.000000052616782407407,x / 0.000000052616782407407
+kilobarrel/day,kbbl/d,US,x * 0.0018401307,x / 0.0018401307
+barrel/second,bbl/s,US,x * 0.1589872949,x / 0.1589872949
+barrel/minute,bbl/min,US,x * 0.0026497882,x / 0.0026497882
+barrel/hour,bbl/hr,US,x * 0.0000441631,x / 0.0000441631
+barrel/day,bbl/d,US,x * 0.0000018401307283333,x / 0.0000018401307283333
+acre-foot/hour,ac-ft/hr,,x * 0.3426352143,x / 0.3426352143
+acre-foot/day,ac-ft/d,,x * 0.0142764673,x / 0.0142764673
+acre-foot/year,ac-ft/y,,x * 0.0000391136,x / 0.0000391136
+hundred-cubic foot/minute,,,x * 0.0471947443,x / 0.0471947443
+hundred-cubic foot/hour,,,x * 0.0007865791,x / 0.0007865791
+hundred-cubic foot/day,,,x * 0.0000327741,x / 0.0000327741
+ounce/second,oz/s,US,x * 0.0000295735,x / 0.0000295735
+ounce/minute,oz/min,US,x * 0.000000492892159375,x / 0.000000492892159375
+ounce/hour,oz/hr,US,x * 0.0000000082148693229167,x / 0.0000000082148693229167
+ounce/second,oz/s,UK,x * 0.0000284131,x / 0.0000284131
+ounce/minute,oz/min,UK,x * 0.00000047355107102865,x / 0.00000047355107102865
+ounce/hour,oz/hr,UK,x * 0.0000000078925178504774,x / 0.0000000078925178504774
+cubic yard/second,yd\u00B3/s,,x * 0.764554858,x / 0.764554858
+cubic yard/minute,yd\u00B3/min,,x * 0.012742581,x / 0.012742581
+cubic yard/hour,yd\u00B3/hr,,x * 0.0002123763,x / 0.0002123763
+cubic foot/second,ft\u00B3/s,,x * 0.0283168466,x / 0.0283168466
+cubic foot/minute,ft\u00B3/min,,x * 0.0004719474,x / 0.0004719474
+cubic foot/hour,ft\u00B3/hr,,x * 0.00000786579072,x / 0.00000786579072
+cubic inch/second,in\u00B3/s,,x * 0.0000163871,x / 0.0000163871
+cubic inch/minute,in\u00B3/min,,x * 0.00000027311773333333,x / 0.00000027311773333333
+cubic inch/hour,in\u00B3/hr,,x * 0.0000000045519622224454,x / 0.0000000045519622224454

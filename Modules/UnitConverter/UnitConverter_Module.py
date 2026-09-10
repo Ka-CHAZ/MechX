@@ -5,7 +5,7 @@ from PySide6.QtGui import QAction, QBrush, QColor, QConicalGradient, QCursor, QF
 from PySide6.QtWidgets import QAbstractSpinBox, QTreeWidget, QTreeWidgetItem, QMdiSubWindow, QMdiArea, QApplication, QComboBox, QDoubleSpinBox, QPushButton, QDialog, QLineEdit, QMenu, QScrollArea, QGridLayout, QVBoxLayout, QHBoxLayout, QFrame, QGroupBox, QHBoxLayout, QLabel, QMainWindow, QMenu, QMenuBar, QSizePolicy, QMessageBox, QStatusBar, QTabWidget, QVBoxLayout, QWidget, QGraphicsView, QGraphicsScene, QGraphicsRectItem, QDoubleSpinBox, QSpacerItem, QSplitter
 import math 
 
-from UnitConverter.UnitConverter_ui import Ui_UnitConverter
+from Modules.UnitConverter.UnitConverter_ui import Ui_UnitConverter
 
 class Unit_Converter(QMainWindow, Ui_UnitConverter, QPushButton, QAction):
     def __init__(self):

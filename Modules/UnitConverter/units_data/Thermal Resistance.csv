@@ -1,0 +1,5 @@
+UnitName,Abrv,Use,toBase,fromBase
+Kelvin/Watt,K/W,,x,x
+degree Fahrenheit hour/Btu,,,x * 1.8956342406,x / 1.8956342406
+degree Fahrenheit minute/Btu,,,x * 0.03159390401,x / 0.03159390401
+degree Fahrenheit second/Btu,,,x * 0.0005265651,x / 0.0005265651

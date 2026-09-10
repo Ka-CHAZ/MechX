@@ -5,8 +5,8 @@ from PySide6 import QtGui
 from PySide6.QtGui import QIcon, QAction
 
 from MechX_Home.MechX_Mainscreen_ui import Ui_MEMainWindow  # Import main UI
-from UnitConverter.UnitConverter_Module_New import Unit_Converter  # Import Unit Converter classes
-from DeterminateBeams.DeterminateBeams_Module import Determinate_beams  # Import Determinate Beams classes
+from Modules.UnitConverter.UnitConverter_Module_New import Unit_Converter  # Import Unit Converter classes
+from Modules.DeterminateBeams.DeterminateBeams_Module import Determinate_beams  # Import Determinate Beams classes
 from MechX_Home.credits_ui import Ui_credits  # Import credits UI
 
 class MdiApp(QMainWindow):

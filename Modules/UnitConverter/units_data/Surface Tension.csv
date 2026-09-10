@@ -1,0 +1,9 @@
+UnitName,Abrv,Use,toBase,fromBase
+Newton/meter,N/m,,x,x
+millinewton/meter,mN/m,,x * 0.001,x / 0.001
+gram-force/centimeter,gf/cm,,x * 0.980665,x / 0.980665
+dyne/centimeter,dyn/cm,,x * 0.001,x / 0.001
+erg/square centimeter,,,x * 0.001,x / 0.001
+erg/square millimeter,,,x * 0.1,x / 0.1
+poundal/inch,pdl/in,,x * 5.443108491,x / 5.443108491
+pound-force/inch,lbf/in,,x * 175.1268369864,x / 175.1268369864

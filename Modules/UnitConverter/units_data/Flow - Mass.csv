@@ -1,0 +1,32 @@
+UnitName,Abrv,Use,toBase,fromBase
+kilogram/second,kg/s,,x,x
+kilogram/minute,kg/min,,x * 0.0166666667,x / 0.0166666667
+kilogram/hour,kg/hr,,x * 0.0002777778,x / 0.0002777778
+kilogram/day,kg/d,,x * 0.0000115741,x / 0.0000115741
+gram/second,g/s,,x * 0.001,x / 0.001
+gram/minute,g/min,,x * 0.0000166667,x / 0.0000166667
+gram/hour,g/hr,,x * 0.00000027777777777778,x / 0.00000027777777777778
+gram/day,g/d,,x * 0.000000011574074074074,x / 0.000000011574074074074
+milligram/second,mg/s,,x * 0.000001,x / 0.000001
+milligram/minute,mg/min,,x * 0.000000016666666666667,x / 0.000000016666666666667
+milligram/hour,mg/hr,,x * 0.00000000027777777777778,x / 0.00000000027777777777778
+milligram/day,mg/d,,x * 0.000000000011574074074074,x / 0.000000000011574074074074
+exagram/second,Eg/s,,x * 1000000000000000,x / 1000000000000000
+petagram/second,Pg/s,,x * 1000000000000,x / 1000000000000
+teragram/second,Tg/s,,x * 1000000000,x / 1000000000
+gigagram/second,Gg/s,,x * 1000000,x / 1000000
+megagram/second,Mg/s,,x * 1000,x / 1000
+hectogram/second,hg/s,,x * 0.1,x / 0.1
+dekagram/second,dag/s,,x * 0.01,x / 0.01
+decigram/second,dg/s,,x * 0.0001,x / 0.0001
+centigram/second,cg/s,,x * 0.00001,x / 0.00001
+microgram/second,\u03BCg/s,,x * 0.000000001,x / 0.000000001
+ton/second,t/s,metric,x * 1000,x / 1000
+ton/minute,t/min,metric,x * 16.6666666667,x / 16.6666666667
+ton/hour,t/hr,metric,x * 0.2777777778,x / 0.2777777778
+ton/day,t/d,metric,x * 0.0115740741,x / 0.0115740741
+ton/hour,ton (US)/hr,short,x * 0.2519957611,x / 0.2519957611
+pound/second,lb/s,,x * 0.45359237,x / 0.45359237
+pound/minute,lb/min,,x * 0.0075598728,x / 0.0075598728
+pound/hour,lb/hr,,x * 0.0001259979,x / 0.0001259979
+pound/day,lb/d,,x * 0.000005299116898148,x / 0.000005299116898148

@@ -8,7 +8,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg
 
-from DeterminateBeams.Shearandmomentdiagramming_ui import Ui_shearandmomentscalculator
+from Modules.DeterminateBeams.Shearandmomentdiagramming_ui import Ui_shearandmomentscalculator
 
 class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
     def __init__(self):
@@ -3045,7 +3045,7 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
 
                 # Ticks and Labels
                 ax.set_xticks(clean_interest_x)
-                ax.set_xticklabels([f"{x:g}" for x in clean_interest_x], fontsize=7, color="#AAAAAA", rotation=45)
+                ax.set_xticklabels([f"{x:g}" for x in clean_interest_x], fontsize=7, color="#AAAAAA", rotation=0)
 
                 label_candidates = [(0, int(np.argmax(ya))), (0, int(np.argmin(ya)))]
                 for x_val in clean_interest_x:
@@ -3266,7 +3266,7 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
 
                 # Ticks and Labels
                 ax.set_xticks(clean_interest_x)
-                ax.set_xticklabels([f"{x:g}" for x in clean_interest_x], fontsize=7, color="#AAAAAA", rotation=45)
+                ax.set_xticklabels([f"{x:g}" for x in clean_interest_x], fontsize=7, color="#AAAAAA", rotation=0)
 
                 label_candidates = [(0, int(np.argmax(ya))), (0, int(np.argmin(ya)))]
                 for x_val in clean_interest_x:
