@@ -1,0 +1,11 @@
+UnitName,Abrv,Use,toBase,fromBase
+ohm,\u03A9,,x,x
+kiloohm,k\u03A9,,x * 1000,x / 1000
+megaohm,M\u03A9,,x * 1000000,x / 1000000
+milliohm,m\u03A9,,x * 0.001,x / 0.001
+microohm,\u03BC\u03A9,,x * 0.000001,x / 0.000001
+volt/ampere,,,x,x
+reciprocal siemens,1/S,,x,x
+abohm,,,x * 0.000000001,x / 0.000000001
+statohm,,,x * 898755200000,x / 898755200000
+quantized Hall resistance,,,x * 25812.8056,x / 25812.8056

@@ -1,3 +1,18 @@
 {
-    "python-envs.defaultEnvManager": "ms-python.python:venv"
+    "python-envs.defaultEnvManager": "ms-python.python:venv",
+    "qtForPython.uic.path": "${workspaceFolder}\\.venv\\Lib\\site-packages\\PySide6\\uic.exe",
+    "qtForPython.uic.options": [
+        "-g",
+        "python",
+        "--from-imports",
+        "-o",
+        "${resourceDirname}${pathSeparator}${resourceBasenameNoExtension}_ui.py"
+    ],
+    "qtForPython.rcc.path": "${workspaceFolder}\\.venv\\Lib\\site-packages\\PySide6\\rcc.exe",
+    "qtForPython.rcc.options": [
+        "-g",
+        "python",
+        "-o",
+        "${resourceDirname}${pathSeparator}..${pathSeparator}${resourceBasenameNoExtension}_rc.py"
+    ]
 }

@@ -1,0 +1,9 @@
+UnitName,Abrv,Use,toBase,fromBase
+ohm meter,\u03A9m,,x,x
+ohm centimeter,\u03A9cm,,x * 0.01,x / 0.01
+ohm inch,\u03A9in,,x * 0.0254,x / 0.0254
+mircoohm centimeter,\u03BC\u03A9cm,,x * 0.00000001,x / 0.00000001
+microohm inch,\u03BC\u03A9in,,x * 0.000000025400000000102,x / 0.000000025400000000102
+abohm centimeter,,,x * 0.000000000001,x / 0.000000000001
+statohm centimeter,,,x * 8987524324.0156,x / 8987524324.0156
+circular mil ohm/foot,,,x * 0.0000000016624261130101,x / 0.0000000016624261130101

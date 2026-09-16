@@ -1,0 +1,9 @@
+UnitName,Abrv,Use,toBase,fromBase
+siemens/meter,S/m,,x,x
+picosiemens/meter,pS/m,,x * 0.000000000001,x / 0.000000000001
+mho/meter,mho/m,,x,x
+mho/centimeter,mho/cm,,x * 100,x / 100
+abmho/meter,abmho/m,,x * 1000000000,x / 1000000000
+abmho/centimeter,abmho/cm,,x * 100000000000,x / 100000000000
+statmho/meter,stmho/m,,x * 0.0000000000011126534560019,x / 0.0000000000011126534560019
+statmho/centimeter,stmho/cm,,x * 0.00000000011126534560019,x / 0.00000000011126534560019

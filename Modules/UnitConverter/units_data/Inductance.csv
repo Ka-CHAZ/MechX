@@ -1,0 +1,21 @@
+UnitName,Abrv,Use,toBase,fromBase
+henry,H,,x,x
+exahenry,EH,,x * 1000000000000000000,x / 1000000000000000000
+petahenry,PH,,x * 1000000000000000,x / 1000000000000000
+terahenry,TH,,x * 1000000000000,x / 1000000000000
+gigahenry,GH,,x * 1000000000,x / 1000000000
+megahenry,MH,,x * 1000000,x / 1000000
+kilohenry,kH,,x * 1000,x / 1000
+hectohenry,hH,,x * 100,x / 100
+dekahenry,daH,,x * 10,x / 10
+decihenry,dH,,x * 0.1,x / 0.1
+centihenry,cH,,x * 0.01,x / 0.01
+millihenry,mH,,x * 0.001,x / 0.001
+microhenry,\u03BCH,,x * 0.000001,x / 0.000001
+nanohenry,nH,,x * 0.000000001,x / 0.000000001
+picohenry,pH,,x * 0.000000000001,x / 0.000000000001
+femtohenry,fH,,x * 0.000000000000001,x / 0.000000000000001
+attohenry,aH,,x * 0.000000000000000001,x / 0.000000000000000001
+weber/ampere,Wb/A,,x,x
+abhenry,abH,,x * 0.000000001,x / 0.000000001
+stathenry,stH,,x * 898755200000,x / 898755200000

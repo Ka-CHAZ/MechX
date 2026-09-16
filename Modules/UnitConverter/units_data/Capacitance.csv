@@ -1,0 +1,21 @@
+UnitName,Abrv,Use,toBase,fromBase
+farad,F,,x,x
+exafarad,EF,,x * 1000000000000000000,x / 1000000000000000000
+petafarad,PF,,x * 1000000000000000,x / 1000000000000000
+terafarad,TF,,x * 1000000000000,x / 1000000000000
+gigafarad,GF,,x * 1000000000,x / 1000000000
+megafarad,MF,,x * 1000000,x / 1000000
+kilofarad,kF,,x * 1000,x / 1000
+hectofarad,hF,,x * 100,x / 100
+dekafarad,daF,,x * 10,x / 10
+decifarad,dF,,x * 0.1,x / 0.1
+centifarad,cF,,x * 0.01,x / 0.01
+millifarad,mF,,x * 0.001,x / 0.001
+microfarad,\u03BCF,,x * 0.000001,x / 0.000001
+nanofarad,nF,,x * 0.000000001,x / 0.000000001
+picofarad,pF,,x * 0.000000000001,x / 0.000000000001
+femtofarad,fF,,x * 0.000000000000001,x / 0.000000000000001
+attofarad,aF,,x * 0.000000000000000001,x / 0.000000000000000001
+coulomb/volt,C/V,,x,x
+abfarad,abF,,x * 1000000000,x / 1000000000
+statfarad,stF,,x * 0.000000000001112650056054,x / 0.000000000001112650056054

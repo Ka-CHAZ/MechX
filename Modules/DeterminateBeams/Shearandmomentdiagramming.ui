@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1150</width>
+    <width>1200</width>
     <height>840</height>
    </rect>
   </property>
@@ -18,13 +18,13 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>1150</width>
+    <width>1200</width>
     <height>840</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1150</width>
+    <width>1200</width>
     <height>840</height>
    </size>
   </property>
@@ -37,8 +37,12 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="Icons/resources.qrc">
+    <normaloff>:/icons/modicon.svg</normaloff>:/icons/modicon.svg</iconset>
+  </property>
   <property name="tabShape">
-   <enum>QTabWidget::TabShape::Rounded</enum>
+   <enum>QTabWidget::Rounded</enum>
   </property>
   <property name="dockNestingEnabled">
    <bool>false</bool>
@@ -60,7 +64,17 @@
      <bool>false</bool>
     </property>
     <property name="text">
-     <string>variable supports</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="Icons/resources.qrc">
+      <normaloff>:/icons/varsup.svg</normaloff>:/icons/varsup.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>64</width>
+      <height>64</height>
+     </size>
     </property>
     <property name="checkable">
      <bool>false</bool>
@@ -88,7 +102,17 @@
      </rect>
     </property>
     <property name="text">
-     <string>supported left side</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="Icons/resources.qrc">
+      <normaloff>:/icons/lcantsup.svg</normaloff>:/icons/lcantsup.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>64</width>
+      <height>64</height>
+     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="rtsidesupport">
@@ -101,7 +125,17 @@
      </rect>
     </property>
     <property name="text">
-     <string>supported right side</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="Icons/resources.qrc">
+      <normaloff>:/icons/rcantsup.svg</normaloff>:/icons/rcantsup.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>64</width>
+      <height>64</height>
+     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="Uppntload">
@@ -114,7 +148,17 @@
      </rect>
     </property>
     <property name="text">
-     <string>point up</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="Icons/resources.qrc">
+      <normaloff>:/icons/cpl_up.svg</normaloff>:/icons/cpl_up.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="Downpntload">
@@ -127,7 +171,17 @@
      </rect>
     </property>
     <property name="text">
-     <string>point down</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="Icons/resources.qrc">
+      <normaloff>:/icons/cpl_dwn.svg</normaloff>:/icons/cpl_dwn.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="lineardistribloadup">
@@ -140,7 +194,17 @@
      </rect>
     </property>
     <property name="text">
-     <string>ditrib up</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="Icons/resources.qrc">
+      <normaloff>:/icons/udl_up.svg</normaloff>:/icons/udl_up.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>37</width>
+      <height>37</height>
+     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="lineardistribloaddown">
@@ -153,7 +217,17 @@
      </rect>
     </property>
     <property name="text">
-     <string>distrib down</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="Icons/resources.qrc">
+      <normaloff>:/icons/udl_dwn.svg</normaloff>:/icons/udl_dwn.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>37</width>
+      <height>37</height>
+     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="varibledistribloadup">
@@ -166,7 +240,17 @@
      </rect>
     </property>
     <property name="text">
-     <string>var distrib up</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="Icons/resources.qrc">
+      <normaloff>:/icons/ldl_up.svg</normaloff>:/icons/ldl_up.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>37</width>
+      <height>37</height>
+     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="varibdistribloaddown">
@@ -179,7 +263,17 @@
      </rect>
     </property>
     <property name="text">
-     <string>var distrib down</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="Icons/resources.qrc">
+      <normaloff>:/icons/ldl_dwn.svg</normaloff>:/icons/ldl_dwn.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>37</width>
+      <height>37</height>
+     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="momentccw">
@@ -192,7 +286,17 @@
      </rect>
     </property>
     <property name="text">
-     <string>moment ccw</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="Icons/resources.qrc">
+      <normaloff>:/icons/m_ccw.svg</normaloff>:/icons/m_ccw.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>35</width>
+      <height>35</height>
+     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="momentcw">
@@ -205,7 +309,17 @@
      </rect>
     </property>
     <property name="text">
-     <string>moment cw</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="Icons/resources.qrc">
+      <normaloff>:/icons/m_cw.svg</normaloff>:/icons/m_cw.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>35</width>
+      <height>35</height>
+     </size>
     </property>
    </widget>
    <widget class="QScrollArea" name="elemetsscrollarea">
@@ -218,10 +332,10 @@
      </rect>
     </property>
     <property name="frameShape">
-     <enum>QFrame::Shape::Box</enum>
+     <enum>QFrame::Panel</enum>
     </property>
     <property name="frameShadow">
-     <enum>QFrame::Shadow::Sunken</enum>
+     <enum>QFrame::Plain</enum>
     </property>
     <property name="lineWidth">
      <number>2</number>
@@ -229,16 +343,13 @@
     <property name="widgetResizable">
      <bool>true</bool>
     </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
-    </property>
     <widget class="QWidget" name="scrollAreaWidgetContents">
      <property name="geometry">
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>303</width>
-       <height>453</height>
+       <width>307</width>
+       <height>457</height>
       </rect>
      </property>
     </widget>
@@ -262,7 +373,7 @@
      <string>Elements</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QGroupBox" name="Beamsetuplength">
@@ -270,8 +381,8 @@
      <rect>
       <x>70</x>
       <y>80</y>
-      <width>221</width>
-      <height>91</height>
+      <width>281</width>
+      <height>94</height>
      </rect>
     </property>
     <property name="font">
@@ -283,128 +394,124 @@
     <property name="title">
      <string>Beam Setup</string>
     </property>
-    <widget class="QWidget" name="layoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>20</y>
-       <width>201</width>
-       <height>68</height>
-      </rect>
-     </property>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QLabel" name="label_2">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>80</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Arial</family>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Total Beam
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>126</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Total Beam
 Length</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <widget class="QDoubleSpinBox" name="Beamlength">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QDoubleSpinBox" name="Beamlength">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="buttonSymbols">
+          <enum>QAbstractSpinBox::UpDownArrows</enum>
+         </property>
+         <property name="maximum">
+          <double>100000000.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="beamlengthunits">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <item>
+          <property name="text">
+           <string/>
           </property>
-          <property name="minimumSize">
-           <size>
-            <width>45</width>
-            <height>0</height>
-           </size>
+         </item>
+         <item>
+          <property name="text">
+           <string>mm</string>
           </property>
-          <property name="font">
-           <font>
-            <family>Arial</family>
-            <pointsize>12</pointsize>
-           </font>
+         </item>
+         <item>
+          <property name="text">
+           <string>m</string>
           </property>
-          <property name="buttonSymbols">
-           <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+         </item>
+         <item>
+          <property name="text">
+           <string>in.</string>
           </property>
-          <property name="maximum">
-           <double>100000000.000000000000000</double>
+         </item>
+         <item>
+          <property name="text">
+           <string>ft</string>
           </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="beamlengthunits">
-          <property name="minimumSize">
-           <size>
-            <width>45</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Arial</family>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <item>
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>mm</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>m</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>in.</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>ft</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </widget>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
    </widget>
    <widget class="QGroupBox" name="supportlocation">
     <property name="geometry">
      <rect>
       <x>70</x>
       <y>180</y>
-      <width>221</width>
-      <height>111</height>
+      <width>281</width>
+      <height>107</height>
      </rect>
     </property>
     <property name="font">
@@ -416,223 +523,129 @@ Length</string>
     <property name="title">
      <string>Support Locations</string>
     </property>
-    <widget class="QWidget" name="layoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>20</y>
-       <width>201</width>
-       <height>84</height>
-      </rect>
-     </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_4">
-      <item>
-       <layout class="QVBoxLayout" name="verticalLayout_5">
-        <item>
-         <widget class="QLabel" name="label_4">
-          <property name="font">
-           <font>
-            <family>Arial</family>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Location of
-Left Support</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignmentFlag::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QDoubleSpinBox" name="leftsupportlocation">
-          <property name="font">
-           <font>
-            <family>Arial</family>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <property name="buttonSymbols">
-           <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
-          </property>
-          <property name="maximum">
-           <double>100000000.000000000000000</double>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QVBoxLayout" name="verticalLayout_4">
-        <item>
-         <widget class="QLabel" name="label_5">
-          <property name="font">
-           <font>
-            <family>Arial</family>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Location of
-Right Support</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignmentFlag::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QDoubleSpinBox" name="rightsupportlocation">
-          <property name="font">
-           <font>
-            <family>Arial</family>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <property name="buttonSymbols">
-           <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
-          </property>
-          <property name="maximum">
-           <double>100000000.000000000000000</double>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>10</y>
-      <width>88</width>
-      <height>68</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_6">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <widget class="QPushButton" name="entersetup">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>Enter</string>
-       </property>
-      </widget>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_4">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Location of
+Left Support</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDoubleSpinBox" name="leftsupportlocation">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="frame">
+          <bool>true</bool>
+         </property>
+         <property name="buttonSymbols">
+          <enum>QAbstractSpinBox::UpDownArrows</enum>
+         </property>
+         <property name="maximum">
+          <double>100000000.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
-      <widget class="QPushButton" name="cancelsetup">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>Cancel</string>
-       </property>
-      </widget>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="label_5">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Location of
+Right Support</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDoubleSpinBox" name="rightsupportlocation">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="frame">
+          <bool>true</bool>
+         </property>
+         <property name="buttonSymbols">
+          <enum>QAbstractSpinBox::UpDownArrows</enum>
+         </property>
+         <property name="maximum">
+          <double>100000000.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
     </layout>
-   </widget>
-   <widget class="QGraphicsView" name="Loadsdiagram">
-    <property name="geometry">
-     <rect>
-      <x>470</x>
-      <y>40</y>
-      <width>671</width>
-      <height>241</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Shape::WinPanel</enum>
-    </property>
-    <property name="verticalScrollBarPolicy">
-     <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="horizontalScrollBarPolicy">
-     <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="sizeAdjustPolicy">
-     <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents</enum>
-    </property>
-   </widget>
-   <widget class="QGraphicsView" name="Sheargraph">
-    <property name="geometry">
-     <rect>
-      <x>470</x>
-      <y>290</y>
-      <width>671</width>
-      <height>241</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Shape::WinPanel</enum>
-    </property>
-   </widget>
-   <widget class="QGraphicsView" name="Momentgraph">
-    <property name="geometry">
-     <rect>
-      <x>470</x>
-      <y>540</y>
-      <width>671</width>
-      <height>241</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Shape::WinPanel</enum>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Switchmomentconvention">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>560</y>
-      <width>31</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Moment Convention</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Switchshearconvention">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>330</y>
-      <width>31</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Shear Convention</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="visualizerlengthunits">
-    <property name="geometry">
-     <rect>
-      <x>400</x>
-      <y>40</y>
-      <width>61</width>
-      <height>25</height>
-     </rect>
-    </property>
    </widget>
    <widget class="QScrollArea" name="loadsscroll">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>105</y>
-      <width>151</width>
+      <x>360</x>
+      <y>100</y>
+      <width>141</width>
       <height>71</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
     </property>
     <property name="widgetResizable">
      <bool>true</bool>
@@ -642,7 +655,7 @@ Right Support</string>
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>149</width>
+       <width>139</width>
        <height>69</height>
       </rect>
      </property>
@@ -651,9 +664,9 @@ Right Support</string>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>360</x>
       <y>80</y>
-      <width>151</width>
+      <width>141</width>
       <height>21</height>
      </rect>
     </property>
@@ -666,18 +679,20 @@ Right Support</string>
     <property name="text">
      <string>Loads</string>
     </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
-    </property>
    </widget>
    <widget class="QScrollArea" name="reactionsscroll">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>200</y>
-      <width>151</width>
+      <x>360</x>
+      <y>190</y>
+      <width>141</width>
       <height>71</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
     </property>
     <property name="widgetResizable">
      <bool>true</bool>
@@ -687,7 +702,7 @@ Right Support</string>
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>149</width>
+       <width>139</width>
        <height>69</height>
       </rect>
      </property>
@@ -696,9 +711,9 @@ Right Support</string>
    <widget class="QLabel" name="label_8">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>175</y>
-      <width>151</width>
+      <x>360</x>
+      <y>170</y>
+      <width>141</width>
       <height>21</height>
      </rect>
     </property>
@@ -711,45 +726,102 @@ Right Support</string>
     <property name="text">
      <string>Reactions</string>
     </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
-    </property>
    </widget>
-   <widget class="QComboBox" name="visualizerloadunits">
+   <widget class="QPushButton" name="entersetup">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>290</y>
-      <width>61</width>
-      <height>25</height>
+      <x>310</x>
+      <y>10</y>
+      <width>81</width>
+      <height>59</height>
      </rect>
     </property>
-   </widget>
-   <widget class="QComboBox" name="visualizermomentunits">
-    <property name="geometry">
-     <rect>
-      <x>400</x>
-      <y>520</y>
-      <width>61</width>
-      <height>25</height>
-     </rect>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
-   </widget>
-   <widget class="QLabel" name="label_9">
-    <property name="geometry">
-     <rect>
-      <x>466</x>
-      <y>20</y>
-      <width>661</width>
-      <height>20</height>
-     </rect>
+    <property name="font">
+     <font>
+      <pointsize>13</pointsize>
+     </font>
     </property>
     <property name="text">
-     <string>Load Diagram</string>
+     <string>Calculate</string>
     </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>10</y>
+      <width>681</width>
+      <height>781</height>
+     </rect>
     </property>
+    <layout class="QVBoxLayout" name="verticalLayout_5">
+     <item>
+      <widget class="QLabel" name="label_9">
+       <property name="text">
+        <string>Load Diagram</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGraphicsView" name="Loadsdiagram">
+       <property name="frameShape">
+        <enum>QFrame::Panel</enum>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAsNeeded</enum>
+       </property>
+       <property name="horizontalScrollBarPolicy">
+        <enum>Qt::ScrollBarAsNeeded</enum>
+       </property>
+       <property name="sizeAdjustPolicy">
+        <enum>QAbstractScrollArea::AdjustIgnored</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_10">
+       <property name="text">
+        <string>Shear Force Diagram</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGraphicsView" name="Sheargraph">
+       <property name="frameShape">
+        <enum>QFrame::Panel</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_11">
+       <property name="text">
+        <string>Moment Diagram</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGraphicsView" name="Momentgraph">
+       <property name="frameShape">
+        <enum>QFrame::Panel</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -758,8 +830,8 @@ Right Support</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1150</width>
-     <height>33</height>
+     <width>1200</width>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_Utilites">
@@ -1235,7 +1307,14 @@ Right Support</string>
     <string>Quit All</string>
    </property>
   </action>
+  <action name="actionOutput_Loads_and_Reactions">
+   <property name="text">
+    <string>Output Loads and Reactions</string>
+   </property>
+  </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="Icons/resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

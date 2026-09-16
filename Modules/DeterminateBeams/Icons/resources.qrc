@@ -1,0 +1,16 @@
+<RCC>
+  <qresource prefix="/icons">
+    <file>modicon.svg</file>
+    <file>rcantsup.svg</file>
+    <file>lcantsup.svg</file>
+    <file>varsup.svg</file>
+    <file>ldl_dwn.svg</file>
+    <file>m_cw.svg</file>
+    <file>m_ccw.svg</file>
+    <file>ldl_up.svg</file>
+    <file>udl_dwn.svg</file>
+    <file>udl_up.svg</file>
+    <file>cpl_dwn.svg</file>
+    <file>cpl_up.svg</file>
+  </qresource>
+</RCC>

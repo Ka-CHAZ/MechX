@@ -1,0 +1,5 @@
+UnitName,Abrv,Use,toBase,fromBase
+volt,V,,x,x
+watt/ampere,W/A,,x,x
+abvolt,abV,,x * 0.00000001,x / 0.00000001
+statvolt,stV,,x * 299.7925,x / 299.7925

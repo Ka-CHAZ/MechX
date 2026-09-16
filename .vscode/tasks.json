@@ -1,0 +1,41 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Qt: Compile current UI",
+            "type": "process",
+            "command": "${workspaceFolder}\\.venv\\Lib\\site-packages\\PySide6\\uic.exe",
+            "args": [
+                "-g",
+                "python",
+                "--from-imports",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}_ui.py"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Qt: Compile Determinate Beams resources",
+            "type": "process",
+            "command": "${workspaceFolder}\\.venv\\Lib\\site-packages\\PySide6\\rcc.exe",
+            "args": [
+                "-g",
+                "python",
+                "${workspaceFolder}\\Modules\\DeterminateBeams\\Icons\\resources.qrc",
+                "-o",
+                "${workspaceFolder}\\Modules\\DeterminateBeams\\resources_rc.py"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Qt: Compile current UI and resources",
+            "dependsOn": [
+                "Qt: Compile current UI",
+                "Qt: Compile Determinate Beams resources"
+            ],
+            "dependsOrder": "sequence",
+            "problemMatcher": []
+        }
+    ]
+}

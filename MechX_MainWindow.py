@@ -32,6 +32,8 @@ class MdiApp(QMainWindow):
             # Add more here as needed
         }
 
+        self._apply_module_icons()
+
         self.ui.Modulelist.expandAll()
         
         # Connect signal for tree widget
@@ -39,6 +41,23 @@ class MdiApp(QMainWindow):
         self.ui.Unitconverter.clicked.connect(self.open_unit_converter)
         self.ui.actionUnit_Converter.triggered.connect(self.open_unit_converter)
         self.ui.actionAbout.triggered.connect(self.credits)
+
+    def _apply_module_icons(self):
+        module_icons = {
+            module_name: module_class().windowIcon()
+            for module_name, module_class in self.sub_windows.items()
+        }
+        self.tree_widget.setIconSize(QSize(24, 24))
+
+        def apply_icon(item):
+            item_text = item.text(0)
+            if item_text in module_icons:
+                item.setIcon(0, module_icons[item_text])
+            for child_index in range(item.childCount()):
+                apply_icon(item.child(child_index))
+
+        for top_level_index in range(self.tree_widget.topLevelItemCount()):
+            apply_icon(self.tree_widget.topLevelItem(top_level_index))
 
     def open_subwindow(self, item, column):
         item_text = item.text(column)

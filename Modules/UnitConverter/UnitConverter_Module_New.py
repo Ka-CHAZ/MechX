@@ -3,7 +3,8 @@ import io
 import os
 import re
 from PySide6.QtWidgets import QMainWindow, QMessageBox
-from Modules.UnitConverter.UnitConverter_ui_new import Ui_UnitConverter
+from PySide6.QtCore import Qt
+from Modules.UnitConverter.UnitConverter_ui import Ui_UnitConverter
 
 
 def parse_base_factor(value):
@@ -81,6 +82,14 @@ class Unit_Converter(QMainWindow, Ui_UnitConverter):
         self.ui = Ui_UnitConverter()
         self.setupUi(self)
         self.setWindowTitle('Unit Converter')
+        self.setFixedSize(self.size())
+        self.setWindowFlags(
+            Qt.Window |
+            Qt.CustomizeWindowHint |
+            Qt.WindowTitleHint |
+            Qt.WindowCloseButtonHint |
+            Qt.MSWindowsFixedSizeDialogHint
+        )
 
         try:
             self.unitstyle.currentTextChanged.disconnect(self.unitsubcat.setCurrentText)

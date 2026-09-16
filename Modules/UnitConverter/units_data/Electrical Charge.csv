@@ -1,0 +1,16 @@
+UnitName,Abrv,Use,toBase,fromBase
+coulomb,C,,x,x
+megacoulomb,MC,,x * 1000000,x / 1000000
+kilocoulomb,kC,,x * 1000000,x / 1000000
+millicoulomb,mC,,x * 0.001,x / 0.001
+microcoulomb,\u03BCC,,x * 0.000001,x / 0.000001
+nanocoulomb,nC,,x * 0.000000001,x / 0.000000001
+picocoulomb,pC,,x * 0.000000000001,x / 0.000000000001
+abcoulomb,abC,,x * 10,x / 10
+statcoulomb,stC,,x * 0.0000000003335640951982,x / 0.0000000003335640951982
+franklin,Fr,,x * 0.0000000003335640951982,x / 0.0000000003335640951982
+ampere-second,As,,x,x
+ampere-minute,Amin,,x * 60,x / 60
+ampere-hour,Ah,,x * 3600,x / 3600
+faraday,,based on carbon-12,x * 96485.309000004,x / 96485.309000004
+elementary charge,e,,x * 0.000000000000000000160217733,x / 0.000000000000000000160217733

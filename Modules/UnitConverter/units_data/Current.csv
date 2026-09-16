@@ -1,0 +1,7 @@
+UnitName,Abrv,Use,toBase,fromBase
+ampere,A,,x,x
+kiloampere,kA,,x * 1000,x / 1000
+milliampere,mA,,x * 0.001,x / 0.001
+biot,Bi,,x * 10,x / 10
+abampere,abA,,x * 10,x / 10
+statampere,stA,,x * 0.0000000003335641,x / 0.0000000003335641

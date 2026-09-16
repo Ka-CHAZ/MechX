@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'UnitConverter.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.0
+## Created by: Qt User Interface Compiler version 6.11.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -17,29 +17,29 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
 from PySide6.QtWidgets import (QAbstractSpinBox, QApplication, QComboBox, QDoubleSpinBox,
-    QFrame, QGroupBox, QHBoxLayout, QMainWindow,
-    QMenuBar, QSizePolicy, QStatusBar, QTabWidget,
-    QVBoxLayout, QWidget)
+    QFrame, QGridLayout, QGroupBox, QHBoxLayout,
+    QMainWindow, QMenuBar, QSizePolicy, QStatusBar,
+    QTabWidget, QVBoxLayout, QWidget)
 
 class Ui_UnitConverter(object):
     def setupUi(self, UnitConverter):
         if not UnitConverter.objectName():
             UnitConverter.setObjectName(u"UnitConverter")
-        UnitConverter.setWindowModality(Qt.WindowModality.NonModal)
-        UnitConverter.resize(566, 260)
+        UnitConverter.setWindowModality(Qt.NonModal)
+        UnitConverter.resize(510, 287)
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(UnitConverter.sizePolicy().hasHeightForWidth())
         UnitConverter.setSizePolicy(sizePolicy)
-        UnitConverter.setMinimumSize(QSize(566, 260))
-        UnitConverter.setMaximumSize(QSize(566, 260))
+        UnitConverter.setMinimumSize(QSize(510, 287))
+        UnitConverter.setMaximumSize(QSize(510, 287))
         font = QFont()
         font.setFamilies([u"Arial"])
         font.setPointSize(10)
         UnitConverter.setFont(font)
-        UnitConverter.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonFollowStyle)
-        UnitConverter.setTabShape(QTabWidget.TabShape.Rounded)
+        UnitConverter.setToolButtonStyle(Qt.ToolButtonIconOnly)
+        UnitConverter.setTabShape(QTabWidget.Rounded)
         UnitConverter.setDockNestingEnabled(False)
         UnitConverter.setUnifiedTitleAndToolBarOnMac(False)
         self.actionUnit_Converter = QAction(UnitConverter)
@@ -214,73 +214,32 @@ class Ui_UnitConverter(object):
         self.actionQuit_All.setObjectName(u"actionQuit_All")
         self.centralwidget = QWidget(UnitConverter)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.groupBox_2 = QGroupBox(self.centralwidget)
-        self.groupBox_2.setObjectName(u"groupBox_2")
-        self.groupBox_2.setGeometry(QRect(10, 170, 548, 67))
+        self.gridLayout = QGridLayout(self.centralwidget)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.frame = QFrame(self.centralwidget)
+        self.frame.setObjectName(u"frame")
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.groupBox_2.sizePolicy().hasHeightForWidth())
-        self.groupBox_2.setSizePolicy(sizePolicy1)
-        self.groupBox_2.setFont(font)
-        self.verticalLayout_4 = QVBoxLayout(self.groupBox_2)
-        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.horizontalLayout_5 = QHBoxLayout()
-        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.NUMunit_output = QDoubleSpinBox(self.groupBox_2)
-        self.NUMunit_output.setObjectName(u"NUMunit_output")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.NUMunit_output.sizePolicy().hasHeightForWidth())
-        self.NUMunit_output.setSizePolicy(sizePolicy2)
-        self.NUMunit_output.setMinimumSize(QSize(140, 30))
-        self.NUMunit_output.setMaximumSize(QSize(140, 30))
-        self.NUMunit_output.setFont(font)
-        self.NUMunit_output.setWrapping(True)
-        self.NUMunit_output.setReadOnly(True)
-        self.NUMunit_output.setButtonSymbols(QAbstractSpinBox.ButtonSymbols.NoButtons)
-        self.NUMunit_output.setDecimals(10)
-        self.NUMunit_output.setMinimum(-99999999999999995164818811802792197885196090803013355167206819763650035712.000000000000000)
-        self.NUMunit_output.setMaximum(99999999999999995164818811802792197885196090803013355167206819763650035712.000000000000000)
-
-        self.horizontalLayout_5.addWidget(self.NUMunit_output)
-
-        self.units_to = QComboBox(self.groupBox_2)
-        self.units_to.setObjectName(u"units_to")
-        sizePolicy2.setHeightForWidth(self.units_to.sizePolicy().hasHeightForWidth())
-        self.units_to.setSizePolicy(sizePolicy2)
-        self.units_to.setMinimumSize(QSize(380, 30))
-        self.units_to.setMaximumSize(QSize(380, 30))
-        self.units_to.setFont(font)
-        self.units_to.setMaxVisibleItems(20)
-
-        self.horizontalLayout_5.addWidget(self.units_to)
-
-
-        self.verticalLayout_4.addLayout(self.horizontalLayout_5)
-
-        self.frame = QFrame(self.centralwidget)
-        self.frame.setObjectName(u"frame")
-        self.frame.setGeometry(QRect(9, 9, 548, 85))
         sizePolicy1.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
         self.frame.setSizePolicy(sizePolicy1)
         self.frame.setMaximumSize(QSize(16777215, 85))
         self.frame.setFont(font)
-        self.frame.setFrameShape(QFrame.Shape.WinPanel)
-        self.frame.setFrameShadow(QFrame.Shadow.Raised)
+        self.frame.setFrameShape(QFrame.NoFrame)
         self.frame.setLineWidth(2)
         self.frame.setMidLineWidth(2)
         self.horizontalLayout_4 = QHBoxLayout(self.frame)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.groupBox_3 = QGroupBox(self.frame)
         self.groupBox_3.setObjectName(u"groupBox_3")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
         sizePolicy2.setHeightForWidth(self.groupBox_3.sizePolicy().hasHeightForWidth())
         self.groupBox_3.setSizePolicy(sizePolicy2)
         self.groupBox_3.setMinimumSize(QSize(180, 0))
         self.groupBox_3.setMaximumSize(QSize(16777215, 16777215))
         self.groupBox_3.setFont(font)
-        self.groupBox_3.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.horizontalLayout_6 = QHBoxLayout(self.groupBox_3)
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
         self.unitstyle = QComboBox(self.groupBox_3)
@@ -296,29 +255,6 @@ class Ui_UnitConverter(object):
 
         self.horizontalLayout_4.addWidget(self.groupBox_3)
 
-        self.groupBox_4 = QGroupBox(self.frame)
-        self.groupBox_4.setObjectName(u"groupBox_4")
-        sizePolicy2.setHeightForWidth(self.groupBox_4.sizePolicy().hasHeightForWidth())
-        self.groupBox_4.setSizePolicy(sizePolicy2)
-        self.groupBox_4.setMinimumSize(QSize(0, 0))
-        self.groupBox_4.setMaximumSize(QSize(16777215, 16777215))
-        self.groupBox_4.setFont(font)
-        self.groupBox_4.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.horizontalLayout_2 = QHBoxLayout(self.groupBox_4)
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.unitplane = QComboBox(self.groupBox_4)
-        self.unitplane.setObjectName(u"unitplane")
-        sizePolicy2.setHeightForWidth(self.unitplane.sizePolicy().hasHeightForWidth())
-        self.unitplane.setSizePolicy(sizePolicy2)
-        self.unitplane.setMinimumSize(QSize(0, 30))
-        self.unitplane.setMaximumSize(QSize(16777215, 30))
-        self.unitplane.setFont(font)
-
-        self.horizontalLayout_2.addWidget(self.unitplane)
-
-
-        self.horizontalLayout_4.addWidget(self.groupBox_4)
-
         self.groupBox_5 = QGroupBox(self.frame)
         self.groupBox_5.setObjectName(u"groupBox_5")
         sizePolicy2.setHeightForWidth(self.groupBox_5.sizePolicy().hasHeightForWidth())
@@ -326,8 +262,7 @@ class Ui_UnitConverter(object):
         self.groupBox_5.setMinimumSize(QSize(185, 0))
         self.groupBox_5.setMaximumSize(QSize(16777215, 16777215))
         self.groupBox_5.setFont(font)
-        self.groupBox_5.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
-        self.groupBox_5.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.groupBox_5.setLayoutDirection(Qt.LeftToRight)
         self.verticalLayout_2 = QVBoxLayout(self.groupBox_5)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.unitsubcat = QComboBox(self.groupBox_5)
@@ -344,31 +279,27 @@ class Ui_UnitConverter(object):
 
         self.horizontalLayout_4.addWidget(self.groupBox_5)
 
+
+        self.gridLayout.addWidget(self.frame, 0, 0, 1, 1)
+
         self.groupBox = QGroupBox(self.centralwidget)
         self.groupBox.setObjectName(u"groupBox")
-        self.groupBox.setGeometry(QRect(10, 100, 548, 67))
-        sizePolicy3 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
-        self.groupBox.setSizePolicy(sizePolicy3)
+        sizePolicy1.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
+        self.groupBox.setSizePolicy(sizePolicy1)
         self.groupBox.setFont(font)
-        self.verticalLayout = QVBoxLayout(self.groupBox)
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout = QHBoxLayout(self.groupBox)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.NUMunit_input = QDoubleSpinBox(self.groupBox)
         self.NUMunit_input.setObjectName(u"NUMunit_input")
         sizePolicy2.setHeightForWidth(self.NUMunit_input.sizePolicy().hasHeightForWidth())
         self.NUMunit_input.setSizePolicy(sizePolicy2)
-        self.NUMunit_input.setMinimumSize(QSize(140, 30))
+        self.NUMunit_input.setMinimumSize(QSize(0, 30))
         self.NUMunit_input.setMaximumSize(QSize(140, 30))
         self.NUMunit_input.setFont(font)
         self.NUMunit_input.setWrapping(True)
         self.NUMunit_input.setDecimals(10)
         self.NUMunit_input.setMinimum(-99999999999999995164818811802792197885196090803013355167206819763650035712.000000000000000)
         self.NUMunit_input.setMaximum(99999999999999995164818811802792197885196090803013355167206819763650035712.000000000000000)
-        self.NUMunit_input.setStepType(QAbstractSpinBox.StepType.DefaultStepType)
 
         self.horizontalLayout.addWidget(self.NUMunit_input)
 
@@ -376,7 +307,7 @@ class Ui_UnitConverter(object):
         self.units_from.setObjectName(u"units_from")
         sizePolicy2.setHeightForWidth(self.units_from.sizePolicy().hasHeightForWidth())
         self.units_from.setSizePolicy(sizePolicy2)
-        self.units_from.setMinimumSize(QSize(380, 30))
+        self.units_from.setMinimumSize(QSize(0, 30))
         self.units_from.setMaximumSize(QSize(380, 30))
         self.units_from.setFont(font)
         self.units_from.setMaxVisibleItems(20)
@@ -384,7 +315,44 @@ class Ui_UnitConverter(object):
         self.horizontalLayout.addWidget(self.units_from)
 
 
-        self.verticalLayout.addLayout(self.horizontalLayout)
+        self.gridLayout.addWidget(self.groupBox, 1, 0, 1, 1)
+
+        self.groupBox_2 = QGroupBox(self.centralwidget)
+        self.groupBox_2.setObjectName(u"groupBox_2")
+        sizePolicy1.setHeightForWidth(self.groupBox_2.sizePolicy().hasHeightForWidth())
+        self.groupBox_2.setSizePolicy(sizePolicy1)
+        self.groupBox_2.setFont(font)
+        self.horizontalLayout_2 = QHBoxLayout(self.groupBox_2)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.NUMunit_output = QDoubleSpinBox(self.groupBox_2)
+        self.NUMunit_output.setObjectName(u"NUMunit_output")
+        sizePolicy2.setHeightForWidth(self.NUMunit_output.sizePolicy().hasHeightForWidth())
+        self.NUMunit_output.setSizePolicy(sizePolicy2)
+        self.NUMunit_output.setMinimumSize(QSize(0, 30))
+        self.NUMunit_output.setMaximumSize(QSize(140, 30))
+        self.NUMunit_output.setFont(font)
+        self.NUMunit_output.setWrapping(True)
+        self.NUMunit_output.setReadOnly(True)
+        self.NUMunit_output.setButtonSymbols(QAbstractSpinBox.UpDownArrows)
+        self.NUMunit_output.setDecimals(10)
+        self.NUMunit_output.setMinimum(-99999999999999995164818811802792197885196090803013355167206819763650035712.000000000000000)
+        self.NUMunit_output.setMaximum(99999999999999995164818811802792197885196090803013355167206819763650035712.000000000000000)
+
+        self.horizontalLayout_2.addWidget(self.NUMunit_output)
+
+        self.units_to = QComboBox(self.groupBox_2)
+        self.units_to.setObjectName(u"units_to")
+        sizePolicy2.setHeightForWidth(self.units_to.sizePolicy().hasHeightForWidth())
+        self.units_to.setSizePolicy(sizePolicy2)
+        self.units_to.setMinimumSize(QSize(0, 30))
+        self.units_to.setMaximumSize(QSize(380, 30))
+        self.units_to.setFont(font)
+        self.units_to.setMaxVisibleItems(20)
+
+        self.horizontalLayout_2.addWidget(self.units_to)
+
+
+        self.gridLayout.addWidget(self.groupBox_2, 2, 0, 1, 1)
 
         UnitConverter.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(UnitConverter)
@@ -392,18 +360,18 @@ class Ui_UnitConverter(object):
         UnitConverter.setStatusBar(self.statusbar)
         self.menubar = QMenuBar(UnitConverter)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 566, 33))
+        self.menubar.setGeometry(QRect(0, 0, 510, 21))
         UnitConverter.setMenuBar(self.menubar)
+        QWidget.setTabOrder(self.unitstyle, self.unitsubcat)
 
         self.retranslateUi(UnitConverter)
-        self.unitplane.currentTextChanged.connect(self.unitsubcat.setCurrentText)
         self.unitstyle.currentTextChanged.connect(self.unitsubcat.setCurrentText)
 
         QMetaObject.connectSlotsByName(UnitConverter)
     # setupUi
 
     def retranslateUi(self, UnitConverter):
-        UnitConverter.setWindowTitle("")
+        UnitConverter.setWindowTitle(QCoreApplication.translate("UnitConverter", u"Unit Converter", None))
         self.actionUnit_Converter.setText(QCoreApplication.translate("UnitConverter", u"Unit Converter", None))
         self.actionMoments_of_Inertia.setText(QCoreApplication.translate("UnitConverter", u"Moments of Inertia", None))
         self.actionVectors.setText(QCoreApplication.translate("UnitConverter", u"Vectors", None))
@@ -489,11 +457,10 @@ class Ui_UnitConverter(object):
         self.actionFit_Classes.setText(QCoreApplication.translate("UnitConverter", u"Fit Classes", None))
         self.actionUnit_Settings.setText(QCoreApplication.translate("UnitConverter", u"Unit Settings", None))
         self.actionQuit_All.setText(QCoreApplication.translate("UnitConverter", u"Quit All", None))
-        self.groupBox_2.setTitle(QCoreApplication.translate("UnitConverter", u"To", None))
-        self.groupBox_3.setTitle(QCoreApplication.translate("UnitConverter", u"Converter Type", None))
-        self.groupBox_4.setTitle(QCoreApplication.translate("UnitConverter", u"Unit Plane", None))
-        self.groupBox_5.setTitle(QCoreApplication.translate("UnitConverter", u"Unit Category", None))
+        self.groupBox_3.setTitle(QCoreApplication.translate("UnitConverter", u"Category", None))
+        self.groupBox_5.setTitle(QCoreApplication.translate("UnitConverter", u"Unit Type", None))
         self.unitsubcat.setCurrentText("")
         self.groupBox.setTitle(QCoreApplication.translate("UnitConverter", u"From", None))
+        self.groupBox_2.setTitle(QCoreApplication.translate("UnitConverter", u"To", None))
     # retranslateUi
 

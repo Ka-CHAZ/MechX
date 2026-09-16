@@ -1,0 +1,13 @@
+UnitName,Abrv,Use,toBase,fromBase
+siemens,S,,x,x
+kilosiemens,kS,,x * 1000,x / 1000
+megasiemens,MS,,x * 1000000,x / 1000000
+millisiemens,mS,,x * 0.001,x / 0.001
+microsiemens,\u03BCS,,x * 0.000001,x / 0.000001
+ampere/volt,A/V,,x,x
+mho,,,x ,x 
+gemmho,,,x * 0.000001,x / 0.000001
+mircomho,,,x * 0.000001,x / 0.000001
+abmho,,,x * 1000000000,x / 1000000000
+statmho,,,x * 0.0000000000011123470522803,x / 0.0000000000011123470522803
+quantized Hall conductance,,,x * 0.0000387405,x / 0.0000387405

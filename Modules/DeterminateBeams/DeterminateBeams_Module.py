@@ -32,19 +32,16 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         self.label_7.hide()
         self.elemetsscrollarea.hide()
         self.label_6.hide()
-        self.visualizerlengthunits.hide()
         self.label_6.hide()
         self.loadsscroll.hide()
         self.label_8.hide()
         self.reactionsscroll.hide()
-        self.visualizerloadunits.hide()
-        self.Switchshearconvention.hide()
-        self.visualizermomentunits.hide()
-        self.Switchmomentconvention.hide()
         self.label_9.hide()
         self.Loadsdiagram.hide()
         self.Sheargraph.hide()
+        self.label_10.hide()
         self.Momentgraph.hide()
+        self.label_11.hide()
         
         self.Uppntload.clicked.connect(self.add_concenuploads)
         self.Downpntload.clicked.connect(self.add_concendownloads)
@@ -201,7 +198,7 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         self.rsp5.setPen(pen)
         self.rsp5_Visible = False
         
-    def _create_moment_symbol(self, radius=75, cw=True, color=("#FF6347")):
+    def _create_moment_symbol(self, radius=75, cw=True, color=("#233AA3")):
         from PySide6.QtCore import QRectF, Qt
         from PySide6.QtGui import QPainterPath, QPen, QColor
         from PySide6.QtWidgets import QGraphicsPathItem, QGraphicsLineItem
@@ -1363,31 +1360,25 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
             self.elemetsscrollarea.setVisible(not self.elemetsscrollarea.isVisible())
         if self.label_6.isHidden():
             self.label_6.setVisible(not self.label_6.isVisible())
-        if self.visualizerlengthunits.isHidden():
-            self.visualizerlengthunits.setVisible(not self.visualizerlengthunits.isVisible())
         if self.loadsscroll.isHidden():
             self.loadsscroll.setVisible(not self.loadsscroll.isVisible())
         if self.label_8.isHidden():
             self.label_8.setVisible(not self.label_8.isVisible())
         if self.reactionsscroll.isHidden():
             self.reactionsscroll.setVisible(not self.reactionsscroll.isVisible())
-        if self.visualizerloadunits.isHidden():
-            self.visualizerloadunits.setVisible(not self.visualizerloadunits.isVisible())
-        if self.Switchshearconvention.isHidden():
-            self.Switchshearconvention.setVisible(not self.Switchshearconvention.isVisible())
-        if self.visualizermomentunits.isHidden():
-            self.visualizermomentunits.setVisible(not self.visualizermomentunits.isVisible())
-        if self.Switchmomentconvention.isHidden():
-            self.Switchmomentconvention.setVisible(not self.Switchmomentconvention.isVisible())
         if self.label_9.isHidden():
             self.label_9.setVisible(not self.label_9.isVisible())
         if self.Loadsdiagram.isHidden():
             self.Loadsdiagram.setVisible(not self.Loadsdiagram.isVisible())
         if self.Sheargraph.isHidden():
             self.Sheargraph.setVisible(not self.Sheargraph.isVisible())
+        if self.label_10.isHidden():
+            self.label_10.setVisible(not self.label_10.isVisible())
         if self.Momentgraph.isHidden():
             self.Momentgraph.setVisible(not self.Momentgraph.isVisible())
-    
+        if self.label_11.isHidden():
+            self.label_11.setVisible(not self.label_11.isVisible())
+
     def leftsidebeam(self):
         self.current_beamscene = 2
         
@@ -1457,22 +1448,12 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
             self.elemetsscrollarea.setVisible(not self.elemetsscrollarea.isVisible())
         if self.label_6.isHidden():
             self.label_6.setVisible(not self.label_6.isVisible())
-        if self.visualizerlengthunits.isHidden():
-            self.visualizerlengthunits.setVisible(not self.visualizerlengthunits.isVisible())
         if self.loadsscroll.isHidden():
             self.loadsscroll.setVisible(not self.loadsscroll.isVisible())
         if self.label_8.isHidden():
             self.label_8.setVisible(not self.label_8.isVisible())
         if self.reactionsscroll.isHidden():
             self.reactionsscroll.setVisible(not self.reactionsscroll.isVisible())
-        if self.visualizerloadunits.isHidden():
-            self.visualizerloadunits.setVisible(not self.visualizerloadunits.isVisible())
-        if self.Switchshearconvention.isHidden():
-            self.Switchshearconvention.setVisible(not self.Switchshearconvention.isVisible())
-        if self.visualizermomentunits.isHidden():
-            self.visualizermomentunits.setVisible(not self.visualizermomentunits.isVisible())
-        if self.Switchmomentconvention.isHidden():
-            self.Switchmomentconvention.setVisible(not self.Switchmomentconvention.isVisible())
         if self.label_9.isHidden():
             self.label_9.setVisible(not self.label_9.isVisible())
         if self.Loadsdiagram.isHidden():
@@ -1551,22 +1532,12 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
             self.elemetsscrollarea.setVisible(not self.elemetsscrollarea.isVisible())
         if self.label_6.isHidden():
             self.label_6.setVisible(not self.label_6.isVisible())
-        if self.visualizerlengthunits.isHidden():
-            self.visualizerlengthunits.setVisible(not self.visualizerlengthunits.isVisible())
         if self.loadsscroll.isHidden():
             self.loadsscroll.setVisible(not self.loadsscroll.isVisible())
         if self.label_8.isHidden():
             self.label_8.setVisible(not self.label_8.isVisible())
         if self.reactionsscroll.isHidden():
             self.reactionsscroll.setVisible(not self.reactionsscroll.isVisible())
-        if self.visualizerloadunits.isHidden():
-            self.visualizerloadunits.setVisible(not self.visualizerloadunits.isVisible())
-        if self.Switchshearconvention.isHidden():
-            self.Switchshearconvention.setVisible(not self.Switchshearconvention.isVisible())
-        if self.visualizermomentunits.isHidden():
-            self.visualizermomentunits.setVisible(not self.visualizermomentunits.isVisible())
-        if self.Switchmomentconvention.isHidden():
-            self.Switchmomentconvention.setVisible(not self.Switchmomentconvention.isVisible())
         if self.label_9.isHidden():
             self.label_9.setVisible(not self.label_9.isVisible())
         if self.Loadsdiagram.isHidden():
@@ -2769,15 +2740,54 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
                 # Will be added in moment calculation below
         
         # ==========================================
-        # STEP 4: Compute moment by integrating shear
+        # STEP 4: Compute the moment exactly from the load primitives
         # ==========================================
-        # Use cumulative trapezoidal integration
-        dx = x[1] - x[0] if len(x) > 1 else 1.0
-        moment = np.zeros_like(x)
-        for i in range(1, len(x)):
-            moment[i] = moment[i-1] + (shear[i-1] + shear[i]) / 2.0 * dx
-        
-        # Add moment jumps from applied moments
+        # Trapezoidal integration of shear is inaccurate across point-load and
+        # support jumps. Build each contribution analytically instead.
+        moment = np.zeros_like(x, dtype=float)
+
+        def positive_distance_from(location):
+            return np.maximum(x - location, 0.0)
+
+        moment += R_left * positive_distance_from(left_support)
+        moment += R_right * positive_distance_from(right_support)
+
+        for load in parsed_loads:
+            if load["type"] == "point":
+                moment -= load["magnitude"] * positive_distance_from(load["location"])
+
+            elif load["type"] == "uniform":
+                a = load["start"]
+                b = load["end"]
+                width = b - a
+                if width <= 0:
+                    continue
+                distance = x - a
+                loaded_distance = np.clip(distance, 0.0, width)
+                moment -= load["w"] * (
+                    distance * loaded_distance - loaded_distance**2 / 2.0
+                )
+
+            elif load["type"] == "linear":
+                a = load["start"]
+                b = load["end"]
+                width = b - a
+                if width <= 0:
+                    continue
+                distance = x - a
+                loaded_distance = np.clip(distance, 0.0, width)
+                slope = (load["w2"] - load["w1"]) / width
+                load_integral = (
+                    load["w1"] * loaded_distance
+                    + slope * loaded_distance**2 / 2.0
+                )
+                first_moment = (
+                    load["w1"] * loaded_distance**2 / 2.0
+                    + slope * loaded_distance**3 / 3.0
+                )
+                moment -= distance * load_integral - first_moment
+
+        # Add moment jumps from applied moments.
         for load in parsed_loads:
             if load["type"] == "moment":
                 M = load["magnitude"]
@@ -2785,17 +2795,9 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
                 mask = x >= loc
                 moment[mask] += M
 
-        # Add fixed-end reaction moments for cantilevers (if any)
-        try:
-            if abs(M_left) > 0.0:
-                mask_ml = x >= left_support
-                moment[mask_ml] += M_left
-            if abs(M_right) > 0.0:
-                mask_mr = x >= right_support
-                moment[mask_mr] += M_right
-        except NameError:
-            # In case M_left/M_right not defined for some reason, skip
-            pass
+        # Add fixed-end reaction moments for cantilevers (if any).
+        moment[x >= left_support] += M_left
+        moment[x >= right_support] += M_right
 
         # Save parsed loads for plotting markers
         try:
@@ -2953,7 +2955,6 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         except Exception:
             pass
             
-        ax.set_title("Shear Force Diagram", color="#FFFFFF")
         ax.set_xlabel(f"Beam Length ({self.beamlengthunits.currentText()})", color="#FFFFFF")
         ax.set_xlim(0, beam_length)
         # Configure x-axis ticks to show support and load locations
@@ -3174,7 +3175,6 @@ class Determinate_beams(QMainWindow, Ui_shearandmomentscalculator, QAction):
         except Exception:
             pass
             
-        ax.set_title("Moment Diagram", color="#FFFFFF")
         ax.set_xlabel(f"Beam Length ({self.beamlengthunits.currentText()})", color="#FFFFFF")
         ax.set_xlim(0, beam_length)
         # Configure x-axis ticks to show support and load locations

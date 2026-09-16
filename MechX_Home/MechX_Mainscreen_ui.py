@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MechanicsEngine_Mainscreen.ui'
+## Form generated from reading UI file 'MechX_Mainscreen.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.0
+## Created by: Qt User Interface Compiler version 6.11.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -35,8 +35,8 @@ class Ui_MEMainWindow(object):
         MEMainWindow.setSizePolicy(sizePolicy)
         MEMainWindow.setMinimumSize(QSize(270, 610))
         MEMainWindow.setMaximumSize(QSize(16777215, 16777215))
-        MEMainWindow.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonIconOnly)
-        MEMainWindow.setTabShape(QTabWidget.TabShape.Rounded)
+        MEMainWindow.setToolButtonStyle(Qt.ToolButtonIconOnly)
+        MEMainWindow.setTabShape(QTabWidget.Rounded)
         MEMainWindow.setDockNestingEnabled(False)
         MEMainWindow.setUnifiedTitleAndToolBarOnMac(False)
         self.actionUnit_Converter = QAction(MEMainWindow)
@@ -267,21 +267,27 @@ class Ui_MEMainWindow(object):
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.Unitconverter = QPushButton(self.centralwidget)
         self.Unitconverter.setObjectName(u"Unitconverter")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.Unitconverter.sizePolicy().hasHeightForWidth())
         self.Unitconverter.setSizePolicy(sizePolicy1)
+        self.Unitconverter.setMinimumSize(QSize(90, 0))
 
         self.horizontalLayout_2.addWidget(self.Unitconverter)
 
         self.pushButton = QPushButton(self.centralwidget)
         self.pushButton.setObjectName(u"pushButton")
+        sizePolicy1.setHeightForWidth(self.pushButton.sizePolicy().hasHeightForWidth())
+        self.pushButton.setSizePolicy(sizePolicy1)
+        self.pushButton.setMinimumSize(QSize(90, 0))
 
         self.horizontalLayout_2.addWidget(self.pushButton)
 
         self.line_2 = QFrame(self.centralwidget)
         self.line_2.setObjectName(u"line_2")
+        sizePolicy.setHeightForWidth(self.line_2.sizePolicy().hasHeightForWidth())
+        self.line_2.setSizePolicy(sizePolicy)
         self.line_2.setFrameShape(QFrame.Shape.VLine)
         self.line_2.setFrameShadow(QFrame.Shadow.Sunken)
 
@@ -291,17 +297,19 @@ class Ui_MEMainWindow(object):
         self.Tables.setObjectName(u"Tables")
         sizePolicy1.setHeightForWidth(self.Tables.sizePolicy().hasHeightForWidth())
         self.Tables.setSizePolicy(sizePolicy1)
+        self.Tables.setMinimumSize(QSize(90, 0))
 
         self.horizontalLayout_2.addWidget(self.Tables)
 
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_2.addItem(self.horizontalSpacer)
+        self.horizontalLayout_2.addItem(self.horizontalSpacer_2)
 
         self.Screenshot = QPushButton(self.centralwidget)
         self.Screenshot.setObjectName(u"Screenshot")
         sizePolicy1.setHeightForWidth(self.Screenshot.sizePolicy().hasHeightForWidth())
         self.Screenshot.setSizePolicy(sizePolicy1)
+        self.Screenshot.setMinimumSize(QSize(90, 0))
 
         self.horizontalLayout_2.addWidget(self.Screenshot)
 
@@ -315,13 +323,13 @@ class Ui_MEMainWindow(object):
         sizePolicy2.setVerticalStretch(0)
         sizePolicy2.setHeightForWidth(self.mdiArea.sizePolicy().hasHeightForWidth())
         self.mdiArea.setSizePolicy(sizePolicy2)
-        self.mdiArea.setFrameShape(QFrame.Shape.WinPanel)
-        self.mdiArea.setFrameShadow(QFrame.Shadow.Sunken)
+        self.mdiArea.setFrameShape(QFrame.Panel)
         self.mdiArea.setLineWidth(2)
         self.mdiArea.setMidLineWidth(0)
-        self.mdiArea.setViewMode(QMdiArea.ViewMode.SubWindowView)
+        self.mdiArea.setViewMode(QMdiArea.SubWindowView)
         self.mdiArea.setTabsClosable(True)
         self.mdiArea.setTabsMovable(True)
+        self.mdiArea.setTabShape(QTabWidget.Triangular)
 
         self.gridLayout.addWidget(self.mdiArea, 1, 0, 1, 1)
 
@@ -331,7 +339,7 @@ class Ui_MEMainWindow(object):
         MEMainWindow.setStatusBar(self.statusbar)
         self.menubar = QMenuBar(MEMainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1596, 33))
+        self.menubar.setGeometry(QRect(0, 0, 1596, 21))
         self.menu_File = QMenu(self.menubar)
         self.menu_File.setObjectName(u"menu_File")
         self.menu_Settings = QMenu(self.menu_File)
@@ -352,170 +360,165 @@ class Ui_MEMainWindow(object):
         sizePolicy3.setVerticalStretch(0)
         sizePolicy3.setHeightForWidth(self.Modulelistdock.sizePolicy().hasHeightForWidth())
         self.Modulelistdock.setSizePolicy(sizePolicy3)
-        self.Modulelistdock.setMinimumSize(QSize(97, 97))
+        self.Modulelistdock.setMinimumSize(QSize(97, 113))
         font = QFont()
         font.setFamilies([u"Arial"])
         font.setPointSize(10)
         self.Modulelistdock.setFont(font)
         self.Modulelistdock.setAutoFillBackground(False)
         self.Modulelistdock.setFloating(False)
-        self.Modulelistdock.setFeatures(QDockWidget.DockWidgetFeature.DockWidgetFloatable|QDockWidget.DockWidgetFeature.DockWidgetMovable)
-        self.Modulelistdock.setAllowedAreas(Qt.DockWidgetArea.LeftDockWidgetArea|Qt.DockWidgetArea.RightDockWidgetArea)
+        self.Modulelistdock.setFeatures(QDockWidget.NoDockWidgetFeatures)
+        self.Modulelistdock.setAllowedAreas(Qt.NoDockWidgetArea)
         self.dockWidgetContents = QWidget()
         self.dockWidgetContents.setObjectName(u"dockWidgetContents")
         self.verticalLayout = QVBoxLayout(self.dockWidgetContents)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.Modulelist = QTreeWidget(self.dockWidgetContents)
         brush = QBrush(QColor(255, 255, 255, 255))
-        brush.setStyle(Qt.SolidPattern)
+        brush.setStyle(Qt.BrushStyle.SolidPattern)
         __qtreewidgetitem = QTreeWidgetItem()
-        __qtreewidgetitem.setForeground(0, brush);
+        __qtreewidgetitem.setBackground(0, QColor(85, 85, 85))
+        __qtreewidgetitem.setForeground(0, brush)
         self.Modulelist.setHeaderItem(__qtreewidgetitem)
         brush1 = QBrush(QColor(0, 0, 0, 255))
-        brush1.setStyle(Qt.NoBrush)
+        brush1.setStyle(Qt.BrushStyle.SolidPattern)
         brush2 = QBrush(QColor(0, 0, 0, 255))
-        brush2.setStyle(Qt.SolidPattern)
-        brush3 = QBrush(QColor(255, 255, 255, 255))
-        brush3.setStyle(Qt.NoBrush)
+        brush2.setStyle(Qt.BrushStyle.NoBrush)
+        brush3 = QBrush(QColor(0, 0, 0, 255))
+        brush3.setStyle(Qt.BrushStyle.NoBrush)
         brush4 = QBrush(QColor(0, 0, 0, 255))
-        brush4.setStyle(Qt.NoBrush)
+        brush4.setStyle(Qt.BrushStyle.NoBrush)
         brush5 = QBrush(QColor(0, 0, 0, 255))
-        brush5.setStyle(Qt.NoBrush)
+        brush5.setStyle(Qt.BrushStyle.NoBrush)
         brush6 = QBrush(QColor(0, 0, 0, 255))
-        brush6.setStyle(Qt.NoBrush)
+        brush6.setStyle(Qt.BrushStyle.NoBrush)
         brush7 = QBrush(QColor(0, 0, 0, 255))
-        brush7.setStyle(Qt.NoBrush)
+        brush7.setStyle(Qt.BrushStyle.NoBrush)
         brush8 = QBrush(QColor(0, 0, 0, 255))
-        brush8.setStyle(Qt.NoBrush)
-        brush9 = QBrush(QColor(0, 0, 0, 255))
-        brush9.setStyle(Qt.NoBrush)
-        brush10 = QBrush(QColor(99, 99, 99, 255))
-        brush10.setStyle(Qt.SolidPattern)
-        brush11 = QBrush(QColor(154, 154, 154, 255))
-        brush11.setStyle(Qt.SolidPattern)
+        brush8.setStyle(Qt.BrushStyle.NoBrush)
+        brush9 = QBrush(QColor(99, 99, 99, 255))
+        brush9.setStyle(Qt.BrushStyle.SolidPattern)
+        brush10 = QBrush(QColor(154, 154, 154, 255))
+        brush10.setStyle(Qt.BrushStyle.SolidPattern)
         __qtreewidgetitem1 = QTreeWidgetItem(self.Modulelist)
-        __qtreewidgetitem1.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem1.setBackground(0, brush1);
-        __qtreewidgetitem1.setForeground(0, brush);
-        __qtreewidgetitem2 = QTreeWidgetItem(self.Modulelist)
-        __qtreewidgetitem2.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem2.setBackground(0, brush);
-        __qtreewidgetitem2.setForeground(0, brush2);
-        __qtreewidgetitem3 = QTreeWidgetItem(__qtreewidgetitem2)
-        __qtreewidgetitem3.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem3.setBackground(0, brush4);
-        __qtreewidgetitem3.setForeground(0, brush3);
-        __qtreewidgetitem4 = QTreeWidgetItem(__qtreewidgetitem2)
-        __qtreewidgetitem4.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem4.setBackground(0, brush5);
-        __qtreewidgetitem5 = QTreeWidgetItem(__qtreewidgetitem2)
-        __qtreewidgetitem5.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem5.setBackground(0, brush6);
-        __qtreewidgetitem6 = QTreeWidgetItem(__qtreewidgetitem2)
-        __qtreewidgetitem6.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem6.setBackground(0, brush7);
-        __qtreewidgetitem7 = QTreeWidgetItem(__qtreewidgetitem2)
-        __qtreewidgetitem7.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem7.setBackground(0, brush8);
-        __qtreewidgetitem8 = QTreeWidgetItem(__qtreewidgetitem2)
-        __qtreewidgetitem8.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem8.setBackground(0, brush9);
-        __qtreewidgetitem9 = QTreeWidgetItem(self.Modulelist)
-        __qtreewidgetitem9.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem9.setBackground(0, brush);
-        __qtreewidgetitem9.setForeground(0, brush2);
+        __qtreewidgetitem1.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem1.setBackground(0, brush)
+        __qtreewidgetitem1.setForeground(0, brush1)
+        __qtreewidgetitem2 = QTreeWidgetItem(__qtreewidgetitem1)
+        __qtreewidgetitem2.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem2.setBackground(0, brush3)
+        __qtreewidgetitem2.setForeground(0, brush2)
+        __qtreewidgetitem3 = QTreeWidgetItem(__qtreewidgetitem1)
+        __qtreewidgetitem3.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem3.setBackground(0, brush4)
+        __qtreewidgetitem4 = QTreeWidgetItem(__qtreewidgetitem1)
+        __qtreewidgetitem4.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem4.setBackground(0, brush5)
+        __qtreewidgetitem5 = QTreeWidgetItem(__qtreewidgetitem1)
+        __qtreewidgetitem5.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem5.setBackground(0, brush6)
+        __qtreewidgetitem6 = QTreeWidgetItem(__qtreewidgetitem1)
+        __qtreewidgetitem6.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem6.setBackground(0, brush7)
+        __qtreewidgetitem7 = QTreeWidgetItem(__qtreewidgetitem1)
+        __qtreewidgetitem7.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem7.setBackground(0, brush8)
+        __qtreewidgetitem8 = QTreeWidgetItem(self.Modulelist)
+        __qtreewidgetitem8.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem8.setBackground(0, brush)
+        __qtreewidgetitem8.setForeground(0, brush1)
+        __qtreewidgetitem9 = QTreeWidgetItem(__qtreewidgetitem8)
+        __qtreewidgetitem9.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem9.setBackground(0, brush9)
+        __qtreewidgetitem9.setForeground(0, brush1)
         __qtreewidgetitem10 = QTreeWidgetItem(__qtreewidgetitem9)
-        __qtreewidgetitem10.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem10.setBackground(0, brush10);
-        __qtreewidgetitem10.setForeground(0, brush2);
-        __qtreewidgetitem11 = QTreeWidgetItem(__qtreewidgetitem10)
-        __qtreewidgetitem11.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem12 = QTreeWidgetItem(__qtreewidgetitem10)
-        __qtreewidgetitem12.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem13 = QTreeWidgetItem(__qtreewidgetitem10)
-        __qtreewidgetitem13.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem14 = QTreeWidgetItem(__qtreewidgetitem10)
-        __qtreewidgetitem14.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem15 = QTreeWidgetItem(__qtreewidgetitem10)
-        __qtreewidgetitem15.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem16 = QTreeWidgetItem(__qtreewidgetitem10)
-        __qtreewidgetitem16.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem17 = QTreeWidgetItem(__qtreewidgetitem10)
-        __qtreewidgetitem17.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem18 = QTreeWidgetItem(__qtreewidgetitem10)
-        __qtreewidgetitem18.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem18.setBackground(0, brush11);
-        __qtreewidgetitem18.setForeground(0, brush2);
-        __qtreewidgetitem19 = QTreeWidgetItem(__qtreewidgetitem18)
-        __qtreewidgetitem19.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem20 = QTreeWidgetItem(__qtreewidgetitem18)
-        __qtreewidgetitem20.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem21 = QTreeWidgetItem(__qtreewidgetitem18)
-        __qtreewidgetitem21.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem22 = QTreeWidgetItem(self.Modulelist)
-        __qtreewidgetitem22.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem22.setBackground(0, brush);
-        __qtreewidgetitem22.setForeground(0, brush2);
-        __qtreewidgetitem23 = QTreeWidgetItem(__qtreewidgetitem22)
-        __qtreewidgetitem23.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem24 = QTreeWidgetItem(__qtreewidgetitem22)
-        __qtreewidgetitem24.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem25 = QTreeWidgetItem(__qtreewidgetitem22)
-        __qtreewidgetitem25.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem26 = QTreeWidgetItem(__qtreewidgetitem22)
-        __qtreewidgetitem26.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem27 = QTreeWidgetItem(__qtreewidgetitem22)
-        __qtreewidgetitem27.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem28 = QTreeWidgetItem(__qtreewidgetitem22)
-        __qtreewidgetitem28.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem29 = QTreeWidgetItem(__qtreewidgetitem22)
-        __qtreewidgetitem29.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem30 = QTreeWidgetItem(__qtreewidgetitem22)
-        __qtreewidgetitem30.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem31 = QTreeWidgetItem(self.Modulelist)
-        __qtreewidgetitem31.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem31.setBackground(0, brush);
-        __qtreewidgetitem31.setForeground(0, brush2);
+        __qtreewidgetitem10.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem11 = QTreeWidgetItem(__qtreewidgetitem9)
+        __qtreewidgetitem11.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem12 = QTreeWidgetItem(__qtreewidgetitem9)
+        __qtreewidgetitem12.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem13 = QTreeWidgetItem(__qtreewidgetitem9)
+        __qtreewidgetitem13.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem14 = QTreeWidgetItem(__qtreewidgetitem9)
+        __qtreewidgetitem14.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem15 = QTreeWidgetItem(__qtreewidgetitem9)
+        __qtreewidgetitem15.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem16 = QTreeWidgetItem(__qtreewidgetitem9)
+        __qtreewidgetitem16.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem17 = QTreeWidgetItem(__qtreewidgetitem9)
+        __qtreewidgetitem17.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem17.setBackground(0, brush10)
+        __qtreewidgetitem17.setForeground(0, brush1)
+        __qtreewidgetitem18 = QTreeWidgetItem(__qtreewidgetitem17)
+        __qtreewidgetitem18.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem19 = QTreeWidgetItem(__qtreewidgetitem17)
+        __qtreewidgetitem19.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem20 = QTreeWidgetItem(__qtreewidgetitem17)
+        __qtreewidgetitem20.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem21 = QTreeWidgetItem(self.Modulelist)
+        __qtreewidgetitem21.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem21.setBackground(0, brush)
+        __qtreewidgetitem21.setForeground(0, brush1)
+        __qtreewidgetitem22 = QTreeWidgetItem(__qtreewidgetitem21)
+        __qtreewidgetitem22.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem23 = QTreeWidgetItem(__qtreewidgetitem21)
+        __qtreewidgetitem23.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem24 = QTreeWidgetItem(__qtreewidgetitem21)
+        __qtreewidgetitem24.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem25 = QTreeWidgetItem(__qtreewidgetitem21)
+        __qtreewidgetitem25.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem26 = QTreeWidgetItem(__qtreewidgetitem21)
+        __qtreewidgetitem26.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem27 = QTreeWidgetItem(__qtreewidgetitem21)
+        __qtreewidgetitem27.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem28 = QTreeWidgetItem(__qtreewidgetitem21)
+        __qtreewidgetitem28.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem29 = QTreeWidgetItem(__qtreewidgetitem21)
+        __qtreewidgetitem29.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem30 = QTreeWidgetItem(self.Modulelist)
+        __qtreewidgetitem30.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem30.setBackground(0, brush)
+        __qtreewidgetitem30.setForeground(0, brush1)
+        __qtreewidgetitem31 = QTreeWidgetItem(__qtreewidgetitem30)
+        __qtreewidgetitem31.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem31.setBackground(0, brush9)
+        __qtreewidgetitem31.setForeground(0, brush1)
         __qtreewidgetitem32 = QTreeWidgetItem(__qtreewidgetitem31)
-        __qtreewidgetitem32.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem32.setBackground(0, brush10);
-        __qtreewidgetitem32.setForeground(0, brush2);
-        __qtreewidgetitem33 = QTreeWidgetItem(__qtreewidgetitem32)
-        __qtreewidgetitem33.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem34 = QTreeWidgetItem(__qtreewidgetitem32)
-        __qtreewidgetitem34.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem35 = QTreeWidgetItem(__qtreewidgetitem32)
-        __qtreewidgetitem35.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem35.setBackground(0, brush11);
-        __qtreewidgetitem35.setForeground(0, brush2);
-        __qtreewidgetitem36 = QTreeWidgetItem(__qtreewidgetitem35)
-        __qtreewidgetitem36.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem37 = QTreeWidgetItem(__qtreewidgetitem35)
-        __qtreewidgetitem37.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem38 = QTreeWidgetItem(__qtreewidgetitem35)
-        __qtreewidgetitem38.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem39 = QTreeWidgetItem(__qtreewidgetitem31)
-        __qtreewidgetitem39.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem40 = QTreeWidgetItem(__qtreewidgetitem31)
-        __qtreewidgetitem40.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem41 = QTreeWidgetItem(self.Modulelist)
-        __qtreewidgetitem41.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem41.setBackground(0, brush);
-        __qtreewidgetitem41.setForeground(0, brush2);
-        __qtreewidgetitem42 = QTreeWidgetItem(__qtreewidgetitem41)
-        __qtreewidgetitem42.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem43 = QTreeWidgetItem(__qtreewidgetitem41)
-        __qtreewidgetitem43.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem44 = QTreeWidgetItem(__qtreewidgetitem41)
-        __qtreewidgetitem44.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem45 = QTreeWidgetItem(__qtreewidgetitem41)
-        __qtreewidgetitem45.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem46 = QTreeWidgetItem(__qtreewidgetitem41)
-        __qtreewidgetitem46.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem47 = QTreeWidgetItem(__qtreewidgetitem41)
-        __qtreewidgetitem47.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        __qtreewidgetitem48 = QTreeWidgetItem(self.Modulelist)
-        __qtreewidgetitem48.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        __qtreewidgetitem32.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem33 = QTreeWidgetItem(__qtreewidgetitem31)
+        __qtreewidgetitem33.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem34 = QTreeWidgetItem(__qtreewidgetitem31)
+        __qtreewidgetitem34.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem34.setBackground(0, brush10)
+        __qtreewidgetitem34.setForeground(0, brush1)
+        __qtreewidgetitem35 = QTreeWidgetItem(__qtreewidgetitem34)
+        __qtreewidgetitem35.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem36 = QTreeWidgetItem(__qtreewidgetitem34)
+        __qtreewidgetitem36.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem37 = QTreeWidgetItem(__qtreewidgetitem34)
+        __qtreewidgetitem37.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem38 = QTreeWidgetItem(__qtreewidgetitem30)
+        __qtreewidgetitem38.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem39 = QTreeWidgetItem(__qtreewidgetitem30)
+        __qtreewidgetitem39.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem40 = QTreeWidgetItem(self.Modulelist)
+        __qtreewidgetitem40.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem40.setBackground(0, brush)
+        __qtreewidgetitem40.setForeground(0, brush1)
+        __qtreewidgetitem41 = QTreeWidgetItem(__qtreewidgetitem40)
+        __qtreewidgetitem41.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem42 = QTreeWidgetItem(__qtreewidgetitem40)
+        __qtreewidgetitem42.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem43 = QTreeWidgetItem(__qtreewidgetitem40)
+        __qtreewidgetitem43.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem44 = QTreeWidgetItem(__qtreewidgetitem40)
+        __qtreewidgetitem44.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem45 = QTreeWidgetItem(__qtreewidgetitem40)
+        __qtreewidgetitem45.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem46 = QTreeWidgetItem(__qtreewidgetitem40)
+        __qtreewidgetitem46.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
+        __qtreewidgetitem47 = QTreeWidgetItem(self.Modulelist)
+        __qtreewidgetitem47.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled)
         self.Modulelist.setObjectName(u"Modulelist")
         sizePolicy3.setHeightForWidth(self.Modulelist.sizePolicy().hasHeightForWidth())
         self.Modulelist.setSizePolicy(sizePolicy3)
@@ -528,15 +531,20 @@ class Ui_MEMainWindow(object):
         font1.setKerning(True)
         font1.setStyleStrategy(QFont.PreferAntialias)
         self.Modulelist.setFont(font1)
-        self.Modulelist.setFocusPolicy(Qt.FocusPolicy.WheelFocus)
-        self.Modulelist.setSizeAdjustPolicy(QAbstractScrollArea.SizeAdjustPolicy.AdjustIgnored)
-        self.Modulelist.setEditTriggers(QAbstractItemView.EditTrigger.DoubleClicked|QAbstractItemView.EditTrigger.EditKeyPressed)
+        self.Modulelist.setFocusPolicy(Qt.NoFocus)
+        self.Modulelist.setFrameShape(QFrame.Panel)
+        self.Modulelist.setSizeAdjustPolicy(QAbstractScrollArea.AdjustIgnored)
+        self.Modulelist.setAutoScrollMargin(16)
+        self.Modulelist.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.Modulelist.setTabKeyNavigation(True)
         self.Modulelist.setAlternatingRowColors(True)
-        self.Modulelist.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
+        self.Modulelist.setSelectionBehavior(QAbstractItemView.SelectItems)
+        self.Modulelist.setIndentation(15)
+        self.Modulelist.setUniformRowHeights(False)
         self.Modulelist.setAnimated(True)
         self.Modulelist.setWordWrap(True)
         self.Modulelist.setColumnCount(1)
+        self.Modulelist.header().setCascadingSectionResizes(False)
 
         self.verticalLayout.addWidget(self.Modulelist)
 
@@ -694,246 +702,244 @@ class Ui_MEMainWindow(object):
         self.menuWindow_2.setTitle(QCoreApplication.translate("MEMainWindow", u"Window", None))
         self.Modulelistdock.setWindowTitle(QCoreApplication.translate("MEMainWindow", u"Module List", None))
         ___qtreewidgetitem = self.Modulelist.headerItem()
-        ___qtreewidgetitem.setText(0, QCoreApplication.translate("MEMainWindow", u"Module List", None));
+        ___qtreewidgetitem.setText(0, QCoreApplication.translate("MEMainWindow", u"Module List", None))
 
         __sortingEnabled = self.Modulelist.isSortingEnabled()
         self.Modulelist.setSortingEnabled(False)
         ___qtreewidgetitem1 = self.Modulelist.topLevelItem(0)
-        ___qtreewidgetitem1.setText(0, QCoreApplication.translate("MEMainWindow", u"Notepad", None));
-        ___qtreewidgetitem2 = self.Modulelist.topLevelItem(1)
-        ___qtreewidgetitem2.setText(0, QCoreApplication.translate("MEMainWindow", u"General Analysis", None));
+        ___qtreewidgetitem1.setText(0, QCoreApplication.translate("MEMainWindow", u"General Analysis", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem2.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"General Analysis List", None));
+        ___qtreewidgetitem1.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"General Analysis List", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem3 = ___qtreewidgetitem2.child(0)
-        ___qtreewidgetitem3.setText(0, QCoreApplication.translate("MEMainWindow", u"Unit Converter", None));
+        ___qtreewidgetitem2 = ___qtreewidgetitem1.child(0)
+        ___qtreewidgetitem2.setText(0, QCoreApplication.translate("MEMainWindow", u"Unit Converter", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem3.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Unit Converter Module", None));
+        ___qtreewidgetitem2.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Unit Converter Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem4 = ___qtreewidgetitem2.child(1)
-        ___qtreewidgetitem4.setText(0, QCoreApplication.translate("MEMainWindow", u"Moments of Inertia", None));
+        ___qtreewidgetitem3 = ___qtreewidgetitem1.child(1)
+        ___qtreewidgetitem3.setText(0, QCoreApplication.translate("MEMainWindow", u"Moments of Inertia", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem4.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Moment of Inertia Module", None));
+        ___qtreewidgetitem3.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Moment of Inertia Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem5 = ___qtreewidgetitem2.child(2)
-        ___qtreewidgetitem5.setText(0, QCoreApplication.translate("MEMainWindow", u"Vectors", None));
+        ___qtreewidgetitem4 = ___qtreewidgetitem1.child(2)
+        ___qtreewidgetitem4.setText(0, QCoreApplication.translate("MEMainWindow", u"Vectors", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem5.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Vector Analysis Module", None));
+        ___qtreewidgetitem4.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Vector Analysis Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem6 = ___qtreewidgetitem2.child(3)
-        ___qtreewidgetitem6.setText(0, QCoreApplication.translate("MEMainWindow", u"Fasteners", None));
+        ___qtreewidgetitem5 = ___qtreewidgetitem1.child(3)
+        ___qtreewidgetitem5.setText(0, QCoreApplication.translate("MEMainWindow", u"Fasteners", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem6.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Basic Fasteners Module", None));
+        ___qtreewidgetitem5.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Basic Fasteners Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem7 = ___qtreewidgetitem2.child(4)
-        ___qtreewidgetitem7.setText(0, QCoreApplication.translate("MEMainWindow", u"Material Properties", None));
+        ___qtreewidgetitem6 = ___qtreewidgetitem1.child(4)
+        ___qtreewidgetitem6.setText(0, QCoreApplication.translate("MEMainWindow", u"Material Properties", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem7.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Material Properties Module", None));
+        ___qtreewidgetitem6.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Material Properties Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem8 = ___qtreewidgetitem2.child(5)
-        ___qtreewidgetitem8.setText(0, QCoreApplication.translate("MEMainWindow", u"Center of Mass and Center of Gravity", None));
+        ___qtreewidgetitem7 = ___qtreewidgetitem1.child(5)
+        ___qtreewidgetitem7.setText(0, QCoreApplication.translate("MEMainWindow", u"Center of Mass and Center of Gravity", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem8.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Center of Mass and Center of Gravity Module", None));
+        ___qtreewidgetitem7.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Center of Mass and Center of Gravity Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem9 = self.Modulelist.topLevelItem(2)
-        ___qtreewidgetitem9.setText(0, QCoreApplication.translate("MEMainWindow", u"Beams and Loads", None));
+        ___qtreewidgetitem8 = self.Modulelist.topLevelItem(1)
+        ___qtreewidgetitem8.setText(0, QCoreApplication.translate("MEMainWindow", u"Beams and Loads", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem9.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Beams and Loads List", None));
+        ___qtreewidgetitem8.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Beams and Loads List", None))
+#endif // QT_CONFIG(tooltip)
+        ___qtreewidgetitem9 = ___qtreewidgetitem8.child(0)
+        ___qtreewidgetitem9.setText(0, QCoreApplication.translate("MEMainWindow", u"General Beam Analysis", None))
+#if QT_CONFIG(tooltip)
+        ___qtreewidgetitem9.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"General Beam Analysis List", None))
 #endif // QT_CONFIG(tooltip)
         ___qtreewidgetitem10 = ___qtreewidgetitem9.child(0)
-        ___qtreewidgetitem10.setText(0, QCoreApplication.translate("MEMainWindow", u"General Beam Analysis", None));
+        ___qtreewidgetitem10.setText(0, QCoreApplication.translate("MEMainWindow", u"Trusses", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem10.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"General Beam Analysis List", None));
+        ___qtreewidgetitem10.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Truss Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem11 = ___qtreewidgetitem10.child(0)
-        ___qtreewidgetitem11.setText(0, QCoreApplication.translate("MEMainWindow", u"Trusses", None));
+        ___qtreewidgetitem11 = ___qtreewidgetitem9.child(1)
+        ___qtreewidgetitem11.setText(0, QCoreApplication.translate("MEMainWindow", u"Moments of Inertia", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem11.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Truss Module", None));
+        ___qtreewidgetitem11.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Moment of Inertia Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem12 = ___qtreewidgetitem10.child(1)
-        ___qtreewidgetitem12.setText(0, QCoreApplication.translate("MEMainWindow", u"Moments of Inertia", None));
+        ___qtreewidgetitem12 = ___qtreewidgetitem9.child(2)
+        ___qtreewidgetitem12.setText(0, QCoreApplication.translate("MEMainWindow", u"Determinate Beams", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem12.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Moment of Inertia Module", None));
+        ___qtreewidgetitem12.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Determinate Beams Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem13 = ___qtreewidgetitem10.child(2)
-        ___qtreewidgetitem13.setText(0, QCoreApplication.translate("MEMainWindow", u"Determinate Beams", None));
+        ___qtreewidgetitem13 = ___qtreewidgetitem9.child(3)
+        ___qtreewidgetitem13.setText(0, QCoreApplication.translate("MEMainWindow", u"Column Buckling", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem13.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Determinate Beams Module", None));
+        ___qtreewidgetitem13.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Column Buckling Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem14 = ___qtreewidgetitem10.child(3)
-        ___qtreewidgetitem14.setText(0, QCoreApplication.translate("MEMainWindow", u"Column Buckling", None));
+        ___qtreewidgetitem14 = ___qtreewidgetitem9.child(4)
+        ___qtreewidgetitem14.setText(0, QCoreApplication.translate("MEMainWindow", u"Flexure", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem14.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Column Buckling Module", None));
+        ___qtreewidgetitem14.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Flexure Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem15 = ___qtreewidgetitem10.child(4)
-        ___qtreewidgetitem15.setText(0, QCoreApplication.translate("MEMainWindow", u"Flexure", None));
+        ___qtreewidgetitem15 = ___qtreewidgetitem9.child(5)
+        ___qtreewidgetitem15.setText(0, QCoreApplication.translate("MEMainWindow", u"Indeterminate Axial Structures", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem15.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Flexure Module", None));
+        ___qtreewidgetitem15.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Indeterminate Axial Structures Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem16 = ___qtreewidgetitem10.child(5)
-        ___qtreewidgetitem16.setText(0, QCoreApplication.translate("MEMainWindow", u"Indeterminate Axial Structures", None));
+        ___qtreewidgetitem16 = ___qtreewidgetitem9.child(6)
+        ___qtreewidgetitem16.setText(0, QCoreApplication.translate("MEMainWindow", u"Mohr's Circle", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem16.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Indeterminate Axial Structures Module", None));
+        ___qtreewidgetitem16.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Mohr's Circle Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem17 = ___qtreewidgetitem10.child(6)
-        ___qtreewidgetitem17.setText(0, QCoreApplication.translate("MEMainWindow", u"Mohr's Circle", None));
+        ___qtreewidgetitem17 = ___qtreewidgetitem9.child(7)
+        ___qtreewidgetitem17.setText(0, QCoreApplication.translate("MEMainWindow", u"Deformation analysis", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem17.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Mohr's Circle Module", None));
+        ___qtreewidgetitem17.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Deformation Analysis List", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem18 = ___qtreewidgetitem10.child(7)
-        ___qtreewidgetitem18.setText(0, QCoreApplication.translate("MEMainWindow", u"Deformation analysis", None));
+        ___qtreewidgetitem18 = ___qtreewidgetitem17.child(0)
+        ___qtreewidgetitem18.setText(0, QCoreApplication.translate("MEMainWindow", u"Generic Beam Deformation Analysis", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem18.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Deformation Analysis List", None));
+        ___qtreewidgetitem18.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Generic Beam Deformation Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem19 = ___qtreewidgetitem18.child(0)
-        ___qtreewidgetitem19.setText(0, QCoreApplication.translate("MEMainWindow", u"Generic Beam Deformation Analysis", None));
+        ___qtreewidgetitem19 = ___qtreewidgetitem17.child(1)
+        ___qtreewidgetitem19.setText(0, QCoreApplication.translate("MEMainWindow", u"Axial Beam Deformation", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem19.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Generic Beam Deformation Module", None));
+        ___qtreewidgetitem19.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Axial Beam Deformation Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem20 = ___qtreewidgetitem18.child(1)
-        ___qtreewidgetitem20.setText(0, QCoreApplication.translate("MEMainWindow", u"Axial Beam Deformation", None));
+        ___qtreewidgetitem20 = ___qtreewidgetitem17.child(2)
+        ___qtreewidgetitem20.setText(0, QCoreApplication.translate("MEMainWindow", u"Torsional Beam Deformation", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem20.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Axial Beam Deformation Module", None));
+        ___qtreewidgetitem20.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Torsioanl Beam Deformation Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem21 = ___qtreewidgetitem18.child(2)
-        ___qtreewidgetitem21.setText(0, QCoreApplication.translate("MEMainWindow", u"Torsional Beam Deformation", None));
+        ___qtreewidgetitem21 = self.Modulelist.topLevelItem(2)
+        ___qtreewidgetitem21.setText(0, QCoreApplication.translate("MEMainWindow", u"Basic Mechanics Analysis", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem21.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Torsioanl Beam Deformation Module", None));
+        ___qtreewidgetitem21.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Basic Mechanics Analysis List", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem22 = self.Modulelist.topLevelItem(3)
-        ___qtreewidgetitem22.setText(0, QCoreApplication.translate("MEMainWindow", u"Basic Mechanics Analysis", None));
+        ___qtreewidgetitem22 = ___qtreewidgetitem21.child(0)
+        ___qtreewidgetitem22.setText(0, QCoreApplication.translate("MEMainWindow", u"Determinate Beams", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem22.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Basic Mechanics Analysis List", None));
+        ___qtreewidgetitem22.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Determinate Beams Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem23 = ___qtreewidgetitem22.child(0)
-        ___qtreewidgetitem23.setText(0, QCoreApplication.translate("MEMainWindow", u"Determinate Beams", None));
+        ___qtreewidgetitem23 = ___qtreewidgetitem21.child(1)
+        ___qtreewidgetitem23.setText(0, QCoreApplication.translate("MEMainWindow", u"Simple Torsion", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem23.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Determinate Beams Module", None));
+        ___qtreewidgetitem23.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Simple Torsion Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem24 = ___qtreewidgetitem22.child(1)
-        ___qtreewidgetitem24.setText(0, QCoreApplication.translate("MEMainWindow", u"Simple Torsion", None));
+        ___qtreewidgetitem24 = ___qtreewidgetitem21.child(2)
+        ___qtreewidgetitem24.setText(0, QCoreApplication.translate("MEMainWindow", u"Mohr's Circle", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem24.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Simple Torsion Module", None));
+        ___qtreewidgetitem24.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Morh's Circle Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem25 = ___qtreewidgetitem22.child(2)
-        ___qtreewidgetitem25.setText(0, QCoreApplication.translate("MEMainWindow", u"Mohr's Circle", None));
+        ___qtreewidgetitem25 = ___qtreewidgetitem21.child(3)
+        ___qtreewidgetitem25.setText(0, QCoreApplication.translate("MEMainWindow", u"Flexure", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem25.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Morh's Circle Module", None));
+        ___qtreewidgetitem25.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Flexure Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem26 = ___qtreewidgetitem22.child(3)
-        ___qtreewidgetitem26.setText(0, QCoreApplication.translate("MEMainWindow", u"Flexure", None));
+        ___qtreewidgetitem26 = ___qtreewidgetitem21.child(4)
+        ___qtreewidgetitem26.setText(0, QCoreApplication.translate("MEMainWindow", u"Pressure Vessels", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem26.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Flexure Module", None));
+        ___qtreewidgetitem26.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Pressure Vessels Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem27 = ___qtreewidgetitem22.child(4)
-        ___qtreewidgetitem27.setText(0, QCoreApplication.translate("MEMainWindow", u"Pressure Vessels", None));
+        ___qtreewidgetitem27 = ___qtreewidgetitem21.child(5)
+        ___qtreewidgetitem27.setText(0, QCoreApplication.translate("MEMainWindow", u"Kinematic Diagraming", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem27.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Pressure Vessels Module", None));
+        ___qtreewidgetitem27.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Kinematic Diagraming Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem28 = ___qtreewidgetitem22.child(5)
-        ___qtreewidgetitem28.setText(0, QCoreApplication.translate("MEMainWindow", u"Kinematic Diagraming", None));
+        ___qtreewidgetitem28 = ___qtreewidgetitem21.child(6)
+        ___qtreewidgetitem28.setText(0, QCoreApplication.translate("MEMainWindow", u"Indeterminate Coaxial Shafts", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem28.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Kinematic Diagraming Module", None));
+        ___qtreewidgetitem28.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Indeterminate Coaxial Shafts Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem29 = ___qtreewidgetitem22.child(6)
-        ___qtreewidgetitem29.setText(0, QCoreApplication.translate("MEMainWindow", u"Indeterminate Coaxial Shafts", None));
+        ___qtreewidgetitem29 = ___qtreewidgetitem21.child(7)
+        ___qtreewidgetitem29.setText(0, QCoreApplication.translate("MEMainWindow", u"Indeterminate End-to-End Shafts", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem29.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Indeterminate Coaxial Shafts Module", None));
+        ___qtreewidgetitem29.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Indeterminate End-to-End Shafts Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem30 = ___qtreewidgetitem22.child(7)
-        ___qtreewidgetitem30.setText(0, QCoreApplication.translate("MEMainWindow", u"Indeterminate End-to-End Shafts", None));
+        ___qtreewidgetitem30 = self.Modulelist.topLevelItem(3)
+        ___qtreewidgetitem30.setText(0, QCoreApplication.translate("MEMainWindow", u"Machine Design Elements", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem30.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Indeterminate End-to-End Shafts Module", None));
+        ___qtreewidgetitem30.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Machine Design Elements List", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem31 = self.Modulelist.topLevelItem(4)
-        ___qtreewidgetitem31.setText(0, QCoreApplication.translate("MEMainWindow", u"Machine Design Elements", None));
+        ___qtreewidgetitem31 = ___qtreewidgetitem30.child(0)
+        ___qtreewidgetitem31.setText(0, QCoreApplication.translate("MEMainWindow", u"Machine Drives", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem31.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Machine Design Elements List", None));
+        ___qtreewidgetitem31.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Machine Drives List", None))
 #endif // QT_CONFIG(tooltip)
         ___qtreewidgetitem32 = ___qtreewidgetitem31.child(0)
-        ___qtreewidgetitem32.setText(0, QCoreApplication.translate("MEMainWindow", u"Machine Drives", None));
+        ___qtreewidgetitem32.setText(0, QCoreApplication.translate("MEMainWindow", u"Belt Drives", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem32.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Machine Drives List", None));
+        ___qtreewidgetitem32.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Belt Drives Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem33 = ___qtreewidgetitem32.child(0)
-        ___qtreewidgetitem33.setText(0, QCoreApplication.translate("MEMainWindow", u"Belt Drives", None));
+        ___qtreewidgetitem33 = ___qtreewidgetitem31.child(1)
+        ___qtreewidgetitem33.setText(0, QCoreApplication.translate("MEMainWindow", u"Chain Drives", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem33.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Belt Drives Module", None));
+        ___qtreewidgetitem33.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Chain Drive Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem34 = ___qtreewidgetitem32.child(1)
-        ___qtreewidgetitem34.setText(0, QCoreApplication.translate("MEMainWindow", u"Chain Drives", None));
+        ___qtreewidgetitem34 = ___qtreewidgetitem31.child(2)
+        ___qtreewidgetitem34.setText(0, QCoreApplication.translate("MEMainWindow", u"Gears", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem34.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Chain Drive Module", None));
+        ___qtreewidgetitem34.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Gear List", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem35 = ___qtreewidgetitem32.child(2)
-        ___qtreewidgetitem35.setText(0, QCoreApplication.translate("MEMainWindow", u"Gears", None));
+        ___qtreewidgetitem35 = ___qtreewidgetitem34.child(0)
+        ___qtreewidgetitem35.setText(0, QCoreApplication.translate("MEMainWindow", u"Gear Driven Shafts", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem35.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Gear List", None));
+        ___qtreewidgetitem35.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Gear Driven Shafts Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem36 = ___qtreewidgetitem35.child(0)
-        ___qtreewidgetitem36.setText(0, QCoreApplication.translate("MEMainWindow", u"Gear Driven Shafts", None));
+        ___qtreewidgetitem36 = ___qtreewidgetitem34.child(1)
+        ___qtreewidgetitem36.setText(0, QCoreApplication.translate("MEMainWindow", u"Gear Trains", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem36.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Gear Driven Shafts Module", None));
+        ___qtreewidgetitem36.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Gear Trains Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem37 = ___qtreewidgetitem35.child(1)
-        ___qtreewidgetitem37.setText(0, QCoreApplication.translate("MEMainWindow", u"Gear Trains", None));
+        ___qtreewidgetitem37 = ___qtreewidgetitem34.child(2)
+        ___qtreewidgetitem37.setText(0, QCoreApplication.translate("MEMainWindow", u"Advanced Gear Calculator", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem37.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Gear Trains Module", None));
+        ___qtreewidgetitem37.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Advanced Gear Calculator Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem38 = ___qtreewidgetitem35.child(2)
-        ___qtreewidgetitem38.setText(0, QCoreApplication.translate("MEMainWindow", u"Advanced Gear Calculator", None));
+        ___qtreewidgetitem38 = ___qtreewidgetitem30.child(1)
+        ___qtreewidgetitem38.setText(0, QCoreApplication.translate("MEMainWindow", u"Bearing Calculator", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem38.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Advanced Gear Calculator Module", None));
+        ___qtreewidgetitem38.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Bearing Calculator", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem39 = ___qtreewidgetitem31.child(1)
-        ___qtreewidgetitem39.setText(0, QCoreApplication.translate("MEMainWindow", u"Bearing Calculator", None));
+        ___qtreewidgetitem39 = ___qtreewidgetitem30.child(2)
+        ___qtreewidgetitem39.setText(0, QCoreApplication.translate("MEMainWindow", u"Key Calculator", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem39.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Bearing Calculator", None));
+        ___qtreewidgetitem39.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Key Calculator Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem40 = ___qtreewidgetitem31.child(2)
-        ___qtreewidgetitem40.setText(0, QCoreApplication.translate("MEMainWindow", u"Key Calculator", None));
+        ___qtreewidgetitem40 = self.Modulelist.topLevelItem(4)
+        ___qtreewidgetitem40.setText(0, QCoreApplication.translate("MEMainWindow", u"Engineering and Drafting", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem40.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Key Calculator Module", None));
+        ___qtreewidgetitem40.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Engineering and Drafting List", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem41 = self.Modulelist.topLevelItem(5)
-        ___qtreewidgetitem41.setText(0, QCoreApplication.translate("MEMainWindow", u"Engineering and Drafting", None));
+        ___qtreewidgetitem41 = ___qtreewidgetitem40.child(0)
+        ___qtreewidgetitem41.setText(0, QCoreApplication.translate("MEMainWindow", u"GD&T Checker", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem41.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Engineering and Drafting List", None));
+        ___qtreewidgetitem41.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"GD&T Checker Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem42 = ___qtreewidgetitem41.child(0)
-        ___qtreewidgetitem42.setText(0, QCoreApplication.translate("MEMainWindow", u"GD&T Checker", None));
+        ___qtreewidgetitem42 = ___qtreewidgetitem40.child(1)
+        ___qtreewidgetitem42.setText(0, QCoreApplication.translate("MEMainWindow", u"Limits and Fits", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem42.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"GD&T Checker Module", None));
+        ___qtreewidgetitem42.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Limits and Fits Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem43 = ___qtreewidgetitem41.child(1)
-        ___qtreewidgetitem43.setText(0, QCoreApplication.translate("MEMainWindow", u"Limits and Fits", None));
+        ___qtreewidgetitem43 = ___qtreewidgetitem40.child(2)
+        ___qtreewidgetitem43.setText(0, QCoreApplication.translate("MEMainWindow", u"Fixed and Floating Fastener Calculator", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem43.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Limits and Fits Module", None));
+        ___qtreewidgetitem43.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"GD&T Fastener Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem44 = ___qtreewidgetitem41.child(2)
-        ___qtreewidgetitem44.setText(0, QCoreApplication.translate("MEMainWindow", u"Fixed and Floating Fastener Calculator", None));
+        ___qtreewidgetitem44 = ___qtreewidgetitem40.child(3)
+        ___qtreewidgetitem44.setText(0, QCoreApplication.translate("MEMainWindow", u"Paper Gauging ", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem44.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"GD&T Fastener Module", None));
+        ___qtreewidgetitem44.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Paper Gauging Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem45 = ___qtreewidgetitem41.child(3)
-        ___qtreewidgetitem45.setText(0, QCoreApplication.translate("MEMainWindow", u"Paper Gauging ", None));
+        ___qtreewidgetitem45 = ___qtreewidgetitem40.child(4)
+        ___qtreewidgetitem45.setText(0, QCoreApplication.translate("MEMainWindow", u"Tolerance Finder", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem45.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Paper Gauging Module", None));
+        ___qtreewidgetitem45.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Tolerance Finder Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem46 = ___qtreewidgetitem41.child(4)
-        ___qtreewidgetitem46.setText(0, QCoreApplication.translate("MEMainWindow", u"Tolerance Finder", None));
+        ___qtreewidgetitem46 = ___qtreewidgetitem40.child(5)
+        ___qtreewidgetitem46.setText(0, QCoreApplication.translate("MEMainWindow", u"Diameter Deviation", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem46.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Tolerance Finder Module", None));
+        ___qtreewidgetitem46.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Diameter Deviation Module", None))
 #endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem47 = ___qtreewidgetitem41.child(5)
-        ___qtreewidgetitem47.setText(0, QCoreApplication.translate("MEMainWindow", u"Diameter Deviation", None));
+        ___qtreewidgetitem47 = self.Modulelist.topLevelItem(5)
+        ___qtreewidgetitem47.setText(0, QCoreApplication.translate("MEMainWindow", u"Additional Calculators", None))
 #if QT_CONFIG(tooltip)
-        ___qtreewidgetitem47.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Diameter Deviation Module", None));
-#endif // QT_CONFIG(tooltip)
-        ___qtreewidgetitem48 = self.Modulelist.topLevelItem(6)
-        ___qtreewidgetitem48.setText(0, QCoreApplication.translate("MEMainWindow", u"Additional Calculators", None));
-#if QT_CONFIG(tooltip)
-        ___qtreewidgetitem48.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Additional Calculators List", None));
+        ___qtreewidgetitem47.setToolTip(0, QCoreApplication.translate("MEMainWindow", u"Additional Calculators List", None))
 #endif // QT_CONFIG(tooltip)
         self.Modulelist.setSortingEnabled(__sortingEnabled)
 
