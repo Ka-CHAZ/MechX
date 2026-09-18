@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>873</width>
+    <width>1142</width>
     <height>820</height>
    </rect>
   </property>
@@ -54,8 +54,8 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>340</y>
-      <width>751</width>
+      <y>350</y>
+      <width>311</width>
       <height>16</height>
      </rect>
     </property>
@@ -946,9 +946,9 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>10</y>
+      <y>60</y>
       <width>311</width>
-      <height>331</height>
+      <height>291</height>
      </rect>
     </property>
     <property name="font">
@@ -957,7 +957,7 @@
      </font>
     </property>
     <property name="title">
-     <string>GDT Dimension and Tolerance Setup</string>
+     <string>Dimension and Tolerance Setup</string>
     </property>
     <property name="flat">
      <bool>false</bool>
@@ -965,545 +965,329 @@
     <property name="checkable">
      <bool>false</bool>
     </property>
-    <widget class="QLabel" name="label_6">
-     <property name="geometry">
-      <rect>
-       <x>11</x>
-       <y>171</y>
-       <width>123</width>
-       <height>35</height>
-      </rect>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>35</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>35</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Lower Dimension
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0" colspan="2">
+      <widget class="QFrame" name="frame_2">
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="2" rowspan="7">
+         <layout class="QVBoxLayout" name="verticalLayout_9">
+          <item>
+           <widget class="QLabel" name="label_5">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>35</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Upper Dimension
 Tolerance</string>
-     </property>
-    </widget>
-    <widget class="QDoubleSpinBox" name="LowerDim">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>210</y>
-       <width>129</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-       <horstretch>250</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-     <property name="buttonSymbols">
-      <enum>QAbstractSpinBox::NoButtons</enum>
-     </property>
-     <property name="decimals">
-      <number>5</number>
-     </property>
-     <property name="maximum">
-      <double>1000000000000.000000000000000</double>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_7">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>180</y>
-       <width>123</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>35</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Lower Dimension</string>
-     </property>
-    </widget>
-    <widget class="QDoubleSpinBox" name="UpperDim">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>130</y>
-       <width>129</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-       <horstretch>250</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-     <property name="buttonSymbols">
-      <enum>QAbstractSpinBox::NoButtons</enum>
-     </property>
-     <property name="decimals">
-      <number>5</number>
-     </property>
-     <property name="maximum">
-      <double>1000000000000.000000000000000</double>
-     </property>
-    </widget>
-    <widget class="QDoubleSpinBox" name="UpperTol">
-     <property name="geometry">
-      <rect>
-       <x>11</x>
-       <y>132</y>
-       <width>129</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-       <horstretch>250</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="buttonSymbols">
-      <enum>QAbstractSpinBox::UpDownArrows</enum>
-     </property>
-     <property name="decimals">
-      <number>5</number>
-     </property>
-     <property name="maximum">
-      <double>1000000000000.000000000000000</double>
-     </property>
-    </widget>
-    <widget class="QDoubleSpinBox" name="ToleranceVal">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>290</y>
-       <width>129</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-       <horstretch>250</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="buttonSymbols">
-      <enum>QAbstractSpinBox::UpDownArrows</enum>
-     </property>
-     <property name="decimals">
-      <number>5</number>
-     </property>
-     <property name="maximum">
-      <double>1000000000000.000000000000000</double>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_2">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>260</y>
-       <width>113</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Tolerance Value</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_5">
-     <property name="geometry">
-      <rect>
-       <x>11</x>
-       <y>91</y>
-       <width>123</width>
-       <height>35</height>
-      </rect>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>35</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Upper Dimension
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="UpperTol">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>250</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>28</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>28</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="buttonSymbols">
+             <enum>QAbstractSpinBox::UpDownArrows</enum>
+            </property>
+            <property name="decimals">
+             <number>5</number>
+            </property>
+            <property name="maximum">
+             <double>1000000000000.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_6">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>35</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>35</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Lower Dimension
 Tolerance</string>
-     </property>
-    </widget>
-    <widget class="QDoubleSpinBox" name="LowTol">
-     <property name="geometry">
-      <rect>
-       <x>11</x>
-       <y>212</y>
-       <width>129</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-       <horstretch>250</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="buttonSymbols">
-      <enum>QAbstractSpinBox::UpDownArrows</enum>
-     </property>
-     <property name="decimals">
-      <number>5</number>
-     </property>
-     <property name="maximum">
-      <double>1000000000000.000000000000000</double>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_8">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>98</y>
-       <width>121</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>35</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Upper Dimension</string>
-     </property>
-    </widget>
-    <widget class="QWidget" name="">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>30</y>
-       <width>131</width>
-       <height>55</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_6">
-      <item>
-       <widget class="QLabel" name="label_4">
-        <property name="font">
-         <font>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Main Dimension</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QDoubleSpinBox" name="MainDim">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-          <horstretch>250</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>28</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>28</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-        <property name="buttonSymbols">
-         <enum>QAbstractSpinBox::UpDownArrows</enum>
-        </property>
-        <property name="decimals">
-         <number>5</number>
-        </property>
-        <property name="maximum">
-         <double>1000000000000.000000000000000</double>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QWidget" name="">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>30</y>
-       <width>131</width>
-       <height>55</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_10">
-      <item>
-       <widget class="QLabel" name="label_9">
-        <property name="font">
-         <font>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Tolerance Step</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QDoubleSpinBox" name="TolStep">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-          <horstretch>250</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>28</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>28</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-        <property name="buttonSymbols">
-         <enum>QAbstractSpinBox::UpDownArrows</enum>
-        </property>
-        <property name="decimals">
-         <number>5</number>
-        </property>
-        <property name="maximum">
-         <double>1000000000000.000000000000000</double>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QLabel" name="label_3">
-     <property name="geometry">
-      <rect>
-       <x>161</x>
-       <y>251</y>
-       <width>149</width>
-       <height>35</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Projected Tolerance
-Value</string>
-     </property>
-    </widget>
-    <widget class="QDoubleSpinBox" name="PTolVal">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>290</y>
-       <width>129</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-       <horstretch>250</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>129</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="buttonSymbols">
-      <enum>QAbstractSpinBox::UpDownArrows</enum>
-     </property>
-     <property name="decimals">
-      <number>5</number>
-     </property>
-     <property name="maximum">
-      <double>1000000000000.000000000000000</double>
-     </property>
-    </widget>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="LowTol">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>250</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>28</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>28</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="buttonSymbols">
+             <enum>QAbstractSpinBox::UpDownArrows</enum>
+            </property>
+            <property name="decimals">
+             <number>5</number>
+            </property>
+            <property name="maximum">
+             <double>1000000000000.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="6" column="0" colspan="2">
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>110</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="0" colspan="2">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>101</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="3" column="0" rowspan="3">
+         <layout class="QVBoxLayout" name="verticalLayout_6">
+          <item>
+           <widget class="QLabel" name="label_4">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Main Dimension</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="MainDim">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>250</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>28</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>28</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="buttonSymbols">
+             <enum>QAbstractSpinBox::UpDownArrows</enum>
+            </property>
+            <property name="decimals">
+             <number>5</number>
+            </property>
+            <property name="maximum">
+             <double>1000000000000.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QFrame" name="frame">
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_10">
+        <item>
+         <widget class="QLabel" name="label_9">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Tolerance Step</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QDoubleSpinBox" name="TolStep">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>250</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>28</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>28</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::UpDownArrows</enum>
+          </property>
+          <property name="decimals">
+           <number>5</number>
+          </property>
+          <property name="maximum">
+           <double>1000000000000.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <spacer name="verticalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>72</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
    </widget>
    <widget class="QGroupBox" name="groupBox_9">
     <property name="geometry">
      <rect>
       <x>330</x>
       <y>10</y>
-      <width>191</width>
-      <height>331</height>
+      <width>341</width>
+      <height>341</height>
      </rect>
     </property>
     <property name="font">
@@ -1514,49 +1298,64 @@ Value</string>
     <property name="title">
      <string>GD&amp;T Modifier Setup</string>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout_7">
-     <item>
-      <widget class="QCheckBox" name="diaModifier">
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Diameter Modifier
-Used</string>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-      </widget>
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="5" column="2">
+      <layout class="QVBoxLayout" name="verticalLayout_12">
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Projected Tolerance
+Value</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDoubleSpinBox" name="PTolVal">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>250</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="buttonSymbols">
+          <enum>QAbstractSpinBox::UpDownArrows</enum>
+         </property>
+         <property name="decimals">
+          <number>5</number>
+         </property>
+         <property name="maximum">
+          <double>1000000000000.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
-     <item>
-      <widget class="QLabel" name="label">
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Tolerance Symbol</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QComboBox" name="TolSymbol">
-       <property name="font">
-        <font>
-         <family>AIGDT</family>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-      </widget>
-     </item>
-     <item>
+     <item row="5" column="0" rowspan="2">
       <widget class="QGroupBox" name="groupBox">
        <property name="font">
         <font>
@@ -1624,13 +1423,247 @@ Used</string>
        </layout>
       </widget>
      </item>
+     <item row="0" column="2">
+      <layout class="QVBoxLayout" name="verticalLayout_7">
+       <item>
+        <widget class="QRadioButton" name="radioButton_3">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Internal Feature</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton_4">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>External Feature</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="4" column="0" colspan="3">
+      <widget class="Line" name="line_12">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1" rowspan="2">
+      <widget class="Line" name="line_13">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" colspan="3">
+      <widget class="Line" name="line_11">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QCheckBox" name="diaModifier">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Diameter Modifier
+Used</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QLabel" name="label_2">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Tolerance Value</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QDoubleSpinBox" name="ToleranceVal">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>250</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>28</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>28</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="buttonSymbols">
+        <enum>QAbstractSpinBox::UpDownArrows</enum>
+       </property>
+       <property name="decimals">
+        <number>5</number>
+       </property>
+       <property name="maximum">
+        <double>1000000000000.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Tolerance Symbol</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" colspan="2">
+      <widget class="QComboBox" name="TolSymbol">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>28</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <item>
+        <property name="text">
+         <string>Flatness</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Straightness</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Circularity</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Cylindricity</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Angularity</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Perpendicularity</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Parallelism</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Position</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Line Profile</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Surface Profile</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Circular Runout</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Total Runout</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="6" column="2">
+      <spacer name="verticalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>82</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
     </layout>
    </widget>
    <widget class="QGroupBox" name="groupBox_10">
     <property name="geometry">
      <rect>
-      <x>530</x>
-      <y>10</y>
+      <x>940</x>
+      <y>520</y>
       <width>221</width>
       <height>331</height>
      </rect>
@@ -1752,6 +1785,53 @@ to Datum Axis</string>
      </item>
     </layout>
    </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>820</x>
+      <y>40</y>
+      <width>291</width>
+      <height>192</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Main Dimention and
+Tolerace Given</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_2">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>10</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Limits Given</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QMenuBar" name="menubar">
@@ -1759,7 +1839,7 @@ to Datum Axis</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>873</width>
+     <width>1142</width>
      <height>21</height>
     </rect>
    </property>
@@ -1901,108 +1981,7 @@ to Datum Axis</string>
     <addaction name="menuModules_help"/>
     <addaction name="actionAbout"/>
    </widget>
-   <widget class="QMenu" name="menu_Modules">
-    <property name="title">
-     <string>&amp;Modules</string>
-    </property>
-    <widget class="QMenu" name="menu_General_Analysis">
-     <property name="title">
-      <string>General Analysis</string>
-     </property>
-     <addaction name="actionUnit_Converter"/>
-     <addaction name="actionMoments_of_Inertia"/>
-     <addaction name="actionVectors"/>
-     <addaction name="actionFriction_and_Force"/>
-     <addaction name="actionFasteners"/>
-     <addaction name="actionMaterial_Properties"/>
-     <addaction name="actionCM_and_CG"/>
-    </widget>
-    <widget class="QMenu" name="menu_Beams_and_Loads">
-     <property name="title">
-      <string>Beams and Loads</string>
-     </property>
-     <widget class="QMenu" name="menu_Generic_Beam_Analysis">
-      <property name="title">
-       <string>Generic Beam Analysis</string>
-      </property>
-      <addaction name="actionTrusses"/>
-      <addaction name="actionBeamsMoments_of_Inertia"/>
-      <addaction name="actionShear_and_Moment"/>
-      <addaction name="actionIndeterminate_Axial_Structures"/>
-      <addaction name="actionFlexure"/>
-      <addaction name="actionBeam_Deformation"/>
-      <addaction name="actionAxial_Beam_Deformation"/>
-      <addaction name="actionTorsional_Beam_Deformation"/>
-      <addaction name="actionSupported_Beams"/>
-      <addaction name="actionMohr_s_Circle"/>
-     </widget>
-     <widget class="QMenu" name="menuCombined_Loadings">
-      <property name="title">
-       <string>Combined Loadings</string>
-      </property>
-      <widget class="QMenu" name="menuEccentric_Loadings">
-       <property name="title">
-        <string>Eccentric Loadings</string>
-       </property>
-       <addaction name="actionC_Clamp"/>
-       <addaction name="actionCompression_Link"/>
-       <addaction name="actionTension_Link"/>
-       <addaction name="actionPost"/>
-      </widget>
-      <widget class="QMenu" name="menuShear_Force_and_Bending_Moment">
-       <property name="title">
-        <string>Shear Force and Bending Moment</string>
-       </property>
-       <addaction name="actionPost_and_Beam"/>
-      </widget>
-      <widget class="QMenu" name="menuAxial_Torsional_and_Bending_Stresses">
-       <property name="title">
-        <string>Axial, Torsional, and Bending Stresses</string>
-       </property>
-       <addaction name="actionSolid_Shaft_and_Pipe"/>
-      </widget>
-      <addaction name="menuEccentric_Loadings"/>
-      <addaction name="menuShear_Force_and_Bending_Moment"/>
-      <addaction name="menuAxial_Torsional_and_Bending_Stresses"/>
-     </widget>
-     <addaction name="menu_Generic_Beam_Analysis"/>
-     <addaction name="menuCombined_Loadings"/>
-    </widget>
-    <widget class="QMenu" name="menu_Kinematics">
-     <property name="title">
-      <string>Kinematics</string>
-     </property>
-     <addaction name="actionKinematic_Diagraming"/>
-     <addaction name="actionVector_Analysis"/>
-    </widget>
-    <widget class="QMenu" name="menu_Egineering_and_Drafting">
-     <property name="title">
-      <string>Egineering and Drafting</string>
-     </property>
-     <addaction name="actionGDT_Checker"/>
-     <addaction name="actionVirtual_Condition_Calculator"/>
-     <addaction name="actionLimits_and_Fits"/>
-     <addaction name="actionGDTFasteners"/>
-     <addaction name="actionPaper_Gauging"/>
-     <addaction name="actionTolerance_Finder"/>
-     <addaction name="actionDiameter_Deviation"/>
-    </widget>
-    <widget class="QMenu" name="menu_Additional_Calculators">
-     <property name="title">
-      <string>Additional Calculators</string>
-     </property>
-     <addaction name="actionTorsion"/>
-     <addaction name="actionPressure"/>
-     <addaction name="actionAddMohr_s_Circle"/>
-    </widget>
-    <addaction name="menu_General_Analysis"/>
-    <addaction name="menu_Beams_and_Loads"/>
-    <addaction name="menu_Kinematics"/>
-    <addaction name="menu_Egineering_and_Drafting"/>
-    <addaction name="menu_Additional_Calculators"/>
-   </widget>
    <addaction name="menu_File"/>
-   <addaction name="menu_Modules"/>
    <addaction name="menu_Utilites"/>
    <addaction name="menu_Help"/>
   </widget>

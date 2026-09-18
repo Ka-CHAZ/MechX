@@ -1,6 +1,7 @@
 {
     "python-envs.defaultEnvManager": "ms-python.python:venv",
     "qtForPython.uic.path": "${workspaceFolder}\\.venv\\Lib\\site-packages\\PySide6\\uic.exe",
+    "qtForPython.designer.path": "${workspaceFolder}\\.venv\\Lib\\site-packages\\PySide6\\designer.exe",
     "qtForPython.uic.options": [
         "-g",
         "python",
